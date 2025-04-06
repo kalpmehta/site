@@ -1,17 +1,11 @@
 <a class="skip-link" href="#main-content">{{ i18n "skip-link" }}</a>
 
-{{ $cssFontAwesome := resources.Get "fontawesome.min.css" }}
-<link rel="stylesheet" type="text/css" href="{{ $cssFontAwesome.RelPermalink }}">
-{{ $cssBrands := resources.Get "brands.min.css" }}
-<link rel="stylesheet" type="text/css" href="{{ $cssBrands.RelPermalink }}">
-{{ $cssSolid := resources.Get "solid.min.css" }}
-<link rel="stylesheet" type="text/css" href="{{ $cssSolid.RelPermalink }}">
-{{ $cssRegular := resources.Get "regular.min.css" }}
-<link rel="stylesheet" type="text/css" href="{{ $cssRegular.RelPermalink }}">
-{{ $cssFa := resources.Get "fa.css" | minify }}
-<link rel="stylesheet" type="text/css" href="{{ $cssFa.RelPermalink }}">
 
-
+<link rel="stylesheet" href="/fontawesome.min.css">
+<link rel="stylesheet" href="/brands.min.css">
+<link rel="stylesheet" href="/solid.min.css">
+<link rel="stylesheet" href="/regular.min.css">
+<link rel="stylesheet" href="/fa.css" >
 
 <div class="header-line">
     <div class="site-title">
