@@ -1,0 +1,52 @@
+<a class="skip-link" href="#main-content">{{ i18n "skip-link" }}</a>
+
+
+<link rel="stylesheet" href="/fontawesome.min.css">
+<link rel="stylesheet" href="/brands.min.css">
+<link rel="stylesheet" href="/solid.min.css">
+<link rel="stylesheet" href="/regular.min.css">
+<link rel="stylesheet" href="/fa.css" >
+
+<div class="header-line">
+    <div class="site-title">
+        <a href="{{ relURL .Site.Home.RelPermalink }}" class="title"><h1>{{ .Site.Title }}</h1></a>
+    </div>
+
+
+<div class="social-buttons">  
+ 
+    <a  
+         href="https://www.linkedin.com/in/kalpmehta/"  
+         class="social-button social-button--linkedin"  
+         aria-label="LinkedIn"  
+         data-aos="flip-left"  
+         data-aos-delay="300"  
+         target="_blank"
+    >  
+         <i class="fa-brands fa-linkedin"></i>  
+    </a>  
+    <a  
+         href="https://x.com/kalpmehta/"  
+         class="social-button social-button--twitter"  
+         aria-label="X"  
+         data-aos="flip-left"  
+         data-aos-delay="300"  
+         target="_blank"
+    >  
+         <i class="fa-brands fa-x-twitter"></i>  
+    </a>  
+    <a  
+         href="https://github.com/kalpmehta/"  
+         class="social-button social-button--github"  
+         aria-label="GitHub"  
+         data-aos="flip-left"  
+         data-aos-delay="300"  
+         target="_blank"
+    >  
+         <i class="fa-brands fa-github"></i>  
+    </a>  
+</div>
+</div>
+<nav>{{- partial "nav.html" . -}} {{- partial "toggle.html" . -}}</nav>
+
+<hr/>
