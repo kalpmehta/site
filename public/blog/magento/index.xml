@@ -4834,7 +4834,7 @@ will check like <em>WHERE somefield = null</em></p>
 </span></span><span style="display:flex;"><span><span style="color:#b8860b">$fname</span> <span style="color:#666">=</span> <span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getFirstname</span>();  
 </span></span><span style="display:flex;"><span><span style="color:#b8860b">$lname</span> <span style="color:#666">=</span> <span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getLastname</span>();
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="">$</span>customerObj<span style="color:#666">-&gt;</span><span style="color:#b44">setEmail</span>(<span style="color:#b8860b">$e</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setEmail</span>(<span style="color:#b8860b">$e</span>);  
 </span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setFirstname</span>(‘Guest’);  
 </span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setLastname</span>(‘Guest’);  
 </span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setPassword</span>(<span style="color:#b8860b">$pwd</span>);  
