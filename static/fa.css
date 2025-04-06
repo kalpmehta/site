@@ -108,7 +108,50 @@
     float:left;
 }
 
-@media screen and (max-width: 500px) {
+.site-title {
+    xmax-width: 60%;
+}
+
+
+ /* iPhone SE and smaller phones */
+ @media screen and (max-width: 375px) {
+    .social-button {
+       width: 1.6rem;
+       height: 1.6rem;
+    }
+    .social-button i {
+        font-size: 14px;
+     }
+     .title h1 {
+        font-size: 18px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 100px;
+     }
+     nav a {
+        margin-right: 0px;
+     }
+ }
+
+ /* iPhone 6/7/8 */
+ @media screen and (max-width: 414px) {
+    .social-button {
+       width: 1.8rem;
+       height: 1.8rem;
+    }
+    .social-button i {
+        font-size: 15px;
+     }
+     .title h1 {
+        font-size: 20px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 110px;
+     }
+ }
+
+ /* iPhone 6/7/8 Plus */
+ @media screen and (max-width: 480px) {
     .social-button {
        width: 2rem;
        height: 2rem;
@@ -117,6 +160,39 @@
         font-size: 18px;
      }
      ul.blog-posts li span {
+        flex: 0 0 125px;
+     }
+ }
+
+ /* iPad Mini/iPad */
+ @media screen and (max-width: 768px) {
+    .social-button {
+       width: 2.2rem;
+       height: 2.2rem;
+    }
+    .social-button i {
+        font-size: 20px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 140px;
+     }
+ }
+
+ @media screen and (max-width: 360px) {
+    .social-button {
+       width: 1.5rem;
+       height: 1.5rem;
+    }
+    .social-button i {
+        font-size: 14px;
+     }
+     .title h1 {
+        font-size: 18px;
+     }
+     ul.blog-posts li span {
         flex: 0 0 110px;
+     }
+     nav a {
+        margin-right: 0px;
      }
  }
