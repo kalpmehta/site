@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linux on KALPESH MEHTA</title>
+    <link>http://localhost:1313/categories/linux/</link>
+    <description>Recent content in Linux on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 25 Sep 2014 20:10:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Fix] Linux Bash Code Injection Vulnerability &amp;#8211; ShellShock</title>
+      <link>http://localhost:1313/fix-linux-bash-code-injection-vulnerability-%238211-shellshock/</link>
+      <pubDate>Thu, 25 Sep 2014 20:10:27 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/fix-linux-bash-code-injection-vulnerability-%238211-shellshock/</guid>
+      <description>&lt;p&gt;ShellShock is new Linux vulnerability affecting all versions of Bash package. This vulnerability is worse than HeartBleed! This command line vulnerability is present in Mac OS X too. Basically it’s there in all the systems having Bash, a software used to control the command line in Unix.&lt;/p&gt;&#xA;&lt;p&gt;To test if you are vulnerable to ShellShock, run this command:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; env x=&amp;#39;() { :;}; echo vulnerable’ bash -c “echo this is a test”&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;If you see output:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; vulnerable  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;this is a test&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;that means you are vulnerable!&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>ShellShock is new Linux vulnerability affecting all versions of Bash package. This vulnerability is worse than HeartBleed! This command line vulnerability is present in Mac OS X too. Basically it’s there in all the systems having Bash, a software used to control the command line in Unix.</p>
+<p>To test if you are vulnerable to ShellShock, run this command:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> env x=&#39;() { :;}; echo vulnerable’ bash -c “echo this is a test”</span></span></span></code></pre></div><br>
+If you see output:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> vulnerable  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">this is a test</span></span></span></code></pre></div><br>
+that means you are vulnerable!</p>
+<p>Fix for Redhat packages:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> yum update bash</span></span></span></code></pre></div></p>
+<p>Fix for Ubuntu/Debian packages:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> apt-get upgrade bash</span></span></span></code></pre></div></p>
+<p>After running above commands, check again to see if you are vulnerable:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> env x=&#39;() { :;}; echo vulnerable’ bash -c “echo this is a test”</span></span></span></code></pre></div></p>
+<p>If you see below output, that means you are no longer vulnerable<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> bash: warning: x: ignoring function definition attempt  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">bash: error importing function definition for `x’  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">this is a test</span></span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Sample apache virtualhost for your website</title>
+      <link>http://localhost:1313/magento-sample-apache-virtualhost-for-your-website/</link>
+      <pubDate>Sun, 22 Jun 2014 19:16:40 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-sample-apache-virtualhost-for-your-website/</guid>
+      <description>&lt;p&gt;Sample apache virtualhost to point to your magento directory and run your local website with specified URL.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; &amp;lt;virtualhost&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; ServerAdmin webmaster@dummy-host.example.com  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; DocumentRoot “/var/www/magento/”  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; ServerName loca.lho.st  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; ServerAlias loca.lho.st  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; ErrorLog “logs/error_log”  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; CustomLog “logs/access_log” common  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&amp;lt;/virtualhost&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Add entry to /etc/hosts too:&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; 127.0.0.1 loca.lho.st&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Restart apache (service httpd restart OR service apache2 restart) and point your browser location to:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; http://loca.lho.st&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;and you will see the website running from your /var/www/magento directory.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Sample apache virtualhost to point to your magento directory and run your local website with specified URL.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;virtualhost&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ServerAdmin webmaster@dummy-host.example.com  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> DocumentRoot “/var/www/magento/”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ServerName loca.lho.st  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ServerAlias loca.lho.st  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ErrorLog “logs/error_log”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> CustomLog “logs/access_log” common  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/virtualhost&gt;</span></span></span></code></pre></div>
+<p>Add entry to /etc/hosts too:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> 127.0.0.1 loca.lho.st</span></span></span></code></pre></div>
+<p>Restart apache (service httpd restart OR service apache2 restart) and point your browser location to:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> http://loca.lho.st</span></span></span></code></pre></div><br>
+and you will see the website running from your /var/www/magento directory.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Clear all caches from command line</title>
+      <link>http://localhost:1313/magento-clear-all-caches-from-command-line/</link>
+      <pubDate>Sun, 22 Jun 2014 18:58:17 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-clear-all-caches-from-command-line/</guid>
+      <description>&lt;p&gt;Magento clear all caches from command line, programatically from ssh. Clearing the caches is a must when you are making any configuration changes in your Magento website. Although you can always clear the cache from admin panel, sometimes for faster cleaning or unable to log into admin panel reason, it’s good to have a script which will clear all the caches in Magento.&lt;/p&gt;&#xA;&lt;p&gt;Create a file in your Magento root and name it clearCache.php with the below code:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&amp;lt;?&lt;/span&gt;php &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;Start Cleaning all caches at ... &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; date(&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;Y-m-d H:i:s&amp;#34;&lt;/span&gt;) &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#b62;font-weight:bold&#34;&gt;\n\n&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ini_set(&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;display_errors&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;require&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;&amp;#39;app/Mage.php&amp;#39;&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;app&lt;/span&gt;(&lt;span style=&#34;color:#b44&#34;&gt;&amp;#39;admin&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setUseSessionInUrl&lt;/span&gt;(&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;false&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getConfig&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;init&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$types&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;app&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCacheInstance&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getTypes&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;try&lt;/span&gt; {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “Cleaning data cache… \\n”;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; flush();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$types&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$type&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$data&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “Removing &lt;span style=&#34;color:#b8860b&#34;&gt;$type&lt;/span&gt; … “;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;app&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCacheInstance&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;clean&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$data&lt;/span&gt;[“tags”]) &lt;span style=&#34;color:#666&#34;&gt;?&lt;/span&gt; “Cache cleared&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;” &lt;span style=&#34;color:#666&#34;&gt;:&lt;/span&gt; “There is some error&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;”;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “\\n”;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; }  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;catch&lt;/span&gt; (exception &lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;die&lt;/span&gt;(“[ERROR&lt;span style=&#34;color:#666&#34;&gt;:&lt;/span&gt;” &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getMessage&lt;/span&gt;() &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; “]”);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “\\n”;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;try&lt;/span&gt; {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “Cleaning stored cache… “;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; flush();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;app&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCacheInstance&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;clean&lt;/span&gt;() &lt;span style=&#34;color:#666&#34;&gt;?&lt;/span&gt; “Cache cleared&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;” &lt;span style=&#34;color:#666&#34;&gt;:&lt;/span&gt; “There is some error&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;”;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “\\n\\n”;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;catch&lt;/span&gt; (exception &lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;die&lt;/span&gt;(“[ERROR&lt;span style=&#34;color:#666&#34;&gt;:&lt;/span&gt;” &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getMessage&lt;/span&gt;() &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; “]”);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080&#34;&gt;?&amp;gt;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;Make sure all the double quotes comes good in copy pasting.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento clear all caches from command line, programatically from ssh. Clearing the caches is a must when you are making any configuration changes in your Magento website. Although you can always clear the cache from admin panel, sometimes for faster cleaning or unable to log into admin panel reason, it’s good to have a script which will clear all the caches in Magento.</p>
+<p>Create a file in your Magento root and name it clearCache.php with the below code:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b44">&#34;Start Cleaning all caches at ... &#34;</span> <span style="color:#666">.</span> date(<span style="color:#b44">&#34;Y-m-d H:i:s&#34;</span>) <span style="color:#666">.</span> <span style="color:#b44">&#34;</span><span style="color:#b62;font-weight:bold">\n\n</span><span style="color:#b44">&#34;</span>;
+</span></span><span style="display:flex;"><span>ini_set(<span style="color:#b44">&#34;display_errors&#34;</span>, <span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require</span> <span style="color:#b44">&#39;app/Mage.php&#39;</span>;
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>(<span style="color:#b44">&#39;admin&#39;</span>)<span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">setUseSessionInUrl</span>(<span style="color:#a2f;font-weight:bold">false</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">getConfig</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">init</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$types</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getCacheInstance</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getTypes</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">try</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Cleaning data cache… \\n”;  
+</span></span><span style="display:flex;"><span> flush();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$types</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$type</span> <span style="color:#666">=&gt;</span> <span style="color:#b8860b">$data</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Removing <span style="color:#b8860b">$type</span> … “;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getCacheInstance</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">clean</span>(<span style="color:#b8860b">$data</span>[“tags”]) <span style="color:#666">?</span> “Cache cleared<span style="color:#666">!</span>” <span style="color:#666">:</span> “There is some error<span style="color:#666">!</span>”;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “\\n”;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">catch</span> (exception <span style="color:#b8860b">$e</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">die</span>(“[ERROR<span style="color:#666">:</span>” <span style="color:#666">.</span> <span style="color:#b8860b">$e</span><span style="color:#666">-&gt;</span><span style="color:#b44">getMessage</span>() <span style="color:#666">.</span> “]”);  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> “\\n”;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">try</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Cleaning stored cache… “;  
+</span></span><span style="display:flex;"><span> flush();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getCacheInstance</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">clean</span>() <span style="color:#666">?</span> “Cache cleared<span style="color:#666">!</span>” <span style="color:#666">:</span> “There is some error<span style="color:#666">!</span>”;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “\\n\\n”;  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">catch</span> (exception <span style="color:#b8860b">$e</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">die</span>(“[ERROR<span style="color:#666">:</span>” <span style="color:#666">.</span> <span style="color:#b8860b">$e</span><span style="color:#666">-&gt;</span><span style="color:#b44">getMessage</span>() <span style="color:#666">.</span> “]”);  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span><span style="color:#080">?&gt;</span><span style="">
+</span></span></span></code></pre></div><br>
+Make sure all the double quotes comes good in copy pasting.</p>
+<p>You can now run this script by the command “php -f clearCache.php” from your magento root location in terminal and this will start clearing all the caches for you! Once done, it will confirm by the message “Cache cleared!” or giving error message if it fails.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>OroCRM Installation guide</title>
+      <link>http://localhost:1313/orocrm-installation-guide/</link>
+      <pubDate>Thu, 20 Jun 2013 00:43:02 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/orocrm-installation-guide/</guid>
+      <description>&lt;p&gt;I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.</p>
+<p><strong>Requirements</strong>: Symfony 2, Doctrine 2, PHP &gt;= 5.3.3</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/06/orocrm-login.png" alt="OroCRM login - installation guide"></p>
+<p>– Clone the CRM application Git repository in your local. It should be done in your web server’s root directory (e.g. /var/www/).<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> git clone http://gitlab.orocrm.com/crm-application.git</span></span></span></code></pre></div></p>
+<p>– Now switch to the newly created crm-application directory and make the parameters.yml file with your configuration changes.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> cd crm-application  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">cp app/config/parameters.dist.yml app/config/parameters.yml  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">vi app/config/parameters.yml</span></span></span></code></pre></div></p>
+<p>– Edit composer.json, add symfony/assestic-bundle to prevent future error:</p>
+<p><em>PHP Fatal error: Class ‘Assetic\Util\PathUtils’ not found in /var/www/crm-application/vendor/symfony/assetic-bundle/Symfony/Bundle/AsseticBundle/Command/DumpCommand.php on line 216</em></p>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> replace:  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">“require”: {  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “php”: “&gt;=5.3.3”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/platform”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/crm”: “dev-master”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> },</span></span></span></code></pre></div><br>
+with<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ”require”: {  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “php”: “&gt;=5.3.3”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/platform”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/crm”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “symfony/assetic-bundle”: “2.3.*@dev”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> },</span></span></span></code></pre></div></p>
+<p>– This will install composer. If you already have it, just ignore this step.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> curl -s https://getcomposer.org/installer | php</span></span></span></code></pre></div></p>
+<p>– This will install all the things which are listed in composer.json file and necessary by Oro; like zendframework, doctrine, twig, symfony, monolog, oro, etc..<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> php composer.phar install –prefer-dist</span></span></span></code></pre></div></p>
+<p>Change permissions of cache and logs directory to world-writeable. Otherwise you will get errors like:</p>
+<p><em>PHP Fatal error: Uncaught exception ‘RuntimeException’ with message ‘Unable to write in the logs directory (/var/www/crm-application/app/logs)\n’ in …<br>
+PHP Fatal error: Uncaught exception ‘RuntimeException’ with message ‘Unable to create the cache directory (/var/www/crm-application/app/cache/prod)\n’ in …</em></p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> chmod -R 777 app/cache  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">chmod -R 777 app/logs  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">or, find app/cache app/logs -type d -exec chmod 777 {} +</span></span></span></code></pre></div>
+<p>– Finally, run the install bash script<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ./install.sh</span></span></span></code></pre></div></p>
+<p>You should now able to see the login screen of OroCRM if everything went good. If you face any error, check below errors and how to solve it.</p>
+<p><em>Login credentials are:</em><br>
+username: admin<br>
+password: admin</p>
+<p>—————-</p>
+<p><em>Fatal error: Class ‘Assetic\Util\PathUtils’ not found in /var/www/crm-application/vendor/symfony/assetic-bundle/Symfony/Bundle/AsseticBundle/Command/DumpCommand.php on line 216</em></p>
+<p>edit composer.json, replace:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ”require”: {  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “php”: “&gt;=5.3.3”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/platform”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/crm”: “dev-master”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> },</span></span></span></code></pre></div><br>
+with<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ”require”: {  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “php”: “&gt;=5.3.3”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/platform”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “oro/crm”: “dev-master”,  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> “symfony/assetic-bundle”: “2.3.*@dev”  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> },</span></span></span></code></pre></div></p>
+<p>and run</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> php composer.phar upate –prefer-dist  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">./install.sh</span></span></span></code></pre></div>
+<p>—————-</p>
+<p>Are you missing JS and CSS files? Skinless? Run below two commands.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> php composer.phar upate –prefer-dist  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">php app/console assetic:dump</span></span></span></code></pre></div></p>
+<p><em>It will output:</em><br>
+Dumping all dev assets.<br>
+Debug mode is off.</p>
+<p>04:55:49 [dir+] /var/www/crm-application/app/../web/css<br>
+04:55:49 [file+] /var/www/crm-application/app/../web/css/oro.all.css<br>
+04:55:55 [file+] /var/www/crm-application/app/../web/css/oro.css<br>
+04:55:59 [file+] /var/www/crm-application/app/../web/js/oro.all.js<br>
+04:56:54 [file+] /var/www/crm-application/app/../web/css/oro.user.css<br>
+04:56:57 [file+] /var/www/crm-application/app/../web/js/oro.user.js<br>
+04:57:00 [file+] /var/www/crm-application/app/../web/js/oro.user.show.js<br>
+04:57:01 [file+] /var/www/crm-application/app/../web/js/orocrm.account.account.js<br>
+04:57:02 [file+] /var/www/crm-application/app/../web/js/orocrm.contact.js<br>
+04:57:03 [file+] /var/www/crm-application/app/../web/js/oroapp.all.js<br>
+04:57:09 [file+] /var/www/crm-application/app/../web/css/oro.crm.css</p>
+<p>—————-</p>
+<p>After login, are you seeing the below message?</p>
+<p><em>ERROR:<br>
+Translator.locale = ‘en’;<br>
+Translator.defaultDomains = [“messages”];<br>
+Translator.add(“validators:You must select at least {{ limit }} role”, “You must select at least {{ limit }} role.|You must select at least {{ limit }} roles.”);</em></p>
+<p>Just remove “i18n/validators/en” from the URL and submit the base URL. You should see the OroCRM Dashboard.</p>
+<p>—————</p>
+<p>Create apache virtualhost at <em>/etc/apache2/sites-available/orocrm</em> to access OroCRM by <em><a href="http://dev.orocrm.local/">http://dev.orocrm.local/</a></em> from your browser.<br>
+Notice the document root is web directory.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;virtualhost&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ServerAdmin webmaster@localhost  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ServerName dev.orocrm.local&lt;/virtualhost&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> DocumentRoot /var/www/crm-application/web  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;directory&gt;&lt;/directory&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> Options Indexes FollowSymLinks MultiViews  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> AllowOverride All  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> Order allow,deny  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> allow from all
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ErrorLog ${APACHE_LOG_DIR}/error.log  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> LogLevel warn  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> CustomLog ${APACHE_LOG_DIR}/access.log combined  </span></span></span></code></pre></div>
+<p>enable the site and reload web server<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> a2ensite orocrm  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">service apache2 reload</span></span></span></code></pre></div></p>
+<p>add entry to hosts file<br>
+<em>vi /etc/hosts</em><br>
+and add<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> 127.0.0.1 dev.orocrm.local</span></span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>pdo_mysql extension is not installed</title>
+      <link>http://localhost:1313/pdo_mysql-extension-is-not-installed/</link>
+      <pubDate>Thu, 18 Apr 2013 20:11:15 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/pdo_mysql-extension-is-not-installed/</guid>
+      <description>&lt;p&gt;PHP Mysql Error: pdo_mysql extension is not installed.&lt;/p&gt;&#xA;&lt;p&gt;Magento needs PDO Mysql extension for database connection and related things, so if you don’t have pdo_mysql extension enabled Magento will complain about this and will not proceed further installation. If you are not sure what PDO is, it’s high time for you to look at &lt;a href=&#34;http://php.net/manual/en/ref.pdo-mysql.php&#34;&gt;http://php.net/manual/en/ref.pdo-mysql.php&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Coming back to error, to resolve this you will need to edit your php.ini file where it says:&lt;br&gt;&#xA;;extension=pdo_mysql.so&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>PHP Mysql Error: pdo_mysql extension is not installed.</p>
+<p>Magento needs PDO Mysql extension for database connection and related things, so if you don’t have pdo_mysql extension enabled Magento will complain about this and will not proceed further installation. If you are not sure what PDO is, it’s high time for you to look at <a href="http://php.net/manual/en/ref.pdo-mysql.php">http://php.net/manual/en/ref.pdo-mysql.php</a></p>
+<p>Coming back to error, to resolve this you will need to edit your php.ini file where it says:<br>
+;extension=pdo_mysql.so</p>
+<p>Just uncomment the line by removing front semincolon, so it becomes<br>
+extension=pdo_mysql.so</p>
+<p>Save it and restart the server, the error should go.</p>
+<p>If you are on Windows, then that line should read:</p>
+<p>extension=php_pdo_mysql.dll</p>
+<p>If you don’t find pdo_mysql in php.ini, <strong>install</strong> php5-mysql by running the command:</p>
+<p>sudo apt-get install php5-mysql (on Ubuntu)</p>
+<p>sudo yum install php-mysql (on Redhat, Fedora, CentOS)</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Linux/Magento: Daily useful development commands</title>
+      <link>http://localhost:1313/linux/magento-daily-useful-development-commands/</link>
+      <pubDate>Sat, 09 Feb 2013 08:11:08 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/linux/magento-daily-useful-development-commands/</guid>
+      <description>&lt;p&gt;These are the daily commands I use at work. This will definately help someone who is not familiar with all these commands in Linux and Magento.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Linux: Search / Replace recursively&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;find /path/here/ -type f -exec sed -i ‘s/search string/replace string/g’ {} \;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Linux: Find all files matching a string&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;grep -r “string to search” /path/to/search/&lt;/p&gt;&#xA;&lt;p&gt;Linux: In vi editor, copy/paste/delete/replace/insert/save/undo/redo/search-replace/goto&lt;br&gt;&#xA;Open file: vi filename&lt;br&gt;&#xA;Copy: yy (yank) (for multiple lines copy, 5yy – for copying 5 lines)&lt;br&gt;&#xA;Paste: p&lt;br&gt;&#xA;Delete: dd (for multiple lines delete, 5dd – for deleting 5 lines)&lt;br&gt;&#xA;Replace: r (on character you wish to replace, press r and enter new character)&lt;br&gt;&#xA;Insert: i or insert key&lt;br&gt;&#xA;Save: escape and : x (without space between : and x) (x = write and quit, w = write, q = quit, q! = quit without saving)&lt;br&gt;&#xA;Undo: u&lt;br&gt;&#xA;Redo: Ctrl+R&lt;br&gt;&#xA;Search: escape key THEN / THEN write string to find THEN enter&lt;br&gt;&#xA;Search-Replace: :%s/search string/replacement string/g&lt;br&gt;&#xA;Goto Line number: escape key THEN : THEN line number (e.g. :22 to go to 22nd line of current file)&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>These are the daily commands I use at work. This will definately help someone who is not familiar with all these commands in Linux and Magento.</p>
+<p><strong>Linux: Search / Replace recursively</strong></p>
+<p>find /path/here/ -type f -exec sed -i ‘s/search string/replace string/g’ {} \;</p>
+<p><strong>Linux: Find all files matching a string</strong></p>
+<p>grep -r “string to search” /path/to/search/</p>
+<p>Linux: In vi editor, copy/paste/delete/replace/insert/save/undo/redo/search-replace/goto<br>
+Open file: vi filename<br>
+Copy: yy (yank) (for multiple lines copy, 5yy – for copying 5 lines)<br>
+Paste: p<br>
+Delete: dd (for multiple lines delete, 5dd – for deleting 5 lines)<br>
+Replace: r (on character you wish to replace, press r and enter new character)<br>
+Insert: i or insert key<br>
+Save: escape and : x (without space between : and x) (x = write and quit, w = write, q = quit, q! = quit without saving)<br>
+Undo: u<br>
+Redo: Ctrl+R<br>
+Search: escape key THEN / THEN write string to find THEN enter<br>
+Search-Replace: :%s/search string/replacement string/g<br>
+Goto Line number: escape key THEN : THEN line number (e.g. :22 to go to 22nd line of current file)</p>
+<p><strong>Linux: Search previous execute command in terminal</strong></p>
+<p>in terminal, press Ctrl+R and type few characters.<br>
+This will show you previous command matching that sequence of characters<br>
+To check another command matching same characters, press Ctrl+R again</p>
+<p><strong>Linux: Recursively change files/directories permissions</strong></p>
+<p>find . -type d -exec chmod 0755 {} \;<br>
+find . -type f -exec chmod 0644 {} \;</p>
+<p>owner / read (4) + write (2) + execute (1)<br>
+group / read (4) + write (2) + execute (1)<br>
+world / read (4) + write (2) + execute (1)</p>
+<p><strong>Linux: Show unique values of any column in CSV</strong></p>
+<p>cat file.csv | cut -f 1 -d , | sort|uniq -c | tee tempfile</p>
+<p>here, 1 = 1st column, which can be changed to view any column<br>
+uniq -c = unique values with count of occurences of each value. You can omit -c to just see the unique values<br>
+file.csv = filename, you can have any file here with any extension<br>
+, = delimiter used to separate columns<br>
+tee tempfile = moves the output to file “tempfile”</p>
+<p><strong>Linux: Recursively change ownership of directories/files</strong></p>
+<p>chown -R www-data:www-data magento<br>
+-R = for recursive<br>
+www-data:www-data = change owner to www-data (apache)<br>
+magento = directory to change permission for, recursively</p>
+<p><strong>Linux: Remove all Magento cache files</strong></p>
+<p>From your magento root in terminal, execute this:<br>
+rm -rf var/cache/*<br>
+DON’T put any space after cache/ and *, otherwise it will delete your WHOLE magento project 😀</p>
+<p>To delete all the active sessions on your magento store,<br>
+rm -rf var/session/*</p>
+<p><strong>Linux: Download any Magento Extension through terminal</strong></p>
+<p>./mage config-set preferred_state stable<br>
+./mage clear-cache<br>
+./mage sync<br>
+./mage download community extension_name_here</p>
+<p>for beta state, change “stable” to “beta” in the first command</p>
+<p><strong>Linux: Start/Stop/Status/Restart Mysql, Apache2</strong></p>
+<p>service apache2 start OR /etc/init.d/apache2 start<br>
+service mysql start OR /etc/init.d/mysql start</p>
+<p>replace start with stop, status, restart for respective operations</p>
+<p><strong>Linux: To forcefully kill stubborn/hanged process</strong></p>
+<p>In terminal, type “top” (without quotes)<br>
+That will display all the processes running, just note down the process id to kill<br>
+Then press key “k” and enter process id. Press enter key twice.</p>
+<p><strong>Linux: Return to active terminal after remote server ssh is dead/not responding/session expired</strong></p>
+<p>Press following keys to get back from remote server not responding (expired session)<br>
+Enter ~ .</p>
+<p><strong>Magento: Get all the methods of the class object</strong></p>
+<p>Mage::log(get_class_methods(get_class($obj)));</p>
+<p><strong>Magento: Testing Magento code/functionality</strong></p>
+<p>Create a file in Magento root, test.php<br>
+Copy this code inside it:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Now run the script at http://magentoproject/test.php</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Mysql root password reset or create</title>
+      <link>http://localhost:1313/mysql-root-password-reset-or-create/</link>
+      <pubDate>Tue, 08 Jan 2013 15:13:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/mysql-root-password-reset-or-create/</guid>
+      <description>&lt;p&gt;Mysql root password reset easily by following below instructions. For those who want to create (if no root user in mysql) or reset the password for the Root user in Mysql (in Linux), this post is definately going to help you. I had a tough time in getting this to work, so thought to share it with anyone facing the same problem.&lt;/p&gt;&#xA;&lt;p&gt;You need to use &lt;strong&gt;–skip-grant-tables&lt;/strong&gt; if you don’t know mysql password to login. You can use it like this:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Mysql root password reset easily by following below instructions. For those who want to create (if no root user in mysql) or reset the password for the Root user in Mysql (in Linux), this post is definately going to help you. I had a tough time in getting this to work, so thought to share it with anyone facing the same problem.</p>
+<p>You need to use <strong>–skip-grant-tables</strong> if you don’t know mysql password to login. You can use it like this:</p>
+<p><em>/usr/bin/mysqld_safe –skip-grant-tables &amp;</em></p>
+<p>Once you run the above command on terminal, write <em>mysql</em> and hit enter. That’s because you already said Mysql that you want to skip all the privileges checking and allowing you with all the database access without password.</p>
+<p>You should be inside mysql now. Now execute the command <em>use mysql;</em> because we are going to create/change the user in “mysql” database.</p>
+<p>Now, check if you have the root user in the “user” table. Do this by:<br>
+<em>select * from user;</em></p>
+<p>If you already have root user, just execute this to change the password:<br>
+<em>UPDATE user SET Password=PASSWORD(‘new-password’) WHERE User=’root’;</em></p>
+<p>If you don’t have any records in user table, create one:<br>
+<em>insert into <code>user</code> (<code>Host</code>, <code>User</code>, <code>Password</code>, <code>Select_priv</code>, <code>Insert_priv</code>, <code>Update_priv</code>, <code>Delete_priv</code>, <code>Create_priv</code>, <code>Drop_priv</code>, <code>Reload_priv</code>, <code>Shutdown_priv</code>, <code>Process_priv</code>, <code>File_priv</code>, <code>Grant_priv</code>, <code>References_priv</code>, <code>Index_priv</code>, <code>Alter_priv</code>, <code>Show_db_priv</code>, <code>Super_priv</code>, <code>Create_tmp_table_priv</code>, <code>Lock_tables_priv</code>, <code>Execute_priv</code>, <code>Repl_slave_priv</code>, <code>Repl_client_priv</code>, <code>Create_view_priv</code>, <code>Show_view_priv</code>, <code>Create_routine_priv</code>, <code>Alter_routine_priv</code>, <code>Create_user_priv</code>, <code>ssl_type</code>, <code>ssl_cipher</code>, <code>x509_issuer</code>, <code>x509_subject</code>, <code>max_questions</code>, <code>max_updates</code>, <code>max_connections</code>, <code>max_user_connections</code>)<br>
+values(‘localhost’,’root’,”,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’, ‘Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,”,”,”,”,’0′,’0′,’0′,’0′);</em></p>
+<p>This creates new user “root” with no password.<br>
+To set a password, use the above UPDATE command.</p>
+<p>After it’s done, don’t forget to execute <em>flush privileges;</em></p>
+<p>Restart mysql and you should be now able to login with root user and your new password.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Linux: Bash script to check availability of domain names in differnet TLDs</title>
+      <link>http://localhost:1313/linux-bash-script-to-check-availability-of-domain-names-in-differnet-tlds/</link>
+      <pubDate>Fri, 02 Nov 2012 08:00:57 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/linux-bash-script-to-check-availability-of-domain-names-in-differnet-tlds/</guid>
+      <description>&lt;p&gt;If you want to check whether your desired domain name is available or not in different extensions, it’s tiresome to search it for each and every tld. There are also limits of performing query to whois on websites, where they will not allow you unlimited whois information queries. It’s better to have your own script which will tell you the availibility of domain name in different extensions, right from your terminal.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you want to check whether your desired domain name is available or not in different extensions, it’s tiresome to search it for each and every tld. There are also limits of performing query to whois on websites, where they will not allow you unlimited whois information queries. It’s better to have your own script which will tell you the availibility of domain name in different extensions, right from your terminal.</p>
+<p>Below script will check your domain name for TLDs .com, .net, .org, .info, .us, .co, .tel, .tv, .biz, .cc, .ru, .eu, .in, .it, .sk, .com.au, .sh, .re and .dk<br>
+But you can add other TLDs also if you want.</p>
+<p>First create a file, e.g. chkWhois.sh, and give it proper permission to execute.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>touch chkWhois<span style="color:#666">.</span>sh  
+</span></span><span style="display:flex;"><span>chmod <span style="color:#666">744</span> chkWhois<span style="color:#666">.</span>sh</span></span></code></pre></div></p>
+<p>Now, copy below code to this newly created file</p>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#080;font-style:italic">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> [ <span style="">“</span><span style="color:#b8860b">$#</span><span style="">”</span> <span style="">==</span> <span style="">“</span><span style="color:#b8860b">0</span><span style="">”</span> ]; <span style="color:#a2f;font-weight:bold">then</span>  
+</span></span><span style="display:flex;"><span> echo <span style="">“</span>You need to supply at least one domain name<span style="color:#666">!</span><span style="">”</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f">exit</span> <span style="color:#666">1</span>  
+</span></span><span style="display:flex;"><span>fi
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DOMAINS<span style="color:#666">=</span>( <span style="">‘</span><span style="color:#666">.</span>com<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>net<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>info<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>us<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>co<span style="">’</span> <span style="color:#666">\\</span>  
+</span></span><span style="display:flex;"><span><span style="">‘</span><span style="color:#666">.</span>org<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>tel<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>biz<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>tv<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>cc<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>eu<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>ru<span style="">’</span> <span style="color:#666">\\</span>  
+</span></span><span style="display:flex;"><span><span style="">‘</span><span style="color:#666">.</span>in<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>it<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>sk<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>com<span style="color:#666">.</span>au<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>sh<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>re<span style="">’</span> <span style="">‘</span><span style="color:#666">.</span>dk<span style="">’</span> )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ELEMENTS<span style="color:#666">=</span><span style="color:#b8860b">$</span>{<span style="color:#080;font-style:italic">#DOMAINS[@]}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">while</span> (( <span style="">“</span><span style="color:#b8860b">$#</span><span style="">”</span> )); <span style="color:#a2f;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">for</span> (( i<span style="color:#666">=</span><span style="color:#666">0</span>;i<span style="color:#666">&lt;</span><span style="color:#b8860b">$ELEMENTS</span>;i<span style="color:#666">++</span>)); <span style="color:#a2f;font-weight:bold">do</span> whois <span style="color:#b8860b">$1$</span>{DOMAINS[<span style="color:#b8860b">$</span>{i}]} <span style="color:#666">|</span> egrep <span style="color:#666">-</span><span style="color:#008000">q &#39;^No </span>match<span style="color:#666">|^</span>NOT FOUND<span style="color:#666">|^</span>Not fo<span style="color:#666">|</span>AVAILABLE<span style="color:#666">|^</span>No Data Fou<span style="color:#666">|</span>has <span style="color:#a2f;font-weight:bold">not</span> been regi<span style="color:#666">|</span>No entri<span style="">&#39;</span> <span style="color:#a2f;font-weight:bold">if</span> [ $? <span style="color:#666">-</span><span style="color:#a2f;font-weight:bold">eq</span> <span style="color:#666">0</span> ]; <span style="color:#a2f;font-weight:bold">then</span> echo <span style="color:#b44">&#34;$1${DOMAINS[${i}]} : available&#34;</span> fi done <span style="color:#a2f">shift</span> done</span></span></code></pre></div> Run this for your desired name to check, 
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">./</span>chkWhois<span style="color:#666">.</span>sh kalpesh</span></span></code></pre></div> You&rsquo;ll get output will all the TLD&rsquo;s your name is available for! 
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>kalpesh<span style="color:#666">.</span>us <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>tel <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>cc <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>eu <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>ru <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>sk <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>sh <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>re <span style="color:#666">:</span> available kalpesh<span style="color:#666">.</span>dk <span style="color:#666">:</span> available</span></span></code></pre></div> Have fun!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Linux: Bash script to get email address and created/updated/expires dates of domain name</title>
+      <link>http://localhost:1313/linux-bash-script-to-get-email-address-and-created/updated/expires-dates-of-domain-name/</link>
+      <pubDate>Fri, 02 Nov 2012 07:43:38 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/linux-bash-script-to-get-email-address-and-created/updated/expires-dates-of-domain-name/</guid>
+      <description>&lt;p&gt;In linux, to check the whois of any domain name, the simple command is:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;whois domainname&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;com&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;But, it will show you so many things which are not important, e.g. it will show you the NOTICE and TERMS of USE and so many other things.&lt;/p&gt;&#xA;&lt;p&gt;If you are only concerned of getting the email address and creation/updation/expiry date of domain name from whois, here is the bash script that will help you out.&lt;br&gt;&#xA;First create a bash script file, e.g. whoisEmailAndDates.sh and give it permissions to run:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;touch whoisEmailAndDates&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;sh  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;chmod &lt;span style=&#34;color:#666&#34;&gt;744&lt;/span&gt; whoisEmailAndDates&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;sh&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In linux, to check the whois of any domain name, the simple command is:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>whois domainname<span style="color:#666">.</span>com</span></span></code></pre></div><br>
+But, it will show you so many things which are not important, e.g. it will show you the NOTICE and TERMS of USE and so many other things.</p>
+<p>If you are only concerned of getting the email address and creation/updation/expiry date of domain name from whois, here is the bash script that will help you out.<br>
+First create a bash script file, e.g. whoisEmailAndDates.sh and give it permissions to run:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>touch whoisEmailAndDates<span style="color:#666">.</span>sh  
+</span></span><span style="display:flex;"><span>chmod <span style="color:#666">744</span> whoisEmailAndDates<span style="color:#666">.</span>sh</span></span></code></pre></div></p>
+<p>Now, copy below code and paste it in the newly created file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#080;font-style:italic">#!/bin/sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="">“”</span>  
+</span></span><span style="display:flex;"><span>echo <span style="">“</span><span style="color:#080;font-style:italic">######## WHOIS: “$1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Whois using the input variable  </span>
+</span></span><span style="display:flex;"><span>whois <span style="color:#b8860b">$1</span> <span style="color:#666">|\\</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Remove EOL characters  </span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f">tr</span> <span style="color:#666">-</span>d <span style="">‘</span><span style="color:#666">\\</span><span style="color:#666">015</span><span style="color:#666">\\</span><span style="color:#666">032</span><span style="">’</span> <span style="color:#666">|\\</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Remove leading spaces  </span>
+</span></span><span style="display:flex;"><span>sed <span style="">‘</span><span style="color:#b68">s/^ *//</span><span style="">’</span> <span style="color:#666">|\\</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Remove common unnecessary words from output  </span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f">grep</span> <span style="color:#666">-</span>v <span style="color:#666">-</span>e <span style="">“</span>http:<span style="color:#b68">//</span><span style="">”</span> <span style="color:#666">-</span>e <span style="">“</span>WHOIS<span style="">”</span> <span style="color:#666">&gt;</span> wtmp1<span style="color:#666">.</span>txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Display all of the date lines and email addresses  </span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f">grep</span> <span style="color:#666">-</span>Eio <span style="">‘</span>([[:alnum:]_<span style="color:#666">.</span>]<span style="color:#666">+</span><span style="color:#b8860b">@</span><span style="">[[</span><span style="color:#b8860b">:alnum:</span>]_]<span style="color:#666">+</span> ?<span style="color:#666">\\.</span>[[:alpha:]<span style="color:#666">.</span>]{<span style="color:#666">2</span>,<span style="color:#666">6</span>})<span style="">’</span> wtmp1<span style="color:#666">.</span>txt  
+</span></span><span style="display:flex;"><span>egrep <span style="color:#666">-</span>i <span style="">“</span>ate: <span style="">”</span> wtmp1<span style="color:#666">.</span>txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic"># Remove the tmp file  </span>
+</span></span><span style="display:flex;"><span>rm <span style="color:#666">-</span>rf wtmp1<span style="color:#666">.</span>txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="">“</span><span style="color:#080;font-style:italic">######## DONE!”  </span>
+</span></span><span style="display:flex;"><span>echo <span style="">“”</span></span></span></code></pre></div></p>
+<p>Now, run the script for the domain:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">./</span>whoisEmailAndDates<span style="color:#666">.</span>sh google<span style="color:#666">.</span>com</span></span></code></pre></div><br>
+You’ll be greeted with following output!<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-perl" data-lang="perl"><span style="display:flex;"><span><span style="color:#080;font-style:italic">######## WHOIS: google.com  </span>
+</span></span><span style="display:flex;"><span>admin<span style="color:#b8860b">@google</span><span style="color:#666">.</span>com  
+</span></span><span style="display:flex;"><span>admin<span style="color:#b8860b">@google</span><span style="color:#666">.</span>com  
+</span></span><span style="display:flex;"><span>admin<span style="color:#b8860b">@google</span><span style="color:#666">.</span>com  
+</span></span><span style="display:flex;"><span>admin<span style="color:#b8860b">@google</span><span style="color:#666">.</span>com  
+</span></span><span style="display:flex;"><span>Updated Date: <span style="color:#666">20</span><span style="color:#666">-</span>jul<span style="color:#666">-</span><span style="color:#666">2011</span>  
+</span></span><span style="display:flex;"><span>Creation Date: <span style="color:#666">15</span><span style="color:#666">-</span>sep<span style="color:#666">-</span><span style="color:#666">1997</span>  
+</span></span><span style="display:flex;"><span>Expiration Date: <span style="color:#666">14</span><span style="color:#666">-</span>sep<span style="color:#666">-</span><span style="color:#666">2020</span>  
+</span></span><span style="display:flex;"><span><span style="color:#666">\</span><span style="color:#080;font-style:italic">######## DONE!</span></span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Ubuntu: Delete temporary/cache files</title>
+      <link>http://localhost:1313/ubuntu-delete-temporary/cache-files/</link>
+      <pubDate>Wed, 10 Oct 2012 21:13:27 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/ubuntu-delete-temporary/cache-files/</guid>
+      <description>&lt;p&gt;It’s necessary to clean unnecessary files from your operating system and free up space. In Ubuntu, this is very easy if you have admin privileges.&lt;/p&gt;&#xA;&lt;p&gt;Below command will remove all the unnecessary package files, which are no longer used by their packages. You can say they are orphaned files, not needed anymore.&lt;br&gt;&#xA;&lt;strong&gt;sudo apt-get autoremove&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Below command will remove all the cache and unnecessary files from your system. It will delete everything and make your system clean from temporary files and orphaned files.&lt;br&gt;&#xA;&lt;strong&gt;sudo apt-get clean&lt;/strong&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It’s necessary to clean unnecessary files from your operating system and free up space. In Ubuntu, this is very easy if you have admin privileges.</p>
+<p>Below command will remove all the unnecessary package files, which are no longer used by their packages. You can say they are orphaned files, not needed anymore.<br>
+<strong>sudo apt-get autoremove</strong></p>
+<p>Below command will remove all the cache and unnecessary files from your system. It will delete everything and make your system clean from temporary files and orphaned files.<br>
+<strong>sudo apt-get clean</strong></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

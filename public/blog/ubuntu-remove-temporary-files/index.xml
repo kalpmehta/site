@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ubuntu Remove Temporary Files on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/ubuntu-remove-temporary-files/</link>
+    <description>Recent content in Ubuntu Remove Temporary Files on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 10 Oct 2012 21:13:27 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/ubuntu-remove-temporary-files/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ubuntu: Delete temporary/cache files</title>
+      <link>http://localhost:1313/ubuntu-delete-temporary/cache-files/</link>
+      <pubDate>Wed, 10 Oct 2012 21:13:27 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/ubuntu-delete-temporary/cache-files/</guid>
+      <description>&lt;p&gt;It’s necessary to clean unnecessary files from your operating system and free up space. In Ubuntu, this is very easy if you have admin privileges.&lt;/p&gt;&#xA;&lt;p&gt;Below command will remove all the unnecessary package files, which are no longer used by their packages. You can say they are orphaned files, not needed anymore.&lt;br&gt;&#xA;&lt;strong&gt;sudo apt-get autoremove&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Below command will remove all the cache and unnecessary files from your system. It will delete everything and make your system clean from temporary files and orphaned files.&lt;br&gt;&#xA;&lt;strong&gt;sudo apt-get clean&lt;/strong&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It’s necessary to clean unnecessary files from your operating system and free up space. In Ubuntu, this is very easy if you have admin privileges.</p>
+<p>Below command will remove all the unnecessary package files, which are no longer used by their packages. You can say they are orphaned files, not needed anymore.<br>
+<strong>sudo apt-get autoremove</strong></p>
+<p>Below command will remove all the cache and unnecessary files from your system. It will delete everything and make your system clean from temporary files and orphaned files.<br>
+<strong>sudo apt-get clean</strong></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

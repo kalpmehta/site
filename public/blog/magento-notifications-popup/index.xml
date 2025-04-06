@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Notifications Popup on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-notifications-popup/</link>
+    <description>Recent content in Magento Notifications Popup on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 12 Jul 2012 14:06:36 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-notifications-popup/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get rid of admin notifications pop-up</title>
+      <link>http://localhost:1313/magento-get-rid-of-admin-notifications-pop-up/</link>
+      <pubDate>Thu, 12 Jul 2012 14:06:36 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-rid-of-admin-notifications-pop-up/</guid>
+      <description>&lt;p&gt;Ever annoyed by the notification which pops up everytime you login to your Magento admin panel? Well, you can get rid of those bugging notifications without changing core.&lt;/p&gt;&#xA;&lt;p&gt;Just disable the output of Mage_AdminNotification at:&lt;br&gt;&#xA;System -&amp;gt; Configuration -&amp;gt; Advanced -&amp;gt; Disable Modules Output&lt;/p&gt;&#xA;&lt;p&gt;Now logout and login, you will now never see those unwanted notifications.&lt;/p&gt;&#xA;&lt;p&gt;Cheers!&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Ever annoyed by the notification which pops up everytime you login to your Magento admin panel? Well, you can get rid of those bugging notifications without changing core.</p>
+<p>Just disable the output of Mage_AdminNotification at:<br>
+System -&gt; Configuration -&gt; Advanced -&gt; Disable Modules Output</p>
+<p>Now logout and login, you will now never see those unwanted notifications.</p>
+<p>Cheers!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

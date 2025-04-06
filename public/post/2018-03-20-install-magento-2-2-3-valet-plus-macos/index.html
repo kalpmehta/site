@@ -1,0 +1,3075 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Setting up Magento 2.2.3 on Valet&#43; (requires MacOS) | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Setting up Magento 2.2.3 on Valet&#43; (requires MacOS)" />
+<meta name="description" content="Wondering what is Valet&#43;? It is a development environment for MacOS. If you have previously used Vagrant and/or Docker, I think you would just love Valet&#43;. Valet&#43; is very easy yet fast development environment, as it doesn’t require you to edit /etc/hosts, vhosts, mysql, etc.. For more information on Valet&#43; and how it differs with Valet, please read this: https://github.com/weprovide/valet-plus/blob/master/readme.md
+Let me know in comments section which one you prefer out of these 3?" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento2,valet&#43;," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Setting up Magento 2.2.3 on Valet&#43; (requires MacOS)" />
+<meta property="og:description" content="Wondering what is Valet&#43;? It is a development environment for MacOS. If you have previously used Vagrant and/or Docker, I think you would just love Valet&#43;. Valet&#43; is very easy yet fast development environment, as it doesn’t require you to edit /etc/hosts, vhosts, mysql, etc.. For more information on Valet&#43; and how it differs with Valet, please read this: https://github.com/weprovide/valet-plus/blob/master/readme.md
+Let me know in comments section which one you prefer out of these 3?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2018-03-20-install-magento-2-2-3-valet-plus-macos/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_f8a7c785f73464c7.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2018-03-20T00:15:28+00:00" />
+<meta property="article:modified_time" content="2018-03-20T00:15:28+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_f8a7c785f73464c7.webp"/>
+<meta name="twitter:title" content="Setting up Magento 2.2.3 on Valet&#43; (requires MacOS)"/>
+<meta name="twitter:description" content="Wondering what is Valet&#43;? It is a development environment for MacOS. If you have previously used Vagrant and/or Docker, I think you would just love Valet&#43;. Valet&#43; is very easy yet fast development environment, as it doesn’t require you to edit /etc/hosts, vhosts, mysql, etc.. For more information on Valet&#43; and how it differs with Valet, please read this: https://github.com/weprovide/valet-plus/blob/master/readme.md
+Let me know in comments section which one you prefer out of these 3?"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Setting up Magento 2.2.3 on Valet&#43; (requires MacOS)">
+<meta itemprop="description" content="Wondering what is Valet&#43;? It is a development environment for MacOS. If you have previously used Vagrant and/or Docker, I think you would just love Valet&#43;. Valet&#43; is very easy yet fast development environment, as it doesn’t require you to edit /etc/hosts, vhosts, mysql, etc.. For more information on Valet&#43; and how it differs with Valet, please read this: https://github.com/weprovide/valet-plus/blob/master/readme.md
+Let me know in comments section which one you prefer out of these 3?"><meta itemprop="datePublished" content="2018-03-20T00:15:28+00:00" />
+<meta itemprop="dateModified" content="2018-03-20T00:15:28+00:00" />
+<meta itemprop="wordCount" content="9914">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_f8a7c785f73464c7.webp"/>
+
+
+<meta itemprop="keywords" content="magento2,valet&#43;," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Setting up Magento 2.2.3 on Valet&#43; (requires MacOS)</h1>
+<p class="byline">
+  <time datetime='2018-03-20' pubdate>
+    2018-03-20
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Wondering what is Valet+? It is a development environment for MacOS. If you have previously used Vagrant and/or Docker, I think you would just love Valet+. Valet+ is very easy yet fast development environment, as it doesn’t require you to edit /etc/hosts, vhosts, mysql, etc.. For more information on Valet+ and how it differs with Valet, please read this: <a href="https://github.com/weprovide/valet-plus/blob/master/readme.md">https://github.com/weprovide/valet-plus/blob/master/readme.md</a></p>
+<p>Let me know in comments section which one you prefer out of these 3?</p>
+<p>Okay so let’s come to topic and start preparing to install Valet and Magento.</p>
+<p><strong>1.) Install <a href="https://brew.sh/">Homebrew</a> if you do not have it already on your Mac</strong></p>
+<p><strong>2.) Let’s install PHP 7.1</strong></p>
+<p>brew install homebrew/php/php71</p>
+<p>If you already have php70, you can unlink it before running above command:</p>
+<p>brew unlink php70</p>
+<p>{code}</p>
+<p>Kalpeshs-MBP:~ kalpesh$ brew install php71<br>
+Updating Homebrew…<br>
+==&gt; Installing php71 from homebrew/php<br>
+==&gt; Installing dependencies for homebrew/php/php71: libpng, freetype, gettext, icu4c, jpeg, libtool, unixodbc, readline<br>
+==&gt; Installing homebrew/php/php71 dependency: libpng<br>
+==&gt; Downloading <a href="https://downloads.sourceforge.net/libpng/libpng-1.6.34.tar.xz">https://downloads.sourceforge.net/libpng/libpng-1.6.34.tar.xz</a><br>
+==&gt; Downloading from <a href="https://downloads.sourceforge.net/project/libpng/libpng16/1.6.34/libpng-1.6.34.tar.xz">https://downloads.sourceforge.net/project/libpng/libpng16/1.6.34/libpng-1.6.34.tar.xz</a><br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –disable-silent-rules –prefix=/usr/local/Cellar/libpng/1.6.34<br>
+==&gt; make<br>
+==&gt; make test<br>
+==&gt; make install<br>
+🍺 /usr/local/Cellar/libpng/1.6.34: 26 files, 1.2MB, built in 2 minutes 22 seconds<br>
+==&gt; Installing homebrew/php/php71 dependency: freetype<br>
+==&gt; Downloading <a href="https://downloads.sourceforge.net/project/freetype/freetype2/2.9/freetype-2.9.tar.bz2">https://downloads.sourceforge.net/project/freetype/freetype2/2.9/freetype-2.9.tar.bz2</a><br>
+==&gt; Downloading from <a href="https://svwh.dl.sourceforge.net/project/freetype/freetype2/2.9/freetype-2.9.tar.bz2">https://svwh.dl.sourceforge.net/project/freetype/freetype2/2.9/freetype-2.9.tar.bz2</a><br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –prefix=/usr/local/Cellar/freetype/2.9 –without-harfbuzz<br>
+==&gt; make<br>
+==&gt; make install<br>
+🍺 /usr/local/Cellar/freetype/2.9: 60 files, 2.7MB, built in 1 minute 53 seconds<br>
+==&gt; Installing homebrew/php/php71 dependency: gettext<br>
+==&gt; Downloading <a href="https://homebrew.bintray.com/bottles/gettext-0.19.8.1.yosemite.bottle.tar.gz">https://homebrew.bintray.com/bottles/gettext-0.19.8.1.yosemite.bottle.tar.gz</a><br>
+######################################################################## 100.0%<br>
+==&gt; Pouring gettext-0.19.8.1.yosemite.bottle.tar.gz<br>
+==&gt; Caveats<br>
+This formula is keg-only, which means it was not symlinked into /usr/local,<br>
+because macOS provides the BSD gettext library &amp; some software gets confused if both are in the library path.</p>
+<p>If you need to have this software first in your PATH run:<br>
+echo ‘export PATH=”/usr/local/opt/gettext/bin:$PATH”‘ &gt;&gt; ~/.bash_profile</p>
+<p>For compilers to find this software you may need to set:<br>
+LDFLAGS: -L/usr/local/opt/gettext/lib<br>
+CPPFLAGS: -I/usr/local/opt/gettext/include</p>
+<p>==&gt; Summary<br>
+🍺 /usr/local/Cellar/gettext/0.19.8.1: 1,934 files, 17.0MB<br>
+==&gt; Installing homebrew/php/php71 dependency: icu4c<br>
+==&gt; Downloading <a href="https://ssl.icu-project.org/files/icu4c/60.2/icu4c-60">https://ssl.icu-project.org/files/icu4c/60.2/icu4c-60</a>_2-src.tgz<br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –prefix=/usr/local/Cellar/icu4c/60.2 –disable-samples –disable-tests –enable-static –with-library-bits=64<br>
+==&gt; make<br>
+==&gt; make install<br>
+==&gt; Caveats<br>
+This formula is keg-only, which means it was not symlinked into /usr/local,<br>
+because macOS provides libicucore.dylib (but nothing else).</p>
+<p>If you need to have this software first in your PATH run:<br>
+echo ‘export PATH=”/usr/local/opt/icu4c/bin:$PATH”‘ &gt;&gt; ~/.bash_profile<br>
+echo ‘export PATH=”/usr/local/opt/icu4c/sbin:$PATH”‘ &gt;&gt; ~/.bash_profile</p>
+<p>For compilers to find this software you may need to set:<br>
+LDFLAGS: -L/usr/local/opt/icu4c/lib<br>
+CPPFLAGS: -I/usr/local/opt/icu4c/include<br>
+For pkg-config to find this software you may need to set:<br>
+PKG_CONFIG_PATH: /usr/local/opt/icu4c/lib/pkgconfig</p>
+<p>==&gt; Summary<br>
+🍺 /usr/local/Cellar/icu4c/60.2: 249 files, 67.2MB, built in 9 minutes 15 seconds<br>
+==&gt; Installing homebrew/php/php71 dependency: jpeg<br>
+==&gt; Downloading <a href="http://www.ijg.org/files/jpegsrc.v9c.tar.gz">http://www.ijg.org/files/jpegsrc.v9c.tar.gz</a><br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –disable-silent-rules –prefix=/usr/local/Cellar/jpeg/9c<br>
+==&gt; make install<br>
+🍺 /usr/local/Cellar/jpeg/9c: 21 files, 736.3KB, built in 1 minute 30 seconds<br>
+==&gt; Installing homebrew/php/php71 dependency: libtool<br>
+==&gt; Downloading <a href="https://homebrew.bintray.com/bottles/libtool-2.4.6">https://homebrew.bintray.com/bottles/libtool-2.4.6</a>_1.yosemite.bottle.tar.gz<br>
+######################################################################## 100.0%<br>
+==&gt; Pouring libtool-2.4.6_1.yosemite.bottle.tar.gz<br>
+==&gt; Caveats<br>
+In order to prevent conflicts with Apple’s own libtool we have prepended a “g”<br>
+so, you have instead: glibtool and glibtoolize.<br>
+==&gt; Summary<br>
+🍺 /usr/local/Cellar/libtool/2.4.6_1: 70 files, 3.7MB<br>
+==&gt; Installing homebrew/php/php71 dependency: unixodbc<br>
+==&gt; Downloading <a href="http://www.unixodbc.org/unixODBC-2.3.5.tar.gz">http://www.unixodbc.org/unixODBC-2.3.5.tar.gz</a><br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –prefix=/usr/local/Cellar/unixodbc/2.3.5_1 –sysconfdir=/usr/local/etc –enable-static –enable-gui=no<br>
+==&gt; make install<br>
+🍺 /usr/local/Cellar/unixodbc/2.3.5_1: 41 files, 1.9MB, built in 4 minutes 22 seconds<br>
+==&gt; Installing homebrew/php/php71 dependency: readline<br>
+==&gt; Downloading <a href="https://homebrew.bintray.com/bottles/readline-7.0.3">https://homebrew.bintray.com/bottles/readline-7.0.3</a>_1.yosemite.bottle.tar.gz<br>
+######################################################################## 100.0%<br>
+==&gt; Pouring readline-7.0.3_1.yosemite.bottle.tar.gz<br>
+==&gt; Caveats<br>
+This formula is keg-only, which means it was not symlinked into /usr/local,<br>
+because macOS provides the BSD libedit library, which shadows libreadline.<br>
+In order to prevent conflicts when programs look for libreadline we are<br>
+defaulting this GNU Readline installation to keg-only..</p>
+<p>For compilers to find this software you may need to set:<br>
+LDFLAGS: -L/usr/local/opt/readline/lib<br>
+CPPFLAGS: -I/usr/local/opt/readline/include</p>
+<p>==&gt; Summary<br>
+🍺 /usr/local/Cellar/readline/7.0.3_1: 46 files, 1.5MB<br>
+==&gt; Installing homebrew/php/php71<br>
+==&gt; Downloading <a href="https://php.net/get/php-7.1.14.tar.bz2/from/this/mirror">https://php.net/get/php-7.1.14.tar.bz2/from/this/mirror</a><br>
+==&gt; Downloading from <a href="https://secure.php.net/get/php-7.1.14.tar.bz2/from/this/mirror">https://secure.php.net/get/php-7.1.14.tar.bz2/from/this/mirror</a><br>
+######################################################################## 100.0%<br>
+==&gt; ./configure –prefix=/usr/local/Cellar/php71/7.1.14_25 –localstatedir=/usr/local/var –sysconfdir=/usr/local/etc/php/7.1 –with-config-file-path=/usr/local/etc/php/7<br>
+==&gt; make<br>
+==&gt; make install<br>
+==&gt; Caveats<br>
+The php.ini file can be found in:<br>
+/usr/local/etc/php/7.1/php.ini</p>
+<p>✩✩✩✩ Extensions ✩✩✩✩</p>
+<p>If you are having issues with custom extension compiling, ensure that you are using the brew version, by placing /usr/local/bin before /usr/sbin in your PATH:</p>
+<p>PATH=”/usr/local/bin:$PATH”</p>
+<p>PHP71 Extensions will always be compiled against this PHP. Please install them using –without-homebrew-php to enable compiling against system PHP.</p>
+<p>✩✩✩✩ PHP CLI ✩✩✩✩</p>
+<p>If you wish to swap the PHP you use on the command line, you should add the following to ~/.bashrc, ~/.zshrc, ~/.profile or your shell’s equivalent configuration file:<br>
+export PATH=”$(brew –prefix homebrew/php/php71)/bin:$PATH”</p>
+<p>✩✩✩✩ FPM ✩✩✩✩</p>
+<p>To launch php-fpm on startup:<br>
+mkdir -p ~/Library/LaunchAgents<br>
+cp /usr/local/opt/php71/homebrew.mxcl.php71.plist ~/Library/LaunchAgents/<br>
+launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php71.plist</p>
+<p>The control script is located at /usr/local/opt/php71/sbin/php71-fpm</p>
+<p>OS X 10.8 and newer come with php-fpm pre-installed, to ensure you are using the brew version you need to make sure /usr/local/sbin is before /usr/sbin in your PATH:</p>
+<p>PATH=”/usr/local/sbin:$PATH”</p>
+<p>You may also need to edit the plist to use the correct “UserName”.</p>
+<p>Please note that the plist was called ‘homebrew-php.josegonzalez.php71.plist’ in old versions of this formula.</p>
+<p>With the release of macOS Sierra the Apache module is now not built by default. If you want to build it on your system you have to install php with the –with-httpd option. See brew options php71 for more details.</p>
+<p>By 31st March 2018 we will deprecate and archive the PHP tap.<br>
+Some of the formulae will be migrated to homebrew-core.</p>
+<p>For more details, see <a href="https://github.com/Homebrew/homebrew-php/issues/4721">https://github.com/Homebrew/homebrew-php/issues/4721</a></p>
+<p>To have launchd start homebrew/php/php71 now and restart at login:<br>
+brew services start homebrew/php/php71<br>
+==&gt; Summary<br>
+🍺 /usr/local/Cellar/php71/7.1.14_25: 345 files, 39.9MB, built in 11 minutes 5 seconds</p>
+<p>{/code}</p>
+<p>3.) Install Composer</p>
+<p>brew install homebrew/php/composer</p>
+<p>4.) Finally install Valet+</p>
+<p>composer global require weprovide/valet-plus</p>
+<p>{code}Kalpeshs-MBP:valet kalpesh$ composer global require weprovide/valet-plus<br>
+Changed current directory to /Users/kalpesh/.composer<br>
+Using version ^1.0 for weprovide/valet-plus<br>
+./composer.json has been created<br>
+Loading composer repositories with package information<br>
+Updating dependencies (including require-dev)<br>
+Package operations: 15 installs, 0 updates, 0 removals<br>
+– Installing tightenco/collect (v5.4.33): Downloading (100%)<br>
+– Installing symfony/process (v3.4.6): Downloading (100%)<br>
+– Installing nategood/httpful (0.2.20): Downloading (100%)<br>
+– Installing psr/container (1.0.0): Downloading (100%)<br>
+– Installing container-interop/container-interop (1.2.0): Downloading (100%)<br>
+– Installing php-di/invoker (1.3.3): Downloading (100%)<br>
+– Installing psr/log (1.0.2): Downloading (100%)<br>
+– Installing symfony/debug (v4.0.6): Downloading (100%)<br>
+– Installing symfony/polyfill-mbstring (v1.7.0): Downloading (100%)<br>
+– Installing symfony/console (v3.4.6): Downloading (100%)<br>
+– Installing mnapoli/silly (1.5.1): Downloading (100%)<br>
+– Installing psr/simple-cache (1.0.1): Downloading (100%)<br>
+– Installing illuminate/contracts (v5.6.12): Downloading (100%)<br>
+– Installing illuminate/container (v5.6.12): Downloading (100%)<br>
+– Installing weprovide/valet-plus (1.0.11): Downloading (100%)<br>
+symfony/console suggests installing symfony/event-dispatcher ()<br>
+symfony/console suggests installing symfony/lock ()<br>
+Writing lock file<br>
+Generating autoload files{/code}</p>
+<p>5.) Add export PATH in your .bash_profile</p>
+<p>vi ~/.bash_profile</p>
+<p>and add below line on top (after PATH line if you have one already)</p>
+<p>export PATH=”$PATH:$HOME/.composer/vendor/bin”</p>
+<p>to reflect our current changes in the current terminal tab session, run:</p>
+<p>source ~/.bash_profile</p>
+<p>6.) Now let’s run the command</p>
+<p>valet install</p>
+<p>{code}</p>
+<p>[nginx] Stopping</p>
+<p>[php71] Stopping</p>
+<p>[mysql] Stopping</p>
+<p>[redis] Stopping</p>
+<p>[devtools] Installing</p>
+<p>[wp-cli] Installing</p>
+<p>[n98-magerun] Installing</p>
+<p>Updating Homebrew…</p>
+<p>[n98-magerun2] Installing</p>
+<p>Updating Homebrew…</p>
+<p>==&gt; Auto-updated Homebrew!</p>
+<p>Updated 1 tap (caskroom/cask).</p>
+<p>No changes to formulae.</p>
+<p>[pv] Installing</p>
+<p>Updating Homebrew…</p>
+<p>[php71] Installing extensions</p>
+<p>[php71-apcu] Installing</p>
+<p>[php71-intl] Installing</p>
+<p>[php71-mcrypt] Installing</p>
+<p>Updating Homebrew…</p>
+<p>[php71-opcache] Installing</p>
+<p>[php71-geoip] Installing</p>
+<p>Updating Homebrew…</p>
+<p>[php71] Restarting</p>
+<p>[dnsmasq] Restarting</p>
+<p>[mysql] Installing</p>
+<p>[mysql-utilities] Installing</p>
+<p>[mysql] Stopping</p>
+<p>[mysql] Configuring</p>
+<p>[mysql] Restarting</p>
+<p>[redis] Installing</p>
+<p>[redis] Restarting</p>
+<p>[mailhog] Installing</p>
+<p>[mailhog] Restarting</p>
+<p>[nginx] Restarting</p>
+<p>Valet installed successfully!</p>
+<p>{/code}</p>
+<p>Now if you ping any domain with tld .test, it should respond:</p>
+<p>ping magento.test</p>
+<p>{code}Kalpeshs-MBP:valet kalpesh$ ping magento.test<br>
+PING magento.test (127.0.0.1): 56 data bytes<br>
+64 bytes from 127.0.0.1: icmp_seq=0 ttl=64 time=0.059 ms<br>
+64 bytes from 127.0.0.1: icmp_seq=1 ttl=64 time=0.082 ms<br>
+64 bytes from 127.0.0.1: icmp_seq=2 ttl=64 time=0.099 ms{/code}</p>
+<p>7.) Create sites folder to install Magento inside it</p>
+<p>mkdir sites</p>
+<p>cd sites</p>
+<p>8.) Run below command to serve our Magento site</p>
+<p>valet park</p>
+<p>9.) Let’s install Magento 2.2.2 now (At this time there was no 2.2.3 in magerun2. But don’t worry we will upgrade it to 2.2.3 later)</p>
+<p>magerun2 install</p>
+<p>{code}</p>
+<p>Kalpeshs-MBP:mage2 kalpesh$ magerun2 install</p>
+<p>Magento 2 Installation</p>
+<p>[1] magento-ce-2.2.2<br>
+[2] magento-ce-2.2.1<br>
+[3] magento-ce-2.2.0<br>
+[4] magento-ce-2.1.11<br>
+[5] magento-ce-2.1.10<br>
+[6] magento-ce-2.1.9<br>
+[7] magento-ce-2.1.8<br>
+[8] magento-ce-2.1.7<br>
+[9] magento-ce-2.1.6<br>
+[10] magento-ce-2.1.5<br>
+[11] magento-ce-2.1.4<br>
+[12] magento-ce-2.1.3<br>
+[13] magento-ce-2.1.2<br>
+[14] magento-ce-2.1.1<br>
+[15] magento-ce-2.1.0<br>
+[16] magento-ce-2.0.16<br>
+[17] magento-ce-2.0.15<br>
+[18] magento-ce-2.0.14<br>
+[19] magento-ce-2.0.13<br>
+[20] magento-ce-2.0.12<br>
+[21] magento-ce-2.0.11<br>
+[22] magento-ce-2.0.10<br>
+[23] magento-ce-2.0.9<br>
+[24] magento-ce-2.0.8<br>
+[25] magento-ce-2.0.7<br>
+[26] magento-ce-2.0.6<br>
+[27] magento-ce-2.0.5<br>
+[28] magento-ce-2.0.4<br>
+[29] magento-ce-2.0.2<br>
+[30] magento-ce-2.0.1<br>
+[31] magento-ce-2.0.0<br>
+Choose a magento version: 1<br>
+Enter installation folder: [./magento]./magento<br>
+Found executable composer.phar<br>
+Installing magento/project-community-edition (2.2.2)<br>
+– Installing magento/project-community-edition (2.2.2)<br>
+Downloading: 100%</p>
+<p>Created project in /Users/kalpesh/sites/magento<br>
+Loading composer repositories with package information<br>
+Updating dependencies<br>
+– Installing magento/magento-composer-installer (0.1.13)<br>
+Downloading: 100%</p>
+<p>– Installing magento/zendframework1 (1.13.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-stdlib (2.7.7)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-hydrator (1.1.0)<br>
+Downloading: 100%</p>
+<p>– Installing psr/container (1.0.0)<br>
+Loading from cache</p>
+<p>– Installing container-interop/container-interop (1.2.0)<br>
+Loading from cache</p>
+<p>– Installing zendframework/zend-validator (2.10.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-escaper (2.5.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-uri (2.5.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-loader (2.5.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-http (2.7.0)<br>
+Downloading: 100%</p>
+<p>– Installing psr/log (1.0.2)<br>
+Loading from cache</p>
+<p>– Installing monolog/monolog (1.23.0)<br>
+Downloading: 100%</p>
+<p>– Installing psr/http-message (1.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-diactoros (1.7.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-psr7bridge (0.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-servicemanager (2.7.10)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-filter (2.7.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-inputfilter (2.8.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-form (2.11.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-eventmanager (2.6.4)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-mvc (2.7.13)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-math (2.7.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-crypt (2.6.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-code (3.1.0)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/polyfill-mbstring (v1.7.0)<br>
+Loading from cache</p>
+<p>– Installing symfony/debug (v3.0.9)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/console (v2.8.36)<br>
+Downloading: 100%</p>
+<p>– Installing oyejorge/less.php (v1.7.0.14)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/process (v2.8.36)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/finder (v3.4.6)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/filesystem (v3.4.6)<br>
+Downloading: 100%</p>
+<p>– Installing seld/phar-utils (1.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing seld/jsonlint (1.7.1)<br>
+Downloading: 100%</p>
+<p>– Installing seld/cli-prompt (1.0.3)<br>
+Downloading: 100%</p>
+<p>– Installing justinrainbow/json-schema (5.2.7)<br>
+Downloading: 100%</p>
+<p>– Installing composer/spdx-licenses (1.3.0)<br>
+Downloading: 100%</p>
+<p>– Installing composer/semver (1.4.2)<br>
+Downloading: 100%</p>
+<p>– Installing composer/ca-bundle (1.1.0)<br>
+Downloading: 100%</p>
+<p>– Installing composer/composer (1.4.1)<br>
+Downloading: 100%</p>
+<p>– Installing colinmollenhour/credis (1.8.2)<br>
+Downloading: 100%</p>
+<p>– Installing colinmollenhour/php-redis-session-abstract (v1.3.4)<br>
+Downloading: 100%</p>
+<p>– Installing tedivm/jshrink (v1.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/framework (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-deploy (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-config (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-media-storage (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-require-js (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-store (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-user (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-email (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-ui (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-translation (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-developer (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-backend (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-authorization (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-quote (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-inventory (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-page-cache (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-url-rewrite (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-cms-url-rewrite (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-variable (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog (102.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-url-rewrite (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-eav (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-import-export (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-security (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-customer (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-integration (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-widget (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-cms (102.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-theme (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-rule (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-rule (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sales-rule (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-reports (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-gift-message (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-directory (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-tax (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sales (101.0.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-shipping (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-msrp (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-payment (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-checkout (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-contact (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-rss (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-wishlist (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sales-sequence (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-grouped-product (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-downloadable (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-newsletter (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-review (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-import-export (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-product-alert (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-indexer (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-cron (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-backup (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing temando/module-shipping-m2 (1.0.4)<br>
+Downloading: 100%</p>
+<p>– Installing dotmailer/dotmailer-magento2-extension (2.3.8)<br>
+Downloading: 100%</p>
+<p>– Installing shopialfb/facebook-module (2.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-zh_hans_cn (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-pt_br (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-nl_nl (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-fr_fr (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-es_es (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-en_us (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/language-de_de (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/theme-frontend-blank (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/theme-frontend-luma (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/theme-adminhtml-backend (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-wishlist-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-weee (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-webapi (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-webapi-security (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-version (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-vault (101.0.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-usps (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-ups (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-tax-import-export (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-swatches-layered-navigation (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-configurable-product (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-swatches (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-swagger (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-robots (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sitemap (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-signifyd (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-send-friend (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-search (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-search (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sample-data (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sales-inventory (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-sales-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-review-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-release-notification (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-quote-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-product-video (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-persistent (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-instant-purchase (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-paypal (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-offline-shipping (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-offline-payments (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-new-relic-reporting (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-multishipping (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-layered-navigation (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-grouped-import-export (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-cookie (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-google-analytics (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-google-optimizer (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-google-adwords (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-fedex (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-encryption-key (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-downloadable-import-export (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-dhl (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-customer-import-export (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-customer-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-currency-symbol (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-configurable-product-sales (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-configurable-import-export (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-checkout-agreements (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-widget (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-rule-configurable (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-catalog-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-session (2.8.5)<br>
+Downloading: 100%</p>
+<p>– Installing paragonie/random_compat (v2.0.11)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-captcha (2.7.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-db (2.9.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-captcha (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-cache-invalidate (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-bundle (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-bundle-import-export (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing braintree/braintree_php (3.25.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-braintree (100.2.2)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-authorizenet (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-analytics (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-advanced-pricing-import-export (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-admin-notification (100.2.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/module-marketplace (100.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing ramsey/uuid (3.7.1)<br>
+Downloading: 100%</p>
+<p>– Installing league/climate (2.6.1)<br>
+Downloading: 100%</p>
+<p>– Installing sjparkinson/static-review (4.1.1)<br>
+Downloading: 100%</p>
+<p>– Installing magento/composer (1.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing phpseclib/phpseclib (2.0.10)<br>
+Downloading: 100%</p>
+<p>– Installing symfony/event-dispatcher (v2.8.36)<br>
+Downloading: 100%</p>
+<p>– Installing tubalmartin/cssmin (v4.1.0)<br>
+Downloading: 100%</p>
+<p>– Installing pelago/emogrifier (V1.2.0)<br>
+Downloading: 100%</p>
+<p>– Installing colinmollenhour/cache-backend-file (1.4)<br>
+Downloading: 100%</p>
+<p>– Installing colinmollenhour/cache-backend-redis (1.10.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-log (2.9.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-json (2.6.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-serializer (2.8.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-di (2.6.1)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-config (2.6.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-view (2.10.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-i18n (2.7.4)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-text (2.6.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-modulemanager (2.8.2)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-console (2.7.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-server (2.7.0)<br>
+Downloading: 100%</p>
+<p>– Installing zendframework/zend-soap (2.7.0)<br>
+Downloading: 100%</p>
+<p>– Installing magento/magento2-base (2.2.2)<br>
+Downloading: 100%</p>
+<p>Package sjparkinson/static-review is abandoned, you should avoid using it. Use phpro/grumphp instead.<br>
+Writing lock file<br>
+Generating autoload files<br>
+Please enter the database host [localhost]: localhost<br>
+Please enter the database port [3306]: 3306<br>
+Please enter the database username [root]: root<br>
+Please enter the database password []: root<br>
+Please enter the database name [magento]: magento2<br>
+Created database magento2<br>
+Please enter the base url: [http://magento2.localdomain/]:magento.test<br>
+Please enter a valid URL<br>
+Please enter the base url: [http://magento2.localdomain/]:http://magento.test/<br>
+Start installation process.<br>
+/usr/local/Cellar/php71/7.1.14_25/bin/php -ddisplay_startup_errors=1 -ddisplay_errors=1 -derror_reporting=-1 -f ‘/Users/kalpesh/sites/magento/bin/magento’ — setup:install –language=’de_DE’ –timezone=’Europe/Berlin’ –db-host=’localhost’ –db-name=’magento2′ –db-user=’root’ –base-url=’http://magento.test/’ –use-rewrites=’1′ –use-secure=’0′ –use-secure-admin=’1′ –admin-user=’admin’ –admin-lastname=’Doe’ –admin-firstname=’John’ –admin-email=’john.doe@example.com’ –admin-password=’password123′ –session-save=’files’ –backend-frontname=’admin’ –currency=’EUR’ –db-password=’root’ –base-url-secure=’https://mage2.test/’<br>
+Successfully installed Magento<br>
+Encryption Key: File permissions check…<br>
+[Progress: 1 / 485]<br>
+Required extensions check…<br>
+[Progress: 2 / 485]<br>
+Enabling Maintenance Mode…<br>
+[Progress: 3 / 485]<br>
+Installing deployment configuration…<br>
+[Progress: 4 / 485]<br>
+Installing database schema:<br>
+Schema creation/updates:<br>
+Module ‘Magento_Store’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 5 / 485]<br>
+Module ‘Magento_Directory’:<br>
+Installing schema…<br>
+[Progress: 6 / 485]<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+[Progress: 7 / 485]<br>
+Module ‘Magento_Config’:<br>
+Installing schema…<br>
+[Progress: 8 / 485]<br>
+Module ‘Magento_Backend’:<br>
+[Progress: 9 / 485]<br>
+Module ‘Magento_Theme’:<br>
+Installing schema…<br>
+[Progress: 10 / 485]<br>
+Module ‘Magento_Eav’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 11 / 485]<br>
+Module ‘Magento_Backup’:<br>
+[Progress: 12 / 485]<br>
+Module ‘Magento_Customer’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 13 / 485]<br>
+Module ‘Magento_AdminNotification’:<br>
+Installing schema…<br>
+[Progress: 14 / 485]<br>
+Module ‘Magento_BundleImportExport’:<br>
+[Progress: 15 / 485]<br>
+Module ‘Magento_CacheInvalidate’:<br>
+[Progress: 16 / 485]<br>
+Module ‘Magento_Indexer’:<br>
+Installing schema…<br>
+[Progress: 17 / 485]<br>
+Module ‘Magento_Cms’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 18 / 485]<br>
+Module ‘Magento_Security’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 19 / 485]<br>
+Module ‘Magento_CatalogImportExport’:<br>
+[Progress: 20 / 485]<br>
+Module ‘Magento_Rule’:<br>
+[Progress: 21 / 485]<br>
+Module ‘Magento_Cron’:<br>
+Installing schema…<br>
+[Progress: 22 / 485]<br>
+Module ‘Magento_Catalog’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 23 / 485]<br>
+Module ‘Magento_Search’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 24 / 485]<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Installing schema…<br>
+[Progress: 25 / 485]<br>
+Module ‘Magento_Widget’:<br>
+Installing schema…<br>
+[Progress: 26 / 485]<br>
+Module ‘Magento_Quote’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 27 / 485]<br>
+Module ‘Magento_SalesSequence’:<br>
+Installing schema…<br>
+[Progress: 28 / 485]<br>
+Module ‘Magento_Payment’:<br>
+[Progress: 29 / 485]<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+[Progress: 30 / 485]<br>
+Module ‘Magento_User’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 31 / 485]<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+[Progress: 32 / 485]<br>
+Module ‘Magento_Msrp’:<br>
+[Progress: 33 / 485]<br>
+Module ‘Magento_CatalogInventory’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 34 / 485]<br>
+Module ‘Magento_Contact’:<br>
+[Progress: 35 / 485]<br>
+Module ‘Magento_Cookie’:<br>
+[Progress: 36 / 485]<br>
+Module ‘Magento_Newsletter’:<br>
+Installing schema…<br>
+[Progress: 37 / 485]<br>
+Module ‘Magento_CurrencySymbol’:<br>
+[Progress: 38 / 485]<br>
+Module ‘Magento_Sales’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 39 / 485]<br>
+Module ‘Magento_Integration’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 40 / 485]<br>
+Module ‘Magento_CustomerImportExport’:<br>
+[Progress: 41 / 485]<br>
+Module ‘Magento_Deploy’:<br>
+[Progress: 42 / 485]<br>
+Module ‘Magento_Developer’:<br>
+[Progress: 43 / 485]<br>
+Module ‘Magento_Dhl’:<br>
+[Progress: 44 / 485]<br>
+Module ‘Magento_Authorization’:<br>
+Installing schema…<br>
+[Progress: 45 / 485]<br>
+Module ‘Magento_Downloadable’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 46 / 485]<br>
+Module ‘Magento_ImportExport’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 47 / 485]<br>
+Module ‘Magento_Bundle’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 48 / 485]<br>
+Module ‘Magento_Email’:<br>
+Installing schema…<br>
+[Progress: 49 / 485]<br>
+Module ‘Magento_EncryptionKey’:<br>
+[Progress: 50 / 485]<br>
+Module ‘Magento_Fedex’:<br>
+[Progress: 51 / 485]<br>
+Module ‘Magento_GiftMessage’:<br>
+Installing schema…<br>
+[Progress: 52 / 485]<br>
+Module ‘Magento_Checkout’:<br>
+[Progress: 53 / 485]<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+[Progress: 54 / 485]<br>
+Module ‘Magento_Ui’:<br>
+Installing schema…<br>
+[Progress: 55 / 485]<br>
+Module ‘Magento_GroupedImportExport’:<br>
+[Progress: 56 / 485]<br>
+Module ‘Magento_GroupedProduct’:<br>
+[Progress: 57 / 485]<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+[Progress: 58 / 485]<br>
+Module ‘Magento_CatalogRule’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 59 / 485]<br>
+Module ‘Magento_InstantPurchase’:<br>
+[Progress: 60 / 485]<br>
+Module ‘Magento_Analytics’:<br>
+[Progress: 61 / 485]<br>
+Module ‘Magento_LayeredNavigation’:<br>
+[Progress: 62 / 485]<br>
+Module ‘Magento_Marketplace’:<br>
+[Progress: 63 / 485]<br>
+Module ‘Magento_MediaStorage’:<br>
+[Progress: 64 / 485]<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Installing schema…<br>
+[Progress: 65 / 485]<br>
+Module ‘Magento_Multishipping’:<br>
+[Progress: 66 / 485]<br>
+Module ‘Magento_NewRelicReporting’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 67 / 485]<br>
+Module ‘Magento_Reports’:<br>
+Installing schema…<br>
+[Progress: 68 / 485]<br>
+Module ‘Magento_OfflinePayments’:<br>
+[Progress: 69 / 485]<br>
+Module ‘Magento_SalesRule’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 70 / 485]<br>
+Module ‘Magento_PageCache’:<br>
+[Progress: 71 / 485]<br>
+Module ‘Magento_Vault’:<br>
+Installing schema…<br>
+[Progress: 72 / 485]<br>
+Module ‘Magento_Paypal’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 73 / 485]<br>
+Module ‘Magento_Persistent’:<br>
+Installing schema…<br>
+[Progress: 74 / 485]<br>
+Module ‘Magento_ProductAlert’:<br>
+Installing schema…<br>
+[Progress: 75 / 485]<br>
+Module ‘Magento_ProductVideo’:<br>
+Installing schema…<br>
+[Progress: 76 / 485]<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 77 / 485]<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+[Progress: 78 / 485]<br>
+Module ‘Magento_ReleaseNotification’:<br>
+Installing schema…<br>
+[Progress: 79 / 485]<br>
+Module ‘Magento_Review’:<br>
+Installing schema…<br>
+[Progress: 80 / 485]<br>
+Module ‘Magento_RequireJs’:<br>
+[Progress: 81 / 485]<br>
+Module ‘Magento_Shipping’:<br>
+[Progress: 82 / 485]<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+[Progress: 83 / 485]<br>
+Module ‘Magento_Robots’:<br>
+[Progress: 84 / 485]<br>
+Module ‘Magento_Rss’:<br>
+[Progress: 85 / 485]<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+[Progress: 86 / 485]<br>
+Module ‘Magento_Captcha’:<br>
+Installing schema…<br>
+[Progress: 87 / 485]<br>
+Module ‘Magento_SalesAnalytics’:<br>
+[Progress: 88 / 485]<br>
+Module ‘Magento_SalesInventory’:<br>
+[Progress: 89 / 485]<br>
+Module ‘Magento_OfflineShipping’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 90 / 485]<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+[Progress: 91 / 485]<br>
+Module ‘Magento_UrlRewrite’:<br>
+Installing schema…<br>
+[Progress: 92 / 485]<br>
+Module ‘Magento_CatalogSearch’:<br>
+Installing schema…<br>
+[Progress: 93 / 485]<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+[Progress: 94 / 485]<br>
+Module ‘Magento_SendFriend’:<br>
+Installing schema…<br>
+[Progress: 95 / 485]<br>
+Module ‘Magento_Wishlist’:<br>
+Installing schema…<br>
+[Progress: 96 / 485]<br>
+Module ‘Magento_Signifyd’:<br>
+Installing schema…<br>
+[Progress: 97 / 485]<br>
+Module ‘Magento_Sitemap’:<br>
+Installing schema…<br>
+[Progress: 98 / 485]<br>
+Module ‘Magento_Authorizenet’:<br>
+[Progress: 99 / 485]<br>
+Module ‘Magento_Swagger’:<br>
+[Progress: 100 / 485]<br>
+Module ‘Magento_Swatches’:<br>
+Installing schema…<br>
+[Progress: 101 / 485]<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+[Progress: 102 / 485]<br>
+Module ‘Magento_Tax’:<br>
+Installing schema…<br>
+[Progress: 103 / 485]<br>
+Module ‘Magento_TaxImportExport’:<br>
+[Progress: 104 / 485]<br>
+Module ‘Magento_GoogleAdwords’:<br>
+[Progress: 105 / 485]<br>
+Module ‘Magento_Translation’:<br>
+Installing schema…<br>
+[Progress: 106 / 485]<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+Installing schema…<br>
+[Progress: 107 / 485]<br>
+Module ‘Magento_Ups’:<br>
+[Progress: 108 / 485]<br>
+Module ‘Magento_SampleData’:<br>
+[Progress: 109 / 485]<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+[Progress: 110 / 485]<br>
+Module ‘Magento_Usps’:<br>
+[Progress: 111 / 485]<br>
+Module ‘Magento_Variable’:<br>
+Installing schema…<br>
+[Progress: 112 / 485]<br>
+Module ‘Magento_Braintree’:<br>
+[Progress: 113 / 485]<br>
+Module ‘Magento_Version’:<br>
+[Progress: 114 / 485]<br>
+Module ‘Magento_Webapi’:<br>
+[Progress: 115 / 485]<br>
+Module ‘Magento_WebapiSecurity’:<br>
+[Progress: 116 / 485]<br>
+Module ‘Magento_Weee’:<br>
+Installing schema…<br>
+[Progress: 117 / 485]<br>
+Module ‘Magento_CatalogWidget’:<br>
+[Progress: 118 / 485]<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 119 / 485]<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+[Progress: 120 / 485]<br>
+Module ‘Shopial_Facebook’:<br>
+[Progress: 121 / 485]<br>
+Module ‘Temando_Shipping’:<br>
+Installing schema… Upgrading schema…<br>
+[Progress: 122 / 485]<br>
+Schema post-updates:<br>
+Module ‘Magento_Store’:<br>
+[Progress: 123 / 485]<br>
+Module ‘Magento_Directory’:<br>
+[Progress: 124 / 485]<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+[Progress: 125 / 485]<br>
+Module ‘Magento_Config’:<br>
+[Progress: 126 / 485]<br>
+Module ‘Magento_Backend’:<br>
+[Progress: 127 / 485]<br>
+Module ‘Magento_Theme’:<br>
+[Progress: 128 / 485]<br>
+Module ‘Magento_Eav’:<br>
+[Progress: 129 / 485]<br>
+Module ‘Magento_Backup’:<br>
+[Progress: 130 / 485]<br>
+Module ‘Magento_Customer’:<br>
+[Progress: 131 / 485]<br>
+Module ‘Magento_AdminNotification’:<br>
+[Progress: 132 / 485]<br>
+Module ‘Magento_BundleImportExport’:<br>
+[Progress: 133 / 485]<br>
+Module ‘Magento_CacheInvalidate’:<br>
+[Progress: 134 / 485]<br>
+Module ‘Magento_Indexer’:<br>
+Running schema recurring…<br>
+[Progress: 135 / 485]<br>
+Module ‘Magento_Cms’:<br>
+[Progress: 136 / 485]<br>
+Module ‘Magento_Security’:<br>
+[Progress: 137 / 485]<br>
+Module ‘Magento_CatalogImportExport’:<br>
+[Progress: 138 / 485]<br>
+Module ‘Magento_Rule’:<br>
+[Progress: 139 / 485]<br>
+Module ‘Magento_Cron’:<br>
+Running schema recurring…<br>
+[Progress: 140 / 485]<br>
+Module ‘Magento_Catalog’:<br>
+Running schema recurring…<br>
+[Progress: 141 / 485]<br>
+Module ‘Magento_Search’:<br>
+[Progress: 142 / 485]<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Running schema recurring…<br>
+[Progress: 143 / 485]<br>
+Module ‘Magento_Widget’:<br>
+[Progress: 144 / 485]<br>
+Module ‘Magento_Quote’:<br>
+[Progress: 145 / 485]<br>
+Module ‘Magento_SalesSequence’:<br>
+[Progress: 146 / 485]<br>
+Module ‘Magento_Payment’:<br>
+[Progress: 147 / 485]<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+[Progress: 148 / 485]<br>
+Module ‘Magento_User’:<br>
+[Progress: 149 / 485]<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+[Progress: 150 / 485]<br>
+Module ‘Magento_Msrp’:<br>
+[Progress: 151 / 485]<br>
+Module ‘Magento_CatalogInventory’:<br>
+Running schema recurring…<br>
+[Progress: 152 / 485]<br>
+Module ‘Magento_Contact’:<br>
+[Progress: 153 / 485]<br>
+Module ‘Magento_Cookie’:<br>
+[Progress: 154 / 485]<br>
+Module ‘Magento_Newsletter’:<br>
+[Progress: 155 / 485]<br>
+Module ‘Magento_CurrencySymbol’:<br>
+[Progress: 156 / 485]<br>
+Module ‘Magento_Sales’:<br>
+[Progress: 157 / 485]<br>
+Module ‘Magento_Integration’:<br>
+Running schema recurring…<br>
+[Progress: 158 / 485]<br>
+Module ‘Magento_CustomerImportExport’:<br>
+[Progress: 159 / 485]<br>
+Module ‘Magento_Deploy’:<br>
+[Progress: 160 / 485]<br>
+Module ‘Magento_Developer’:<br>
+[Progress: 161 / 485]<br>
+Module ‘Magento_Dhl’:<br>
+[Progress: 162 / 485]<br>
+Module ‘Magento_Authorization’:<br>
+[Progress: 163 / 485]<br>
+Module ‘Magento_Downloadable’:<br>
+[Progress: 164 / 485]<br>
+Module ‘Magento_ImportExport’:<br>
+[Progress: 165 / 485]<br>
+Module ‘Magento_Bundle’:<br>
+Running schema recurring…<br>
+[Progress: 166 / 485]<br>
+Module ‘Magento_Email’:<br>
+[Progress: 167 / 485]<br>
+Module ‘Magento_EncryptionKey’:<br>
+[Progress: 168 / 485]<br>
+Module ‘Magento_Fedex’:<br>
+[Progress: 169 / 485]<br>
+Module ‘Magento_GiftMessage’:<br>
+[Progress: 170 / 485]<br>
+Module ‘Magento_Checkout’:<br>
+[Progress: 171 / 485]<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+[Progress: 172 / 485]<br>
+Module ‘Magento_Ui’:<br>
+[Progress: 173 / 485]<br>
+Module ‘Magento_GroupedImportExport’:<br>
+[Progress: 174 / 485]<br>
+Module ‘Magento_GroupedProduct’:<br>
+[Progress: 175 / 485]<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+[Progress: 176 / 485]<br>
+Module ‘Magento_CatalogRule’:<br>
+[Progress: 177 / 485]<br>
+Module ‘Magento_InstantPurchase’:<br>
+[Progress: 178 / 485]<br>
+Module ‘Magento_Analytics’:<br>
+[Progress: 179 / 485]<br>
+Module ‘Magento_LayeredNavigation’:<br>
+[Progress: 180 / 485]<br>
+Module ‘Magento_Marketplace’:<br>
+[Progress: 181 / 485]<br>
+Module ‘Magento_MediaStorage’:<br>
+[Progress: 182 / 485]<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Running schema recurring…<br>
+[Progress: 183 / 485]<br>
+Module ‘Magento_Multishipping’:<br>
+[Progress: 184 / 485]<br>
+Module ‘Magento_NewRelicReporting’:<br>
+[Progress: 185 / 485]<br>
+Module ‘Magento_Reports’:<br>
+Running schema recurring…<br>
+[Progress: 186 / 485]<br>
+Module ‘Magento_OfflinePayments’:<br>
+[Progress: 187 / 485]<br>
+Module ‘Magento_SalesRule’:<br>
+[Progress: 188 / 485]<br>
+Module ‘Magento_PageCache’:<br>
+[Progress: 189 / 485]<br>
+Module ‘Magento_Vault’:<br>
+[Progress: 190 / 485]<br>
+Module ‘Magento_Paypal’:<br>
+[Progress: 191 / 485]<br>
+Module ‘Magento_Persistent’:<br>
+[Progress: 192 / 485]<br>
+Module ‘Magento_ProductAlert’:<br>
+Running schema recurring…<br>
+[Progress: 193 / 485]<br>
+Module ‘Magento_ProductVideo’:<br>
+[Progress: 194 / 485]<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+[Progress: 195 / 485]<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+[Progress: 196 / 485]<br>
+Module ‘Magento_ReleaseNotification’:<br>
+[Progress: 197 / 485]<br>
+Module ‘Magento_Review’:<br>
+[Progress: 198 / 485]<br>
+Module ‘Magento_RequireJs’:<br>
+[Progress: 199 / 485]<br>
+Module ‘Magento_Shipping’:<br>
+[Progress: 200 / 485]<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+[Progress: 201 / 485]<br>
+Module ‘Magento_Robots’:<br>
+[Progress: 202 / 485]<br>
+Module ‘Magento_Rss’:<br>
+[Progress: 203 / 485]<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+[Progress: 204 / 485]<br>
+Module ‘Magento_Captcha’:<br>
+[Progress: 205 / 485]<br>
+Module ‘Magento_SalesAnalytics’:<br>
+[Progress: 206 / 485]<br>
+Module ‘Magento_SalesInventory’:<br>
+[Progress: 207 / 485]<br>
+Module ‘Magento_OfflineShipping’:<br>
+[Progress: 208 / 485]<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+[Progress: 209 / 485]<br>
+Module ‘Magento_UrlRewrite’:<br>
+[Progress: 210 / 485]<br>
+Module ‘Magento_CatalogSearch’:<br>
+[Progress: 211 / 485]<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+[Progress: 212 / 485]<br>
+Module ‘Magento_SendFriend’:<br>
+[Progress: 213 / 485]<br>
+Module ‘Magento_Wishlist’:<br>
+Running schema recurring…<br>
+[Progress: 214 / 485]<br>
+Module ‘Magento_Signifyd’:<br>
+[Progress: 215 / 485]<br>
+Module ‘Magento_Sitemap’:<br>
+[Progress: 216 / 485]<br>
+Module ‘Magento_Authorizenet’:<br>
+[Progress: 217 / 485]<br>
+Module ‘Magento_Swagger’:<br>
+[Progress: 218 / 485]<br>
+Module ‘Magento_Swatches’:<br>
+[Progress: 219 / 485]<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+[Progress: 220 / 485]<br>
+Module ‘Magento_Tax’:<br>
+[Progress: 221 / 485]<br>
+Module ‘Magento_TaxImportExport’:<br>
+[Progress: 222 / 485]<br>
+Module ‘Magento_GoogleAdwords’:<br>
+[Progress: 223 / 485]<br>
+Module ‘Magento_Translation’:<br>
+[Progress: 224 / 485]<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+[Progress: 225 / 485]<br>
+Module ‘Magento_Ups’:<br>
+[Progress: 226 / 485]<br>
+Module ‘Magento_SampleData’:<br>
+[Progress: 227 / 485]<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+[Progress: 228 / 485]<br>
+Module ‘Magento_Usps’:<br>
+[Progress: 229 / 485]<br>
+Module ‘Magento_Variable’:<br>
+[Progress: 230 / 485]<br>
+Module ‘Magento_Braintree’:<br>
+[Progress: 231 / 485]<br>
+Module ‘Magento_Version’:<br>
+[Progress: 232 / 485]<br>
+Module ‘Magento_Webapi’:<br>
+[Progress: 233 / 485]<br>
+Module ‘Magento_WebapiSecurity’:<br>
+[Progress: 234 / 485]<br>
+Module ‘Magento_Weee’:<br>
+Running schema recurring…<br>
+[Progress: 235 / 485]<br>
+Module ‘Magento_CatalogWidget’:<br>
+[Progress: 236 / 485]<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Running schema recurring…<br>
+[Progress: 237 / 485]<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+[Progress: 238 / 485]<br>
+Module ‘Shopial_Facebook’:<br>
+[Progress: 239 / 485]<br>
+Module ‘Temando_Shipping’:<br>
+[Progress: 240 / 485]<br>
+[Progress: 241 / 485]<br>
+Installing user configuration…<br>
+[Progress: 242 / 485]<br>
+Enabling caches:<br>
+Current status:<br>
+Array<br>
+(<br>
+[config] =&gt; 1<br>
+[layout] =&gt; 1<br>
+[block_html] =&gt; 1<br>
+[collections] =&gt; 1<br>
+[reflection] =&gt; 1<br>
+[db_ddl] =&gt; 1<br>
+[eav] =&gt; 1<br>
+[customer_notification] =&gt; 1<br>
+[config_integration] =&gt; 1<br>
+[config_integration_api] =&gt; 1<br>
+[full_page] =&gt; 1<br>
+[translate] =&gt; 1<br>
+[config_webservice] =&gt; 1<br>
+)</p>
+<p>[Progress: 243 / 485]<br>
+Installing data…<br>
+Data install/update:<br>
+Module ‘Magento_Store’:<br>
+Upgrading data…<br>
+[Progress: 244 / 485]<br>
+Module ‘Magento_Directory’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 245 / 485]<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+[Progress: 246 / 485]<br>
+Module ‘Magento_Config’:<br>
+Installing data…<br>
+[Progress: 247 / 485]<br>
+Module ‘Magento_Backend’:<br>
+[Progress: 248 / 485]<br>
+Module ‘Magento_Theme’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 249 / 485]<br>
+Module ‘Magento_Eav’:<br>
+Installing data…<br>
+[Progress: 250 / 485]<br>
+Module ‘Magento_Backup’:<br>
+[Progress: 251 / 485]<br>
+Module ‘Magento_Customer’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 252 / 485]<br>
+Module ‘Magento_AdminNotification’:<br>
+[Progress: 253 / 485]<br>
+Module ‘Magento_BundleImportExport’:<br>
+[Progress: 254 / 485]<br>
+Module ‘Magento_CacheInvalidate’:<br>
+[Progress: 255 / 485]<br>
+Module ‘Magento_Indexer’:<br>
+Installing data…<br>
+[Progress: 256 / 485]<br>
+Module ‘Magento_Cms’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 257 / 485]<br>
+Module ‘Magento_Security’:<br>
+[Progress: 258 / 485]<br>
+Module ‘Magento_CatalogImportExport’:<br>
+[Progress: 259 / 485]<br>
+Module ‘Magento_Rule’:<br>
+[Progress: 260 / 485]<br>
+Module ‘Magento_Cron’:<br>
+[Progress: 261 / 485]<br>
+Module ‘Magento_Catalog’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 262 / 485]<br>
+Module ‘Magento_Search’:<br>
+[Progress: 263 / 485]<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Installing data…<br>
+[Progress: 264 / 485]<br>
+Module ‘Magento_Widget’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 265 / 485]<br>
+Module ‘Magento_Quote’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 266 / 485]<br>
+Module ‘Magento_SalesSequence’:<br>
+Installing data…<br>
+[Progress: 267 / 485]<br>
+Module ‘Magento_Payment’:<br>
+[Progress: 268 / 485]<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+[Progress: 269 / 485]<br>
+Module ‘Magento_User’:<br>
+Upgrading data…<br>
+[Progress: 270 / 485]<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+[Progress: 271 / 485]<br>
+Module ‘Magento_Msrp’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 272 / 485]<br>
+Module ‘Magento_CatalogInventory’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 273 / 485]<br>
+Module ‘Magento_Contact’:<br>
+[Progress: 274 / 485]<br>
+Module ‘Magento_Cookie’:<br>
+[Progress: 275 / 485]<br>
+Module ‘Magento_Newsletter’:<br>
+[Progress: 276 / 485]<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Upgrading data…<br>
+[Progress: 277 / 485]<br>
+Module ‘Magento_Sales’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 278 / 485]<br>
+Module ‘Magento_Integration’:<br>
+Upgrading data…<br>
+[Progress: 279 / 485]<br>
+Module ‘Magento_CustomerImportExport’:<br>
+[Progress: 280 / 485]<br>
+Module ‘Magento_Deploy’:<br>
+[Progress: 281 / 485]<br>
+Module ‘Magento_Developer’:<br>
+[Progress: 282 / 485]<br>
+Module ‘Magento_Dhl’:<br>
+Installing data…<br>
+[Progress: 283 / 485]<br>
+Module ‘Magento_Authorization’:<br>
+Installing data…<br>
+[Progress: 284 / 485]<br>
+Module ‘Magento_Downloadable’:<br>
+Installing data…<br>
+[Progress: 285 / 485]<br>
+Module ‘Magento_ImportExport’:<br>
+[Progress: 286 / 485]<br>
+Module ‘Magento_Bundle’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 287 / 485]<br>
+Module ‘Magento_Email’:<br>
+[Progress: 288 / 485]<br>
+Module ‘Magento_EncryptionKey’:<br>
+[Progress: 289 / 485]<br>
+Module ‘Magento_Fedex’:<br>
+Installing data…<br>
+[Progress: 290 / 485]<br>
+Module ‘Magento_GiftMessage’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 291 / 485]<br>
+Module ‘Magento_Checkout’:<br>
+Installing data…<br>
+[Progress: 292 / 485]<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+[Progress: 293 / 485]<br>
+Module ‘Magento_Ui’:<br>
+[Progress: 294 / 485]<br>
+Module ‘Magento_GroupedImportExport’:<br>
+[Progress: 295 / 485]<br>
+Module ‘Magento_GroupedProduct’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 296 / 485]<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+[Progress: 297 / 485]<br>
+Module ‘Magento_CatalogRule’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 298 / 485]<br>
+Module ‘Magento_InstantPurchase’:<br>
+[Progress: 299 / 485]<br>
+Module ‘Magento_Analytics’:<br>
+Installing data…<br>
+[Progress: 300 / 485]<br>
+Module ‘Magento_LayeredNavigation’:<br>
+[Progress: 301 / 485]<br>
+Module ‘Magento_Marketplace’:<br>
+[Progress: 302 / 485]<br>
+Module ‘Magento_MediaStorage’:<br>
+[Progress: 303 / 485]<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 304 / 485]<br>
+Module ‘Magento_Multishipping’:<br>
+[Progress: 305 / 485]<br>
+Module ‘Magento_NewRelicReporting’:<br>
+[Progress: 306 / 485]<br>
+Module ‘Magento_Reports’:<br>
+Installing data…<br>
+[Progress: 307 / 485]<br>
+Module ‘Magento_OfflinePayments’:<br>
+[Progress: 308 / 485]<br>
+Module ‘Magento_SalesRule’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 309 / 485]<br>
+Module ‘Magento_PageCache’:<br>
+[Progress: 310 / 485]<br>
+Module ‘Magento_Vault’:<br>
+Upgrading data…<br>
+[Progress: 311 / 485]<br>
+Module ‘Magento_Paypal’:<br>
+Installing data…<br>
+[Progress: 312 / 485]<br>
+Module ‘Magento_Persistent’:<br>
+[Progress: 313 / 485]<br>
+Module ‘Magento_ProductAlert’:<br>
+[Progress: 314 / 485]<br>
+Module ‘Magento_ProductVideo’:<br>
+[Progress: 315 / 485]<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+[Progress: 316 / 485]<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+[Progress: 317 / 485]<br>
+Module ‘Magento_ReleaseNotification’:<br>
+[Progress: 318 / 485]<br>
+Module ‘Magento_Review’:<br>
+Installing data…<br>
+[Progress: 319 / 485]<br>
+Module ‘Magento_RequireJs’:<br>
+[Progress: 320 / 485]<br>
+Module ‘Magento_Shipping’:<br>
+[Progress: 321 / 485]<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+[Progress: 322 / 485]<br>
+Module ‘Magento_Robots’:<br>
+[Progress: 323 / 485]<br>
+Module ‘Magento_Rss’:<br>
+[Progress: 324 / 485]<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+[Progress: 325 / 485]<br>
+Module ‘Magento_Captcha’:<br>
+[Progress: 326 / 485]<br>
+Module ‘Magento_SalesAnalytics’:<br>
+[Progress: 327 / 485]<br>
+Module ‘Magento_SalesInventory’:<br>
+[Progress: 328 / 485]<br>
+Module ‘Magento_OfflineShipping’:<br>
+Upgrading data…<br>
+[Progress: 329 / 485]<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+[Progress: 330 / 485]<br>
+Module ‘Magento_UrlRewrite’:<br>
+Upgrading data…<br>
+[Progress: 331 / 485]<br>
+Module ‘Magento_CatalogSearch’:<br>
+Installing data…<br>
+[Progress: 332 / 485]<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+[Progress: 333 / 485]<br>
+Module ‘Magento_SendFriend’:<br>
+[Progress: 334 / 485]<br>
+Module ‘Magento_Wishlist’:<br>
+Upgrading data…<br>
+[Progress: 335 / 485]<br>
+Module ‘Magento_Signifyd’:<br>
+[Progress: 336 / 485]<br>
+Module ‘Magento_Sitemap’:<br>
+[Progress: 337 / 485]<br>
+Module ‘Magento_Authorizenet’:<br>
+[Progress: 338 / 485]<br>
+Module ‘Magento_Swagger’:<br>
+[Progress: 339 / 485]<br>
+Module ‘Magento_Swatches’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 340 / 485]<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+[Progress: 341 / 485]<br>
+Module ‘Magento_Tax’:<br>
+Installing data… Upgrading data…<br>
+[Progress: 342 / 485]<br>
+Module ‘Magento_TaxImportExport’:<br>
+[Progress: 343 / 485]<br>
+Module ‘Magento_GoogleAdwords’:<br>
+[Progress: 344 / 485]<br>
+Module ‘Magento_Translation’:<br>
+[Progress: 345 / 485]<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+[Progress: 346 / 485]<br>
+Module ‘Magento_Ups’:<br>
+[Progress: 347 / 485]<br>
+Module ‘Magento_SampleData’:<br>
+Installing data…<br>
+[Progress: 348 / 485]<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+[Progress: 349 / 485]<br>
+Module ‘Magento_Usps’:<br>
+Upgrading data…<br>
+[Progress: 350 / 485]<br>
+Module ‘Magento_Variable’:<br>
+[Progress: 351 / 485]<br>
+Module ‘Magento_Braintree’:<br>
+Upgrading data…<br>
+[Progress: 352 / 485]<br>
+Module ‘Magento_Version’:<br>
+[Progress: 353 / 485]<br>
+Module ‘Magento_Webapi’:<br>
+[Progress: 354 / 485]<br>
+Module ‘Magento_WebapiSecurity’:<br>
+[Progress: 355 / 485]<br>
+Module ‘Magento_Weee’:<br>
+Installing data…<br>
+[Progress: 356 / 485]<br>
+Module ‘Magento_CatalogWidget’:<br>
+[Progress: 357 / 485]<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Installing data…<br>
+[Progress: 358 / 485]<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+[Progress: 359 / 485]<br>
+Module ‘Shopial_Facebook’:<br>
+[Progress: 360 / 485]<br>
+Module ‘Temando_Shipping’:<br>
+[Progress: 361 / 485]<br>
+Data post-updates:<br>
+Module ‘Magento_Store’:<br>
+[Progress: 362 / 485]<br>
+Module ‘Magento_Directory’:<br>
+[Progress: 363 / 485]<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+[Progress: 364 / 485]<br>
+Module ‘Magento_Config’:<br>
+[Progress: 365 / 485]<br>
+Module ‘Magento_Backend’:<br>
+[Progress: 366 / 485]<br>
+Module ‘Magento_Theme’:<br>
+Running data recurring…<br>
+[Progress: 367 / 485]<br>
+Module ‘Magento_Eav’:<br>
+[Progress: 368 / 485]<br>
+Module ‘Magento_Backup’:<br>
+[Progress: 369 / 485]<br>
+Module ‘Magento_Customer’:<br>
+[Progress: 370 / 485]<br>
+Module ‘Magento_AdminNotification’:<br>
+[Progress: 371 / 485]<br>
+Module ‘Magento_BundleImportExport’:<br>
+[Progress: 372 / 485]<br>
+Module ‘Magento_CacheInvalidate’:<br>
+[Progress: 373 / 485]<br>
+Module ‘Magento_Indexer’:<br>
+Running data recurring…<br>
+[Progress: 374 / 485]<br>
+Module ‘Magento_Cms’:<br>
+[Progress: 375 / 485]<br>
+Module ‘Magento_Security’:<br>
+[Progress: 376 / 485]<br>
+Module ‘Magento_CatalogImportExport’:<br>
+[Progress: 377 / 485]<br>
+Module ‘Magento_Rule’:<br>
+[Progress: 378 / 485]<br>
+Module ‘Magento_Cron’:<br>
+[Progress: 379 / 485]<br>
+Module ‘Magento_Catalog’:<br>
+[Progress: 380 / 485]<br>
+Module ‘Magento_Search’:<br>
+[Progress: 381 / 485]<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+[Progress: 382 / 485]<br>
+Module ‘Magento_Widget’:<br>
+[Progress: 383 / 485]<br>
+Module ‘Magento_Quote’:<br>
+[Progress: 384 / 485]<br>
+Module ‘Magento_SalesSequence’:<br>
+Running data recurring…<br>
+[Progress: 385 / 485]<br>
+Module ‘Magento_Payment’:<br>
+[Progress: 386 / 485]<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+[Progress: 387 / 485]<br>
+Module ‘Magento_User’:<br>
+[Progress: 388 / 485]<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+[Progress: 389 / 485]<br>
+Module ‘Magento_Msrp’:<br>
+[Progress: 390 / 485]<br>
+Module ‘Magento_CatalogInventory’:<br>
+[Progress: 391 / 485]<br>
+Module ‘Magento_Contact’:<br>
+[Progress: 392 / 485]<br>
+Module ‘Magento_Cookie’:<br>
+[Progress: 393 / 485]<br>
+Module ‘Magento_Newsletter’:<br>
+[Progress: 394 / 485]<br>
+Module ‘Magento_CurrencySymbol’:<br>
+[Progress: 395 / 485]<br>
+Module ‘Magento_Sales’:<br>
+[Progress: 396 / 485]<br>
+Module ‘Magento_Integration’:<br>
+[Progress: 397 / 485]<br>
+Module ‘Magento_CustomerImportExport’:<br>
+[Progress: 398 / 485]<br>
+Module ‘Magento_Deploy’:<br>
+[Progress: 399 / 485]<br>
+Module ‘Magento_Developer’:<br>
+[Progress: 400 / 485]<br>
+Module ‘Magento_Dhl’:<br>
+[Progress: 401 / 485]<br>
+Module ‘Magento_Authorization’:<br>
+[Progress: 402 / 485]<br>
+Module ‘Magento_Downloadable’:<br>
+[Progress: 403 / 485]<br>
+Module ‘Magento_ImportExport’:<br>
+[Progress: 404 / 485]<br>
+Module ‘Magento_Bundle’:<br>
+[Progress: 405 / 485]<br>
+Module ‘Magento_Email’:<br>
+[Progress: 406 / 485]<br>
+Module ‘Magento_EncryptionKey’:<br>
+[Progress: 407 / 485]<br>
+Module ‘Magento_Fedex’:<br>
+[Progress: 408 / 485]<br>
+Module ‘Magento_GiftMessage’:<br>
+[Progress: 409 / 485]<br>
+Module ‘Magento_Checkout’:<br>
+[Progress: 410 / 485]<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+[Progress: 411 / 485]<br>
+Module ‘Magento_Ui’:<br>
+[Progress: 412 / 485]<br>
+Module ‘Magento_GroupedImportExport’:<br>
+[Progress: 413 / 485]<br>
+Module ‘Magento_GroupedProduct’:<br>
+[Progress: 414 / 485]<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+[Progress: 415 / 485]<br>
+Module ‘Magento_CatalogRule’:<br>
+[Progress: 416 / 485]<br>
+Module ‘Magento_InstantPurchase’:<br>
+[Progress: 417 / 485]<br>
+Module ‘Magento_Analytics’:<br>
+[Progress: 418 / 485]<br>
+Module ‘Magento_LayeredNavigation’:<br>
+[Progress: 419 / 485]<br>
+Module ‘Magento_Marketplace’:<br>
+[Progress: 420 / 485]<br>
+Module ‘Magento_MediaStorage’:<br>
+[Progress: 421 / 485]<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+[Progress: 422 / 485]<br>
+Module ‘Magento_Multishipping’:<br>
+[Progress: 423 / 485]<br>
+Module ‘Magento_NewRelicReporting’:<br>
+[Progress: 424 / 485]<br>
+Module ‘Magento_Reports’:<br>
+[Progress: 425 / 485]<br>
+Module ‘Magento_OfflinePayments’:<br>
+[Progress: 426 / 485]<br>
+Module ‘Magento_SalesRule’:<br>
+[Progress: 427 / 485]<br>
+Module ‘Magento_PageCache’:<br>
+[Progress: 428 / 485]<br>
+Module ‘Magento_Vault’:<br>
+[Progress: 429 / 485]<br>
+Module ‘Magento_Paypal’:<br>
+[Progress: 430 / 485]<br>
+Module ‘Magento_Persistent’:<br>
+[Progress: 431 / 485]<br>
+Module ‘Magento_ProductAlert’:<br>
+[Progress: 432 / 485]<br>
+Module ‘Magento_ProductVideo’:<br>
+[Progress: 433 / 485]<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+[Progress: 434 / 485]<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+[Progress: 435 / 485]<br>
+Module ‘Magento_ReleaseNotification’:<br>
+[Progress: 436 / 485]<br>
+Module ‘Magento_Review’:<br>
+[Progress: 437 / 485]<br>
+Module ‘Magento_RequireJs’:<br>
+[Progress: 438 / 485]<br>
+Module ‘Magento_Shipping’:<br>
+[Progress: 439 / 485]<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+[Progress: 440 / 485]<br>
+Module ‘Magento_Robots’:<br>
+[Progress: 441 / 485]<br>
+Module ‘Magento_Rss’:<br>
+[Progress: 442 / 485]<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+[Progress: 443 / 485]<br>
+Module ‘Magento_Captcha’:<br>
+[Progress: 444 / 485]<br>
+Module ‘Magento_SalesAnalytics’:<br>
+[Progress: 445 / 485]<br>
+Module ‘Magento_SalesInventory’:<br>
+[Progress: 446 / 485]<br>
+Module ‘Magento_OfflineShipping’:<br>
+[Progress: 447 / 485]<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+[Progress: 448 / 485]<br>
+Module ‘Magento_UrlRewrite’:<br>
+[Progress: 449 / 485]<br>
+Module ‘Magento_CatalogSearch’:<br>
+[Progress: 450 / 485]<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+[Progress: 451 / 485]<br>
+Module ‘Magento_SendFriend’:<br>
+[Progress: 452 / 485]<br>
+Module ‘Magento_Wishlist’:<br>
+[Progress: 453 / 485]<br>
+Module ‘Magento_Signifyd’:<br>
+[Progress: 454 / 485]<br>
+Module ‘Magento_Sitemap’:<br>
+[Progress: 455 / 485]<br>
+Module ‘Magento_Authorizenet’:<br>
+[Progress: 456 / 485]<br>
+Module ‘Magento_Swagger’:<br>
+[Progress: 457 / 485]<br>
+Module ‘Magento_Swatches’:<br>
+[Progress: 458 / 485]<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+[Progress: 459 / 485]<br>
+Module ‘Magento_Tax’:<br>
+[Progress: 460 / 485]<br>
+Module ‘Magento_TaxImportExport’:<br>
+[Progress: 461 / 485]<br>
+Module ‘Magento_GoogleAdwords’:<br>
+[Progress: 462 / 485]<br>
+Module ‘Magento_Translation’:<br>
+[Progress: 463 / 485]<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+[Progress: 464 / 485]<br>
+Module ‘Magento_Ups’:<br>
+[Progress: 465 / 485]<br>
+Module ‘Magento_SampleData’:<br>
+[Progress: 466 / 485]<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+[Progress: 467 / 485]<br>
+Module ‘Magento_Usps’:<br>
+[Progress: 468 / 485]<br>
+Module ‘Magento_Variable’:<br>
+[Progress: 469 / 485]<br>
+Module ‘Magento_Braintree’:<br>
+[Progress: 470 / 485]<br>
+Module ‘Magento_Version’:<br>
+[Progress: 471 / 485]<br>
+Module ‘Magento_Webapi’:<br>
+[Progress: 472 / 485]<br>
+Module ‘Magento_WebapiSecurity’:<br>
+[Progress: 473 / 485]<br>
+Module ‘Magento_Weee’:<br>
+[Progress: 474 / 485]<br>
+Module ‘Magento_CatalogWidget’:<br>
+[Progress: 475 / 485]<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+[Progress: 476 / 485]<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+[Progress: 477 / 485]<br>
+Module ‘Shopial_Facebook’:<br>
+[Progress: 478 / 485]<br>
+Module ‘Temando_Shipping’:<br>
+[Progress: 479 / 485]<br>
+[Progress: 480 / 485]<br>
+Installing admin user…<br>
+[Progress: 481 / 485]<br>
+Caches clearing:<br>
+Cache cleared successfully<br>
+[Progress: 482 / 485]<br>
+Disabling Maintenance Mode:<br>
+[Progress: 483 / 485]<br>
+Post installation file permissions check…<br>
+For security, remove write permissions from these directories: ‘/Users/kalpesh/sites/magento/app/etc’<br>
+[Progress: 484 / 485]<br>
+Write installation date…<br>
+[Progress: 485 / 485]<br>
+[SUCCESS]: Magento installation complete.<br>
+[SUCCESS]: Magento Admin URI: /admin<br>
+Nothing to import.<br>
+Install sample data? [y]: y<br>
+bin/magento &gt; ./composer.json has been updated<br>
+bin/magento &gt; Loading composer repositories with package information<br>
+bin/magento &gt;<br>
+Installation failed, reverting ./composer.json to its original content.<br>
+bin/magento &gt;<br>
+bin/magento &gt; bin/magento &gt;<br>
+bin/magento &gt; [Composer\Downloader\TransportException]<br>
+The ‘https://repo.magento.com/packages.json’ URL required authentication.<br>
+bin/magento &gt; You must be using the interactive console to authenticate</p>
+<p>bin/magento &gt; require [–dev] [–prefer-source] [–prefer-dist] [–no-progress] [–no-suggest] [–no-update] [–no-scripts] [–update-no-dev] [–update-with-dependencies] [–ignore-platform-reqs] [–prefer-stable] [–prefer-lowest] [–sort-packages] [-o|–optimize-autoloader] [-a|–classmap-authoritative] [–apcu-autoloader] [–] [&lt;packages&gt;]…</p>
+<p>bin/magento &gt; There is an error during sample data deployment. Composer file will be reverted.<br>
+bin/magento &gt; Cache cleared successfully<br>
+File system cleanup:<br>
+bin/magento &gt; /Users/kalpesh/sites/magento/generated/code/Composer<br>
+bin/magento &gt; /Users/kalpesh/sites/magento/generated/code/Magento<br>
+/Users/kalpesh/sites/magento/generated/code/Symfony<br>
+Updating modules:<br>
+bin/magento &gt; Schema creation/updates:<br>
+bin/magento &gt; Module ‘Magento_Store’:<br>
+bin/magento &gt; Module ‘Magento_Directory’:<br>
+bin/magento &gt; Module ‘Magento_AdvancedPricingImportExport’:<br>
+Module ‘Magento_Config’:<br>
+Module ‘Magento_Backend’:<br>
+bin/magento &gt; Module ‘Magento_Theme’:<br>
+Module ‘Magento_Eav’:<br>
+bin/magento &gt; Module ‘Magento_Backup’:<br>
+bin/magento &gt; Module ‘Magento_Customer’:<br>
+Module ‘Magento_AdminNotification’:<br>
+bin/magento &gt; Module ‘Magento_BundleImportExport’:<br>
+Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+bin/magento &gt; Module ‘Magento_Cms’:<br>
+bin/magento &gt; Module ‘Magento_Security’:<br>
+Module ‘Magento_CatalogImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Rule’:<br>
+Module ‘Magento_Cron’:<br>
+Module ‘Magento_Catalog’:<br>
+bin/magento &gt; Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_Widget’:<br>
+bin/magento &gt; Module ‘Magento_Quote’:<br>
+bin/magento &gt; Module ‘Magento_SalesSequence’:<br>
+Module ‘Magento_Payment’:<br>
+bin/magento &gt; Module ‘Magento_CmsUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_User’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Msrp’:<br>
+bin/magento &gt; Module ‘Magento_CatalogInventory’:<br>
+bin/magento &gt; Module ‘Magento_Contact’:<br>
+bin/magento &gt; Module ‘Magento_Cookie’:<br>
+bin/magento &gt; Module ‘Magento_Newsletter’:<br>
+bin/magento &gt; Module ‘Magento_CurrencySymbol’:<br>
+bin/magento &gt; Module ‘Magento_Sales’:<br>
+bin/magento &gt; Module ‘Magento_Integration’:<br>
+bin/magento &gt; Module ‘Magento_CustomerImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Deploy’:<br>
+bin/magento &gt; Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+bin/magento &gt; Module ‘Magento_Authorization’:<br>
+bin/magento &gt; Module ‘Magento_Downloadable’:<br>
+bin/magento &gt; Module ‘Magento_ImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Bundle’:<br>
+Module ‘Magento_Email’:<br>
+bin/magento &gt; Module ‘Magento_EncryptionKey’:<br>
+bin/magento &gt; Module ‘Magento_Fedex’:<br>
+bin/magento &gt; Module ‘Magento_GiftMessage’:<br>
+bin/magento &gt; Module ‘Magento_Checkout’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Ui’:<br>
+bin/magento &gt; Module ‘Magento_GroupedImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GroupedProduct’:<br>
+bin/magento &gt; Module ‘Magento_DownloadableImportExport’:<br>
+Module ‘Magento_CatalogRule’:<br>
+bin/magento &gt; Module ‘Magento_InstantPurchase’:<br>
+bin/magento &gt; Module ‘Magento_Analytics’:<br>
+bin/magento &gt; Module ‘Magento_LayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Marketplace’:<br>
+bin/magento &gt; Module ‘Magento_MediaStorage’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProduct’:<br>
+bin/magento &gt; Module ‘Magento_Multishipping’:<br>
+bin/magento &gt; Module ‘Magento_NewRelicReporting’:<br>
+Module ‘Magento_Reports’:<br>
+bin/magento &gt; Module ‘Magento_OfflinePayments’:<br>
+bin/magento &gt; Module ‘Magento_SalesRule’:<br>
+bin/magento &gt; Module ‘Magento_PageCache’:<br>
+bin/magento &gt; Module ‘Magento_Vault’:<br>
+bin/magento &gt; Module ‘Magento_Paypal’:<br>
+bin/magento &gt; Module ‘Magento_Persistent’:<br>
+bin/magento &gt; Module ‘Magento_ProductAlert’:<br>
+bin/magento &gt; Module ‘Magento_ProductVideo’:<br>
+bin/magento &gt; Module ‘Magento_CheckoutAgreements’:<br>
+bin/magento &gt; Module ‘Magento_QuoteAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_ReleaseNotification’:<br>
+bin/magento &gt; Module ‘Magento_Review’:<br>
+bin/magento &gt; Module ‘Magento_RequireJs’:<br>
+bin/magento &gt; Module ‘Magento_Shipping’:<br>
+bin/magento &gt; Module ‘Magento_ReviewAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Robots’:<br>
+bin/magento &gt; Module ‘Magento_Rss’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRuleConfigurable’:<br>
+bin/magento &gt; Module ‘Magento_Captcha’:<br>
+bin/magento &gt; Module ‘Magento_SalesAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SalesInventory’:<br>
+bin/magento &gt; Module ‘Magento_OfflineShipping’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProductSales’:<br>
+bin/magento &gt; Module ‘Magento_UrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_CatalogSearch’:<br>
+bin/magento &gt; Module ‘Magento_CustomerAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SendFriend’:<br>
+bin/magento &gt; Module ‘Magento_Wishlist’:<br>
+Module ‘Magento_Signifyd’:<br>
+bin/magento &gt; Module ‘Magento_Sitemap’:<br>
+bin/magento &gt; Module ‘Magento_Authorizenet’:<br>
+bin/magento &gt; Module ‘Magento_Swagger’:<br>
+bin/magento &gt; Module ‘Magento_Swatches’:<br>
+bin/magento &gt; Module ‘Magento_SwatchesLayeredNavigation’:<br>
+Module ‘Magento_Tax’:<br>
+Module ‘Magento_TaxImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAdwords’:<br>
+bin/magento &gt; Module ‘Magento_Translation’:<br>
+bin/magento &gt; Module ‘Magento_GoogleOptimizer’:<br>
+Module ‘Magento_Ups’:<br>
+bin/magento &gt; Module ‘Magento_SampleData’:<br>
+bin/magento &gt; Module ‘Magento_CatalogAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Usps’:<br>
+bin/magento &gt; Module ‘Magento_Variable’:<br>
+bin/magento &gt; Module ‘Magento_Braintree’:<br>
+bin/magento &gt; Module ‘Magento_Version’:<br>
+bin/magento &gt; Module ‘Magento_Webapi’:<br>
+bin/magento &gt; Module ‘Magento_WebapiSecurity’:<br>
+bin/magento &gt; Module ‘Magento_Weee’:<br>
+bin/magento &gt; Module ‘Magento_CatalogWidget’:<br>
+bin/magento &gt; Module ‘Dotdigitalgroup_Email’:<br>
+bin/magento &gt; Module ‘Magento_WishlistAnalytics’:<br>
+bin/magento &gt; Module ‘Shopial_Facebook’:<br>
+bin/magento &gt; Module ‘Temando_Shipping’:<br>
+bin/magento &gt; Schema post-updates:<br>
+bin/magento &gt; Module ‘Magento_Store’:<br>
+bin/magento &gt; Module ‘Magento_Directory’:<br>
+bin/magento &gt; Module ‘Magento_AdvancedPricingImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Config’:<br>
+bin/magento &gt; Module ‘Magento_Backend’:<br>
+bin/magento &gt; Module ‘Magento_Theme’:<br>
+bin/magento &gt; Module ‘Magento_Eav’:<br>
+bin/magento &gt; Module ‘Magento_Backup’:<br>
+bin/magento &gt; Module ‘Magento_Customer’:<br>
+bin/magento &gt; Module ‘Magento_AdminNotification’:<br>
+bin/magento &gt; Module ‘Magento_BundleImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CacheInvalidate’:<br>
+bin/magento &gt; Module ‘Magento_Indexer’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Cms’:<br>
+bin/magento &gt; Module ‘Magento_Security’:<br>
+bin/magento &gt; Module ‘Magento_CatalogImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Rule’:<br>
+bin/magento &gt; Module ‘Magento_Cron’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Catalog’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Widget’:<br>
+bin/magento &gt; Module ‘Magento_Quote’:<br>
+bin/magento &gt; Module ‘Magento_SalesSequence’:<br>
+Module ‘Magento_Payment’:<br>
+bin/magento &gt; Module ‘Magento_CmsUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_User’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Msrp’:<br>
+bin/magento &gt; Module ‘Magento_CatalogInventory’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+Module ‘Magento_Contact’:<br>
+Module ‘Magento_Cookie’:<br>
+Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+Module ‘Magento_Integration’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_CustomerImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Deploy’:<br>
+bin/magento &gt; Module ‘Magento_Developer’:<br>
+bin/magento &gt; Module ‘Magento_Dhl’:<br>
+bin/magento &gt; Module ‘Magento_Authorization’:<br>
+bin/magento &gt; Module ‘Magento_Downloadable’:<br>
+bin/magento &gt; Module ‘Magento_ImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Bundle’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Email’:<br>
+bin/magento &gt; Module ‘Magento_EncryptionKey’:<br>
+bin/magento &gt; Module ‘Magento_Fedex’:<br>
+bin/magento &gt; Module ‘Magento_GiftMessage’:<br>
+bin/magento &gt; Module ‘Magento_Checkout’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Ui’:<br>
+bin/magento &gt; Module ‘Magento_GroupedImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GroupedProduct’:<br>
+bin/magento &gt; Module ‘Magento_DownloadableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRule’:<br>
+bin/magento &gt; Module ‘Magento_InstantPurchase’:<br>
+bin/magento &gt; Module ‘Magento_Analytics’:<br>
+bin/magento &gt; Module ‘Magento_LayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Marketplace’:<br>
+bin/magento &gt; Module ‘Magento_MediaStorage’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProduct’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Multishipping’:<br>
+bin/magento &gt; Module ‘Magento_NewRelicReporting’:<br>
+bin/magento &gt; Module ‘Magento_Reports’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_OfflinePayments’:<br>
+bin/magento &gt; Module ‘Magento_SalesRule’:<br>
+bin/magento &gt; Module ‘Magento_PageCache’:<br>
+bin/magento &gt; Module ‘Magento_Vault’:<br>
+bin/magento &gt; Module ‘Magento_Paypal’:<br>
+bin/magento &gt; Module ‘Magento_Persistent’:<br>
+bin/magento &gt; Module ‘Magento_ProductAlert’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_ProductVideo’:<br>
+bin/magento &gt; Module ‘Magento_CheckoutAgreements’:<br>
+bin/magento &gt; Module ‘Magento_QuoteAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_ReleaseNotification’:<br>
+bin/magento &gt; Module ‘Magento_Review’:<br>
+bin/magento &gt; Module ‘Magento_RequireJs’:<br>
+bin/magento &gt; Module ‘Magento_Shipping’:<br>
+bin/magento &gt; Module ‘Magento_ReviewAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Robots’:<br>
+bin/magento &gt; Module ‘Magento_Rss’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRuleConfigurable’:<br>
+bin/magento &gt; Module ‘Magento_Captcha’:<br>
+bin/magento &gt; Module ‘Magento_SalesAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SalesInventory’:<br>
+bin/magento &gt; Module ‘Magento_OfflineShipping’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProductSales’:<br>
+bin/magento &gt; Module ‘Magento_UrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_CatalogSearch’:<br>
+bin/magento &gt; Module ‘Magento_CustomerAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SendFriend’:<br>
+bin/magento &gt; Module ‘Magento_Wishlist’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Signifyd’:<br>
+bin/magento &gt; Module ‘Magento_Sitemap’:<br>
+bin/magento &gt; Module ‘Magento_Authorizenet’:<br>
+bin/magento &gt; Module ‘Magento_Swagger’:<br>
+bin/magento &gt; Module ‘Magento_Swatches’:<br>
+bin/magento &gt; Module ‘Magento_SwatchesLayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Tax’:<br>
+bin/magento &gt; Module ‘Magento_TaxImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAdwords’:<br>
+bin/magento &gt; Module ‘Magento_Translation’:<br>
+bin/magento &gt; Module ‘Magento_GoogleOptimizer’:<br>
+bin/magento &gt; Module ‘Magento_Ups’:<br>
+bin/magento &gt; Module ‘Magento_SampleData’:<br>
+bin/magento &gt; Module ‘Magento_CatalogAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Usps’:<br>
+bin/magento &gt; Module ‘Magento_Variable’:<br>
+bin/magento &gt; Module ‘Magento_Braintree’:<br>
+bin/magento &gt; Module ‘Magento_Version’:<br>
+bin/magento &gt; Module ‘Magento_Webapi’:<br>
+bin/magento &gt; Module ‘Magento_WebapiSecurity’:<br>
+bin/magento &gt; Module ‘Magento_Weee’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_CatalogWidget’:<br>
+bin/magento &gt; Module ‘Dotdigitalgroup_Email’:<br>
+bin/magento &gt; Running schema recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_WishlistAnalytics’:<br>
+bin/magento &gt; Module ‘Shopial_Facebook’:<br>
+bin/magento &gt; Module ‘Temando_Shipping’:<br>
+bin/magento &gt; Data install/update:<br>
+bin/magento &gt; Module ‘Magento_Store’:<br>
+bin/magento &gt; Module ‘Magento_Directory’:<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Config’:<br>
+bin/magento &gt; Module ‘Magento_Backend’:<br>
+bin/magento &gt; Module ‘Magento_Theme’:<br>
+bin/magento &gt; Module ‘Magento_Eav’:<br>
+bin/magento &gt; Module ‘Magento_Backup’:<br>
+bin/magento &gt; Module ‘Magento_Customer’:<br>
+bin/magento &gt; Module ‘Magento_AdminNotification’:<br>
+bin/magento &gt; Module ‘Magento_BundleImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+bin/magento &gt; Module ‘Magento_Cms’:<br>
+bin/magento &gt; Module ‘Magento_Security’:<br>
+bin/magento &gt; Module ‘Magento_CatalogImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Rule’:<br>
+bin/magento &gt; Module ‘Magento_Cron’:<br>
+bin/magento &gt; Module ‘Magento_Catalog’:<br>
+bin/magento &gt; Module ‘Magento_Search’:<br>
+bin/magento &gt; Module ‘Magento_CatalogUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_Widget’:<br>
+bin/magento &gt; Module ‘Magento_Quote’:<br>
+bin/magento &gt; Module ‘Magento_SalesSequence’:<br>
+bin/magento &gt; Module ‘Magento_Payment’:<br>
+bin/magento &gt; Module ‘Magento_CmsUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_User’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Msrp’:<br>
+bin/magento &gt; Module ‘Magento_CatalogInventory’:<br>
+Module ‘Magento_Contact’:<br>
+bin/magento &gt; Module ‘Magento_Cookie’:<br>
+bin/magento &gt; Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+bin/magento &gt; Module ‘Magento_Integration’:<br>
+bin/magento &gt; Module ‘Magento_CustomerImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Deploy’:<br>
+bin/magento &gt; Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+bin/magento &gt; Module ‘Magento_Authorization’:<br>
+bin/magento &gt; Module ‘Magento_Downloadable’:<br>
+bin/magento &gt; Module ‘Magento_ImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Bundle’:<br>
+Module ‘Magento_Email’:<br>
+bin/magento &gt; Module ‘Magento_EncryptionKey’:<br>
+bin/magento &gt; Module ‘Magento_Fedex’:<br>
+bin/magento &gt; Module ‘Magento_GiftMessage’:<br>
+Module ‘Magento_Checkout’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Ui’:<br>
+bin/magento &gt; Module ‘Magento_GroupedImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GroupedProduct’:<br>
+bin/magento &gt; Module ‘Magento_DownloadableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRule’:<br>
+bin/magento &gt; Module ‘Magento_InstantPurchase’:<br>
+bin/magento &gt; Module ‘Magento_Analytics’:<br>
+bin/magento &gt; Module ‘Magento_LayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Marketplace’:<br>
+bin/magento &gt; Module ‘Magento_MediaStorage’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProduct’:<br>
+bin/magento &gt; Module ‘Magento_Multishipping’:<br>
+bin/magento &gt; Module ‘Magento_NewRelicReporting’:<br>
+bin/magento &gt; Module ‘Magento_Reports’:<br>
+bin/magento &gt; Module ‘Magento_OfflinePayments’:<br>
+bin/magento &gt; Module ‘Magento_SalesRule’:<br>
+bin/magento &gt; Module ‘Magento_PageCache’:<br>
+bin/magento &gt; Module ‘Magento_Vault’:<br>
+bin/magento &gt; Module ‘Magento_Paypal’:<br>
+bin/magento &gt; Module ‘Magento_Persistent’:<br>
+bin/magento &gt; Module ‘Magento_ProductAlert’:<br>
+bin/magento &gt; Module ‘Magento_ProductVideo’:<br>
+bin/magento &gt; Module ‘Magento_CheckoutAgreements’:<br>
+bin/magento &gt; Module ‘Magento_QuoteAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_ReleaseNotification’:<br>
+bin/magento &gt; Module ‘Magento_Review’:<br>
+bin/magento &gt; Module ‘Magento_RequireJs’:<br>
+bin/magento &gt; Module ‘Magento_Shipping’:<br>
+bin/magento &gt; Module ‘Magento_ReviewAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Robots’:<br>
+bin/magento &gt; Module ‘Magento_Rss’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRuleConfigurable’:<br>
+bin/magento &gt; Module ‘Magento_Captcha’:<br>
+bin/magento &gt; Module ‘Magento_SalesAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SalesInventory’:<br>
+bin/magento &gt; Module ‘Magento_OfflineShipping’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProductSales’:<br>
+bin/magento &gt; Module ‘Magento_UrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_CatalogSearch’:<br>
+bin/magento &gt; Module ‘Magento_CustomerAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SendFriend’:<br>
+bin/magento &gt; Module ‘Magento_Wishlist’:<br>
+bin/magento &gt; Module ‘Magento_Signifyd’:<br>
+bin/magento &gt; Module ‘Magento_Sitemap’:<br>
+bin/magento &gt; Module ‘Magento_Authorizenet’:<br>
+bin/magento &gt; Module ‘Magento_Swagger’:<br>
+bin/magento &gt; Module ‘Magento_Swatches’:<br>
+bin/magento &gt; Module ‘Magento_SwatchesLayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Tax’:<br>
+bin/magento &gt; Module ‘Magento_TaxImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAdwords’:<br>
+bin/magento &gt; Module ‘Magento_Translation’:<br>
+bin/magento &gt; Module ‘Magento_GoogleOptimizer’:<br>
+bin/magento &gt; Module ‘Magento_Ups’:<br>
+bin/magento &gt; Module ‘Magento_SampleData’:<br>
+bin/magento &gt; Module ‘Magento_CatalogAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Usps’:<br>
+bin/magento &gt; Module ‘Magento_Variable’:<br>
+bin/magento &gt; Module ‘Magento_Braintree’:<br>
+bin/magento &gt; Module ‘Magento_Version’:<br>
+bin/magento &gt; Module ‘Magento_Webapi’:<br>
+bin/magento &gt; Module ‘Magento_WebapiSecurity’:<br>
+bin/magento &gt; Module ‘Magento_Weee’:<br>
+bin/magento &gt; Module ‘Magento_CatalogWidget’:<br>
+bin/magento &gt; Module ‘Dotdigitalgroup_Email’:<br>
+bin/magento &gt; Module ‘Magento_WishlistAnalytics’:<br>
+bin/magento &gt; Module ‘Shopial_Facebook’:<br>
+bin/magento &gt; Module ‘Temando_Shipping’:<br>
+bin/magento &gt; Data post-updates:<br>
+bin/magento &gt; Module ‘Magento_Store’:<br>
+bin/magento &gt; Module ‘Magento_Directory’:<br>
+bin/magento &gt; Module ‘Magento_AdvancedPricingImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Config’:<br>
+bin/magento &gt; Module ‘Magento_Backend’:<br>
+bin/magento &gt; Module ‘Magento_Theme’:<br>
+bin/magento &gt; Running data recurring…bin/magento &gt;<br>
+Module ‘Magento_Eav’:<br>
+bin/magento &gt; Module ‘Magento_Backup’:<br>
+bin/magento &gt; Module ‘Magento_Customer’:<br>
+bin/magento &gt; Module ‘Magento_AdminNotification’:<br>
+bin/magento &gt; Module ‘Magento_BundleImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CacheInvalidate’:<br>
+bin/magento &gt; Module ‘Magento_Indexer’:<br>
+bin/magento &gt; Running data recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Cms’:<br>
+bin/magento &gt; Module ‘Magento_Security’:<br>
+bin/magento &gt; Module ‘Magento_CatalogImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Rule’:<br>
+bin/magento &gt; Module ‘Magento_Cron’:<br>
+bin/magento &gt; Module ‘Magento_Catalog’:<br>
+bin/magento &gt; Module ‘Magento_Search’:<br>
+bin/magento &gt; Module ‘Magento_CatalogUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_Widget’:<br>
+bin/magento &gt; Module ‘Magento_Quote’:<br>
+bin/magento &gt; Module ‘Magento_SalesSequence’:<br>
+bin/magento &gt; Running data recurring…bin/magento &gt;<br>
+bin/magento &gt; Module ‘Magento_Payment’:<br>
+bin/magento &gt; Module ‘Magento_CmsUrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_User’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Msrp’:<br>
+bin/magento &gt; Module ‘Magento_CatalogInventory’:<br>
+bin/magento &gt; Module ‘Magento_Contact’:<br>
+bin/magento &gt; Module ‘Magento_Cookie’:<br>
+bin/magento &gt; Module ‘Magento_Newsletter’:<br>
+bin/magento &gt; Module ‘Magento_CurrencySymbol’:<br>
+bin/magento &gt; Module ‘Magento_Sales’:<br>
+bin/magento &gt; Module ‘Magento_Integration’:<br>
+bin/magento &gt; Module ‘Magento_CustomerImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Deploy’:<br>
+bin/magento &gt; Module ‘Magento_Developer’:<br>
+bin/magento &gt; Module ‘Magento_Dhl’:<br>
+bin/magento &gt; Module ‘Magento_Authorization’:<br>
+bin/magento &gt; Module ‘Magento_Downloadable’:<br>
+bin/magento &gt; Module ‘Magento_ImportExport’:<br>
+bin/magento &gt; Module ‘Magento_Bundle’:<br>
+bin/magento &gt; Module ‘Magento_Email’:<br>
+bin/magento &gt; Module ‘Magento_EncryptionKey’:<br>
+bin/magento &gt; Module ‘Magento_Fedex’:<br>
+bin/magento &gt; Module ‘Magento_GiftMessage’:<br>
+bin/magento &gt; Module ‘Magento_Checkout’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Ui’:<br>
+bin/magento &gt; Module ‘Magento_GroupedImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GroupedProduct’:<br>
+bin/magento &gt; Module ‘Magento_DownloadableImportExport’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRule’:<br>
+bin/magento &gt; Module ‘Magento_InstantPurchase’:<br>
+bin/magento &gt; Module ‘Magento_Analytics’:<br>
+bin/magento &gt; Module ‘Magento_LayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Marketplace’:<br>
+bin/magento &gt; Module ‘Magento_MediaStorage’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProduct’:<br>
+bin/magento &gt; Module ‘Magento_Multishipping’:<br>
+bin/magento &gt; Module ‘Magento_NewRelicReporting’:<br>
+bin/magento &gt; Module ‘Magento_Reports’:<br>
+bin/magento &gt; Module ‘Magento_OfflinePayments’:<br>
+bin/magento &gt; Module ‘Magento_SalesRule’:<br>
+bin/magento &gt; Module ‘Magento_PageCache’:<br>
+bin/magento &gt; Module ‘Magento_Vault’:<br>
+bin/magento &gt; Module ‘Magento_Paypal’:<br>
+bin/magento &gt; Module ‘Magento_Persistent’:<br>
+bin/magento &gt; Module ‘Magento_ProductAlert’:<br>
+bin/magento &gt; Module ‘Magento_ProductVideo’:<br>
+bin/magento &gt; Module ‘Magento_CheckoutAgreements’:<br>
+bin/magento &gt; Module ‘Magento_QuoteAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_ReleaseNotification’:<br>
+bin/magento &gt; Module ‘Magento_Review’:<br>
+bin/magento &gt; Module ‘Magento_RequireJs’:<br>
+bin/magento &gt; Module ‘Magento_Shipping’:<br>
+bin/magento &gt; Module ‘Magento_ReviewAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Robots’:<br>
+bin/magento &gt; Module ‘Magento_Rss’:<br>
+bin/magento &gt; Module ‘Magento_CatalogRuleConfigurable’:<br>
+bin/magento &gt; Module ‘Magento_Captcha’:<br>
+bin/magento &gt; Module ‘Magento_SalesAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SalesInventory’:<br>
+bin/magento &gt; Module ‘Magento_OfflineShipping’:<br>
+bin/magento &gt; Module ‘Magento_ConfigurableProductSales’:<br>
+bin/magento &gt; Module ‘Magento_UrlRewrite’:<br>
+bin/magento &gt; Module ‘Magento_CatalogSearch’:<br>
+bin/magento &gt; Module ‘Magento_CustomerAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_SendFriend’:<br>
+bin/magento &gt; Module ‘Magento_Wishlist’:<br>
+bin/magento &gt; Module ‘Magento_Signifyd’:<br>
+bin/magento &gt; Module ‘Magento_Sitemap’:<br>
+bin/magento &gt; Module ‘Magento_Authorizenet’:<br>
+bin/magento &gt; Module ‘Magento_Swagger’:<br>
+bin/magento &gt; Module ‘Magento_Swatches’:<br>
+bin/magento &gt; Module ‘Magento_SwatchesLayeredNavigation’:<br>
+bin/magento &gt; Module ‘Magento_Tax’:<br>
+bin/magento &gt; Module ‘Magento_TaxImportExport’:<br>
+bin/magento &gt; Module ‘Magento_GoogleAdwords’:<br>
+bin/magento &gt; Module ‘Magento_Translation’:<br>
+bin/magento &gt; Module ‘Magento_GoogleOptimizer’:<br>
+bin/magento &gt; Module ‘Magento_Ups’:<br>
+bin/magento &gt; Module ‘Magento_SampleData’:<br>
+bin/magento &gt; Module ‘Magento_CatalogAnalytics’:<br>
+bin/magento &gt; Module ‘Magento_Usps’:<br>
+bin/magento &gt; Module ‘Magento_Variable’:<br>
+bin/magento &gt; Module ‘Magento_Braintree’:<br>
+bin/magento &gt; Module ‘Magento_Version’:<br>
+bin/magento &gt; Module ‘Magento_Webapi’:<br>
+bin/magento &gt; Module ‘Magento_WebapiSecurity’:<br>
+bin/magento &gt; Module ‘Magento_Weee’:<br>
+bin/magento &gt; Module ‘Magento_CatalogWidget’:<br>
+bin/magento &gt; Module ‘Dotdigitalgroup_Email’:<br>
+bin/magento &gt; Module ‘Magento_WishlistAnalytics’:<br>
+bin/magento &gt; Module ‘Shopial_Facebook’:<br>
+bin/magento &gt; Module ‘Temando_Shipping’:<br>
+bin/magento &gt; Nothing to import.<br>
+Reindex all after installation<br>
+Design Config Grid index has been rebuilt successfully in 00:00:01<br>
+Customer Grid index has been rebuilt successfully in 00:00:03<br>
+Category Products index has been rebuilt successfully in 00:00:01<br>
+Product Categories index has been rebuilt successfully in 00:00:00<br>
+Product Price index has been rebuilt successfully in 00:00:00<br>
+Product EAV index has been rebuilt successfully in 00:00:00<br>
+Stock index has been rebuilt successfully in 00:00:00<br>
+Catalog Rule Product index has been rebuilt successfully in 00:00:02<br>
+Catalog Product Rule index has been rebuilt successfully in 00:00:00<br>
+Catalog Search index has been rebuilt successfully in 00:00:13<br>
+Successfully installed magento{/code}</p>
+<p>At this point, your Magento 2.2.2 is installed and can be accessed at <a href="http://magento.test">http://magento.test</a> or whatever base URL you provided during installation steps.</p>
+<p>You can access the admin panel at <a href="http://magento.test/admin">http://magento.test/admin</a> and credentials would be admin / password123</p>
+<p>10.) Now that Magento 2.2.2 is installed, let’s upgrade it to Magento 2.2.3</p>
+<p><!-- raw HTML omitted -->cd magento<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->composer require magento/product-community-edition 2.2.3 –no-update<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->composer update<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->bin/magento setup:upgrade<!-- raw HTML omitted --></p>
+<p>{code}</p>
+<p>Kalpeshs-MBP:magento kalpesh$ composer require magento/product-community-edition 2.2.3 –no-update<br>
+./composer.json has been updated<br>
+Kalpeshs-MBP:magento kalpesh$ composer update<br>
+Loading composer repositories with package information<br>
+Updating dependencies (including require-dev)<br>
+Package operations: 47 installs, 30 updates, 0 removals<br>
+– Updating tedivm/jshrink (v1.2.0 =&gt; v1.3.0): Downloading (100%)<br>
+– Updating magento/framework (101.0.2 =&gt; 101.0.3): Downloading (100%)<br>
+– Updating magento/module-config (101.0.2 =&gt; 101.0.3): Downloading (100%)<br>
+– Updating magento/module-variable (100.2.1 =&gt; 100.2.2): Downloading (100%)<br>
+– Updating magento/module-ui (101.0.2 =&gt; 101.0.3): Downloading (100%)<br>
+– Updating magento/module-backend (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-eav (101.0.1 =&gt; 101.0.2): Downloading (100%)<br>
+– Updating magento/module-catalog (102.0.2 =&gt; 102.0.3): Downloading (100%)<br>
+– Updating magento/module-theme (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-customer (101.0.2 =&gt; 101.0.3): Downloading (100%)<br>
+– Updating magento/module-tax (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-reports (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-shipping (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-directory (100.2.1 =&gt; 100.2.2): Downloading (100%)<br>
+– Updating magento/module-checkout (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-cms (102.0.2 =&gt; 102.0.3): Downloading (100%)<br>
+– Updating magento/module-downloadable (100.2.1 =&gt; 100.2.2): Downloading (100%)<br>
+– Updating magento/module-newsletter (100.2.1 =&gt; 100.2.2): Downloading (100%)<br>
+– Updating magento/module-review (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-import-export (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating magento/module-backup (100.2.1 =&gt; 100.2.2): Downloading (100%)<br>
+– Updating magento/module-usps (100.2.0 =&gt; 100.2.1): Downloading (100%)<br>
+– Updating magento/module-configurable-product (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating braintree/braintree_php (3.25.0 =&gt; 3.27.0): Downloading (100%)<br>
+– Updating magento/module-braintree (100.2.2 =&gt; 100.2.3): Downloading (100%)<br>
+– Updating ramsey/uuid (3.7.1 =&gt; 3.7.3): Downloading (100%)<br>
+– Updating tubalmartin/cssmin (v4.1.0 =&gt; v4.1.1): Downloading (100%)<br>
+– Updating colinmollenhour/cache-backend-redis (1.10.2 =&gt; 1.10.4): Downloading (100%)<br>
+– Updating magento/magento2-base (2.2.2 =&gt; 2.2.3): Downloading (100%)<br>
+– Installing squizlabs/php_codesniffer (3.1.1): Downloading (100%)<br>
+– Installing lusitanian/oauth (v0.8.10): Downloading (100%)<br>
+– Installing theseer/fdomdocument (1.6.6): Downloading (100%)<br>
+– Installing sebastian/version (2.0.1): Downloading (100%)<br>
+– Installing sebastian/resource-operations (1.0.0): Downloading (100%)<br>
+– Installing sebastian/recursion-context (3.0.0): Downloading (100%)<br>
+– Installing sebastian/object-reflector (1.1.1): Downloading (100%)<br>
+– Installing sebastian/object-enumerator (3.0.3): Downloading (100%)<br>
+– Installing sebastian/global-state (2.0.0): Downloading (100%)<br>
+– Installing sebastian/exporter (3.1.0): Downloading (100%)<br>
+– Installing sebastian/environment (3.1.0): Downloading (100%)<br>
+– Installing sebastian/diff (1.4.3): Downloading (100%)<br>
+– Installing sebastian/comparator (2.0.0): Downloading (100%)<br>
+– Installing doctrine/instantiator (1.1.0): Downloading (100%)<br>
+– Installing phpunit/php-text-template (1.2.1): Downloading (100%)<br>
+– Installing phpunit/phpunit-mock-objects (4.0.4): Downloading (100%)<br>
+– Installing phpunit/php-timer (1.0.9): Downloading (100%)<br>
+– Installing phpunit/php-file-iterator (1.4.5): Downloading (100%)<br>
+– Installing theseer/tokenizer (1.1.0): Downloading (100%)<br>
+– Installing sebastian/code-unit-reverse-lookup (1.0.1): Downloading (100%)<br>
+– Installing phpunit/php-token-stream (2.0.2): Downloading (100%)<br>
+– Installing phpunit/php-code-coverage (5.3.0): Downloading (100%)<br>
+– Installing webmozart/assert (1.3.0): Downloading (100%)<br>
+– Installing phpdocumentor/reflection-common (1.0.1): Downloading (100%)<br>
+– Installing phpdocumentor/type-resolver (0.4.0): Downloading (100%)<br>
+– Installing phpdocumentor/reflection-docblock (4.3.0): Downloading (100%)<br>
+– Installing phpspec/prophecy (1.7.5): Downloading (100%)<br>
+– Installing phar-io/version (1.0.1): Downloading (100%)<br>
+– Installing phar-io/manifest (1.0.1): Downloading (100%)<br>
+– Installing myclabs/deep-copy (1.7.0): Downloading (100%)<br>
+– Installing phpunit/phpunit (6.2.4): Downloading (100%)<br>
+– Installing sebastian/finder-facade (1.2.2): Downloading (100%)<br>
+– Installing sebastian/phpcpd (2.0.4): Downloading (100%)<br>
+– Installing symfony/config (v3.4.6): Downloading (100%)<br>
+– Installing symfony/dependency-injection (v3.4.6): Downloading (100%)<br>
+– Installing pdepend/pdepend (2.5.0): Downloading (100%)<br>
+– Installing phpmd/phpmd (2.6.0): Downloading (100%)<br>
+– Installing symfony/stopwatch (v4.0.6): Downloading (100%)<br>
+– Installing symfony/polyfill-php72 (v1.7.0): Downloading (100%)<br>
+– Installing symfony/polyfill-php70 (v1.7.0): Downloading (100%)<br>
+– Installing ircmaxell/password-compat (v1.0.4): Downloading (100%)<br>
+– Installing symfony/polyfill-php55 (v1.7.0): Downloading (100%)<br>
+– Installing symfony/polyfill-php54 (v1.7.0): Downloading (100%)<br>
+– Installing symfony/options-resolver (v4.0.6): Downloading (100%)<br>
+– Installing doctrine/lexer (v1.0.1): Downloading (100%)<br>
+– Installing doctrine/annotations (v1.6.0): Downloading (100%)<br>
+– Installing friendsofphp/php-cs-fixer (v2.2.18): Downloading (100%)<br>
+lusitanian/oauth suggests installing symfony/http-foundation (Allows using the Symfony Session storage backend.)<br>
+lusitanian/oauth suggests installing predis/predis (Allows using the Redis storage backend.)<br>
+sebastian/global-state suggests installing ext-uopz (*)<br>
+phpunit/php-code-coverage suggests installing ext-xdebug (^2.5.5)<br>
+phpunit/phpunit suggests installing phpunit/php-invoker (^1.1)<br>
+phpunit/phpunit suggests installing ext-xdebug (*)<br>
+symfony/config suggests installing symfony/yaml (To use the yaml reference dumper)<br>
+symfony/dependency-injection suggests installing symfony/expression-language (For using expressions in service container configuration)<br>
+symfony/dependency-injection suggests installing symfony/proxy-manager-bridge (Generate service proxies to lazy load them)<br>
+symfony/dependency-injection suggests installing symfony/yaml ()<br>
+Package sjparkinson/static-review is abandoned, you should avoid using it. Use phpro/grumphp instead.<br>
+Writing lock file<br>
+Generating autoload files</p>
+<p>Kalpeshs-MBP:magento kalpesh$ rm -rf var/cache/* var/page_cache/* generated/*<br>
+Kalpeshs-MBP:magento kalpesh$ bin/magento setup:upgrade<br>
+Cache cleared successfully<br>
+File system cleanup:<br>
+/Users/kalpesh/sites/magento/generated/code/Composer<br>
+/Users/kalpesh/sites/magento/generated/code/Magento<br>
+/Users/kalpesh/sites/magento/generated/code/Symfony<br>
+/Users/kalpesh/sites/magento/pub/static/adminhtml<br>
+/Users/kalpesh/sites/magento/pub/static/deployed_version.txt<br>
+/Users/kalpesh/sites/magento/pub/static/frontend<br>
+/Users/kalpesh/sites/magento/var/view_preprocessed/pub<br>
+Updating modules:<br>
+Schema creation/updates:<br>
+Module ‘Magento_Store’:<br>
+Module ‘Magento_Directory’:<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+Module ‘Magento_Config’:<br>
+Module ‘Magento_Backend’:<br>
+Module ‘Magento_Theme’:<br>
+Module ‘Magento_Eav’:<br>
+Module ‘Magento_Backup’:<br>
+Module ‘Magento_Customer’:<br>
+Module ‘Magento_AdminNotification’:<br>
+Module ‘Magento_BundleImportExport’:<br>
+Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+Module ‘Magento_Cms’:<br>
+Module ‘Magento_Security’:<br>
+Module ‘Magento_CatalogImportExport’:<br>
+Module ‘Magento_Rule’:<br>
+Module ‘Magento_Cron’:<br>
+Module ‘Magento_Catalog’:<br>
+Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Module ‘Magento_Widget’:<br>
+Module ‘Magento_Quote’:<br>
+Module ‘Magento_SalesSequence’:<br>
+Module ‘Magento_Payment’:<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+Module ‘Magento_User’:<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+Module ‘Magento_Msrp’:<br>
+Module ‘Magento_CatalogInventory’:<br>
+Module ‘Magento_Contact’:<br>
+Module ‘Magento_Cookie’:<br>
+Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+Module ‘Magento_Integration’:<br>
+Module ‘Magento_CustomerImportExport’:<br>
+Module ‘Magento_Deploy’:<br>
+Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+Module ‘Magento_Authorization’:<br>
+Module ‘Magento_Downloadable’:<br>
+Module ‘Magento_ImportExport’:<br>
+Module ‘Magento_Bundle’:<br>
+Module ‘Magento_Email’:<br>
+Module ‘Magento_EncryptionKey’:<br>
+Module ‘Magento_Fedex’:<br>
+Module ‘Magento_GiftMessage’:<br>
+Module ‘Magento_Checkout’:<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+Module ‘Magento_Ui’:<br>
+Module ‘Magento_GroupedImportExport’:<br>
+Module ‘Magento_GroupedProduct’:<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+Module ‘Magento_CatalogRule’:<br>
+Module ‘Magento_InstantPurchase’:<br>
+Module ‘Magento_Analytics’:<br>
+Module ‘Magento_LayeredNavigation’:<br>
+Module ‘Magento_Marketplace’:<br>
+Module ‘Magento_MediaStorage’:<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Module ‘Magento_Multishipping’:<br>
+Module ‘Magento_NewRelicReporting’:<br>
+Module ‘Magento_Reports’:<br>
+Module ‘Magento_OfflinePayments’:<br>
+Module ‘Magento_SalesRule’:<br>
+Module ‘Magento_PageCache’:<br>
+Module ‘Magento_Vault’:<br>
+Module ‘Magento_Paypal’:<br>
+Module ‘Magento_Persistent’:<br>
+Module ‘Magento_ProductAlert’:<br>
+Module ‘Magento_ProductVideo’:<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+Module ‘Magento_ReleaseNotification’:<br>
+Module ‘Magento_Review’:<br>
+Module ‘Magento_RequireJs’:<br>
+Module ‘Magento_Shipping’:<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+Module ‘Magento_Robots’:<br>
+Module ‘Magento_Rss’:<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+Module ‘Magento_Captcha’:<br>
+Module ‘Magento_SalesAnalytics’:<br>
+Module ‘Magento_SalesInventory’:<br>
+Module ‘Magento_OfflineShipping’:<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+Module ‘Magento_UrlRewrite’:<br>
+Module ‘Magento_CatalogSearch’:<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+Module ‘Magento_SendFriend’:<br>
+Module ‘Magento_Wishlist’:<br>
+Module ‘Magento_Signifyd’:<br>
+Module ‘Magento_Sitemap’:<br>
+Module ‘Magento_Authorizenet’:<br>
+Module ‘Magento_Swagger’:<br>
+Module ‘Magento_Swatches’:<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+Module ‘Magento_Tax’:<br>
+Module ‘Magento_TaxImportExport’:<br>
+Module ‘Magento_GoogleAdwords’:<br>
+Module ‘Magento_Translation’:<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+Module ‘Magento_Ups’:<br>
+Module ‘Magento_SampleData’:<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+Module ‘Magento_Usps’:<br>
+Module ‘Magento_Variable’:<br>
+Module ‘Magento_Braintree’:<br>
+Module ‘Magento_Version’:<br>
+Module ‘Magento_Webapi’:<br>
+Module ‘Magento_WebapiSecurity’:<br>
+Module ‘Magento_Weee’:<br>
+Module ‘Magento_CatalogWidget’:<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+Module ‘Shopial_Facebook’:<br>
+Module ‘Temando_Shipping’:<br>
+Schema post-updates:<br>
+Module ‘Magento_Store’:<br>
+Module ‘Magento_Directory’:<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+Module ‘Magento_Config’:<br>
+Module ‘Magento_Backend’:<br>
+Module ‘Magento_Theme’:<br>
+Module ‘Magento_Eav’:<br>
+Module ‘Magento_Backup’:<br>
+Module ‘Magento_Customer’:<br>
+Module ‘Magento_AdminNotification’:<br>
+Module ‘Magento_BundleImportExport’:<br>
+Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Cms’:<br>
+Module ‘Magento_Security’:<br>
+Module ‘Magento_CatalogImportExport’:<br>
+Module ‘Magento_Rule’:<br>
+Module ‘Magento_Cron’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Catalog’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Widget’:<br>
+Module ‘Magento_Quote’:<br>
+Module ‘Magento_SalesSequence’:<br>
+Module ‘Magento_Payment’:<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+Module ‘Magento_User’:<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+Module ‘Magento_Msrp’:<br>
+Module ‘Magento_CatalogInventory’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Contact’:<br>
+Module ‘Magento_Cookie’:<br>
+Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+Module ‘Magento_Integration’:<br>
+Running schema recurring…<br>
+Module ‘Magento_CustomerImportExport’:<br>
+Module ‘Magento_Deploy’:<br>
+Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+Module ‘Magento_Authorization’:<br>
+Module ‘Magento_Downloadable’:<br>
+Module ‘Magento_ImportExport’:<br>
+Module ‘Magento_Bundle’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Email’:<br>
+Module ‘Magento_EncryptionKey’:<br>
+Module ‘Magento_Fedex’:<br>
+Module ‘Magento_GiftMessage’:<br>
+Module ‘Magento_Checkout’:<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+Module ‘Magento_Ui’:<br>
+Module ‘Magento_GroupedImportExport’:<br>
+Module ‘Magento_GroupedProduct’:<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+Module ‘Magento_CatalogRule’:<br>
+Module ‘Magento_InstantPurchase’:<br>
+Module ‘Magento_Analytics’:<br>
+Module ‘Magento_LayeredNavigation’:<br>
+Module ‘Magento_Marketplace’:<br>
+Module ‘Magento_MediaStorage’:<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Multishipping’:<br>
+Module ‘Magento_NewRelicReporting’:<br>
+Module ‘Magento_Reports’:<br>
+Running schema recurring…<br>
+Module ‘Magento_OfflinePayments’:<br>
+Module ‘Magento_SalesRule’:<br>
+Module ‘Magento_PageCache’:<br>
+Module ‘Magento_Vault’:<br>
+Module ‘Magento_Paypal’:<br>
+Module ‘Magento_Persistent’:<br>
+Module ‘Magento_ProductAlert’:<br>
+Running schema recurring…<br>
+Module ‘Magento_ProductVideo’:<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+Module ‘Magento_ReleaseNotification’:<br>
+Module ‘Magento_Review’:<br>
+Module ‘Magento_RequireJs’:<br>
+Module ‘Magento_Shipping’:<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+Module ‘Magento_Robots’:<br>
+Module ‘Magento_Rss’:<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+Module ‘Magento_Captcha’:<br>
+Module ‘Magento_SalesAnalytics’:<br>
+Module ‘Magento_SalesInventory’:<br>
+Module ‘Magento_OfflineShipping’:<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+Module ‘Magento_UrlRewrite’:<br>
+Module ‘Magento_CatalogSearch’:<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+Module ‘Magento_SendFriend’:<br>
+Module ‘Magento_Wishlist’:<br>
+Running schema recurring…<br>
+Module ‘Magento_Signifyd’:<br>
+Module ‘Magento_Sitemap’:<br>
+Module ‘Magento_Authorizenet’:<br>
+Module ‘Magento_Swagger’:<br>
+Module ‘Magento_Swatches’:<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+Module ‘Magento_Tax’:<br>
+Module ‘Magento_TaxImportExport’:<br>
+Module ‘Magento_GoogleAdwords’:<br>
+Module ‘Magento_Translation’:<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+Module ‘Magento_Ups’:<br>
+Module ‘Magento_SampleData’:<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+Module ‘Magento_Usps’:<br>
+Module ‘Magento_Variable’:<br>
+Module ‘Magento_Braintree’:<br>
+Module ‘Magento_Version’:<br>
+Module ‘Magento_Webapi’:<br>
+Module ‘Magento_WebapiSecurity’:<br>
+Module ‘Magento_Weee’:<br>
+Running schema recurring…<br>
+Module ‘Magento_CatalogWidget’:<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Running schema recurring…<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+Module ‘Shopial_Facebook’:<br>
+Module ‘Temando_Shipping’:<br>
+Data install/update:<br>
+Module ‘Magento_Store’:<br>
+Module ‘Magento_Directory’:<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+Module ‘Magento_Config’:<br>
+Module ‘Magento_Backend’:<br>
+Module ‘Magento_Theme’:<br>
+Module ‘Magento_Eav’:<br>
+Module ‘Magento_Backup’:<br>
+Module ‘Magento_Customer’:<br>
+Module ‘Magento_AdminNotification’:<br>
+Module ‘Magento_BundleImportExport’:<br>
+Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+Module ‘Magento_Cms’:<br>
+Module ‘Magento_Security’:<br>
+Module ‘Magento_CatalogImportExport’:<br>
+Module ‘Magento_Rule’:<br>
+Module ‘Magento_Cron’:<br>
+Module ‘Magento_Catalog’:<br>
+Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Module ‘Magento_Widget’:<br>
+Module ‘Magento_Quote’:<br>
+Module ‘Magento_SalesSequence’:<br>
+Module ‘Magento_Payment’:<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+Module ‘Magento_User’:<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+Module ‘Magento_Msrp’:<br>
+Module ‘Magento_CatalogInventory’:<br>
+Module ‘Magento_Contact’:<br>
+Module ‘Magento_Cookie’:<br>
+Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+Module ‘Magento_Integration’:<br>
+Module ‘Magento_CustomerImportExport’:<br>
+Module ‘Magento_Deploy’:<br>
+Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+Module ‘Magento_Authorization’:<br>
+Module ‘Magento_Downloadable’:<br>
+Module ‘Magento_ImportExport’:<br>
+Module ‘Magento_Bundle’:<br>
+Module ‘Magento_Email’:<br>
+Module ‘Magento_EncryptionKey’:<br>
+Module ‘Magento_Fedex’:<br>
+Module ‘Magento_GiftMessage’:<br>
+Module ‘Magento_Checkout’:<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+Module ‘Magento_Ui’:<br>
+Module ‘Magento_GroupedImportExport’:<br>
+Module ‘Magento_GroupedProduct’:<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+Module ‘Magento_CatalogRule’:<br>
+Module ‘Magento_InstantPurchase’:<br>
+Module ‘Magento_Analytics’:<br>
+Module ‘Magento_LayeredNavigation’:<br>
+Module ‘Magento_Marketplace’:<br>
+Module ‘Magento_MediaStorage’:<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Module ‘Magento_Multishipping’:<br>
+Module ‘Magento_NewRelicReporting’:<br>
+Module ‘Magento_Reports’:<br>
+Module ‘Magento_OfflinePayments’:<br>
+Module ‘Magento_SalesRule’:<br>
+Module ‘Magento_PageCache’:<br>
+Module ‘Magento_Vault’:<br>
+Module ‘Magento_Paypal’:<br>
+Module ‘Magento_Persistent’:<br>
+Module ‘Magento_ProductAlert’:<br>
+Module ‘Magento_ProductVideo’:<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+Module ‘Magento_ReleaseNotification’:<br>
+Module ‘Magento_Review’:<br>
+Module ‘Magento_RequireJs’:<br>
+Module ‘Magento_Shipping’:<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+Module ‘Magento_Robots’:<br>
+Module ‘Magento_Rss’:<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+Module ‘Magento_Captcha’:<br>
+Module ‘Magento_SalesAnalytics’:<br>
+Module ‘Magento_SalesInventory’:<br>
+Module ‘Magento_OfflineShipping’:<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+Module ‘Magento_UrlRewrite’:<br>
+Module ‘Magento_CatalogSearch’:<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+Module ‘Magento_SendFriend’:<br>
+Module ‘Magento_Wishlist’:<br>
+Module ‘Magento_Signifyd’:<br>
+Module ‘Magento_Sitemap’:<br>
+Module ‘Magento_Authorizenet’:<br>
+Module ‘Magento_Swagger’:<br>
+Module ‘Magento_Swatches’:<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+Module ‘Magento_Tax’:<br>
+Module ‘Magento_TaxImportExport’:<br>
+Module ‘Magento_GoogleAdwords’:<br>
+Module ‘Magento_Translation’:<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+Module ‘Magento_Ups’:<br>
+Module ‘Magento_SampleData’:<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+Module ‘Magento_Usps’:<br>
+Module ‘Magento_Variable’:<br>
+Module ‘Magento_Braintree’:<br>
+Module ‘Magento_Version’:<br>
+Module ‘Magento_Webapi’:<br>
+Module ‘Magento_WebapiSecurity’:<br>
+Module ‘Magento_Weee’:<br>
+Module ‘Magento_CatalogWidget’:<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+Module ‘Shopial_Facebook’:<br>
+Module ‘Temando_Shipping’:<br>
+Data post-updates:<br>
+Module ‘Magento_Store’:<br>
+Module ‘Magento_Directory’:<br>
+Module ‘Magento_AdvancedPricingImportExport’:<br>
+Module ‘Magento_Config’:<br>
+Module ‘Magento_Backend’:<br>
+Module ‘Magento_Theme’:<br>
+Running data recurring…<br>
+Module ‘Magento_Eav’:<br>
+Module ‘Magento_Backup’:<br>
+Module ‘Magento_Customer’:<br>
+Module ‘Magento_AdminNotification’:<br>
+Module ‘Magento_BundleImportExport’:<br>
+Module ‘Magento_CacheInvalidate’:<br>
+Module ‘Magento_Indexer’:<br>
+Running data recurring…<br>
+Module ‘Magento_Cms’:<br>
+Module ‘Magento_Security’:<br>
+Module ‘Magento_CatalogImportExport’:<br>
+Module ‘Magento_Rule’:<br>
+Module ‘Magento_Cron’:<br>
+Module ‘Magento_Catalog’:<br>
+Module ‘Magento_Search’:<br>
+Module ‘Magento_CatalogUrlRewrite’:<br>
+Module ‘Magento_Widget’:<br>
+Module ‘Magento_Quote’:<br>
+Module ‘Magento_SalesSequence’:<br>
+Running data recurring…<br>
+Module ‘Magento_Payment’:<br>
+Module ‘Magento_CmsUrlRewrite’:<br>
+Module ‘Magento_User’:<br>
+Module ‘Magento_ConfigurableImportExport’:<br>
+Module ‘Magento_Msrp’:<br>
+Module ‘Magento_CatalogInventory’:<br>
+Module ‘Magento_Contact’:<br>
+Module ‘Magento_Cookie’:<br>
+Module ‘Magento_Newsletter’:<br>
+Module ‘Magento_CurrencySymbol’:<br>
+Module ‘Magento_Sales’:<br>
+Module ‘Magento_Integration’:<br>
+Module ‘Magento_CustomerImportExport’:<br>
+Module ‘Magento_Deploy’:<br>
+Module ‘Magento_Developer’:<br>
+Module ‘Magento_Dhl’:<br>
+Module ‘Magento_Authorization’:<br>
+Module ‘Magento_Downloadable’:<br>
+Module ‘Magento_ImportExport’:<br>
+Module ‘Magento_Bundle’:<br>
+Module ‘Magento_Email’:<br>
+Module ‘Magento_EncryptionKey’:<br>
+Module ‘Magento_Fedex’:<br>
+Module ‘Magento_GiftMessage’:<br>
+Module ‘Magento_Checkout’:<br>
+Module ‘Magento_GoogleAnalytics’:<br>
+Module ‘Magento_Ui’:<br>
+Module ‘Magento_GroupedImportExport’:<br>
+Module ‘Magento_GroupedProduct’:<br>
+Module ‘Magento_DownloadableImportExport’:<br>
+Module ‘Magento_CatalogRule’:<br>
+Module ‘Magento_InstantPurchase’:<br>
+Module ‘Magento_Analytics’:<br>
+Module ‘Magento_LayeredNavigation’:<br>
+Module ‘Magento_Marketplace’:<br>
+Module ‘Magento_MediaStorage’:<br>
+Module ‘Magento_ConfigurableProduct’:<br>
+Module ‘Magento_Multishipping’:<br>
+Module ‘Magento_NewRelicReporting’:<br>
+Module ‘Magento_Reports’:<br>
+Module ‘Magento_OfflinePayments’:<br>
+Module ‘Magento_SalesRule’:<br>
+Module ‘Magento_PageCache’:<br>
+Module ‘Magento_Vault’:<br>
+Module ‘Magento_Paypal’:<br>
+Module ‘Magento_Persistent’:<br>
+Module ‘Magento_ProductAlert’:<br>
+Module ‘Magento_ProductVideo’:<br>
+Module ‘Magento_CheckoutAgreements’:<br>
+Module ‘Magento_QuoteAnalytics’:<br>
+Module ‘Magento_ReleaseNotification’:<br>
+Module ‘Magento_Review’:<br>
+Module ‘Magento_RequireJs’:<br>
+Module ‘Magento_Shipping’:<br>
+Module ‘Magento_ReviewAnalytics’:<br>
+Module ‘Magento_Robots’:<br>
+Module ‘Magento_Rss’:<br>
+Module ‘Magento_CatalogRuleConfigurable’:<br>
+Module ‘Magento_Captcha’:<br>
+Module ‘Magento_SalesAnalytics’:<br>
+Module ‘Magento_SalesInventory’:<br>
+Module ‘Magento_OfflineShipping’:<br>
+Module ‘Magento_ConfigurableProductSales’:<br>
+Module ‘Magento_UrlRewrite’:<br>
+Module ‘Magento_CatalogSearch’:<br>
+Module ‘Magento_CustomerAnalytics’:<br>
+Module ‘Magento_SendFriend’:<br>
+Module ‘Magento_Wishlist’:<br>
+Module ‘Magento_Signifyd’:<br>
+Module ‘Magento_Sitemap’:<br>
+Module ‘Magento_Authorizenet’:<br>
+Module ‘Magento_Swagger’:<br>
+Module ‘Magento_Swatches’:<br>
+Module ‘Magento_SwatchesLayeredNavigation’:<br>
+Module ‘Magento_Tax’:<br>
+Module ‘Magento_TaxImportExport’:<br>
+Module ‘Magento_GoogleAdwords’:<br>
+Module ‘Magento_Translation’:<br>
+Module ‘Magento_GoogleOptimizer’:<br>
+Module ‘Magento_Ups’:<br>
+Module ‘Magento_SampleData’:<br>
+Module ‘Magento_CatalogAnalytics’:<br>
+Module ‘Magento_Usps’:<br>
+Module ‘Magento_Variable’:<br>
+Module ‘Magento_Braintree’:<br>
+Module ‘Magento_Version’:<br>
+Module ‘Magento_Webapi’:<br>
+Module ‘Magento_WebapiSecurity’:<br>
+Module ‘Magento_Weee’:<br>
+Module ‘Magento_CatalogWidget’:<br>
+Module ‘Dotdigitalgroup_Email’:<br>
+Module ‘Magento_WishlistAnalytics’:<br>
+Module ‘Shopial_Facebook’:<br>
+Module ‘Temando_Shipping’:<br>
+Nothing to import.</p>
+<p>{/code}</p>
+<p>That’s it! Your Magento 2.2.3 is now ready on Valet+</p>
+<p>You can access your frontend at: <a href="http://magento.test">http://magento.test</a></p>
+<p>Admin: <a href="http://magento.test/admin">http://magento.test/admin</a></p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento2/">#magento2</a>
+  
+    <a class="blog-tags" href="/blog/valet/">#valet&#43;</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Setting%20up%20Magento%202.2.3%20on%20Valet%2b%20%28requires%20MacOS%29"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

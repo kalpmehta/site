@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Session on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/session/</link>
+    <description>Recent content in Session on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 02 Sep 2014 17:28:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/session/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento set session cookie lifetime to 1 day</title>
+      <link>http://localhost:1313/magento-set-session-cookie-lifetime-to-1-day/</link>
+      <pubDate>Tue, 02 Sep 2014 17:28:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-set-session-cookie-lifetime-to-1-day/</guid>
+      <description>&lt;p&gt;Is your Magento shopping cart kicking out all the items after 24 minutes? Are you frustrated because your customer’s cart items are getting flushed every few hours even though you have correct setting in Magento? Do you want to increase your shopping cart sessions to last for 1 day (or anything you wish)?&lt;/p&gt;&#xA;&lt;p&gt;Here are the things to look for to increase/decrease Magento’s session cookie lifetime.&lt;/p&gt;&#xA;&lt;p&gt;In your php.ini file:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; session.gc_maxlifetime 86400&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;If you have not changed this, it should be by default 1440 i.e. 24 minutes. Change it to 86400 for one day session lifetime&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Is your Magento shopping cart kicking out all the items after 24 minutes? Are you frustrated because your customer’s cart items are getting flushed every few hours even though you have correct setting in Magento? Do you want to increase your shopping cart sessions to last for 1 day (or anything you wish)?</p>
+<p>Here are the things to look for to increase/decrease Magento’s session cookie lifetime.</p>
+<p>In your php.ini file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> session.gc_maxlifetime 86400</span></span></span></code></pre></div><br>
+If you have not changed this, it should be by default 1440 i.e. 24 minutes. Change it to 86400 for one day session lifetime</p>
+<p>In your Magento admin:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> System -&gt; Configuration -&gt; Checkout -&gt; Shopping Cart  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Quote Lifetime (days) -&gt; 1</span></span></span></code></pre></div></p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> System -&gt; Configuration -&gt; Web -&gt; Session Cookie Management  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Cookie Lifetime -&gt; 86400</span></span></span></code></pre></div>
+<p>Make sure to check if you are in correct website/store if using multi-website/multi-store Magento setup. You can change the scope by changing the website/store from the upper left Store Switcher drop down in System -&gt; Configuration screen.</p>
+<p>If you are changing php.ini value, make sure you reload apache to reflect the changes.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento remove session id from URL</title>
+      <link>http://localhost:1313/magento-remove-session-id-from-url/</link>
+      <pubDate>Sun, 03 Nov 2013 20:00:28 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-remove-session-id-from-url/</guid>
+      <description>&lt;p&gt;Magento displays session ID in url, something like:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; http://loca.lho.st?__SID=2wewesfdgfsdm&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;You can remove this in two ways:&lt;/p&gt;&#xA;&lt;p&gt;1. Go to your &lt;strong&gt;Magento admin panel &amp;gt; System &amp;gt; Configuration &amp;gt; Web&lt;/strong&gt;.&lt;br&gt;&#xA;Under Session Validation Settings, set “No” against label “Use SID on the Frontend”.&lt;br&gt;&#xA;If this doesn’t work, then move to option two below.&lt;/p&gt;&#xA;&lt;p&gt;2. Edit the file at &lt;strong&gt;app/code/core/Mage/Core/Model/App.php&lt;/strong&gt; (somewhere around line 222),&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;protected&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$_useSessionInUrl&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;Change that value to “false”. That should now prevent session IDs appearing in URL.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento displays session ID in url, something like:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> http://loca.lho.st?__SID=2wewesfdgfsdm</span></span></span></code></pre></div></p>
+<p>You can remove this in two ways:</p>
+<p>1. Go to your <strong>Magento admin panel &gt; System &gt; Configuration &gt; Web</strong>.<br>
+Under Session Validation Settings, set “No” against label “Use SID on the Frontend”.<br>
+If this doesn’t work, then move to option two below.</p>
+<p>2. Edit the file at <strong>app/code/core/Mage/Core/Model/App.php</strong> (somewhere around line 222),<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">protected</span> <span style="color:#b8860b">$_useSessionInUrl</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">true</span>;</span></span></code></pre></div><br>
+Change that value to “false”. That should now prevent session IDs appearing in URL.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Get and set variables in session</title>
+      <link>http://localhost:1313/magento-get-and-set-variables-in-session/</link>
+      <pubDate>Sun, 19 Jun 2011 07:56:21 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-and-set-variables-in-session/</guid>
+      <description>&lt;p&gt;Suppose you want to set data in the magento session, so that you can retrieve it from other pages. Session has been very useful global variable in PHP and using it we can easily retrieve and add data to it and get it from the entire site.&lt;/p&gt;&#xA;&lt;p&gt;Here is the code that will set / add your custom data into session.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSingleton&lt;/span&gt;(‘core&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;session’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setMyCustomData&lt;/span&gt;(‘blah’);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;here, setMyCustomData can be replaced with the meaningful name as per your need. One thing to be cautious while setting session variables is to make sure it doesn’t conflict with magento’s internal variables, example setData.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Suppose you want to set data in the magento session, so that you can retrieve it from other pages. Session has been very useful global variable in PHP and using it we can easily retrieve and add data to it and get it from the entire site.</p>
+<p>Here is the code that will set / add your custom data into session.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘core<span style="color:#666">/</span>session’)<span style="color:#666">-&gt;</span><span style="color:#b44">setMyCustomData</span>(‘blah’);</span></span></code></pre></div></p>
+<p>here, setMyCustomData can be replaced with the meaningful name as per your need. One thing to be cautious while setting session variables is to make sure it doesn’t conflict with magento’s internal variables, example setData.</p>
+<p>Code to retrieve the session variable<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$session</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘core<span style="color:#666">/</span>session’, <span style="color:#a2f;font-weight:bold">array</span>(‘name’ <span style="color:#666">=&gt;</span> ‘frontend’));  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getMyCustomData</span>();</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Checking customer/admin is logged in or not</title>
+      <link>http://localhost:1313/magento-checking-customer/admin-is-logged-in-or-not/</link>
+      <pubDate>Sun, 19 Jun 2011 07:07:47 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-checking-customer/admin-is-logged-in-or-not/</guid>
+      <description>&lt;p&gt;The most important part in magento development is to check whether customer is logged in or not in the system. So that you can show specific features and extra privileges to your customers. There are many things that are restricted to the guests, while members can see the special privilege things.&lt;/p&gt;&#xA;&lt;p&gt;Also if the customer is not logged in, we can show a link like “Log in”; while for logged in customers, we can show link like “Log out”, “My account”, etc. This is already present in Magento, but we may want to add more features to our customers. So here is the code where you can check customer is logged in or not.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>The most important part in magento development is to check whether customer is logged in or not in the system. So that you can show specific features and extra privileges to your customers. There are many things that are restricted to the guests, while members can see the special privilege things.</p>
+<p>Also if the customer is not logged in, we can show a link like “Log in”; while for logged in customers, we can show link like “Log out”, “My account”, etc. This is already present in Magento, but we may want to add more features to our customers. So here is the code where you can check customer is logged in or not.</p>
+<p>This will check whether the customer is logged in the magento system or not.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$session</span><span style="color:#666">=</span>Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘customer<span style="color:#666">/</span>session’, <span style="color:#a2f;font-weight:bold">array</span>(‘name’<span style="color:#666">=&gt;</span>’frontend’) );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">isLoggedIn</span>()) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Welcome, “<span style="color:#666">.</span><span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCustomer</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>();  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Not logged in”;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>This will check whether admin is logged in or not in a magento site.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$adminsession</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘admin<span style="color:#666">/</span>session’, <span style="color:#a2f;font-weight:bold">array</span>(‘name’<span style="color:#666">=&gt;</span>’adminhtml’));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$adminsession</span><span style="color:#666">-&gt;</span><span style="color:#b44">isLoggedIn</span>()) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Welcome Admin”;  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “Not logged in”;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

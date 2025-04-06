@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lazy Loading on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/lazy-loading/</link>
+    <description>Recent content in Lazy Loading on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 25 Feb 2013 11:06:20 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/lazy-loading/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Design Patterns</title>
+      <link>http://localhost:1313/magento-design-patterns/</link>
+      <pubDate>Mon, 25 Feb 2013 11:06:20 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-design-patterns/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Factory:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It implement the concept of factories and deals with the problem of creating objects without specifying the exact class of object that will be created.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$product&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘catalog&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;product’);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Singleton:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It restricts the instantiation of a class to one object. It will refer to same object each time called.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$category&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSingleton&lt;/span&gt;(‘catalog&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;session’);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Registry:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It is a way to store information throughout your application.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;register&lt;/span&gt;(‘key’,&lt;span style=&#34;color:#b8860b&#34;&gt;$value&lt;/span&gt;); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//stores  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$currentCategory&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;registry&lt;/span&gt;(‘key’); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//retrives&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Prototype:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;It determines the type of object to create. In Magento it can be Simple, Configurable, Grouped, Bundle, Downloadable or Virtual types.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;:&lt;/span&gt;getModel(‘catalog&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;product’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getTypeInstance&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>Factory:</strong></p>
+<p>It implement the concept of factories and deals with the problem of creating objects without specifying the exact class of object that will be created.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$product</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’);</span></span></code></pre></div></p>
+<p><strong>Singleton:</strong></p>
+<p>It restricts the instantiation of a class to one object. It will refer to same object each time called.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$category</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘catalog<span style="color:#666">/</span>session’);</span></span></code></pre></div></p>
+<p><strong>Registry:</strong></p>
+<p>It is a way to store information throughout your application.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">register</span>(‘key’,<span style="color:#b8860b">$value</span>); <span style="color:#080;font-style:italic">//stores  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$currentCategory</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">registry</span>(‘key’); <span style="color:#080;font-style:italic">//retrives
+</span></span></span></code></pre></div></p>
+<p><strong>Prototype:</strong></p>
+<p>It determines the type of object to create. In Magento it can be Simple, Configurable, Grouped, Bundle, Downloadable or Virtual types.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">:</span>getModel(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">getTypeInstance</span>();</span></span></code></pre></div></p>
+<p><strong>Observer:</strong></p>
+<p>It is mainly used to implement distributed event handling systems. Here the subject maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">dispatchEvent</span>(‘event_name’, <span style="color:#a2f;font-weight:bold">array</span>(‘key’<span style="color:#666">=&gt;</span><span style="color:#b8860b">$value</span>));</span></span></code></pre></div></p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;config&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;global&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;events&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;event_name&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;observers&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;unique_name&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;class&gt;</span>Class_Name<span style="color:#008000;font-weight:bold">&lt;/class&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;method&gt;</span>methodName<span style="color:#008000;font-weight:bold">&lt;/method&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/unique_name&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/observers&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/event_name&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/events&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/global&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;/config&gt;</span></span></span></code></pre></div>
+<p><strong>Object Pool:</strong></p>
+<p>It is used to reuse and share objects that are expensive to create.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$id</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">objects</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">save</span>(<span style="color:#b8860b">$object</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$object</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">objects</span>(<span style="color:#b8860b">$id</span>);</span></span></code></pre></div></p>
+<p><strong>Iterator:</strong></p>
+<p>It is used to traverse a collection and access the collection’s items.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">getCollection</span>();</span></span></code></pre></div></p>
+<p><strong>Lazy Loading:</strong></p>
+<p>It is used to defer initialization of an object until the point at which it is needed.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$collection_of_products</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)  
+</span></span><span style="display:flex;"><span><span style="color:#666">-&gt;</span><span style="color:#b44">getCollection</span>();</span></span></code></pre></div></p>
+<p><strong>Decorator:</strong></p>
+<p>It is used to extend or modify the behaviour of an object at runtime.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">script</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text/javascript&#34;</span>&gt;decorateTable(<span style="color:#b44">&#39;product_comparison&#39;</span>);&lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;</span></span></code></pre></div></p>
+<p><strong>Helper:</strong></p>
+<p>Multiple methods are available for use by other objects. Here you can use core’s helper methods from anywhere in the application.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">helper</span>(‘core’);</span></span></code></pre></div></p>
+<p><strong>Service Locator:</strong></p>
+<p>Allows overrides or renamed physical resources (e.g. Classes, DB tables, etc)<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’) <span style="color:#a2f;font-weight:bold">and</span> <span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">getTable</span>(‘customer<span style="color:#666">/</span>address_entity’);</span></span></code></pre></div></p>
+<p>Thanks to contributors at: <a href="http://stackoverflow.com/questions/5041473/magento-design-patterns">http://stackoverflow.com/questions/5041473/magento-design-patterns</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Getting back shopping cart items after order fails | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Getting back shopping cart items after order fails" />
+<meta name="description" content="It’s very awkward if users place an order in your website and by chance the order fails, from end user side or some technical glitch, shopping cart becomes empty. User have to again add items in cart and go through the process which becomes tedious and may be changing their mind to shop.
+So here’s a code that does the trick and preserves shopping cart content even if order gets failed.
+Open your file where you’re handling your order failure action in frontend. (generally Mage/Checkout/controllers/OnepageController.php)
+{code type=php}public function failureAction()
+{
+$lastQuoteId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastQuoteId();
+$lastOrderId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastOrderId();" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="checkout,magento,order fails,preserve cart,restore cart," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Getting back shopping cart items after order fails" />
+<meta property="og:description" content="It’s very awkward if users place an order in your website and by chance the order fails, from end user side or some technical glitch, shopping cart becomes empty. User have to again add items in cart and go through the process which becomes tedious and may be changing their mind to shop.
+So here’s a code that does the trick and preserves shopping cart content even if order gets failed.
+Open your file where you’re handling your order failure action in frontend. (generally Mage/Checkout/controllers/OnepageController.php)
+{code type=php}public function failureAction()
+{
+$lastQuoteId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastQuoteId();
+$lastOrderId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastOrderId();" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2011-12-31-magento-getting-back-shopping-cart-items-after-order-fails/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_86c79f067dd3f195.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2011-12-31T12:09:56+00:00" />
+<meta property="article:modified_time" content="2011-12-31T12:09:56+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_86c79f067dd3f195.webp"/>
+<meta name="twitter:title" content="Magento: Getting back shopping cart items after order fails"/>
+<meta name="twitter:description" content="It’s very awkward if users place an order in your website and by chance the order fails, from end user side or some technical glitch, shopping cart becomes empty. User have to again add items in cart and go through the process which becomes tedious and may be changing their mind to shop.
+So here’s a code that does the trick and preserves shopping cart content even if order gets failed.
+Open your file where you’re handling your order failure action in frontend. (generally Mage/Checkout/controllers/OnepageController.php)
+{code type=php}public function failureAction()
+{
+$lastQuoteId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastQuoteId();
+$lastOrderId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastOrderId();"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Getting back shopping cart items after order fails">
+<meta itemprop="description" content="It’s very awkward if users place an order in your website and by chance the order fails, from end user side or some technical glitch, shopping cart becomes empty. User have to again add items in cart and go through the process which becomes tedious and may be changing their mind to shop.
+So here’s a code that does the trick and preserves shopping cart content even if order gets failed.
+Open your file where you’re handling your order failure action in frontend. (generally Mage/Checkout/controllers/OnepageController.php)
+{code type=php}public function failureAction()
+{
+$lastQuoteId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastQuoteId();
+$lastOrderId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastOrderId();"><meta itemprop="datePublished" content="2011-12-31T12:09:56+00:00" />
+<meta itemprop="dateModified" content="2011-12-31T12:09:56+00:00" />
+<meta itemprop="wordCount" content="178">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_86c79f067dd3f195.webp"/>
+
+
+<meta itemprop="keywords" content="checkout,magento,order fails,preserve cart,restore cart," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Getting back shopping cart items after order fails</h1>
+<p class="byline">
+  <time datetime='2011-12-31' pubdate>
+    2011-12-31
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>It’s very awkward if users place an order in your website and by chance the order fails, from end user side or some technical glitch, shopping cart becomes empty. User have to again add items in cart and go through the process which becomes tedious and may be changing their mind to shop.</p>
+<p>So here’s a code that does the trick and preserves shopping cart content even if order gets failed.<br>
+Open your file where you’re handling your order failure action in frontend. (generally <strong>Mage/Checkout/controllers/OnepageController.php</strong>)<br>
+{code type=php}public function failureAction()<br>
+{<br>
+$lastQuoteId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastQuoteId();<br>
+$lastOrderId = $this-&gt;getOnepage()-&gt;getCheckout()-&gt;getLastOrderId();</p>
+<p>if ($lastQuoteId &amp;&amp; $lastOrderId) {<br>
+$orderModel = Mage::getModel(‘sales/order’)-&gt;load($lastOrderId);<br>
+if($orderModel-&gt;canCancel()) {</p>
+<p>$quote = Mage::getModel(‘sales/quote’)-&gt;load($lastQuoteId);<br>
+$quote-&gt;setIsActive(true)-&gt;save();</p>
+<p>$orderModel-&gt;cancel();<br>
+$orderModel-&gt;setStatus(‘canceled’);<br>
+$orderModel-&gt;save();</p>
+<p>Mage::getSingleton(‘core/session’)-&gt;setFailureMsg(‘order_failed’);<br>
+Mage::getSingleton(‘checkout/session’)-&gt;setFirstTimeChk(‘0’);<br>
+$this-&gt;_redirect(‘kcheckout/index/payment’, array(“_forced_secure” =&gt; true));<br>
+return;<br>
+}<br>
+}<br>
+if (!$lastQuoteId || !$lastOrderId) {<br>
+$this-&gt;_redirect(‘checkout/cart’, array(“_forced_secure” =&gt; true));<br>
+return;<br>
+}</p>
+<p>$this-&gt;loadLayout();<br>
+$this-&gt;renderLayout();<br>
+}{/code}</p>
+<p>Be noted here that we don’t have here onepage checkout so we’re redirecting user to payment page after restoring the cart. You can redirect user to any page as per your need after the cart is restored and previous order is cancelled.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/checkout/">#checkout</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/order-fails/">#order fails</a>
+  
+    <a class="blog-tags" href="/blog/preserve-cart/">#preserve cart</a>
+  
+    <a class="blog-tags" href="/blog/restore-cart/">#restore cart</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Getting%20back%20shopping%20cart%20items%20after%20order%20fails"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

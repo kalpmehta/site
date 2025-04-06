@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Submitting form in admin redirects to dashboard | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento: Submitting form in admin redirects to dashboard" />
+<meta name="description" content="When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="form redirects dashboard,magento form post,magento form redirection," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2012-09-13-magento-submitting-form-in-admin-redirects-to-dashboard/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento: Submitting form in admin redirects to dashboard">
+  <meta property="og:description" content="When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-09-13T09:16:15+00:00">
+    <meta property="article:modified_time" content="2012-09-13T09:16:15+00:00">
+    <meta property="article:tag" content="Form Redirects Dashboard">
+    <meta property="article:tag" content="Magento Form Post">
+    <meta property="article:tag" content="Magento Form Redirection">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento: Submitting form in admin redirects to dashboard">
+  <meta name="twitter:description" content="When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.">
+
+
+  
+  
+  <meta itemprop="name" content="Magento: Submitting form in admin redirects to dashboard">
+  <meta itemprop="description" content="When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.">
+  <meta itemprop="datePublished" content="2012-09-13T09:16:15+00:00">
+  <meta itemprop="dateModified" content="2012-09-13T09:16:15+00:00">
+  <meta itemprop="wordCount" content="139">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Form Redirects Dashboard,Magento Form Post,Magento Form Redirection">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Submitting form in admin redirects to dashboard</h1>
+<p class="byline">
+  <time datetime='2012-09-13' pubdate>
+    2012-09-13
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.</p>
+<p>Finally, got one forum where I found the solution to this problem. In Magento, when submitting the form, you need to have one extra hidden field, with name “form_key” which should have form’s key value from session. Here is the line of code, which helped me in posting form successfully.</p>
+<p>{code type=php}&lt;input name=&ldquo;form_key&rdquo; type=&ldquo;hidden&rdquo; value=&quot;<!-- raw HTML omitted -->” /&gt; {/code}<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/form-redirects-dashboard/">#form redirects dashboard</a>
+  
+    <a class="blog-tags" href="/blog/magento-form-post/">#magento form post</a>
+  
+    <a class="blog-tags" href="/blog/magento-form-redirection/">#magento form redirection</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

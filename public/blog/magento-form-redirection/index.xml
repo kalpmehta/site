@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Form Redirection on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-form-redirection/</link>
+    <description>Recent content in Magento Form Redirection on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 13 Sep 2012 09:16:15 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-form-redirection/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Submitting form in admin redirects to dashboard</title>
+      <link>http://localhost:1313/magento-submitting-form-in-admin-redirects-to-dashboard/</link>
+      <pubDate>Thu, 13 Sep 2012 09:16:15 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-submitting-form-in-admin-redirects-to-dashboard/</guid>
+      <description>&lt;p&gt;When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>When trying to submit a form which is created in admin, it redirects to dashboard no matter how much you try. I faced this problem and tried many things but without any luck. Everything was running, for file upload I had enctype=”multipart/form-data” in form, checked the form action through firebug and run it directly in browser URL which was also going good. After so much frustration, googled the problem and found that I was not the only one to face this problem.</p>
+<p>Finally, got one forum where I found the solution to this problem. In Magento, when submitting the form, you need to have one extra hidden field, with name “form_key” which should have form’s key value from session. Here is the line of code, which helped me in posting form successfully.</p>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;</span>input name<span style="color:#666">=</span><span style="color:#b44">&#34;form_key&#34;</span> type<span style="color:#666">=</span><span style="color:#b44">&#34;hidden&#34;</span> value<span style="color:#666">=</span><span style="color:#b44">&#34;&lt;?php echo Mage::getSingleton(&#39;core/session&#39;)-&gt;getFormKey() ?&gt;” /&gt; 
+</span></span></span></code></pre></div><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

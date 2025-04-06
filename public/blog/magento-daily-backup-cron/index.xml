@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Daily Backup Cron on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-daily-backup-cron/</link>
+    <description>Recent content in Magento Daily Backup Cron on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 02 Feb 2013 20:18:58 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-daily-backup-cron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Create database backups daily programatically by cron</title>
+      <link>http://localhost:1313/magento-create-database-backups-daily-programatically-by-cron/</link>
+      <pubDate>Sat, 02 Feb 2013 20:18:58 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-create-database-backups-daily-programatically-by-cron/</guid>
+      <description>&lt;p&gt;It’s a good practice to create your database backup every day/week. But to manually go to Magento admin and create backup daily is a cumbersome process. You can’t guarantee that your database will be secure especially if you are on a cloud storage. Backups are MUST and if it’s automated, life becomes very easier.&lt;/p&gt;&#xA;&lt;p&gt;This code will create backup of your Magento DB and place it to var/backups directory.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#00a000&#34;&gt;backup&lt;/span&gt;()  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;try&lt;/span&gt; {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$backupDb&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘backup&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;db’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$backup&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘backup&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;backup’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setTime&lt;/span&gt;(time())  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setType&lt;/span&gt;(‘db’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setPath&lt;/span&gt;(Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getBaseDir&lt;/span&gt;(“var”) &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; DS &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; “backups”);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$backupDb&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;createBackup&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$backup&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;return&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;helper&lt;/span&gt;(‘core’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;__&lt;/span&gt;(‘Backup successfully created’);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; } &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;catch&lt;/span&gt; (Exception &lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;logException&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$e&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It’s a good practice to create your database backup every day/week. But to manually go to Magento admin and create backup daily is a cumbersome process. You can’t guarantee that your database will be secure especially if you are on a cloud storage. Backups are MUST and if it’s automated, life becomes very easier.</p>
+<p>This code will create backup of your Magento DB and place it to var/backups directory.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">backup</span>()  
+</span></span><span style="display:flex;"><span>{  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">try</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$backupDb</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘backup<span style="color:#666">/</span>db’);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$backup</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘backup<span style="color:#666">/</span>backup’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setTime</span>(time())  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setType</span>(‘db’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setPath</span>(Mage<span style="color:#666">::</span><span style="color:#b44">getBaseDir</span>(“var”) <span style="color:#666">.</span> DS <span style="color:#666">.</span> “backups”);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$backupDb</span><span style="color:#666">-&gt;</span><span style="color:#b44">createBackup</span>(<span style="color:#b8860b">$backup</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> Mage<span style="color:#666">::</span><span style="color:#b44">helper</span>(‘core’)<span style="color:#666">-&gt;</span><span style="color:#b44">__</span>(‘Backup successfully created’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> } <span style="color:#a2f;font-weight:bold">catch</span> (Exception <span style="color:#b8860b">$e</span>) {  
+</span></span><span style="display:flex;"><span> Mage<span style="color:#666">::</span><span style="color:#b44">logException</span>(<span style="color:#b8860b">$e</span>);  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$this</span>;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>Now, you can set the cron to run every midnight and call this above method to automatically create your DB backups. Sounds good? But there is a problem. As Magento DB size is huge, running daily/weekly backups will soon fill up your hardrives like hell.</p>
+<p>So, we will now first create new DB database backup through our above method, and after it’s created we will delete the older backups just to free up the disk space.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">endsWith</span>(<span style="color:#b8860b">$haystack</span>, <span style="color:#b8860b">$needle</span>)  
+</span></span><span style="display:flex;"><span>{  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$length</span> <span style="color:#666">=</span> strlen(<span style="color:#b8860b">$needle</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$length</span> <span style="color:#666">==</span> <span style="color:#666">0</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#a2f;font-weight:bold">true</span>;  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> (substr(<span style="color:#b8860b">$haystack</span>, <span style="color:#666">-</span><span style="color:#b8860b">$length</span>) <span style="color:#666">===</span> <span style="color:#b8860b">$needle</span>);  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">backup</span>()  
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//get all the older db backup files in an array  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$filelist</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$handle</span> <span style="color:#666">=</span> opendir(Mage<span style="color:#666">::</span><span style="color:#b44">getBaseDir</span>(‘var’) <span style="color:#666">.</span> DS <span style="color:#666">.</span> “backups” <span style="color:#666">.</span> DS)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">while</span> (<span style="color:#b8860b">$entry</span> <span style="color:#666">=</span> readdir(<span style="color:#b8860b">$handle</span>)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">endsWith</span>(<span style="color:#b8860b">$entry</span>, “_db<span style="color:#666">.</span>gz”)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$filelist</span>[] <span style="color:#666">=</span> <span style="color:#b8860b">$entry</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> closedir(<span style="color:#b8860b">$handle</span>);  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">try</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//create the db backup  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$backupDb</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘backup<span style="color:#666">/</span>db’);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$backup</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘backup<span style="color:#666">/</span>backup’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setTime</span>(time())  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setType</span>(‘db’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">setPath</span>(Mage<span style="color:#666">::</span><span style="color:#b44">getBaseDir</span>(“var”) <span style="color:#666">.</span> DS <span style="color:#666">.</span> “backups”);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$backupDb</span><span style="color:#666">-&gt;</span><span style="color:#b44">createBackup</span>(<span style="color:#b8860b">$backup</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//delete all older db backup files we found  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#a2f;font-weight:bold">foreach</span>((<span style="color:#a2f;font-weight:bold">array</span>)<span style="color:#b8860b">$filelist</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$fileToDelete</span>) {  
+</span></span><span style="display:flex;"><span> unlink(Mage<span style="color:#666">::</span><span style="color:#b44">getBaseDir</span>(“var”) <span style="color:#666">.</span> DS <span style="color:#666">.</span> “backups” <span style="color:#666">.</span> DS <span style="color:#666">.</span> <span style="color:#b8860b">$fileToDelete</span>);  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> Mage<span style="color:#666">::</span><span style="color:#b44">helper</span>(‘core’)<span style="color:#666">-&gt;</span><span style="color:#b44">__</span>(‘Backup successfully created’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> } <span style="color:#a2f;font-weight:bold">catch</span> (Exception <span style="color:#b8860b">$e</span>) {  
+</span></span><span style="display:flex;"><span> Mage<span style="color:#666">::</span><span style="color:#b44">logException</span>(<span style="color:#b8860b">$e</span>);  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$this</span>;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Now you can set the CRON to run the file every midnight, which calls the above backup() method. You will now get daily fresh backups replacing the old ones 🙂</p>
+<p>If you are not sure how to create a cron, check this link: <a href="http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/how_to_setup_a_cron_job">http://www.magentocommerce.com/wiki/1_-_installation_and_configuration/how_to_setup_a_cron_job</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

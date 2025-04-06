@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento get all items in cart | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento get all items in cart" />
+<meta name="description" content="Magento get all the items currently in cart programatically using below code. You can place it anywhere you wish to get information, phtml or php file. Instead of Mage::getSingleton(‘checkout/session’)-&gt;getQuote() you can also use Mage::getSingleton(‘checkout/cart’)-&gt;getQuote() to get same results. If you want to see what all product information is retrieved you can use $product-&gt;getData() inside the foreach loop to display in array format.
+{code type=php}$cart = Mage::getSingleton(‘checkout/session’)-&gt;getQuote();
+//$cart-&gt;getAllItems() to get ALL items, parent as well as child, configurable as well as it’s simple associated item
+foreach ($cart-&gt;getAllVisibleItems() as $item) {
+$product = $item-&gt;getProduct();
+$name = $product-&gt;getName();
+$sku = $product-&gt;getSku();
+}{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="cart,items,magento," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2015-10-13-magento-get-all-items-in-cart/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento get all items in cart">
+  <meta property="og:description" content="Magento get all the items currently in cart programatically using below code. You can place it anywhere you wish to get information, phtml or php file. Instead of Mage::getSingleton(‘checkout/session’)-&gt;getQuote() you can also use Mage::getSingleton(‘checkout/cart’)-&gt;getQuote() to get same results. If you want to see what all product information is retrieved you can use $product-&gt;getData() inside the foreach loop to display in array format.
+{code type=php}$cart = Mage::getSingleton(‘checkout/session’)-&gt;getQuote();
+//$cart-&gt;getAllItems() to get ALL items, parent as well as child, configurable as well as it’s simple associated item
+foreach ($cart-&gt;getAllVisibleItems() as $item) {
+$product = $item-&gt;getProduct();
+$name = $product-&gt;getName();
+$sku = $product-&gt;getSku();
+}{/code}">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2015-10-13T21:23:50+00:00">
+    <meta property="article:modified_time" content="2015-10-13T21:23:50+00:00">
+    <meta property="article:tag" content="Cart">
+    <meta property="article:tag" content="Items">
+    <meta property="article:tag" content="Magento">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento get all items in cart">
+  <meta name="twitter:description" content="Magento get all the items currently in cart programatically using below code. You can place it anywhere you wish to get information, phtml or php file. Instead of Mage::getSingleton(‘checkout/session’)-&gt;getQuote() you can also use Mage::getSingleton(‘checkout/cart’)-&gt;getQuote() to get same results. If you want to see what all product information is retrieved you can use $product-&gt;getData() inside the foreach loop to display in array format.
+{code type=php}$cart = Mage::getSingleton(‘checkout/session’)-&gt;getQuote();
+//$cart-&gt;getAllItems() to get ALL items, parent as well as child, configurable as well as it’s simple associated item
+foreach ($cart-&gt;getAllVisibleItems() as $item) {
+$product = $item-&gt;getProduct();
+$name = $product-&gt;getName();
+$sku = $product-&gt;getSku();
+}{/code}">
+
+
+  
+  
+  <meta itemprop="name" content="Magento get all items in cart">
+  <meta itemprop="description" content="Magento get all the items currently in cart programatically using below code. You can place it anywhere you wish to get information, phtml or php file. Instead of Mage::getSingleton(‘checkout/session’)-&gt;getQuote() you can also use Mage::getSingleton(‘checkout/cart’)-&gt;getQuote() to get same results. If you want to see what all product information is retrieved you can use $product-&gt;getData() inside the foreach loop to display in array format.
+{code type=php}$cart = Mage::getSingleton(‘checkout/session’)-&gt;getQuote();
+//$cart-&gt;getAllItems() to get ALL items, parent as well as child, configurable as well as it’s simple associated item
+foreach ($cart-&gt;getAllVisibleItems() as $item) {
+$product = $item-&gt;getProduct();
+$name = $product-&gt;getName();
+$sku = $product-&gt;getSku();
+}{/code}">
+  <meta itemprop="datePublished" content="2015-10-13T21:23:50+00:00">
+  <meta itemprop="dateModified" content="2015-10-13T21:23:50+00:00">
+  <meta itemprop="wordCount" content="118">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Cart,Items,Magento">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento get all items in cart</h1>
+<p class="byline">
+  <time datetime='2015-10-13' pubdate>
+    2015-10-13
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento get all the items currently in cart programatically using below code. You can place it anywhere you wish to get information, phtml or php file. Instead of <strong>Mage::getSingleton(‘checkout/session’)-&gt;getQuote()</strong> you can also use <strong>Mage::getSingleton(‘checkout/cart’)-&gt;getQuote()</strong> to get same results. If you want to see what all product information is retrieved you can use $product-&gt;getData() inside the foreach loop to display in array format.</p>
+<p>{code type=php}$cart = Mage::getSingleton(‘checkout/session’)-&gt;getQuote();<br>
+//$cart-&gt;getAllItems() to get ALL items, parent as well as child, configurable as well as it’s simple associated item<br>
+foreach ($cart-&gt;getAllVisibleItems() as $item) {<br>
+$product = $item-&gt;getProduct();<br>
+$name = $product-&gt;getName();<br>
+$sku = $product-&gt;getSku();<br>
+}{/code}</p>
+<p>If you want all the items in collection format, you can call below code instead:<br>
+{code type=php}$itemsCollection = Mage::getSingleton(‘checkout/cart’)-&gt;getQuote()-&gt;getItemsCollection();{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/cart/">#cart</a>
+  
+    <a class="blog-tags" href="/blog/items/">#items</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

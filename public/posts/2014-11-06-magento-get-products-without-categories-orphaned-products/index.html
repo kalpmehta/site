@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Get all products without categories (orphaned products) | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento: Get all products without categories (orphaned products)" />
+<meta name="description" content="Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.
+Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,no categories,orphaned,products," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2014-11-06-magento-get-products-without-categories-orphaned-products/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento: Get all products without categories (orphaned products)">
+  <meta property="og:description" content="Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.
+Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2014-11-06T20:17:43+00:00">
+    <meta property="article:modified_time" content="2014-11-06T20:17:43+00:00">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="No Categories">
+    <meta property="article:tag" content="Orphaned">
+    <meta property="article:tag" content="Products">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento: Get all products without categories (orphaned products)">
+  <meta name="twitter:description" content="Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.
+Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:">
+
+
+  
+  
+  <meta itemprop="name" content="Magento: Get all products without categories (orphaned products)">
+  <meta itemprop="description" content="Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.
+Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:">
+  <meta itemprop="datePublished" content="2014-11-06T20:17:43+00:00">
+  <meta itemprop="dateModified" content="2014-11-06T20:17:43+00:00">
+  <meta itemprop="wordCount" content="148">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Magento,No Categories,Orphaned,Products">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Get all products without categories (orphaned products)</h1>
+<p class="byline">
+  <time datetime='2014-11-06' pubdate>
+    2014-11-06
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.</p>
+<p>Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:</p>
+<p>{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);</p>
+<p>$i=0;
+$sql = &ldquo;select
+type_id,sku
+from catalog_product_entity a
+left join catalog_category_product cp on cp.<code>product_id</code> = a.entity_id
+left join catalog_product_relation cpr on cpr.child_id = a.entity_id
+where
+cp.product_id is null
+and cpr.parent_id is null
+and a.type_id = &lsquo;configurable&rsquo;&rdquo;;
+$connection = Mage::getSingleton(&lsquo;core/resource&rsquo;)-?&gt;
+getConnection(‘core_read’);<br>
+//echo count($connection-&gt;fetchAll($sql));exit;</p>
+<p>foreach ($connection-&gt;fetchAll($sql) as $arr_row) {<br>
+$pid = $arr_row[‘sku’];<br>
+$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’,$pid);<br>
+if($product-&gt;getTypeId()!=’configurable’) continue;<br>
+$i++;<br>
+echo $i .”) “. $product-&gt;getName() . ” – ” . $product-&gt;getSku() . “<br>
+“;<br>
+}<br>
+?&gt;{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/no-categories/">#no categories</a>
+  
+    <a class="blog-tags" href="/blog/orphaned/">#orphaned</a>
+  
+    <a class="blog-tags" href="/blog/products/">#products</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

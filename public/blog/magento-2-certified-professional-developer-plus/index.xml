@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento 2 Certified Professional Developer Plus on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-2-certified-professional-developer-plus/</link>
+    <description>Recent content in Magento 2 Certified Professional Developer Plus on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 20 Oct 2018 22:07:49 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-2-certified-professional-developer-plus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento 2 Certified Professional Developer Plus Workshop</title>
+      <link>http://localhost:1313/magento-2-certified-professional-developer-plus-workshop/</link>
+      <pubDate>Sat, 20 Oct 2018 22:07:49 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-2-certified-professional-developer-plus-workshop/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam.jpg&#34;&gt;&lt;img src=&#34;http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam-300x200.jpg&#34; alt=&#34;&#34;&gt;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Last month I and Jonathan from Corra participated in the M2 Developer Plus certification workshop which happened in London. The goal of this new certification is to test the developers’ skills in Magento 2 Commerce and Open Source. This exam is intended to be difficult than the Professional Developer that was launched earlier this year. The exam will be scenario-based, so don’t come memorizing class and method names to the exam, it will not help 🙂&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><a href="http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam.jpg"><img src="http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam-300x200.jpg" alt=""></a></p>
+<p>Last month I and Jonathan from Corra participated in the M2 Developer Plus certification workshop which happened in London. The goal of this new certification is to test the developers’ skills in Magento 2 Commerce and Open Source. This exam is intended to be difficult than the Professional Developer that was launched earlier this year. The exam will be scenario-based, so don’t come memorizing class and method names to the exam, it will not help 🙂</p>
+<h3 id="participants">Participants</h3>
+<p>Developers from Magento, an Adobe Company and few SIs participated in this workshop to come up with the questions for this exam. Everybody was highly skilled in Magento 2, and submitted very good questions which will make it difficult for the developers to pass this exam 🙂 Partners who participated – Corra (I an Jonathan Lorenzi), Something Digital (Max Chadwick), DCKAP (Jaykanth), Vaimo (Sergii) and Cream NL (Julian).<!-- raw HTML omitted --> <!-- raw HTML omitted -->And there were Alex Paliarush and Iryna from Magento. Vitaliy Golomoziy and Vinai Kopp were top of the game, submitting and reviewing some crazy amount of questions respectively. It was great to work with all these awesome folks for four days. This was all possible under the guidance of Peter Manijak, Director of Certification &amp; Special Programs at Magento U.</p>
+<h3 id="new-topics">New topics</h3>
+<p>This exam added two new topics that are different than Professional exam. First one is of course Magento 2 Commerce features. The other one, which I personally advocated for few years to include in different areas of the Magento ecosystem, is Magento Security.</p>
+<h3 id="magento-security">Magento Security</h3>
+<p>I proposed this topic to Peter Manijak few weeks before the workshop, he really liked the idea and gave his support to include this in the certification. We were not sure whether to add objectives in other topics or to create an entire new topic for this. Peter took this to the team and we agreed to keep it as it’s own topic. We also got support on this topic from Richard Huie-Buckius, Head of Training &amp; Certification Services at Magento, an Adobe Company. I am very grateful to Peter and Richard for understanding the importance of Security in Magento and making it a part of the certification. Peter is personally a big fan of Security so huge props to him on including this additional topic to the exam.</p>
+<p>The goal to introduce Magento Security in the exam is to test developers’ abilities in security area when they develop something in Magento. Security is a part of development, every developer who works on Magento needs to know at least the basics of security to write secure code while developing extensions or custom in-house modules. The exam will test the developers on frontend, backend and overall architectural related security questions. For full details, wait for the study guide 🙂</p>
+<h3 id="launch-date">Launch date</h3>
+<p>The certification will be available to the developers in November 2018 (as per the tweet from Magento U handle).</p>
+<blockquote>
+<p>The Certified Professional Developer PLUS exam creation workshop is well underway in London!! If you are an experienced Magento 2 Developer and are a Certified Professional Developer, keep an eye out on the website for exam details coming this November! <a href="https://t.co/fTX9gSrCMV">pic.twitter.com/fTX9gSrCMV</a></p>
+<p>— Magento U (@MagentoU) <a href="https://twitter.com/MagentoU/status/1044980399368212482?ref_src=twsrc%5Etfw">September 26, 2018</a></p></blockquote>
+<!-- raw HTML omitted -->
+<h3 id="thanks">Thanks</h3>
+<p>It was a great opportunity for me to participate in this workshop. I learned a lot from all the participants and am thankful to Peter Manijak and Corra for allowing me to participate in the workshop!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

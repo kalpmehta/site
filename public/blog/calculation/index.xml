@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Calculation on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/calculation/</link>
+    <description>Recent content in Calculation on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Fri, 04 Sep 2015 05:39:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/calculation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Zipcode &#43; 4 tax calculation bug fix</title>
+      <link>http://localhost:1313/magento-zipcode--4-tax-calculation-bug-fix/</link>
+      <pubDate>Fri, 04 Sep 2015 05:39:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-zipcode--4-tax-calculation-bug-fix/</guid>
+      <description>&lt;p&gt;Magento bug fix for zipcode + 4 in tax calculation&lt;/p&gt;&#xA;&lt;p&gt;Tax Calculation in Magento has a bug where customer can escape paying tax if they enter zipcode + 4 digit in USA. This is because you import 5 digit zipcodes with their tax rates in Magento admin, so if customer inputs their zipcode in zipcode+4 format their zipcode will not match with the imported one. Importing 5-digit zipcode ending in wildcard (*) does not solve this issue either.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento bug fix for zipcode + 4 in tax calculation</p>
+<p>Tax Calculation in Magento has a bug where customer can escape paying tax if they enter zipcode + 4 digit in USA. This is because you import 5 digit zipcodes with their tax rates in Magento admin, so if customer inputs their zipcode in zipcode+4 format their zipcode will not match with the imported one. Importing 5-digit zipcode ending in wildcard (*) does not solve this issue either.</p>
+<p>Before this fix: If zipcode 90036 collects tax, 90036-1234 does NOT collect tax.</p>
+<p>You can fix this bug by adding below code in your custom module:</p>
+<p>config.xml<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> …  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;global&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;models&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;tax_resource&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;rewrite&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;calculation&gt;Namespace_Module_Model_Tax_Resource_Calculation&lt;/calculation&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;/rewrite&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;/tax_resource&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;/models&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/global&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">…</span></span></span></code></pre></div></p>
+<p>Note that we are rewriting core logic of Tax Calculation. Now create folder structure in your custom module: app/code/local/Namespace/Module/Model/Tax/Resource/Calculation.php and copy below code:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;?php class Namespace_Module_Model_Tax_Resource_Calculation extends Mage_Tax_Model_Resource_Calculation
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">{
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    protected function _getRates($request)
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">    {
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">        $countryId = $request-&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">getCountryId();  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> $regionId = $request-&gt;getRegionId();  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> $postcode = $request-&gt;getPostcode();
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> //12 = california, 25 = iowa  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> if($countryId == ‘US’ &amp;amp;&amp;amp; in_array($regionId,array(12,25))) {  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> $postcode = substr(trim($request-&gt;getPostcode()),0,5);  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> $request-&gt;setPostcode($postcode);  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> }  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> return parent::_getRates($request);
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> }
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">}</span></span></span></code></pre></div>
+<p>Above code will only take first 5 digits from the zipcode if the country is USA and state selected is either California or Iowa. You can change the states as per your requirement, to know what ID relates to different states you can look at the State/Province dropdown source code in checkout page.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

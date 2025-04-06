@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Security on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/security/</link>
+    <description>Recent content in Security on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 28 Mar 2015 06:31:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/security/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento 2 Security Bug in Customer Address section (Resolved)</title>
+      <link>http://localhost:1313/magento-2-security-bug-in-customer-address-section-resolved/</link>
+      <pubDate>Sat, 28 Mar 2015 06:31:02 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-2-security-bug-in-customer-address-section-resolved/</guid>
+      <description>&lt;p&gt;Magento 2 had a serious security bug where a website user can view and edit any customer’s address very easily. I reported this issue to Magento 2 team and they quickly fixed it and rolled it out in new beta version. All the beta versions up to &lt;strong&gt;0.42.0-beta11&lt;/strong&gt; were affected, and from &lt;strong&gt;0.74.0-beta1&lt;/strong&gt; it is fixed (I have not tested it yet).&lt;/p&gt;&#xA;&lt;p&gt;Details about the bug and progress: &lt;a href=&#34;https://github.com/magento/magento2/issues/1107&#34;&gt;https://github.com/magento/magento2/issues/1107&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you are using the affected Magento 2 versions for online demo or development please upgrade it. Though people use fake address in Demo stores, it is likely that some of them could have used their real address and details which can be accessible by anyone who knows about this bug.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento 2 had a serious security bug where a website user can view and edit any customer’s address very easily. I reported this issue to Magento 2 team and they quickly fixed it and rolled it out in new beta version. All the beta versions up to <strong>0.42.0-beta11</strong> were affected, and from <strong>0.74.0-beta1</strong> it is fixed (I have not tested it yet).</p>
+<p>Details about the bug and progress: <a href="https://github.com/magento/magento2/issues/1107">https://github.com/magento/magento2/issues/1107</a></p>
+<p>If you are using the affected Magento 2 versions for online demo or development please upgrade it. Though people use fake address in Demo stores, it is likely that some of them could have used their real address and details which can be accessible by anyone who knows about this bug.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

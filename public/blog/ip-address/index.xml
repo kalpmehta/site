@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ip Address on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/ip-address/</link>
+    <description>Recent content in Ip Address on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Fri, 07 Nov 2014 18:48:19 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/ip-address/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get real IP address behind a proxy</title>
+      <link>http://localhost:1313/magento-get-real-ip-address-behind-a-proxy/</link>
+      <pubDate>Fri, 07 Nov 2014 18:48:19 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-real-ip-address-behind-a-proxy/</guid>
+      <description>&lt;p&gt;Get real IP address if your server or customer is behind a proxy network. Magento have function Mage::helper(‘core/http’)-&amp;gt;getRemoteAddr(); to get client IP address, but it gives proxy IP address instead of real IP if there is proxy network in between. Below code checks and returns both real IP and proxy IP address if it founds any.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$_SERVER&lt;/span&gt;[‘HTTP_CLIENT_IP’])) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$_SERVER&lt;/span&gt;[‘HTTP_CLIENT_IP’];  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;empty&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$_SERVER&lt;/span&gt;[‘HTTP_X_FORWARDED_FOR’])) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$ips&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; explode(‘,’, &lt;span style=&#34;color:#b8860b&#34;&gt;$_SERVER&lt;/span&gt;[‘HTTP_X_FORWARDED_FOR’]);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; trim(&lt;span style=&#34;color:#b8860b&#34;&gt;$ips&lt;/span&gt;[count(&lt;span style=&#34;color:#b8860b&#34;&gt;$ips&lt;/span&gt;) – &lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;]); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//real IP address behind proxy IP  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt; &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;// echo $_SERVER[‘REMOTE_ADDR’]; //proxy IP address  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;} &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;else&lt;/span&gt; {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$_SERVER&lt;/span&gt;[‘REMOTE_ADDR’]; &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//no proxy found  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <content:encoded><![CDATA[<p>Get real IP address if your server or customer is behind a proxy network. Magento have function Mage::helper(‘core/http’)-&gt;getRemoteAddr(); to get client IP address, but it gives proxy IP address instead of real IP if there is proxy network in between. Below code checks and returns both real IP and proxy IP address if it founds any.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span><span style="color:#a2f;font-weight:bold">empty</span>(<span style="color:#b8860b">$_SERVER</span>[‘HTTP_CLIENT_IP’])) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$_SERVER</span>[‘HTTP_CLIENT_IP’];  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span><span style="color:#a2f;font-weight:bold">empty</span>(<span style="color:#b8860b">$_SERVER</span>[‘HTTP_X_FORWARDED_FOR’])) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$ips</span> <span style="color:#666">=</span> explode(‘,’, <span style="color:#b8860b">$_SERVER</span>[‘HTTP_X_FORWARDED_FOR’]);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> trim(<span style="color:#b8860b">$ips</span>[count(<span style="color:#b8860b">$ips</span>) – <span style="color:#666">1</span>]); <span style="color:#080;font-style:italic">//real IP address behind proxy IP  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#080;font-style:italic">// echo $_SERVER[‘REMOTE_ADDR’]; //proxy IP address  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>} <span style="color:#a2f;font-weight:bold">else</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$_SERVER</span>[‘REMOTE_ADDR’]; <span style="color:#080;font-style:italic">//no proxy found  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

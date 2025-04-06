@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Duplicate Records on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/duplicate-records/</link>
+    <description>Recent content in Duplicate Records on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 24 Jul 2012 17:22:49 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/duplicate-records/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql delete duplicate records leaving one</title>
+      <link>http://localhost:1313/mysql-delete-duplicate-records-leaving-one/</link>
+      <pubDate>Tue, 24 Jul 2012 17:22:49 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/mysql-delete-duplicate-records-leaving-one/</guid>
+      <description>&lt;p&gt;Mysql delete duplicate records leaving one row. Consider that there are many duplicate records in the table and you want to remove it. Now, we can select it by applying GROUP BY but the question is how to delete all the duplicate records (of field some_id below) EXCEPT one that should be there. So, lets say I have following table with duplicate data as shown:&lt;br&gt;&#xA;&lt;strong&gt;Tablename: test&lt;/strong&gt;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;   &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;unique_id&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;some_id&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;&#34;&gt;——————–&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;|&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Mysql delete duplicate records leaving one row. Consider that there are many duplicate records in the table and you want to remove it. Now, we can select it by applying GROUP BY but the question is how to delete all the duplicate records (of field some_id below) EXCEPT one that should be there. So, lets say I have following table with duplicate data as shown:<br>
+<strong>Tablename: test</strong><br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>unique_id<span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span>some_id<span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">——————–</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">1</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">1</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">2</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">1</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">3</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">4</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">5</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">1</span><span style="color:#bbb">  </span></span></span></code></pre></div></p>
+<p>Solution:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">DELETE</span><span style="color:#bbb"> </span>t1<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">FROM</span><span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>t1,<span style="color:#bbb"> </span>test<span style="color:#bbb"> </span>t2<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>t1.unique_id<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>t2.unique_id<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">AND</span><span style="color:#bbb"> </span>t1.some_id<span style="color:#bbb"> </span><span style="color:#666">=</span><span style="color:#bbb"> </span>t2.some_id;</span></span></code></pre></div></p>
+<p>Final Result:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#bbb">   
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span>unique_id<span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span>some_id<span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="">——————–</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">1</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">1</span><span style="color:#bbb">  
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#666">3</span><span style="color:#bbb"> </span><span style="color:#666">|</span><span style="color:#bbb"> </span><span style="color:#666">2</span><span style="color:#bbb">  </span></span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

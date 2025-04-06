@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Invoice and Ship on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/invoice-and-ship/</link>
+    <description>Recent content in Invoice and Ship on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 31 Dec 2011 10:41:25 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/invoice-and-ship/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Admin &amp;#8211; Forcing Invoice and Ship button together</title>
+      <link>http://localhost:1313/magento-admin-%238211-forcing-invoice-and-ship-button-together/</link>
+      <pubDate>Sat, 31 Dec 2011 10:41:25 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-admin-%238211-forcing-invoice-and-ship-button-together/</guid>
+      <description>&lt;p&gt;Ever wondered what if you want to do invoice and shipment with just one click in your website admin? Yes, Magento allows you to integrate both these in one step.&lt;/p&gt;&#xA;&lt;p&gt;Edit your module’s config.xml and Observer.php for this to happen.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;config.xml&lt;/strong&gt; snippet:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;events&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;sales_order_place_after&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;observers&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;type&amp;gt;&lt;/span&gt;singleton&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/type&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;class&amp;gt;&lt;/span&gt;Namespace_Module_Model_Observer&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/class&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;method&amp;gt;&lt;/span&gt;doForceInvoiceWithShipment&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/method&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/observers&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/sales_order_place_after&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/events&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;Every time a order is placed, frontend as well as backend, your observer method will be called which will force invoice and shipment to show in one button in Manage Orders for particular order at backend.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Ever wondered what if you want to do invoice and shipment with just one click in your website admin? Yes, Magento allows you to integrate both these in one step.</p>
+<p>Edit your module’s config.xml and Observer.php for this to happen.</p>
+<p><strong>config.xml</strong> snippet:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;events&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;sales_order_place_after&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;observers&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;type&gt;</span>singleton<span style="color:#008000;font-weight:bold">&lt;/type&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;class&gt;</span>Namespace_Module_Model_Observer<span style="color:#008000;font-weight:bold">&lt;/class&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;method&gt;</span>doForceInvoiceWithShipment<span style="color:#008000;font-weight:bold">&lt;/method&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/observers&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/sales_order_place_after&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;/events&gt;</span></span></span></code></pre></div><br>
+Every time a order is placed, frontend as well as backend, your observer method will be called which will force invoice and shipment to show in one button in Manage Orders for particular order at backend.</p>
+<p><strong>Observer.php</strong> snippet:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">doForceInvoiceWithShipment</span>(<span style="color:#b8860b">$observer</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$order</span> <span style="color:#666">=</span> <span style="color:#b8860b">$observer</span><span style="color:#666">-&gt;</span><span style="color:#b44">getOrder</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$orderId</span> <span style="color:#666">=</span> <span style="color:#b8860b">$order</span><span style="color:#666">-&gt;</span><span style="color:#b44">getIncrementId</span>();  
+</span></span><span style="display:flex;"><span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘sales<span style="color:#666">/</span>order’)<span style="color:#666">-&gt;</span><span style="color:#b44">loadByIncrementId</span>(<span style="color:#b8860b">$orderId</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">setForcedDoShipmentWithInvoice</span>(<span style="color:#a2f;font-weight:bold">true</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">save</span>();  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>Now you can place a order and check at backend under Sales-&gt;Orders clicking on latest order to see “Invoice &amp; Ship” button integrated rather than “Invoice” and “Ship” button separated.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

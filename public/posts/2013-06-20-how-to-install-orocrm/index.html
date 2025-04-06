@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>OroCRM Installation guide | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="OroCRM Installation guide" />
+<meta name="description" content="I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="orocrm," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2013-06-20-how-to-install-orocrm/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="OroCRM Installation guide">
+  <meta property="og:description" content="I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-06-20T00:43:02+00:00">
+    <meta property="article:modified_time" content="2013-06-20T00:43:02+00:00">
+    <meta property="article:tag" content="Orocrm">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="OroCRM Installation guide">
+  <meta name="twitter:description" content="I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.">
+
+
+  
+  
+  <meta itemprop="name" content="OroCRM Installation guide">
+  <meta itemprop="description" content="I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.">
+  <meta itemprop="datePublished" content="2013-06-20T00:43:02+00:00">
+  <meta itemprop="dateModified" content="2013-06-20T00:43:02+00:00">
+  <meta itemprop="wordCount" content="573">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Orocrm">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>OroCRM Installation guide</h1>
+<p class="byline">
+  <time datetime='2013-06-20' pubdate>
+    2013-06-20
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>I will show you here how to install OroCRM in your machine. OroCRM is the latest open-source CRM tool developed by MageCore. It’s little difficult to make it work on your system as there are some issues which occurs in installing it, and there is also no thorough documentation as of now. It’s in pre-alpha release and just publicly available since 3 weeks. I will show you how to install OroCRM assuming you have Linux system.</p>
+<p><strong>Requirements</strong>: Symfony 2, Doctrine 2, PHP &gt;= 5.3.3</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/06/orocrm-login.png" alt="OroCRM login - installation guide"></p>
+<p>– Clone the CRM application Git repository in your local. It should be done in your web server’s root directory (e.g. /var/www/).<br>
+{code}git clone <a href="http://gitlab.orocrm.com/crm-application.git%7B/code%7D">http://gitlab.orocrm.com/crm-application.git{/code}</a></p>
+<p>– Now switch to the newly created crm-application directory and make the parameters.yml file with your configuration changes.<br>
+{code}cd crm-application<br>
+cp app/config/parameters.dist.yml app/config/parameters.yml<br>
+vi app/config/parameters.yml{/code}</p>
+<p>– Edit composer.json, add symfony/assestic-bundle to prevent future error:</p>
+<p><em>PHP Fatal error: Class ‘Assetic\Util\PathUtils’ not found in /var/www/crm-application/vendor/symfony/assetic-bundle/Symfony/Bundle/AsseticBundle/Command/DumpCommand.php on line 216</em></p>
+<p>{code}replace:<br>
+“require”: {<br>
+“php”: “&gt;=5.3.3”,<br>
+“oro/platform”: “dev-master”,<br>
+“oro/crm”: “dev-master”<br>
+},{/code}<br>
+with<br>
+{code}”require”: {<br>
+“php”: “&gt;=5.3.3”,<br>
+“oro/platform”: “dev-master”,<br>
+“oro/crm”: “dev-master”,<br>
+“symfony/assetic-bundle”: “2.3.*@dev”<br>
+},{/code}</p>
+<p>– This will install composer. If you already have it, just ignore this step.<br>
+{code}curl -s <a href="https://getcomposer.org/installer">https://getcomposer.org/installer</a> | php{/code}</p>
+<p>– This will install all the things which are listed in composer.json file and necessary by Oro; like zendframework, doctrine, twig, symfony, monolog, oro, etc..<br>
+{code}php composer.phar install –prefer-dist{/code}</p>
+<p>Change permissions of cache and logs directory to world-writeable. Otherwise you will get errors like:</p>
+<p><em>PHP Fatal error: Uncaught exception ‘RuntimeException’ with message ‘Unable to write in the logs directory (/var/www/crm-application/app/logs)\n’ in …<br>
+PHP Fatal error: Uncaught exception ‘RuntimeException’ with message ‘Unable to create the cache directory (/var/www/crm-application/app/cache/prod)\n’ in …</em></p>
+<p>{code}chmod -R 777 app/cache<br>
+chmod -R 777 app/logs<br>
+or, find app/cache app/logs -type d -exec chmod 777 {} +{/code}</p>
+<p>– Finally, run the install bash script<br>
+{code}./install.sh{/code}</p>
+<p>You should now able to see the login screen of OroCRM if everything went good. If you face any error, check below errors and how to solve it.</p>
+<p><em>Login credentials are:</em><br>
+username: admin<br>
+password: admin</p>
+<p>—————-</p>
+<p><em>Fatal error: Class ‘Assetic\Util\PathUtils’ not found in /var/www/crm-application/vendor/symfony/assetic-bundle/Symfony/Bundle/AsseticBundle/Command/DumpCommand.php on line 216</em></p>
+<p>edit composer.json, replace:<br>
+{code}”require”: {<br>
+“php”: “&gt;=5.3.3”,<br>
+“oro/platform”: “dev-master”,<br>
+“oro/crm”: “dev-master”<br>
+},{/code}<br>
+with<br>
+{code}”require”: {<br>
+“php”: “&gt;=5.3.3”,<br>
+“oro/platform”: “dev-master”,<br>
+“oro/crm”: “dev-master”,<br>
+“symfony/assetic-bundle”: “2.3.*@dev”<br>
+},{/code}</p>
+<p>and run</p>
+<p>{code}php composer.phar upate –prefer-dist<br>
+./install.sh{/code}</p>
+<p>—————-</p>
+<p>Are you missing JS and CSS files? Skinless? Run below two commands.<br>
+{code}php composer.phar upate –prefer-dist<br>
+php app/console assetic:dump{/code}</p>
+<p><em>It will output:</em><br>
+Dumping all dev assets.<br>
+Debug mode is off.</p>
+<p>04:55:49 [dir+] /var/www/crm-application/app/../web/css<br>
+04:55:49 [file+] /var/www/crm-application/app/../web/css/oro.all.css<br>
+04:55:55 [file+] /var/www/crm-application/app/../web/css/oro.css<br>
+04:55:59 [file+] /var/www/crm-application/app/../web/js/oro.all.js<br>
+04:56:54 [file+] /var/www/crm-application/app/../web/css/oro.user.css<br>
+04:56:57 [file+] /var/www/crm-application/app/../web/js/oro.user.js<br>
+04:57:00 [file+] /var/www/crm-application/app/../web/js/oro.user.show.js<br>
+04:57:01 [file+] /var/www/crm-application/app/../web/js/orocrm.account.account.js<br>
+04:57:02 [file+] /var/www/crm-application/app/../web/js/orocrm.contact.js<br>
+04:57:03 [file+] /var/www/crm-application/app/../web/js/oroapp.all.js<br>
+04:57:09 [file+] /var/www/crm-application/app/../web/css/oro.crm.css</p>
+<p>—————-</p>
+<p>After login, are you seeing the below message?</p>
+<p><em>ERROR:<br>
+Translator.locale = ‘en’;<br>
+Translator.defaultDomains = [“messages”];<br>
+Translator.add(“validators:You must select at least {{ limit }} role”, “You must select at least {{ limit }} role.|You must select at least {{ limit }} roles.”);</em></p>
+<p>Just remove “i18n/validators/en” from the URL and submit the base URL. You should see the OroCRM Dashboard.</p>
+<p>—————</p>
+<p>Create apache virtualhost at <em>/etc/apache2/sites-available/orocrm</em> to access OroCRM by <em><a href="http://dev.orocrm.local/">http://dev.orocrm.local/</a></em> from your browser.<br>
+Notice the document root is web directory.</p>
+<p>{code}<!-- raw HTML omitted --><br>
+ServerAdmin webmaster@localhost<br>
+ServerName dev.orocrm.local<!-- raw HTML omitted --></p>
+<p>DocumentRoot /var/www/crm-application/web<br>
+<!-- raw HTML omitted --><!-- raw HTML omitted --><br>
+Options Indexes FollowSymLinks MultiViews<br>
+AllowOverride All<br>
+Order allow,deny<br>
+allow from all</p>
+<p>ErrorLog ${APACHE_LOG_DIR}/error.log<br>
+LogLevel warn<br>
+CustomLog ${APACHE_LOG_DIR}/access.log combined<br>
+{/code}</p>
+<p>enable the site and reload web server<br>
+{code}a2ensite orocrm<br>
+service apache2 reload{/code}</p>
+<p>add entry to hosts file<br>
+<em>vi /etc/hosts</em><br>
+and add<br>
+{code}127.0.0.1 dev.orocrm.local{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/orocrm/">#orocrm</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

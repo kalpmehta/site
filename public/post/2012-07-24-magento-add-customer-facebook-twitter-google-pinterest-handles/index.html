@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles" />
+<meta name="description" content="It’s always a good idea to get as much information as you get from customer. Adding customer’s social networking usernames are common in most of the sites, which can allow you to post content to their wall regarding any purchase customer made. It helps you to get more visibility of your store in front of customer’s friends and whoever visits their page.
+So, you will need to add these in database, so that it can reflect to the customer’s account:
+{code type=php}$installer = $this;
+$installer-&gt;startSetup();
+$setup = new Mage_Eav_Model_Entity_Setup(‘core_setup’);
+$setup-&gt;addAttribute(‘customer’, ‘facebook’, array(
+‘label’ =&gt; ‘Facebook’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));{/code}{code type=php}
+$setup-&gt;addAttribute(‘customer’, ‘twitter’, array(
+‘label’ =&gt; ‘Twitter’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Google&#43;’, array(
+‘label’ =&gt; ‘Google&#43;’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Pinterest’, array(
+‘label’ =&gt; ‘Pinterest’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$installer-&gt;endSetup();
+$installer-&gt;installEntities();{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="facebook twitter pinterest google&#43; handles,magento customer attributes,magento social network," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles" />
+<meta property="og:description" content="It’s always a good idea to get as much information as you get from customer. Adding customer’s social networking usernames are common in most of the sites, which can allow you to post content to their wall regarding any purchase customer made. It helps you to get more visibility of your store in front of customer’s friends and whoever visits their page.
+So, you will need to add these in database, so that it can reflect to the customer’s account:
+{code type=php}$installer = $this;
+$installer-&gt;startSetup();
+$setup = new Mage_Eav_Model_Entity_Setup(‘core_setup’);
+$setup-&gt;addAttribute(‘customer’, ‘facebook’, array(
+‘label’ =&gt; ‘Facebook’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));{/code}{code type=php}
+$setup-&gt;addAttribute(‘customer’, ‘twitter’, array(
+‘label’ =&gt; ‘Twitter’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Google&#43;’, array(
+‘label’ =&gt; ‘Google&#43;’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Pinterest’, array(
+‘label’ =&gt; ‘Pinterest’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$installer-&gt;endSetup();
+$installer-&gt;installEntities();{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-07-24-magento-add-customer-facebook-twitter-google-pinterest-handles/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_4f66ddddc35dd462.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-07-24T16:57:41+00:00" />
+<meta property="article:modified_time" content="2012-07-24T16:57:41+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_4f66ddddc35dd462.webp"/>
+<meta name="twitter:title" content="Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles"/>
+<meta name="twitter:description" content="It’s always a good idea to get as much information as you get from customer. Adding customer’s social networking usernames are common in most of the sites, which can allow you to post content to their wall regarding any purchase customer made. It helps you to get more visibility of your store in front of customer’s friends and whoever visits their page.
+So, you will need to add these in database, so that it can reflect to the customer’s account:
+{code type=php}$installer = $this;
+$installer-&gt;startSetup();
+$setup = new Mage_Eav_Model_Entity_Setup(‘core_setup’);
+$setup-&gt;addAttribute(‘customer’, ‘facebook’, array(
+‘label’ =&gt; ‘Facebook’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));{/code}{code type=php}
+$setup-&gt;addAttribute(‘customer’, ‘twitter’, array(
+‘label’ =&gt; ‘Twitter’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Google&#43;’, array(
+‘label’ =&gt; ‘Google&#43;’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Pinterest’, array(
+‘label’ =&gt; ‘Pinterest’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$installer-&gt;endSetup();
+$installer-&gt;installEntities();{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles">
+<meta itemprop="description" content="It’s always a good idea to get as much information as you get from customer. Adding customer’s social networking usernames are common in most of the sites, which can allow you to post content to their wall regarding any purchase customer made. It helps you to get more visibility of your store in front of customer’s friends and whoever visits their page.
+So, you will need to add these in database, so that it can reflect to the customer’s account:
+{code type=php}$installer = $this;
+$installer-&gt;startSetup();
+$setup = new Mage_Eav_Model_Entity_Setup(‘core_setup’);
+$setup-&gt;addAttribute(‘customer’, ‘facebook’, array(
+‘label’ =&gt; ‘Facebook’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));{/code}{code type=php}
+$setup-&gt;addAttribute(‘customer’, ‘twitter’, array(
+‘label’ =&gt; ‘Twitter’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Google&#43;’, array(
+‘label’ =&gt; ‘Google&#43;’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$setup-&gt;addAttribute(‘customer’, ‘Pinterest’, array(
+‘label’ =&gt; ‘Pinterest’,
+‘type’ =&gt; ‘varchar’,
+‘input’ =&gt; ‘text’,
+‘default’ =&gt; ”,
+‘visible’ =&gt; true,
+‘required’ =&gt; false,
+‘unique’ =&gt; true,
+‘user_defined’ =&gt; true,
+));
+$installer-&gt;endSetup();
+$installer-&gt;installEntities();{/code}"><meta itemprop="datePublished" content="2012-07-24T16:57:41+00:00" />
+<meta itemprop="dateModified" content="2012-07-24T16:57:41+00:00" />
+<meta itemprop="wordCount" content="226">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_4f66ddddc35dd462.webp"/>
+
+
+<meta itemprop="keywords" content="facebook twitter pinterest google&#43; handles,magento customer attributes,magento social network," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Add customer Facebook, Twitter, Google&#43;, Pinterest handles</h1>
+<p class="byline">
+  <time datetime='2012-07-24' pubdate>
+    2012-07-24
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>It’s always a good idea to get as much information as you get from customer. Adding customer’s social networking usernames are common in most of the sites, which can allow you to post content to their wall regarding any purchase customer made. It helps you to get more visibility of your store in front of customer’s friends and whoever visits their page.</p>
+<p>So, you will need to add these in database, so that it can reflect to the customer’s account:<br>
+{code type=php}$installer = $this;<br>
+$installer-&gt;startSetup();<br>
+$setup = new Mage_Eav_Model_Entity_Setup(‘core_setup’);<br>
+$setup-&gt;addAttribute(‘customer’, ‘facebook’, array(<br>
+‘label’ =&gt; ‘Facebook’,<br>
+‘type’ =&gt; ‘varchar’,<br>
+‘input’ =&gt; ‘text’,<br>
+‘default’ =&gt; ”,<br>
+‘visible’ =&gt; true,<br>
+‘required’ =&gt; false,<br>
+‘unique’ =&gt; true,<br>
+‘user_defined’ =&gt; true,<br>
+));{/code}{code type=php}<br>
+$setup-&gt;addAttribute(‘customer’, ‘twitter’, array(<br>
+‘label’ =&gt; ‘Twitter’,<br>
+‘type’ =&gt; ‘varchar’,<br>
+‘input’ =&gt; ‘text’,<br>
+‘default’ =&gt; ”,<br>
+‘visible’ =&gt; true,<br>
+‘required’ =&gt; false,<br>
+‘unique’ =&gt; true,<br>
+‘user_defined’ =&gt; true,<br>
+));<br>
+$setup-&gt;addAttribute(‘customer’, ‘Google+’, array(<br>
+‘label’ =&gt; ‘Google+’,<br>
+‘type’ =&gt; ‘varchar’,<br>
+‘input’ =&gt; ‘text’,<br>
+‘default’ =&gt; ”,<br>
+‘visible’ =&gt; true,<br>
+‘required’ =&gt; false,<br>
+‘unique’ =&gt; true,<br>
+‘user_defined’ =&gt; true,<br>
+));<br>
+$setup-&gt;addAttribute(‘customer’, ‘Pinterest’, array(<br>
+‘label’ =&gt; ‘Pinterest’,<br>
+‘type’ =&gt; ‘varchar’,<br>
+‘input’ =&gt; ‘text’,<br>
+‘default’ =&gt; ”,<br>
+‘visible’ =&gt; true,<br>
+‘required’ =&gt; false,<br>
+‘unique’ =&gt; true,<br>
+‘user_defined’ =&gt; true,<br>
+));<br>
+$installer-&gt;endSetup();<br>
+$installer-&gt;installEntities();{/code}</p>
+<p>Once attributes are added to database, you can easily add HTML in the customer’s profile page where you want them to display.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/facebook-twitter-pinterest-google-handles/">#facebook twitter pinterest google&#43; handles</a>
+  
+    <a class="blog-tags" href="/blog/magento-customer-attributes/">#magento customer attributes</a>
+  
+    <a class="blog-tags" href="/blog/magento-social-network/">#magento social network</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Add%20customer%20Facebook%2c%20Twitter%2c%20Google%2b%2c%20Pinterest%20handles"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

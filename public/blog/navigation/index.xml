@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Navigation on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/navigation/</link>
+    <description>Recent content in Navigation on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 10 Jul 2011 06:02:34 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/navigation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Show only specific attributes in layered navigation</title>
+      <link>http://localhost:1313/magento-show-only-specific-attributes-in-layered-navigation/</link>
+      <pubDate>Sun, 10 Jul 2011 06:02:34 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-show-only-specific-attributes-in-layered-navigation/</guid>
+      <description>&lt;p&gt;In Magento, if you have lots of attributes (e.g. Type, Size, Price, Color, etc.) defined for categories, all are shown in the layered navigation on the left side. This may be sometimes annoying as they may break the website design. It is possible to disable the desired attributes from displaying on frontend.&lt;/p&gt;&#xA;&lt;p&gt;The solution is, go to:&lt;/p&gt;&#xA;&lt;p&gt;– Magento Backend -&amp;gt; Catalog Tab -&amp;gt; Attributes -&amp;gt; Manage Attributes&lt;br&gt;&#xA;– Click the attributes you do not want to display in layered navigation&lt;br&gt;&#xA;– Select NO where it says “Use in Layered Navigation”&lt;br&gt;&#xA;– Save&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In Magento, if you have lots of attributes (e.g. Type, Size, Price, Color, etc.) defined for categories, all are shown in the layered navigation on the left side. This may be sometimes annoying as they may break the website design. It is possible to disable the desired attributes from displaying on frontend.</p>
+<p>The solution is, go to:</p>
+<p>– Magento Backend -&gt; Catalog Tab -&gt; Attributes -&gt; Manage Attributes<br>
+– Click the attributes you do not want to display in layered navigation<br>
+– Select NO where it says “Use in Layered Navigation”<br>
+– Save</p>
+<p>Now all the attributes with Use in Layered Navation as Yes will only show in frontend Shopping options.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

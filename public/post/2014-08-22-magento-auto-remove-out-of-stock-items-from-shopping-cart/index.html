@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento auto remove out of stock items from shopping cart | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento auto remove out of stock items from shopping cart" />
+<meta name="description" content="Magento automatically remove product items from shopping cart page which are out of stock. You may need this feature when the situation aries where product goes out of stock and that particular product is already there in other customer’s cart who have not yet checked it out. With this script Magento will auto-check if all the items in the cart are available and in-stock before proceeding for checkout page.
+In config.xml file:
+{code type=xml}
+
+&lt;controller_action_predispatch_checkout_cart_index&gt;
+
+&lt;namespace_module_autoremove_outofstock&gt;
+singleton
+namespace_module/observer
+autoRemoveOutOfStockItems
+&lt;/namespace_module_autoremove_outofstock&gt;
+
+&lt;/controller_action_predispatch_checkout_cart_index&gt;
+
+{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="auto remove,cart,magento,out of stock," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento auto remove out of stock items from shopping cart" />
+<meta property="og:description" content="Magento automatically remove product items from shopping cart page which are out of stock. You may need this feature when the situation aries where product goes out of stock and that particular product is already there in other customer’s cart who have not yet checked it out. With this script Magento will auto-check if all the items in the cart are available and in-stock before proceeding for checkout page.
+In config.xml file:
+{code type=xml}
+
+&lt;controller_action_predispatch_checkout_cart_index&gt;
+
+&lt;namespace_module_autoremove_outofstock&gt;
+singleton
+namespace_module/observer
+autoRemoveOutOfStockItems
+&lt;/namespace_module_autoremove_outofstock&gt;
+
+&lt;/controller_action_predispatch_checkout_cart_index&gt;
+
+{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2014-08-22-magento-auto-remove-out-of-stock-items-from-shopping-cart/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_8c0be2cd49d4e5e3.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-08-22T03:43:35+00:00" />
+<meta property="article:modified_time" content="2014-08-22T03:43:35+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_8c0be2cd49d4e5e3.webp"/>
+<meta name="twitter:title" content="Magento auto remove out of stock items from shopping cart"/>
+<meta name="twitter:description" content="Magento automatically remove product items from shopping cart page which are out of stock. You may need this feature when the situation aries where product goes out of stock and that particular product is already there in other customer’s cart who have not yet checked it out. With this script Magento will auto-check if all the items in the cart are available and in-stock before proceeding for checkout page.
+In config.xml file:
+{code type=xml}
+
+&lt;controller_action_predispatch_checkout_cart_index&gt;
+
+&lt;namespace_module_autoremove_outofstock&gt;
+singleton
+namespace_module/observer
+autoRemoveOutOfStockItems
+&lt;/namespace_module_autoremove_outofstock&gt;
+
+&lt;/controller_action_predispatch_checkout_cart_index&gt;
+
+{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento auto remove out of stock items from shopping cart">
+<meta itemprop="description" content="Magento automatically remove product items from shopping cart page which are out of stock. You may need this feature when the situation aries where product goes out of stock and that particular product is already there in other customer’s cart who have not yet checked it out. With this script Magento will auto-check if all the items in the cart are available and in-stock before proceeding for checkout page.
+In config.xml file:
+{code type=xml}
+
+&lt;controller_action_predispatch_checkout_cart_index&gt;
+
+&lt;namespace_module_autoremove_outofstock&gt;
+singleton
+namespace_module/observer
+autoRemoveOutOfStockItems
+&lt;/namespace_module_autoremove_outofstock&gt;
+
+&lt;/controller_action_predispatch_checkout_cart_index&gt;
+
+{/code}"><meta itemprop="datePublished" content="2014-08-22T03:43:35+00:00" />
+<meta itemprop="dateModified" content="2014-08-22T03:43:35+00:00" />
+<meta itemprop="wordCount" content="124">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_8c0be2cd49d4e5e3.webp"/>
+
+
+<meta itemprop="keywords" content="auto remove,cart,magento,out of stock," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento auto remove out of stock items from shopping cart</h1>
+<p class="byline">
+  <time datetime='2014-08-22' pubdate>
+    2014-08-22
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento automatically remove product items from shopping cart page which are out of stock. You may need this feature when the situation aries where product goes out of stock and that particular product is already there in other customer’s cart who have not yet checked it out. With this script Magento will auto-check if all the items in the cart are available and in-stock before proceeding for checkout page.</p>
+<p>In config.xml file:<br>
+{code type=xml}<br>
+<!-- raw HTML omitted --><br>
+&lt;controller_action_predispatch_checkout_cart_index&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;namespace_module_autoremove_outofstock&gt;<br>
+<!-- raw HTML omitted -->singleton<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->namespace_module/observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->autoRemoveOutOfStockItems<!-- raw HTML omitted --><br>
+&lt;/namespace_module_autoremove_outofstock&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/controller_action_predispatch_checkout_cart_index&gt;<br>
+<!-- raw HTML omitted --><br>
+{/code}</p>
+<p>In Observer.php file:<br>
+{code type=php}<br>
+public function autoRemoveOutOfStockItems($observer) {<br>
+$quote = Mage::getModel(‘checkout/session’)-&gt;getQuote();<br>
+$cartItems = $quote-&gt;getAllItems();<br>
+foreach ($cartItems as $item)<br>
+{<br>
+//$productType = $item-&gt;getProduct()-&gt;getTypeId();<br>
+//if($productType!=’configurable’) {<br>
+$productId = $item-&gt;getProductId();<br>
+$product = Mage::getModel(‘catalog/product’)-&gt;load($productId);<br>
+$stockItem = $product-&gt;getStockItem();<br>
+if(!$stockItem-&gt;getIsInStock())<br>
+{<br>
+Mage::helper(‘checkout/cart’)-&gt;getCart()-&gt;removeItem($item-&gt;getId())-&gt;save();<br>
+}<br>
+//}<br>
+}</p>
+<p>}<br>
+{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/auto-remove/">#auto remove</a>
+  
+    <a class="blog-tags" href="/blog/cart/">#cart</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/out-of-stock/">#out of stock</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20auto%20remove%20out%20of%20stock%20items%20from%20shopping%20cart"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

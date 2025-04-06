@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>PHP redirect without header() | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="PHP redirect without header()" />
+<meta name="description" content="It’s very frustrating when you want to redirect from one page to another, and you get the error:
+Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99
+The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="php,redirect," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2013-06-12-php-redirect-without-header/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="PHP redirect without header()">
+  <meta property="og:description" content="It’s very frustrating when you want to redirect from one page to another, and you get the error:
+Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99
+The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-06-12T19:19:54+00:00">
+    <meta property="article:modified_time" content="2013-06-12T19:19:54+00:00">
+    <meta property="article:tag" content="Php">
+    <meta property="article:tag" content="Redirect">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="PHP redirect without header()">
+  <meta name="twitter:description" content="It’s very frustrating when you want to redirect from one page to another, and you get the error:
+Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99
+The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.">
+
+
+  
+  
+  <meta itemprop="name" content="PHP redirect without header()">
+  <meta itemprop="description" content="It’s very frustrating when you want to redirect from one page to another, and you get the error:
+Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99
+The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.">
+  <meta itemprop="datePublished" content="2013-06-12T19:19:54+00:00">
+  <meta itemprop="dateModified" content="2013-06-12T19:19:54+00:00">
+  <meta itemprop="wordCount" content="240">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Php,Redirect">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>PHP redirect without header()</h1>
+<p class="byline">
+  <time datetime='2013-06-12' pubdate>
+    2013-06-12
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>It’s very frustrating when you want to redirect from one page to another, and you get the error:</p>
+<p><em>Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99</em></p>
+<p>The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.</p>
+<p>Another way is to use output buffering. Without output buffering (the default), your HTML is sent to the browser in pieces as PHP processes through your script. With output buffering, your HTML is stored in a variable and sent to the browser as one piece at the end of your script. For using this method, you have to start your file with <em>ob_start();</em> so that output gets buffered.</p>
+<p>But what if you don’t care whether the output is sent or not, you anyway want the redirect to work? This simple function will do the trick for you. It will check if headers are not sent, then it will call the PHP’s header function to redirect. But if the headers are sent, it will use Javascript to redirect to the URL you want.</p>
+<p>{code type=php}function redirect($url)<br>
+{<br>
+if (!headers_sent())<br>
+{<br>
+header(‘Location: ‘.$url);<br>
+exit;<br>
+}<br>
+else<br>
+{<br>
+echo ‘<!-- raw HTML omitted -->&rsquo;;
+echo &lsquo;window.location.href=&quot;&rsquo;.$url.&rsquo;&quot;;&rsquo;;
+echo &lsquo;<!-- raw HTML omitted -->‘;<br>
+echo ‘<!-- raw HTML omitted -->‘;<br>
+echo ‘<!-- raw HTML omitted --><!-- raw HTML omitted -->‘;<br>
+echo ‘<!-- raw HTML omitted -->‘;<br>
+exit;<br>
+}<br>
+}{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/php/">#php</a>
+  
+    <a class="blog-tags" href="/blog/redirect/">#redirect</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

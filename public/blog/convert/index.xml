@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Convert on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/convert/</link>
+    <description>Recent content in Convert on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 29 Feb 2012 12:34:47 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/convert/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP Convert SimpleXML object to Array</title>
+      <link>http://localhost:1313/php-convert-simplexml-object-to-array/</link>
+      <pubDate>Wed, 29 Feb 2012 12:34:47 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/php-convert-simplexml-object-to-array/</guid>
+      <description>&lt;p&gt;In PHP, if you want to convert your xml data to array for looping and displaying purpose, it sometimes becomes tedious. If you already have a SimpleXML class and want to convert XML to Array without any notices, warnings and recursively preparing the array, here is the method that will do so without any modifications needed. This will work by pasting this in your class file, if you are not using object oriented approach, you will have to remove “public” and “$this-&amp;gt;” from this function.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In PHP, if you want to convert your xml data to array for looping and displaying purpose, it sometimes becomes tedious. If you already have a SimpleXML class and want to convert XML to Array without any notices, warnings and recursively preparing the array, here is the method that will do so without any modifications needed. This will work by pasting this in your class file, if you are not using object oriented approach, you will have to remove “public” and “$this-&gt;” from this function.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">simpleXMLToArray</span>(SimpleXMLElement <span style="color:#b8860b">$xml</span>,<span style="color:#b8860b">$attributesKey</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">null</span>,<span style="color:#b8860b">$childrenKey</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">null</span>,<span style="color:#b8860b">$valueKey</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">null</span>){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$childrenKey</span> <span style="color:#666">&amp;</span>amp;<span style="color:#666">&amp;</span>amp; <span style="color:#666">!</span>is_string(<span style="color:#b8860b">$childrenKey</span>)){<span style="color:#b8860b">$childrenKey</span> <span style="color:#666">=</span> ‘<span style="color:#666">@</span>children’;}  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$attributesKey</span> <span style="color:#666">&amp;</span>amp;<span style="color:#666">&amp;</span>amp; <span style="color:#666">!</span>is_string(<span style="color:#b8860b">$attributesKey</span>)){<span style="color:#b8860b">$attributesKey</span> <span style="color:#666">=</span> ‘<span style="color:#666">@</span>attributes’;}  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$valueKey</span> <span style="color:#666">&amp;</span>amp;<span style="color:#666">&amp;</span>amp; <span style="color:#666">!</span>is_string(<span style="color:#b8860b">$valueKey</span>)){<span style="color:#b8860b">$valueKey</span> <span style="color:#666">=</span> ‘<span style="color:#666">@</span>values’;}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$return</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$name</span> <span style="color:#666">=</span> <span style="color:#b8860b">$xml</span><span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$_value</span> <span style="color:#666">=</span> trim((string)<span style="color:#b8860b">$xml</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#666">!</span>strlen(<span style="color:#b8860b">$_value</span>)){<span style="color:#b8860b">$_value</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">null</span>;};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$_value</span><span style="color:#666">!==</span><span style="color:#a2f;font-weight:bold">null</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$valueKey</span>){<span style="color:#b8860b">$return</span>[<span style="color:#b8860b">$valueKey</span>] <span style="color:#666">=</span> <span style="color:#b8860b">$_value</span>;}  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">else</span>{<span style="color:#b8860b">$return</span> <span style="color:#666">=</span> <span style="color:#b8860b">$_value</span>;}  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$children</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$first</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">true</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">foreach</span>(<span style="color:#b8860b">$xml</span><span style="color:#666">-&gt;</span><span style="color:#b44">children</span>() <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$elementName</span> <span style="color:#666">=&gt;</span> <span style="color:#b8860b">$child</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">simpleXMLToArray</span>(<span style="color:#b8860b">$child</span>,<span style="color:#b8860b">$attributesKey</span>, <span style="color:#b8860b">$childrenKey</span>,<span style="color:#b8860b">$valueKey</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(isset(<span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>])){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(is_array(<span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>])){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$first</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$temp</span> <span style="color:#666">=</span> <span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>];  
+</span></span><span style="display:flex;"><span> unset(<span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>]);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>][] <span style="color:#666">=</span> <span style="color:#b8860b">$temp</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$first</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">false</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>][] <span style="color:#666">=</span> <span style="color:#b8860b">$value</span>;  
+</span></span><span style="display:flex;"><span> }<span style="color:#a2f;font-weight:bold">else</span>{  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>] <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>(<span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>],<span style="color:#b8860b">$value</span>);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">else</span>{  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$children</span>[<span style="color:#b8860b">$elementName</span>] <span style="color:#666">=</span> <span style="color:#b8860b">$value</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$children</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$childrenKey</span>){<span style="color:#b8860b">$return</span>[<span style="color:#b8860b">$childrenKey</span>] <span style="color:#666">=</span> <span style="color:#b8860b">$children</span>;}  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">else</span>{<span style="color:#b8860b">$return</span> <span style="color:#666">=</span> array_merge(<span style="color:#b8860b">$return</span>,<span style="color:#b8860b">$children</span>);}  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attributes</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">foreach</span>(<span style="color:#b8860b">$xml</span><span style="color:#666">-&gt;</span><span style="color:#b44">attributes</span>() <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$name</span><span style="color:#666">=&gt;</span><span style="color:#b8860b">$value</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attributes</span>[<span style="color:#b8860b">$name</span>] <span style="color:#666">=</span> trim(<span style="color:#b8860b">$value</span>);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$attributes</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$attributesKey</span>){<span style="color:#b8860b">$return</span>[<span style="color:#b8860b">$attributesKey</span>] <span style="color:#666">=</span> <span style="color:#b8860b">$attributes</span>;}  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">else</span>{<span style="color:#b8860b">$return</span> <span style="color:#666">=</span> array_merge(<span style="color:#b8860b">$return</span>, <span style="color:#b8860b">$attributes</span>);}  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$return</span>;  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div>
+<p>Hope this helps.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

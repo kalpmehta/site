@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Guest on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/guest/</link>
+    <description>Recent content in Guest on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 26 May 2013 17:42:39 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/guest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento disable guest checkout / enable guest checkout</title>
+      <link>http://localhost:1313/magento-disable-guest-checkout-/-enable-guest-checkout/</link>
+      <pubDate>Sun, 26 May 2013 17:42:39 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-disable-guest-checkout-/-enable-guest-checkout/</guid>
+      <description>&lt;p&gt;By default the guest checkout in Magento is enabled and visitors can place an order without registering to the website. Some websites require mandatory login for placing orders, and this default feature should be turned off to disallow guest checkout.&lt;/p&gt;&#xA;&lt;p&gt;To disable guest checkout, navigate to:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;System &amp;gt; Configuration &amp;gt; Sales section &amp;gt; Checkout &amp;gt; Checkout Options&lt;/em&gt;&lt;br&gt;&#xA;Set &lt;em&gt;Allow Guest Checkout&lt;/em&gt; to &lt;em&gt;No&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;This will now disable any guest checkout in your site.&lt;br&gt;&#xA;To enable guest checkout, simply set the above dropdown option to &lt;em&gt;Yes&lt;/em&gt;.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>By default the guest checkout in Magento is enabled and visitors can place an order without registering to the website. Some websites require mandatory login for placing orders, and this default feature should be turned off to disallow guest checkout.</p>
+<p>To disable guest checkout, navigate to:</p>
+<p><em>System &gt; Configuration &gt; Sales section &gt; Checkout &gt; Checkout Options</em><br>
+Set <em>Allow Guest Checkout</em> to <em>No</em></p>
+<p>This will now disable any guest checkout in your site.<br>
+To enable guest checkout, simply set the above dropdown option to <em>Yes</em>.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Register guest user to website if email provided</title>
+      <link>http://localhost:1313/magento-register-guest-user-to-website-if-email-provided/</link>
+      <pubDate>Sat, 31 Dec 2011 13:03:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-register-guest-user-to-website-if-email-provided/</guid>
+      <description>&lt;p&gt;If your Magento website have feature where guest user can place an order without registering themself in your site, you can add them as a customer in your database. It helps in grouping the orders w.r.t email address in backend sales order. The only condition is that he should provide his email address while placing an order, which is quite obvious.&lt;/p&gt;&#xA;&lt;p&gt;So here is a snippet of code you can insert where you are asking user to enter his email address. Just check if the user is already not registered in your site.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If your Magento website have feature where guest user can place an order without registering themself in your site, you can add them as a customer in your database. It helps in grouping the orders w.r.t email address in backend sales order. The only condition is that he should provide his email address while placing an order, which is quite obvious.</p>
+<p>So here is a snippet of code you can insert where you are asking user to enter his email address. Just check if the user is already not registered in your site.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$e</span> <span style="color:#666">=</span> <span style="color:#b8860b">$email</span>; <span style="color:#080;font-style:italic">//provided by guest user
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$store</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getStore</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$websiteId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getWebsite</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getId</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘customer<span style="color:#666">/</span>customer’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">website_id</span> <span style="color:#666">=</span> <span style="color:#b8860b">$websiteId</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setStore</span>(<span style="color:#b8860b">$store</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$prefix</span> <span style="color:#666">=</span> “mag”;  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$pwd</span> <span style="color:#666">=</span> uniqid(<span style="color:#b8860b">$prefix</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$session</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘checkout<span style="color:#666">/</span>session’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$fname</span> <span style="color:#666">=</span> <span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getFirstname</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$lname</span> <span style="color:#666">=</span> <span style="color:#b8860b">$session</span><span style="color:#666">-&gt;</span><span style="color:#b44">getLastname</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="">$</span>customerObj<span style="color:#666">-&gt;</span><span style="color:#b44">setEmail</span>(<span style="color:#b8860b">$e</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setFirstname</span>(‘Guest’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setLastname</span>(‘Guest’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">setPassword</span>(<span style="color:#b8860b">$pwd</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">save</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$customerObj</span><span style="color:#666">-&gt;</span><span style="color:#b44">sendNewAccountEmail</span>(‘confirmed’); <span style="color:#080;font-style:italic">//auto confirmed  
+</span></span></span></code></pre></div>
+<p>UPDATE: It depends where you want to keep this functionality on your site. I have put it in saveShippingMethodAction() function of Mage/Checkout/controllers/OnepageController.php file after extending. Don’t forget, this code should only be run if customer is guest.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

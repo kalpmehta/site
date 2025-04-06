@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Performance on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/performance/</link>
+    <description>Recent content in Performance on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Fri, 19 Jul 2013 01:09:41 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento tweak .htaccess for performance optimization</title>
+      <link>http://localhost:1313/magento-tweak-.htaccess-for-performance-optimization/</link>
+      <pubDate>Fri, 19 Jul 2013 01:09:41 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-tweak-.htaccess-for-performance-optimization/</guid>
+      <description>&lt;p&gt;Tweak .htaccess for performance optimization in Magento. It will not sky rocket your website, but will show notable improvement. The default Magento .htaccess comes with performance optimization, but commented by default. I will show you here which lines to uncomment and improve the performance.&lt;/p&gt;&#xA;&lt;h2 id=&#34;compressing-web-pages-with-mod_deflate&#34;&gt;Compressing web pages with mod_deflate&lt;/h2&gt;&#xA;&lt;p&gt;The mod_deflate module allows the Apache2 web service to compress files and deliver them to browser that can handle them. With mod_deflate you can compress HTML, text or XML files by upto 70% of their original sizes! Thus, saving you server traffic and speeding up page loads.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Tweak .htaccess for performance optimization in Magento. It will not sky rocket your website, but will show notable improvement. The default Magento .htaccess comes with performance optimization, but commented by default. I will show you here which lines to uncomment and improve the performance.</p>
+<h2 id="compressing-web-pages-with-mod_deflate">Compressing web pages with mod_deflate</h2>
+<p>The mod_deflate module allows the Apache2 web service to compress files and deliver them to browser that can handle them. With mod_deflate you can compress HTML, text or XML files by upto 70% of their original sizes! Thus, saving you server traffic and speeding up page loads.</p>
+<p>Check your .htaccess file for below code, I have removed hashes before few lines to uncomment them for performance.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;ifmodule mod_deflate.c=&#34;&#34;&gt;&lt;/ifmodule&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\############################################  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\## enable apache served files compression  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\## http://developer.yahoo.com/performance/rules.html#gzip
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Insert filter on all content  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> SetOutputFilter DEFLATE  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Insert filter on selected content types only  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Netscape 4.x has some problems…  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> BrowserMatch ^Mozilla/4 gzip-only-text/html
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Netscape 4.06-4.08 have some more problems  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> BrowserMatch ^Mozilla/4\\.0[678] no-gzip
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # MSIE masquerades as Netscape, but it is fine  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> BrowserMatch \\bMSIE !no-gzip !gzip-only-text/html
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Don’t compress images  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> SetEnvIfNoCase Request_URI \\.(?:gif|jpe?g|png)$ no-gzip dont-vary
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> # Make sure proxies don’t deliver the wrong content  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> Header append Vary User-Agent env=!dont-vary</span></span></span></code></pre></div></p>
+<h2 id="enabling-expires-header-with-mod_expires">Enabling expires header with mod_expires</h2>
+<p>Make browser cache static files with Apache2’s mod_expires module.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;ifmodule mod_expires.c=&#34;&#34;&gt;&lt;/ifmodule&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\############################################  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\## Add default Expires header  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\## http://developer.yahoo.com/performance/rules.html#expires
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ExpiresActive On  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> ExpiresDefault “access plus 1 year”</span></span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

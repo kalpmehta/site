@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Certification on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-certification/</link>
+    <description>Recent content in Magento Certification on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 21 Oct 2019 04:55:03 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-certification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to pass Magento 2 certification exams</title>
+      <link>http://localhost:1313/how-to-pass-magento-2-certification-exams/</link>
+      <pubDate>Mon, 21 Oct 2019 04:55:03 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/how-to-pass-magento-2-certification-exams/</guid>
+      <description>&lt;p&gt;Hi folks, I am getting many requests on how to pass M2 certifications via email, twitter, slack, skype, etc.. I recently passed 5th M2 certification exam and would like to share with all my Magento friends how I prepared for these exams. There is no secret mantra which can help you pass M2 certification tests quickly and easily.&lt;/p&gt;&#xA;&lt;p&gt;You need hands-on experience, that is the &lt;strong&gt;first&lt;/strong&gt; mandatory requirement. At least an year of experience in Magento 2 will give you good understanding on how everything in it works. If you are the kind of folks who copy and paste the code all the time, you need at least 3 years of Magento 2 experience.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Hi folks, I am getting many requests on how to pass M2 certifications via email, twitter, slack, skype, etc.. I recently passed 5th M2 certification exam and would like to share with all my Magento friends how I prepared for these exams. There is no secret mantra which can help you pass M2 certification tests quickly and easily.</p>
+<p>You need hands-on experience, that is the <strong>first</strong> mandatory requirement. At least an year of experience in Magento 2 will give you good understanding on how everything in it works. If you are the kind of folks who copy and paste the code all the time, you need at least 3 years of Magento 2 experience.</p>
+<p><strong>Second</strong> in the list is, <a href="https://devdocs.magento.com">Magento DevDocs</a>. No matter what M2 exam you go for, read and understand all the Magento DevDocs articles on it. Being part of the hardest M2 certification test questions writer group, I can assure you, you will not be disappointed if you have prepared DevDocs for your certification exam.</p>
+<p><strong>Thirdly</strong>, go prepare SwiftOtter study guides. And prepare it slowly, understand each and every line written in that guide. After completing that, give the SwiftOtter test to know where you stand with your preparation and if you will able to crack the real exam.</p>
+<p>Last but not the least, try things practically. Though I understand you might not have luxury of time to test and learn everything practically, try important areas of the exam by writing the code locally and understand the flow of logic.</p>
+<p>I may edit this post in the future, but if you have followed these three important things mentioned above, your chances to pass any M2 exam will increase exponentially.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

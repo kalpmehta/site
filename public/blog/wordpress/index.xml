@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wordpress on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/wordpress/</link>
+    <description>Recent content in Wordpress on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 28 Mar 2016 23:43:54 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/wordpress/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Resolved] WordPress update error</title>
+      <link>http://localhost:1313/resolved-wordpress-update-error/</link>
+      <pubDate>Mon, 28 Mar 2016 23:43:54 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/resolved-wordpress-update-error/</guid>
+      <description>&lt;p&gt;If you are getting below (or any WordPress update) error when you are updating your WordPress to latest version, the problem could be:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;500 Internal Server Error&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;PHP Fatal error: Call to undefined function wp_oembed_add_host_js() in /var/www/production/blog/wp-admin/about.php on line 31&lt;/p&gt;&#xA;&lt;p&gt;– &lt;strong&gt;PHP version.&lt;/strong&gt; Make sure the PHP version you have meets the required PHP version of new WordPress update.&lt;br&gt;&#xA;– &lt;strong&gt;Opcode cache.&lt;/strong&gt; If you are using opcode cache like APC, clear the cache.&lt;br&gt;&#xA;– &lt;strong&gt;WordPress cache.&lt;/strong&gt; Flush the WordPress cache (Wordfence, WP Super Cache, W3 Total Cache, etc.) you are using.&lt;br&gt;&#xA;– &lt;strong&gt;CloudFlare.&lt;/strong&gt; If you are using external cache like CloudFlare, make sure you also flush it if you still see the above error.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you are getting below (or any WordPress update) error when you are updating your WordPress to latest version, the problem could be:</p>
+<p><em><strong>500 Internal Server Error</strong></em></p>
+<p>PHP Fatal error: Call to undefined function wp_oembed_add_host_js() in /var/www/production/blog/wp-admin/about.php on line 31</p>
+<p>– <strong>PHP version.</strong> Make sure the PHP version you have meets the required PHP version of new WordPress update.<br>
+– <strong>Opcode cache.</strong> If you are using opcode cache like APC, clear the cache.<br>
+– <strong>WordPress cache.</strong> Flush the WordPress cache (Wordfence, WP Super Cache, W3 Total Cache, etc.) you are using.<br>
+– <strong>CloudFlare.</strong> If you are using external cache like CloudFlare, make sure you also flush it if you still see the above error.</p>
+<p>Refresh the update page and see if this resolves for you!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>WordPress plugin install without FTP</title>
+      <link>http://localhost:1313/wordpress-plugin-install-without-ftp/</link>
+      <pubDate>Thu, 27 Jun 2013 12:13:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/wordpress-plugin-install-without-ftp/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://ka.lpe.sh/wp-content/uploads/2013/06/wp_connection_error.jpg&#34; alt=&#34;Wordpress Connection Information Error&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;WordPress generally gives you page to fill FTP connection details when you try to install new plugin or update wordpress. The reason is it cannot write to wp-content directory due of lack of permissions to write. The best way is to change permissions and ownership of wp-content directory. But if you can’t do that because of some reason, then add the below line of code in your wp-config.php&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/06/wp_connection_error.jpg" alt="Wordpress Connection Information Error"></p>
+<p>WordPress generally gives you page to fill FTP connection details when you try to install new plugin or update wordpress. The reason is it cannot write to wp-content directory due of lack of permissions to write. The best way is to change permissions and ownership of wp-content directory. But if you can’t do that because of some reason, then add the below line of code in your wp-config.php</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>define(‘FS_METHOD’, ‘direct’);</span></span></code></pre></div>
+<p>Other way is to change permissions and ownerships to wp-content directory as said.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> chown -R www-data wordpress  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">chgrp -R www-data wordpress  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">chmod -R 755 wordpress/wp-content</span></span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

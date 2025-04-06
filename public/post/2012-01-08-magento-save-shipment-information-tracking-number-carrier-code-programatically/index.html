@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Save shipment information of order programatically | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Save shipment information of order programatically" />
+<meta name="description" content="After creating invoice and shipment, it is necessary to add tracking information to shipment. Here is how to write a observer which will invoke as shipment save method is called and save tracking information programatically.
+config.xml – under global -&gt; events node
+{code type=xml}&lt;sales_order_shipment_save_before&gt;
+
+&lt;namespace_modulename_ship_before&gt;
+singleton
+Namespace_Modulename_Model_Observer
+salesOrderShipmentSaveBefore
+&lt;/namespace_modulename_ship_before&gt;
+
+&lt;/sales_order_shipment_save_before&gt;{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="assign awb number,magento,magento admin,save shipment,save tracking info,shipment save before," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Save shipment information of order programatically" />
+<meta property="og:description" content="After creating invoice and shipment, it is necessary to add tracking information to shipment. Here is how to write a observer which will invoke as shipment save method is called and save tracking information programatically.
+config.xml – under global -&gt; events node
+{code type=xml}&lt;sales_order_shipment_save_before&gt;
+
+&lt;namespace_modulename_ship_before&gt;
+singleton
+Namespace_Modulename_Model_Observer
+salesOrderShipmentSaveBefore
+&lt;/namespace_modulename_ship_before&gt;
+
+&lt;/sales_order_shipment_save_before&gt;{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-01-08-magento-save-shipment-information-tracking-number-carrier-code-programatically/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_10732e1d8b420414.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-01-08T15:23:03+00:00" />
+<meta property="article:modified_time" content="2012-01-08T15:23:03+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_10732e1d8b420414.webp"/>
+<meta name="twitter:title" content="Magento: Save shipment information of order programatically"/>
+<meta name="twitter:description" content="After creating invoice and shipment, it is necessary to add tracking information to shipment. Here is how to write a observer which will invoke as shipment save method is called and save tracking information programatically.
+config.xml – under global -&gt; events node
+{code type=xml}&lt;sales_order_shipment_save_before&gt;
+
+&lt;namespace_modulename_ship_before&gt;
+singleton
+Namespace_Modulename_Model_Observer
+salesOrderShipmentSaveBefore
+&lt;/namespace_modulename_ship_before&gt;
+
+&lt;/sales_order_shipment_save_before&gt;{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Save shipment information of order programatically">
+<meta itemprop="description" content="After creating invoice and shipment, it is necessary to add tracking information to shipment. Here is how to write a observer which will invoke as shipment save method is called and save tracking information programatically.
+config.xml – under global -&gt; events node
+{code type=xml}&lt;sales_order_shipment_save_before&gt;
+
+&lt;namespace_modulename_ship_before&gt;
+singleton
+Namespace_Modulename_Model_Observer
+salesOrderShipmentSaveBefore
+&lt;/namespace_modulename_ship_before&gt;
+
+&lt;/sales_order_shipment_save_before&gt;{/code}"><meta itemprop="datePublished" content="2012-01-08T15:23:03+00:00" />
+<meta itemprop="dateModified" content="2012-01-08T15:23:03+00:00" />
+<meta itemprop="wordCount" content="82">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_10732e1d8b420414.webp"/>
+
+
+<meta itemprop="keywords" content="assign awb number,magento,magento admin,save shipment,save tracking info,shipment save before," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Save shipment information of order programatically</h1>
+<p class="byline">
+  <time datetime='2012-01-08' pubdate>
+    2012-01-08
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>After creating invoice and shipment, it is necessary to add tracking information to shipment. Here is how to write a observer which will invoke as shipment save method is called and save tracking information programatically.</p>
+<p><strong>config.xml</strong> – under global -&gt; events node<br>
+{code type=xml}&lt;sales_order_shipment_save_before&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;namespace_modulename_ship_before&gt;<br>
+<!-- raw HTML omitted -->singleton<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Namespace_Modulename_Model_Observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->salesOrderShipmentSaveBefore<!-- raw HTML omitted --><br>
+&lt;/namespace_modulename_ship_before&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/sales_order_shipment_save_before&gt;{/code}</p>
+<p><strong>Observer.php</strong> -&gt; under Model directory of module<br>
+{code type=php}public function salesOrderShipmentSaveBefore($observer)<br>
+{<br>
+$shipment = $observer-&gt;getEvent()-&gt;getShipment();<br>
+$track = Mage::getModel(‘sales/order_shipment_track’)<br>
+-&gt;setNumber(‘824343454454’) //tracking number / awb number<br>
+-&gt;setCarrierCode(‘aramex’) //carrier code<br>
+-&gt;setTitle(‘Aramex’); //carrier title<br>
+$shipment-&gt;addTrack($track);<br>
+}{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/assign-awb-number/">#assign awb number</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/magento-admin/">#magento admin</a>
+  
+    <a class="blog-tags" href="/blog/save-shipment/">#save shipment</a>
+  
+    <a class="blog-tags" href="/blog/save-tracking-info/">#save tracking info</a>
+  
+    <a class="blog-tags" href="/blog/shipment-save-before/">#shipment save before</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Save%20shipment%20information%20of%20order%20programatically"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Linking multiple shipments with their invoices | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento: Linking multiple shipments with their invoices" />
+<meta name="description" content="In Magento, it’s a feature to create multiple invoices and shipments. But you can’t find the link between invoice with their respective shipment if you have more than one invoice and shipment. It’s because if you have forced invoice and shipment enabled (Invoice and Ship button combined in Manage Orders view page), it saves both invoice and shipment object together and hence can’t give the invoice id to shipment and hence fails in building the link between them." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="linking invoice with shipment,magento,multiple invoices,multiple shipments," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2012-01-17-magento-linking-multiple-shipments-with-their-invoices/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento: Linking multiple shipments with their invoices">
+  <meta property="og:description" content="In Magento, it’s a feature to create multiple invoices and shipments. But you can’t find the link between invoice with their respective shipment if you have more than one invoice and shipment. It’s because if you have forced invoice and shipment enabled (Invoice and Ship button combined in Manage Orders view page), it saves both invoice and shipment object together and hence can’t give the invoice id to shipment and hence fails in building the link between them.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-01-17T17:17:39+00:00">
+    <meta property="article:modified_time" content="2012-01-17T17:17:39+00:00">
+    <meta property="article:tag" content="Linking Invoice With Shipment">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="Multiple Invoices">
+    <meta property="article:tag" content="Multiple Shipments">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento: Linking multiple shipments with their invoices">
+  <meta name="twitter:description" content="In Magento, it’s a feature to create multiple invoices and shipments. But you can’t find the link between invoice with their respective shipment if you have more than one invoice and shipment. It’s because if you have forced invoice and shipment enabled (Invoice and Ship button combined in Manage Orders view page), it saves both invoice and shipment object together and hence can’t give the invoice id to shipment and hence fails in building the link between them.">
+
+
+  
+  
+  <meta itemprop="name" content="Magento: Linking multiple shipments with their invoices">
+  <meta itemprop="description" content="In Magento, it’s a feature to create multiple invoices and shipments. But you can’t find the link between invoice with their respective shipment if you have more than one invoice and shipment. It’s because if you have forced invoice and shipment enabled (Invoice and Ship button combined in Manage Orders view page), it saves both invoice and shipment object together and hence can’t give the invoice id to shipment and hence fails in building the link between them.">
+  <meta itemprop="datePublished" content="2012-01-17T17:17:39+00:00">
+  <meta itemprop="dateModified" content="2012-01-17T17:17:39+00:00">
+  <meta itemprop="wordCount" content="424">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Linking Invoice With Shipment,Magento,Multiple Invoices,Multiple Shipments">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Linking multiple shipments with their invoices</h1>
+<p class="byline">
+  <time datetime='2012-01-17' pubdate>
+    2012-01-17
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>In Magento, it’s a feature to create multiple invoices and shipments. But you can’t find the link between invoice with their respective shipment if you have more than one invoice and shipment. It’s because if you have forced invoice and shipment enabled (Invoice and Ship button combined in Manage Orders view page), it saves both invoice and shipment object together and hence can’t give the invoice id to shipment and hence fails in building the link between them.</p>
+<p>So what we need to do here is:<br>
+1. Add a column to sales_flat_shipment which will store invoice increment id (say invoice_id)<br>
+2. Before invoice and shipment are saved, get the invoice’s latest increment id and increment it by 1 (to get next invoice increment id)<br>
+3. Give that invoice increment id to shipment object, so it will get saved along with other shipment columns</p>
+<p>Here we go technically,</p>
+<p>Firstly, add a column to sales_flat_shipment table.<br>
+{code type=php}&lt;?php $installer = $this;</p>
+<p>$installer-?&gt;
+startSetup();</p>
+<p>$installer-&gt;run(”<br>
+ALTER TABLE sales_flat_shipment ADD COLUMN invoice_id VARCHAR(50) AFTER increment_id<br>
+“);</p>
+<p>$installer-&gt;endSetup();</p>
+<p>?&gt;{/code}</p>
+<p>Then, override InvoiceController.php of sales/order: Mage/Adminhtml/controllers/Sales/Order/InvoiceController.php<br>
+Paste this code to newly overridden file:</p>
+<p>{code type=php}&lt;?php require_once(&lsquo;Mage/Adminhtml/controllers/Sales/Order/InvoiceController.php&rsquo;);
+class Namespace_Module_Sales_Order_InvoiceController extends Mage_Adminhtml_Sales_Order_InvoiceController
+{
+/**
+* @author - Kalpesh Mehta
+* @desc - Rewritten this method for linking shipment and invoice
+*/</p>
+<pre><code>public function saveAction()
+{
+    $data = $this-?&gt;
+</code></pre>
+<p>getRequest()-&gt;getPost(‘invoice’);<br>
+$orderId = $this-&gt;getRequest()-&gt;getParam(‘order_id’);</p>
+<p>if (!empty($data[‘comment_text’])) {<br>
+Mage::getSingleton(‘adminhtml/session’)-&gt;setCommentText($data[‘comment_text’]);<br>
+}</p>
+<p>try {<br>
+$invoice = $this-&gt;_initInvoice();<br>
+if ($invoice) {<br>
+if (!empty($data[‘capture_case’])) {<br>
+$invoice-&gt;setRequestedCaptureCase($data[‘capture_case’]);<br>
+}<br>
+if (!empty($data[‘comment_text’])) {<br>
+$invoice-&gt;addComment($data[‘comment_text’], isset($data[‘comment_customer_notify’]), isset($data[‘is_visible_on_front’]));<br>
+}</p>
+<p>$invoice-&gt;register();</p>
+<p>if (!empty($data[‘send_email’])) {<br>
+$invoice-&gt;setEmailSent(true);<br>
+}<br>
+$invoice-&gt;getOrder()-&gt;setCustomerNoteNotify(!empty($data[‘send_email’]));<br>
+$invoice-&gt;getOrder()-&gt;setIsInProcess(true);</p>
+<p>$transactionSave = Mage::getModel(‘core/resource_transaction’)<br>
+-&gt;addObject($invoice)<br>
+-&gt;addObject($invoice-&gt;getOrder());<br>
+$shipment = false;</p>
+<p>if (!empty($data[‘do_shipment’]) || (int) $invoice-&gt;getOrder()-&gt;getForcedDoShipmentWithInvoice()) {<br>
+$shipment = $this-&gt;_prepareShipment($invoice);<br>
+if ($shipment) {</p>
+<p>//Get last invoice increment ID<br>
+$invoiceLast = Mage::getModel(‘sales/order_invoice’)-&gt;getCollection()<br>
+-&gt;setOrder(‘increment_id’,’DESC’)<br>
+-&gt;setPageSize(1)<br>
+-&gt;setCurPage(1);</p>
+<p>$invLastIncrId = $invoiceLast-&gt;getFirstItem()-&gt;getIncrementId();<br>
+$invNewIncrId = (int)$invLastIncrId + 1; //incrementing by 1<br>
+$shipment-&gt;setInvoiceId($invNewIncrId); //setting data for our sales_flat_shipment table column invoice_id</p>
+<p>$shipment-&gt;setEmailSent($invoice-&gt;getEmailSent());<br>
+$transactionSave-&gt;addObject($shipment);<br>
+}<br>
+}<br>
+$transactionSave-&gt;save();</p>
+<p>if (!empty($data[‘do_shipment’]) || (int) $invoice-&gt;getOrder()-&gt;getForcedDoShipmentWithInvoice()) {<br>
+$this-&gt;_getSession()-&gt;addSuccess($this-&gt;__(‘The invoice and shipment have been created.’));<br>
+} else {<br>
+$this-&gt;_getSession()-&gt;addSuccess($this-&gt;__(‘The invoice has been created.’));<br>
+}</p>
+<p>// send invoice/shipment emails<br>
+$comment = ”;<br>
+if (isset($data[‘comment_customer_notify’])) {<br>
+$comment = $data[‘comment_text’];<br>
+}<br>
+try {<br>
+$invoice-&gt;sendEmail(!empty($data[‘send_email’]), $comment);<br>
+} catch (Exception $e) {<br>
+Mage::logException($e);<br>
+$this-&gt;_getSession()-&gt;addError($this-&gt;__(‘Unable to send the invoice email.’));<br>
+}<br>
+if ($shipment) {<br>
+try {<br>
+$shipment-&gt;sendEmail(!empty($data[‘send_email’]));<br>
+} catch (Exception $e) {<br>
+Mage::logException($e);<br>
+$this-&gt;_getSession()-&gt;addError($this-&gt;__(‘Unable to send the shipment email.’));<br>
+}<br>
+}<br>
+Mage::getSingleton(‘adminhtml/session’)-&gt;getCommentText(true);<br>
+$this-&gt;_redirect(‘*/sales_order/view’, array(‘order_id’ =&gt; $orderId));<br>
+} else {<br>
+$this-&gt;_redirect(‘*/*/new’, array(‘order_id’ =&gt; $orderId));<br>
+}<br>
+return;<br>
+} catch (Mage_Core_Exception $e) {<br>
+$this-&gt;_getSession()-&gt;addError($e-&gt;getMessage());<br>
+} catch (Exception $e) {<br>
+$this-&gt;_getSession()-&gt;addError($this-&gt;__(‘Unable to save the invoice.’));<br>
+Mage::logException($e);<br>
+}<br>
+$this-&gt;_redirect(‘*/*/new’, array(‘order_id’ =&gt; $orderId));<br>
+}</p>
+<p>}{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/linking-invoice-with-shipment/">#linking invoice with shipment</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/multiple-invoices/">#multiple invoices</a>
+  
+    <a class="blog-tags" href="/blog/multiple-shipments/">#multiple shipments</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Prototypejs on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/prototypejs/</link>
+    <description>Recent content in Prototypejs on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 03 Jun 2013 11:33:13 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/prototypejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prototype Utility Methods &amp;#8211; Commonly used prototypejs functions</title>
+      <link>http://localhost:1313/prototype-utility-methods-%238211-commonly-used-prototypejs-functions/</link>
+      <pubDate>Mon, 03 Jun 2013 11:33:13 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/prototype-utility-methods-%238211-commonly-used-prototypejs-functions/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://ka.lpe.sh/wp-content/uploads/2013/06/prototype_logo.gif&#34; alt=&#34;Prototype JS Javascript framework&#34;&gt;Prototype JS comes with many utility methods which are very powerful and useful while development. Below methods are shorthands or aliases of other Prototype methods, created to save time in typing.&lt;/p&gt;&#xA;&lt;p&gt;These are created as they are very commonly used, to make developer’s life easier.&lt;/p&gt;&#xA;&lt;h2 id=&#34;-function&#34;&gt;$() Function&lt;/h2&gt;&#xA;&lt;p&gt;– Retuns the element that has the ID passed as an argument&lt;br&gt;&#xA;&lt;em&gt;Shorthand to&lt;/em&gt;: document.getElementById()&lt;br&gt;&#xA;Example:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$(&lt;span style=&#34;&#34;&gt;“&lt;/span&gt;car&lt;span style=&#34;&#34;&gt;”&lt;/span&gt;); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//returns element having id “car”  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;$(&lt;span style=&#34;&#34;&gt;“&lt;/span&gt;car&lt;span style=&#34;&#34;&gt;”&lt;/span&gt;).hide(); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//hides div where id is “car”  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;$(&lt;span style=&#34;&#34;&gt;“&lt;/span&gt;car&lt;span style=&#34;&#34;&gt;”&lt;/span&gt;).addClassName(&lt;span style=&#34;&#34;&gt;“&lt;/span&gt;hidden&lt;span style=&#34;&#34;&gt;”&lt;/span&gt;); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//adds class name “hidden” to element with id “car”  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/06/prototype_logo.gif" alt="Prototype JS Javascript framework">Prototype JS comes with many utility methods which are very powerful and useful while development. Below methods are shorthands or aliases of other Prototype methods, created to save time in typing.</p>
+<p>These are created as they are very commonly used, to make developer’s life easier.</p>
+<h2 id="-function">$() Function</h2>
+<p>– Retuns the element that has the ID passed as an argument<br>
+<em>Shorthand to</em>: document.getElementById()<br>
+Example:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>$(<span style="">“</span>car<span style="">”</span>); <span style="color:#080;font-style:italic">//returns element having id “car”  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>$(<span style="">“</span>car<span style="">”</span>).hide(); <span style="color:#080;font-style:italic">//hides div where id is “car”  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>$(<span style="">“</span>car<span style="">”</span>).addClassName(<span style="">“</span>hidden<span style="">”</span>); <span style="color:#080;font-style:italic">//adds class name “hidden” to element with id “car”  
+</span></span></span></code></pre></div></p>
+<h2 id="-function-1">$$() Function</h2>
+<p>– Returns the elements that has CSS selectors as an argument<br>
+<em>Shorthand to</em>: document.getElementById() + document.getElementsByTagName() + prototype’s getElementsByClassName()<br>
+Example:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>$$(<span style="">‘</span>.active<span style="">’</span>);<span style="color:#080;font-style:italic">//returns all the elements having class “active”  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>$$(<span style="">‘</span>div.active p, <span style="">#</span>car a<span style="">’</span>).invoke(<span style="">‘</span>hide<span style="">’</span>); <span style="color:#080;font-style:italic">//hides all the “p” tags under div having class “active”, hides all links under element having id “car”  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>$$(<span style="">‘</span>div<span style="color:#666">:</span>empty<span style="">’</span>); <span style="color:#080;font-style:italic">//all divs without any content, version 1.5.1 and above  
+</span></span></span></code></pre></div></p>
+<h2 id="f-function">$F() Function</h2>
+<p>– Returns the value of a form control, like text boxes or dropdown options<br>
+<em>Shorthand to</em>: Form.Element.getValue, Form.Element#getValue<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">script</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>	<span style="color:#a2f;font-weight:bold">function</span> showName() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a2f;font-weight:bold">var</span> name <span style="color:#666">=</span> $F(<span style="color:#b44">&#39;firstname&#39;</span>) <span style="color:#666">+</span> <span style="color:#b44">&#39; &#39;</span> <span style="color:#666">+</span> $F(<span style="color:#b44">&#39;lastname&#39;</span>);
+</span></span><span style="display:flex;"><span>		alert(<span style="color:#b44">&#39;Name: &#39;</span> <span style="color:#666">+</span> name);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">form</span>&gt; &lt;<span style="color:#008000;font-weight:bold">input</span> <span style="color:#b44">id</span><span style="color:#666">=</span><span style="color:#b44">&#34;firstname&#34;</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text&#34;</span> <span style="color:#b44">value</span><span style="color:#666">=</span><span style="color:#b44">&#34;Kalpesh&#34;</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">input</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">input</span> <span style="color:#b44">id</span><span style="color:#666">=</span><span style="color:#b44">&#34;lastname&#34;</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text&#34;</span> <span style="color:#b44">value</span><span style="color:#666">=</span><span style="color:#b44">&#34;Mehta&#34;</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">input</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">input</span> <span style="color:#b44">onclick</span><span style="color:#666">=</span><span style="color:#b44">&#34;showName();&#34;</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;button&#34;</span> <span style="color:#b44">value</span><span style="color:#666">=</span><span style="color:#b44">&#34;Get my Name!&#34;</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">input</span>&gt;  
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#008000;font-weight:bold">form</span>&gt;</span></span></code></pre></div></p>
+<h2 id="r-function">$R() Function</h2>
+<p>– Builds a range object, shorthand to “new ObjectRange()”<br>
+<em>Shorthand to</em>: ObjectRange()<br>
+Example:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> range <span style="color:#666">=</span> $R(<span style="color:#666">10</span>, <span style="color:#666">20</span>, <span style="color:#a2f;font-weight:bold">false</span>);  
+</span></span><span style="display:flex;"><span>range.each(<span style="color:#a2f;font-weight:bold">function</span>(value, index){  
+</span></span><span style="display:flex;"><span> alert(value);  
+</span></span><span style="display:flex;"><span>});  
+</span></span></code></pre></div></p>
+<h2 id="h-function">$H() Function</h2>
+<p>– Converts objects into enumerable Hash objects which resembles associate arrays.<br>
+<em>Shorthand to</em>: Hash<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> a <span style="color:#666">=</span> {  
+</span></span><span style="display:flex;"><span> firstname<span style="color:#666">:</span> <span style="">‘</span>John<span style="">’</span>,  
+</span></span><span style="display:flex;"><span> lastname<span style="color:#666">:</span> <span style="">‘</span>Doe<span style="">’</span>  
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> h <span style="color:#666">=</span> $H(a);  
+</span></span><span style="display:flex;"><span>alert( h.get(<span style="">‘</span>firstname<span style="">’</span>) ); <span style="color:#080;font-style:italic">//alert’s John  
+</span></span></span></code></pre></div></p>
+<h2 id="a-function">$A() Function</h2>
+<p>– Converts the single argument passed into an Array object.<br>
+<em>Shorthand to</em>: Array.from<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> paras <span style="color:#666">=</span> $A(<span style="color:#a2f">document</span>.getElementsByTagName(<span style="">‘</span>p<span style="">’</span>)); <span style="color:#080;font-style:italic">//gets all the paragraph’s in array format  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>paras.each(Element.hide); <span style="color:#080;font-style:italic">//looping paragraphs and hiding them each  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>$(paras.last()).show(); <span style="color:#080;font-style:italic">//showing the last paragraph  
+</span></span></span></code></pre></div></p>
+<h2 id="w-function">$w() Function</h2>
+<p>– Splits a string into an array with whitespace as a delimiter.<br>
+<em>Shorthand to</em>: Ruby’s %w{foo bar} or Perl’s qw(foo bar).<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">var</span> str <span style="color:#666">=</span> <span style="">‘</span>apples bananas kiwis<span style="">’</span>;  
+</span></span><span style="display:flex;"><span>$w(str).each(<span style="color:#a2f;font-weight:bold">function</span>(fruit){  
+</span></span><span style="display:flex;"><span> alert(fruit); <span style="color:#080;font-style:italic">//alerts 3 times with values apples, bananas and kiwis  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>})  
+</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>return false vs preventDefault in javascript</title>
+      <link>http://localhost:1313/return-false-vs-preventdefault-in-javascript/</link>
+      <pubDate>Sat, 01 Jun 2013 22:53:39 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/return-false-vs-preventdefault-in-javascript/</guid>
+      <description>&lt;p&gt;This post will help you to differentiate between javascript’s &lt;em&gt;return false&lt;/em&gt;, &lt;em&gt;preventDefault&lt;/em&gt;, &lt;em&gt;stopPropagation&lt;/em&gt; and &lt;em&gt;stopImmediatePropagation&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;The first thing you learn when using javascript is to use &lt;em&gt;return false&lt;/em&gt;. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using &lt;em&gt;return false&lt;/em&gt;. But when you want event to propagate, &lt;em&gt;return false&lt;/em&gt; will not be helpful and will give unexpected result.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>This post will help you to differentiate between javascript’s <em>return false</em>, <em>preventDefault</em>, <em>stopPropagation</em> and <em>stopImmediatePropagation</em>.</p>
+<p>The first thing you learn when using javascript is to use <em>return false</em>. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using <em>return false</em>. But when you want event to propagate, <em>return false</em> will not be helpful and will give unexpected result.</p>
+<h2 id="what-is-event-propagation">What is event propagation?</h2>
+<p>When a single event, such as a mouse click, if is handled by two or more event handlers defined in various location of the DOM hiearachy, then the event handling starts by executing for individual elements at the lowest level. There are two models of this event propagation, <em>event bubbling</em> and <em>event capturing</em>.</p>
+<p><!-- raw HTML omitted -->Event bubbling<!-- raw HTML omitted --> is when an event has more than one event handler and event handling execution starts from <strong>bottom to top</strong> i.e. from individual links to it’s parent element (e.g. form or body or document) having it’s own event handler.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">form</span> <span style="color:#b44">onclick</span><span style="color:#666">=</span><span style="color:#b44">&#34;2ndEvent()&#34;</span>&gt; [  
+</span></span><span style="display:flex;"><span> This is a link!  
+</span></span><span style="display:flex;"><span> ](#)  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">form</span>&gt;   </span></span></code></pre></div>
+<p>On clicking on the link in the above example code, first the hyperlink’s event will be handled, then form’s event will get handled, and at last body’s event will get handled. This is event bubbling, which bubble up from bottom to top.</p>
+<p><!-- raw HTML omitted -->Event capturing<!-- raw HTML omitted --> is opposite to event bubbling, where event handling execution starts from <strong>top to bottom</strong>.</p>
+<p>If you have such type of architecture, where there are many event handlers for an event, you should not use <em>return false</em> or atleast use it with caution. It can get you in big trouble, as it does <em>preventDefault()</em> and <em>stopPropagation()</em> both and hence never allows further execution of an event.</p>
+<h2 id="preventdefault">preventDefault()</h2>
+<p>It simply stops the default action of an element. Example, prevents the hyperlink from following the URL, prevents the submit button to submit the form. When you have many event handlers and you just want to prevent default event from occuring, just use <em>e.preventDefault()</em> in the top of the function definition. The reason we put <em>preventDefault()</em> in the first line of function is because, if something goes wrong in the code following the <em>preventDefault()</em>, then also it will not allow link or form to get submitted or do whatever action you want it to do. And hence the link or submit button will get submitted. It will still allow further propagation of the event.</p>
+<p>Following example prevents the link from following the URL given in href attribute.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">div</span>&gt; [Blah](http://ka.lpe.sh/) &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt; &lt;<span style="color:#008000;font-weight:bold">script</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      $(<span style="color:#b44">&#34;div a&#34;</span>).click(<span style="color:#a2f;font-weight:bold">function</span>(e){
+</span></span><span style="display:flex;"><span>  			e.preventDefault();
+</span></span><span style="display:flex;"><span>			});
+</span></span><span style="display:flex;"><span>     &lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;  
+</span></span><span style="display:flex;"><span>   </span></span></code></pre></div></p>
+<h2 id="stoppropagation">stopPropagation()</h2>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">div</span> <span style="color:#b44">onclick</span><span style="color:#666">=</span><span style="color:#b44">&#34;doSomething()&#34;</span>&gt; [Blah](#) &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt;   </span></span></code></pre></div><br>
+The above code has two event handlers for hyperlink. If you click on Blah, <em>doSomethingElse()</em> and then <em>doSomething()</em> will get fired.<br>
+Now let’s say you want to stop the execution of div’s onclick function i.e. <em>doSomething()</em>, but you want the anchor tag’s onclick to fire when clicking on Blah, then use <em>stopPropagation()</em>.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$(<span style="">“</span>div a<span style="">”</span>).click(<span style="color:#a2f;font-weight:bold">function</span> (e) {  
+</span></span><span style="display:flex;"><span> alert(<span style="">‘</span>Link is clicked<span style="color:#666">!</span> Sorry div will not get clicked..<span style="">’</span>);  
+</span></span><span style="display:flex;"><span> e.stopPropagation();  
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div></p>
+<h2 id="stopimmediatepropagation">stopImmediatePropagation()</h2>
+<p>If you have multiple event handlers for the event, and you want to stop all other event handlers and current event also from further executing, you should use <em>stopImmediatePropagation()</em>.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">div</span>&gt; [Blah](#) &lt;/<span style="color:#008000;font-weight:bold">div</span>&gt; &lt;<span style="color:#008000;font-weight:bold">script</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      $(<span style="color:#b44">&#34;div a&#34;</span>).click(<span style="color:#a2f;font-weight:bold">function</span> () {
+</span></span><span style="display:flex;"><span>         alert(<span style="color:#b44">&#39;Hello!&#39;</span>);
+</span></span><span style="display:flex;"><span>      });&lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $(&#34;div a&#34;).click(function (e) { alert(&#39;Hi! You can see me&#39;); e.stopImmediatePropagation(); });
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $(&#34;div a&#34;).click(function () { alert(&#39;I will never popup :(&#39;); });   
+</span></span><span style="display:flex;"><span>   </span></span></code></pre></div></p>
+<p>So next time when you use <em>return false</em>, think twice do you really want return false or <em>e.preventDefault()</em> or other methods explained above will well-suited there.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

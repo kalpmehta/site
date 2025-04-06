@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento filter products by status | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento filter products by status" />
+<meta name="description" content="Get all the products with status equal to enabled/disabled.
+If you are using Flat Catalog in Magento, you will not get disabled products by this filter as in flat table all the products are only enabled one. You can check if your Magento website uses flat catalog or not by going here:
+Admin &gt; System &gt; Configuration &gt; Catalog section &gt; Catalog &gt; Frontend
+Check Use Flat Catalog Category and Use Flat Catalog Product, if they are Yes it means you are using flat catalog, if they are No it means you are NOT using flat catalog." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,product,status," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento filter products by status" />
+<meta property="og:description" content="Get all the products with status equal to enabled/disabled.
+If you are using Flat Catalog in Magento, you will not get disabled products by this filter as in flat table all the products are only enabled one. You can check if your Magento website uses flat catalog or not by going here:
+Admin &gt; System &gt; Configuration &gt; Catalog section &gt; Catalog &gt; Frontend
+Check Use Flat Catalog Category and Use Flat Catalog Product, if they are Yes it means you are using flat catalog, if they are No it means you are NOT using flat catalog." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-05-26-magento-filter-products-by-status/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_dc02085bb23a3b20.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-05-26T18:35:49+00:00" />
+<meta property="article:modified_time" content="2013-05-26T18:35:49+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_dc02085bb23a3b20.webp"/>
+<meta name="twitter:title" content="Magento filter products by status"/>
+<meta name="twitter:description" content="Get all the products with status equal to enabled/disabled.
+If you are using Flat Catalog in Magento, you will not get disabled products by this filter as in flat table all the products are only enabled one. You can check if your Magento website uses flat catalog or not by going here:
+Admin &gt; System &gt; Configuration &gt; Catalog section &gt; Catalog &gt; Frontend
+Check Use Flat Catalog Category and Use Flat Catalog Product, if they are Yes it means you are using flat catalog, if they are No it means you are NOT using flat catalog."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento filter products by status">
+<meta itemprop="description" content="Get all the products with status equal to enabled/disabled.
+If you are using Flat Catalog in Magento, you will not get disabled products by this filter as in flat table all the products are only enabled one. You can check if your Magento website uses flat catalog or not by going here:
+Admin &gt; System &gt; Configuration &gt; Catalog section &gt; Catalog &gt; Frontend
+Check Use Flat Catalog Category and Use Flat Catalog Product, if they are Yes it means you are using flat catalog, if they are No it means you are NOT using flat catalog."><meta itemprop="datePublished" content="2013-05-26T18:35:49+00:00" />
+<meta itemprop="dateModified" content="2013-05-26T18:35:49+00:00" />
+<meta itemprop="wordCount" content="151">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_dc02085bb23a3b20.webp"/>
+
+
+<meta itemprop="keywords" content="magento,product,status," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento filter products by status</h1>
+<p class="byline">
+  <time datetime='2013-05-26' pubdate>
+    2013-05-26
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Get all the products with status equal to enabled/disabled.</p>
+<p>If you are using Flat Catalog in Magento, you will not get disabled products by this filter as in flat table all the products are only enabled one. You can check if your Magento website uses flat catalog or not by going here:<br>
+<em>Admin &gt; System &gt; Configuration &gt; Catalog section &gt; Catalog &gt; Frontend</em></p>
+<p>Check <em>Use Flat Catalog Category</em> and <em>Use Flat Catalog Product</em>, if they are <em>Yes</em> it means you are using flat catalog, if they are <em>No</em> it means you are NOT using flat catalog.</p>
+<p>So, if you don’t have flat catalog enabled and you want to filter all the products with status equal to disabled, you can use below code:</p>
+<p>{code type=php}$products = Mage::getModel(‘catalog/category’)-&gt;load($category_id)<br>
+-&gt;getProductCollection()<br>
+-&gt;addAttributeToSelect(‘*’) //whatever attributes you want to get here<br>
+-&gt;addAttributeToFilter(<br>
+‘status’,<br>
+array(‘eq’ =&gt; Mage_Catalog_Model_Product_Status::STATUS_DISABLED)<br>
+//replace DISABLED to ENABLED for products with status enabled<br>
+);{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/product/">#product</a>
+  
+    <a class="blog-tags" href="/blog/status/">#status</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20filter%20products%20by%20status"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

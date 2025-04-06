@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento get products without category | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento get products without category" />
+<meta name="description" content="Get a list of all orphaned products which are not associated with any category in Magento. Sometimes you may have missed to select categories for products by mistake when filling new product details, and now want to list them and assign categories to those products. You can’t get it from the Magento admin screen so you will need to run below MySQL query to get all the products without categories." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,orphaned products," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2013-07-16-magento-get-products-without-category/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento get products without category">
+  <meta property="og:description" content="Get a list of all orphaned products which are not associated with any category in Magento. Sometimes you may have missed to select categories for products by mistake when filling new product details, and now want to list them and assign categories to those products. You can’t get it from the Magento admin screen so you will need to run below MySQL query to get all the products without categories.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2013-07-16T13:12:09+00:00">
+    <meta property="article:modified_time" content="2013-07-16T13:12:09+00:00">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="Orphaned Products">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento get products without category">
+  <meta name="twitter:description" content="Get a list of all orphaned products which are not associated with any category in Magento. Sometimes you may have missed to select categories for products by mistake when filling new product details, and now want to list them and assign categories to those products. You can’t get it from the Magento admin screen so you will need to run below MySQL query to get all the products without categories.">
+
+
+  
+  
+  <meta itemprop="name" content="Magento get products without category">
+  <meta itemprop="description" content="Get a list of all orphaned products which are not associated with any category in Magento. Sometimes you may have missed to select categories for products by mistake when filling new product details, and now want to list them and assign categories to those products. You can’t get it from the Magento admin screen so you will need to run below MySQL query to get all the products without categories.">
+  <meta itemprop="datePublished" content="2013-07-16T13:12:09+00:00">
+  <meta itemprop="dateModified" content="2013-07-16T13:12:09+00:00">
+  <meta itemprop="wordCount" content="124">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Magento,Orphaned Products">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento get products without category</h1>
+<p class="byline">
+  <time datetime='2013-07-16' pubdate>
+    2013-07-16
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Get a list of all orphaned products which are not associated with any category in Magento. Sometimes you may have missed to select categories for products by mistake when filling new product details, and now want to list them and assign categories to those products. You can’t get it from the Magento admin screen so you will need to run below MySQL query to get all the products without categories.</p>
+<p>{code type=sql}SELECT e.entity_id, e.sku, e.name FROM catalog_product_entity AS e LEFT JOIN catalog_category_product AS cp ON cp.product_id = e.entity_id WHERE cp.category_id IS NULL{/code}</p>
+<p>Above sql query will simply bring the product ID, SKU, Name of products where category is NULL. You can add more columns in select (like e.*) to list full details of products.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/orphaned-products/">#orphaned products</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>No Categories on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/no-categories/</link>
+    <description>Recent content in No Categories on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 06 Nov 2014 20:17:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/no-categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get all products without categories (orphaned products)</title>
+      <link>http://localhost:1313/magento-get-all-products-without-categories-orphaned-products/</link>
+      <pubDate>Thu, 06 Nov 2014 20:17:43 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-all-products-without-categories-orphaned-products/</guid>
+      <description>&lt;p&gt;Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.&lt;/p&gt;&#xA;&lt;p&gt;Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento get all the configurable/simple products which are not associated with any categories, which are orphaned products. To get all the products (regardless of their type), simply ignore the condition where it checks for type_id in the below query and comment the condition line in foreach loop.</p>
+<p>Below script will get all such products, you can create new PHP file at the root of Magento installation and paste the code:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#a2f;font-weight:bold">require_once</span>(<span style="color:#b44">&#39;app/Mage.php&#39;</span>);
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>(<span style="color:#b44">&#39;admin&#39;</span>);
+</span></span><span style="display:flex;"><span>set_time_limit(<span style="color:#666">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$i</span><span style="color:#666">=</span><span style="color:#666">0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$sql</span> <span style="color:#666">=</span> <span style="color:#b44">&#34;select
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">    type_id,sku
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> from catalog_product_entity a
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> left join catalog_category_product cp on cp.`product_id` = a.entity_id
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> left join catalog_product_relation cpr on cpr.child_id = a.entity_id
+</span></span></span><span style="display:flex;"><span><span style="color:#b44"> where
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">       cp.product_id is null
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">   and cpr.parent_id is null
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">   and a.type_id = &#39;configurable&#39;&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$connection</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(<span style="color:#b44">&#39;core/resource&#39;</span>)<span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">getConnection</span>(‘core_read’);  
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//echo count($connection-&gt;fetchAll($sql));exit;
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$connection</span><span style="color:#666">-&gt;</span><span style="color:#b44">fetchAll</span>(<span style="color:#b8860b">$sql</span>) <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$arr_row</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$pid</span> <span style="color:#666">=</span> <span style="color:#b8860b">$arr_row</span>[‘sku’];  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">loadByAttribute</span>(‘sku’,<span style="color:#b8860b">$pid</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getTypeId</span>()<span style="color:#666">!=</span>’configurable’) <span style="color:#a2f;font-weight:bold">continue</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$i</span><span style="color:#666">++</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$i</span> <span style="color:#666">.</span>”) “<span style="color:#666">.</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>() <span style="color:#666">.</span> ” – ” <span style="color:#666">.</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSku</span>() <span style="color:#666">.</span> “  
+</span></span><span style="display:flex;"><span>“;  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span><span style="color:#080">?&gt;</span><span style="">
+</span></span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

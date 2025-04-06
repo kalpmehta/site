@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Minicart on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/minicart/</link>
+    <description>Recent content in Minicart on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 17 Nov 2013 11:40:23 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/minicart/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento enterprise: show top mini cart when product is added to cart</title>
+      <link>http://localhost:1313/magento-enterprise-show-top-mini-cart-when-product-is-added-to-cart/</link>
+      <pubDate>Sun, 17 Nov 2013 11:40:23 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-enterprise-show-top-mini-cart-when-product-is-added-to-cart/</guid>
+      <description>&lt;p&gt;Magento Enterprise comes with a top header mini-cart, which displays all the items with their custom options added to cart, when you click on My Cart in the header. This is a good feature, but what if you want to show this mini-cart each time a product is added, without clicking on that link? I will show you here how to display your mini cart automatically when a product is added to cart.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento Enterprise comes with a top header mini-cart, which displays all the items with their custom options added to cart, when you click on My Cart in the header. This is a good feature, but what if you want to show this mini-cart each time a product is added, without clicking on that link? I will show you here how to display your mini cart automatically when a product is added to cart.</p>
+<p>Open your cartheader.php file, which is located at:<br>
+<em>app/design/frontend/enterprise/YOUR_DESIGN/template/checkout/cart/cartheader.phtml</em></p>
+<p>In the last few lines of this file, you should find the below line in javascript:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Enterprise.TopCart.initialize(<span style="">‘</span>topCartContent<span style="">’</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Below can be used to show minicart after item added  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Enterprise.TopCart.showCart(7);
+</span></span></span></code></pre></div>
+<p>Replace the last line, <strong>//Enterprise.TopCart.showCart(7);</strong> with the below lines:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>jQuery( <span style="color:#a2f">document</span> ).ready(<span style="color:#a2f;font-weight:bold">function</span>() {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>( jQuery(<span style="">‘#</span>messages_product_view<span style="">’</span>).children().length ){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(jQuery(<span style="">‘#</span>messages_product_view<span style="">’</span>).children().children().attr(<span style="">‘</span><span style="color:#a2f;font-weight:bold">class</span><span style="">’</span>) <span style="color:#666">==</span> <span style="">‘</span>success<span style="color:#666">-</span>msg<span style="">’</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(jQuery(<span style="">‘</span>.success<span style="color:#666">-</span>msg ul li span<span style="">’</span>).text().indexOf(<span style="">‘</span>was added to your shopping cart<span style="">’</span>) <span style="color:#666">&gt;</span> <span style="color:#666">-</span><span style="color:#666">1</span>) {  
+</span></span><span style="display:flex;"><span> Enterprise.TopCart.showCart(<span style="color:#666">7</span>);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div>
+<p>So whenever in the page, there will be an element with ID “#messages_product_view” and it has a children with class “success-msg” and it has a ul/li/span with text containing “was added to your shopping cart”, we will show the top mini-cart. This is only true when an product is added to shopping cart.</p>
+<p>You can also show top mini-cart without this jquery hack, by making a new module in Magento and catch the event when product is added to cart. Then programmatically clicking the top mini cart to display it. But according to me this small piece of code is better than to create whole new Magento module.</p>
+<p>HTH!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

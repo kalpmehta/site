@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Enterprise on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/enterprise/</link>
+    <description>Recent content in Enterprise on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 28 Mar 2015 04:40:23 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/enterprise/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs</title>
+      <link>http://localhost:1313/magento-ee-1.14-%238211-broken-category-%23038-product-sitemap-urls/</link>
+      <pubDate>Sat, 28 Mar 2015 04:40:23 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-ee-1.14-%238211-broken-category-%23038-product-sitemap-urls/</guid>
+      <description>&lt;p&gt;Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. &lt;a href=&#34;http://www.magentocommerce.com/knowledge-base/entry/ee114-later-release-notes#ee114-1400fixes-other&#34;&gt;Magento EE 1.14.0.0 Release Notes&lt;/a&gt; and &lt;a href=&#34;http://www.magentocommerce.com/knowledge-base/entry/ce19-later-release-notes#ce19-1900fixes-other&#34;&gt;Magento CE 1.9.0.0 Release Notes&lt;/a&gt; lists this in it’s Bug Fixes:&lt;br&gt;&#xA;&lt;em&gt;Google Sitemap files now include the .html suffix for category and product URLs.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. <a href="http://www.magentocommerce.com/knowledge-base/entry/ee114-later-release-notes#ee114-1400fixes-other">Magento EE 1.14.0.0 Release Notes</a> and <a href="http://www.magentocommerce.com/knowledge-base/entry/ce19-later-release-notes#ce19-1900fixes-other">Magento CE 1.9.0.0 Release Notes</a> lists this in it’s Bug Fixes:<br>
+<em>Google Sitemap files now include the .html suffix for category and product URLs.</em></p>
+<p>We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages.</p>
+<p><a href="http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png"><img src="http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png" alt="Magento Category Product URL config"></a></p>
+<p>Magento team have used observer to observe the events <em>sitemap_categories_generating_before</em> and <em>sitemap_products_generating_before</em> to add the suffix in the following file and functions (Notice I have commented all lines in the functions):<br>
+app/code/core/Enterprise/Catalog/Model/Observer.php<br>
+(copy this file to app/code/local/Enterprise/Catalog/Model/Observer.php, you may have to create directories)<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b44;font-style:italic">/**  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * Add Seo suffix to category’s URL if doesn’t exists.  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> *  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * @param Varien_Event_Observer $observer  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> */</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">addSeoSuffixToCategoryUrl</span>(Varien_Event_Observer <span style="color:#b8860b">$observer</span>)  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">/*$seoSuffix = (string) Mage::app()-&gt;getStore()-&gt;getConfig(  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> Mage_Catalog_Helper_Category::XML_PATH_CATEGORY_URL_SUFFIX  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> );  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> $this-&gt;_addSuffixToUrl($observer-&gt;getCollection()-&gt;getItems(), $seoSuffix);*/</span>  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b44;font-style:italic">/**  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * Add Seo suffix to product’s URL if doesn’t exists.  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> *  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * @param Varien_Event_Observer $observer  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> */</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">addSeoSuffixToProductUrl</span>(Varien_Event_Observer <span style="color:#b8860b">$observer</span>)  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">/*$seoSuffix = (string) Mage::app()-&gt;getStore()-&gt;getConfig(  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> Mage_Catalog_Helper_Product::XML_PATH_PRODUCT_URL_SUFFIX  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> );  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> $this-&gt;_addSuffixToUrl($observer-&gt;getCollection()-&gt;getItems(), $seoSuffix);*/</span>  
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div></p>
+<p>After commenting above function’s logic and generating the Google Sitemap again (Admin &gt; Catalog &gt; Google Sitemap) everything was normal (no dot and suffix in URLs)</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento enterprise: show top mini cart when product is added to cart</title>
+      <link>http://localhost:1313/magento-enterprise-show-top-mini-cart-when-product-is-added-to-cart/</link>
+      <pubDate>Sun, 17 Nov 2013 11:40:23 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-enterprise-show-top-mini-cart-when-product-is-added-to-cart/</guid>
+      <description>&lt;p&gt;Magento Enterprise comes with a top header mini-cart, which displays all the items with their custom options added to cart, when you click on My Cart in the header. This is a good feature, but what if you want to show this mini-cart each time a product is added, without clicking on that link? I will show you here how to display your mini cart automatically when a product is added to cart.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento Enterprise comes with a top header mini-cart, which displays all the items with their custom options added to cart, when you click on My Cart in the header. This is a good feature, but what if you want to show this mini-cart each time a product is added, without clicking on that link? I will show you here how to display your mini cart automatically when a product is added to cart.</p>
+<p>Open your cartheader.php file, which is located at:<br>
+<em>app/design/frontend/enterprise/YOUR_DESIGN/template/checkout/cart/cartheader.phtml</em></p>
+<p>In the last few lines of this file, you should find the below line in javascript:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>Enterprise.TopCart.initialize(<span style="">‘</span>topCartContent<span style="">’</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Below can be used to show minicart after item added  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">// Enterprise.TopCart.showCart(7);
+</span></span></span></code></pre></div>
+<p>Replace the last line, <strong>//Enterprise.TopCart.showCart(7);</strong> with the below lines:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>jQuery( <span style="color:#a2f">document</span> ).ready(<span style="color:#a2f;font-weight:bold">function</span>() {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>( jQuery(<span style="">‘#</span>messages_product_view<span style="">’</span>).children().length ){  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(jQuery(<span style="">‘#</span>messages_product_view<span style="">’</span>).children().children().attr(<span style="">‘</span><span style="color:#a2f;font-weight:bold">class</span><span style="">’</span>) <span style="color:#666">==</span> <span style="">‘</span>success<span style="color:#666">-</span>msg<span style="">’</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(jQuery(<span style="">‘</span>.success<span style="color:#666">-</span>msg ul li span<span style="">’</span>).text().indexOf(<span style="">‘</span>was added to your shopping cart<span style="">’</span>) <span style="color:#666">&gt;</span> <span style="color:#666">-</span><span style="color:#666">1</span>) {  
+</span></span><span style="display:flex;"><span> Enterprise.TopCart.showCart(<span style="color:#666">7</span>);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>});</span></span></code></pre></div>
+<p>So whenever in the page, there will be an element with ID “#messages_product_view” and it has a children with class “success-msg” and it has a ul/li/span with text containing “was added to your shopping cart”, we will show the top mini-cart. This is only true when an product is added to shopping cart.</p>
+<p>You can also show top mini-cart without this jquery hack, by making a new module in Magento and catch the event when product is added to cart. Then programmatically clicking the top mini cart to display it. But according to me this small piece of code is better than to create whole new Magento module.</p>
+<p>HTH!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

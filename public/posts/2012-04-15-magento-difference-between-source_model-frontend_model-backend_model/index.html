@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Difference between source_model, frontend_model, backend_model | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento: Difference between source_model, frontend_model, backend_model" />
+<meta name="description" content="When dealing with Magento Admin’s system configuration, you may have encountered with these models. If you don’t know, these models are used when you add custom fields through your system.xml file at Magento’s backend configuration (Admin -&gt; System -&gt; Configuration).
+Okay, so the difference between these 3 models are:
+source_model:
+It specifies a Model class, where you will be returned with options that can populate in the current field.
+Example,
+{code type=php}&lt;source_model&gt;adminhtml/system_config_source_yesno&lt;/source_model&gt;{/code}
+this will populate select dropdown with values Yes/No" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="backend_model,difference,frontend_model,magento,source_model,versus," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2012-04-15-magento-difference-between-source_model-frontend_model-backend_model/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento: Difference between source_model, frontend_model, backend_model">
+  <meta property="og:description" content="When dealing with Magento Admin’s system configuration, you may have encountered with these models. If you don’t know, these models are used when you add custom fields through your system.xml file at Magento’s backend configuration (Admin -&gt; System -&gt; Configuration).
+Okay, so the difference between these 3 models are:
+source_model:
+It specifies a Model class, where you will be returned with options that can populate in the current field.
+Example,
+{code type=php}&lt;source_model&gt;adminhtml/system_config_source_yesno&lt;/source_model&gt;{/code}
+this will populate select dropdown with values Yes/No">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-04-15T07:15:06+00:00">
+    <meta property="article:modified_time" content="2012-04-15T07:15:06+00:00">
+    <meta property="article:tag" content="Backend_model">
+    <meta property="article:tag" content="Difference">
+    <meta property="article:tag" content="Frontend_model">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="Source_model">
+    <meta property="article:tag" content="Versus">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento: Difference between source_model, frontend_model, backend_model">
+  <meta name="twitter:description" content="When dealing with Magento Admin’s system configuration, you may have encountered with these models. If you don’t know, these models are used when you add custom fields through your system.xml file at Magento’s backend configuration (Admin -&gt; System -&gt; Configuration).
+Okay, so the difference between these 3 models are:
+source_model:
+It specifies a Model class, where you will be returned with options that can populate in the current field.
+Example,
+{code type=php}&lt;source_model&gt;adminhtml/system_config_source_yesno&lt;/source_model&gt;{/code}
+this will populate select dropdown with values Yes/No">
+
+
+  
+  
+  <meta itemprop="name" content="Magento: Difference between source_model, frontend_model, backend_model">
+  <meta itemprop="description" content="When dealing with Magento Admin’s system configuration, you may have encountered with these models. If you don’t know, these models are used when you add custom fields through your system.xml file at Magento’s backend configuration (Admin -&gt; System -&gt; Configuration).
+Okay, so the difference between these 3 models are:
+source_model:
+It specifies a Model class, where you will be returned with options that can populate in the current field.
+Example,
+{code type=php}&lt;source_model&gt;adminhtml/system_config_source_yesno&lt;/source_model&gt;{/code}
+this will populate select dropdown with values Yes/No">
+  <meta itemprop="datePublished" content="2012-04-15T07:15:06+00:00">
+  <meta itemprop="dateModified" content="2012-04-15T07:15:06+00:00">
+  <meta itemprop="wordCount" content="220">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Backend_model,Difference,Frontend_model,Magento,Source_model,Versus">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Difference between source_model, frontend_model, backend_model</h1>
+<p class="byline">
+  <time datetime='2012-04-15' pubdate>
+    2012-04-15
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>When dealing with Magento Admin’s system configuration, you may have encountered with these models. If you don’t know, these models are used when you add custom fields through your system.xml file at Magento’s backend configuration (Admin -&gt; System -&gt; Configuration).</p>
+<p>Okay, so the difference between these 3 models are:</p>
+<p><strong>source_model</strong>:<br>
+It specifies a Model class, where you will be returned with options that can populate in the current field.</p>
+<p>Example,<br>
+{code type=php}&lt;source_model&gt;adminhtml/system_config_source_yesno&lt;/source_model&gt;{/code}<br>
+this will populate select dropdown with values Yes/No</p>
+<p><strong>frontend_model</strong>:<br>
+It specifies a Block class to add custom render to use as a frontend field type instead of/along with default frontend_type field value (text, textarea, select, etc.).</p>
+<p>Example,<br>
+{code type=xml}&lt;frontend_type&gt;button&lt;/frontend_type&gt;<br>
+&lt;frontend_model&gt;MyCustomModule/button&lt;/frontend_model&gt;{/code}<br>
+this will keep frontend type as button, but the customized one taken from Block class Button.php of MyCustomModule module</p>
+<p>Code at Button.php can be anything like this:<br>
+{code type=php}&lt;?php class MyNamespace_MyCustomModule_Block_Button extends Mage_Adminhtml_Block_System_Config_Form_Field
+{</p>
+<pre><code>protected function _getElementHtml(Varien_Data_Form_Element_Abstract $element)
+{
+    $this-?&gt;
+</code></pre>
+<p>setElement($element);<br>
+$url = $this-&gt;getUrl(‘catalog/product’);</p>
+<p>$html = $this-&gt;getLayout()-&gt;createBlock(‘adminhtml/widget_button’)<br>
+-&gt;setType(‘button’)<br>
+-&gt;setClass(‘scalable’)<br>
+-&gt;setLabel(‘Run Now !’)<br>
+-&gt;setOnClick(“setLocation(‘$url’)”)<br>
+-&gt;toHtml();</p>
+<p>return $html;<br>
+}<br>
+}<br>
+?&gt;{/code}</p>
+<p><strong>backend_model</strong>:<br>
+Generally, when you save any form at System Configuration, the data is stored in the table core_config_data. But if your requirement is to do something prior/after the save is performed, you can do it by having _beforeSave() &amp; _afterSave() methods defined in this custom/defined class.</p>
+<p>Example,<br>
+{code type=xml}&lt;backend_model&gt;adminhtml/system_config_backend_shipping_tablerate&lt;/backend_model&gt;{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/backend_model/">#backend_model</a>
+  
+    <a class="blog-tags" href="/blog/difference/">#difference</a>
+  
+    <a class="blog-tags" href="/blog/frontend_model/">#frontend_model</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/source_model/">#source_model</a>
+  
+    <a class="blog-tags" href="/blog/versus/">#versus</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

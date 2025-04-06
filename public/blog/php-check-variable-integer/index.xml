@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Php Check Variable Integer on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/php-check-variable-integer/</link>
+    <description>Recent content in Php Check Variable Integer on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 17 Oct 2012 14:53:07 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/php-check-variable-integer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP: is_int() vs is_numeric()</title>
+      <link>http://localhost:1313/php-is_int-vs-is_numeric/</link>
+      <pubDate>Wed, 17 Oct 2012 14:53:07 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/php-is_int-vs-is_numeric/</guid>
+      <description>&lt;p&gt;Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.&lt;/p&gt;&#xA;&lt;p&gt;The key difference between these two functions is that is_int() checks the &lt;strong&gt;type&lt;/strong&gt; of variable, while is_numeric() checks the &lt;strong&gt;value&lt;/strong&gt; of the variable.&lt;/p&gt;&#xA;&lt;p&gt;From PHP.net,&lt;br&gt;&#xA;&lt;em&gt;is_int:&lt;/em&gt; Find whether the type of a variable is integer&lt;br&gt;&#xA;&lt;em&gt;is_numeric:&lt;/em&gt; Finds whether a variable is a number or a numeric string&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.</p>
+<p>The key difference between these two functions is that is_int() checks the <strong>type</strong> of variable, while is_numeric() checks the <strong>value</strong> of the variable.</p>
+<p>From PHP.net,<br>
+<em>is_int:</em> Find whether the type of a variable is integer<br>
+<em>is_numeric:</em> Finds whether a variable is a number or a numeric string</p>
+<p>So, if you check something like:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$var</span> <span style="color:#666">=</span> “123”;</span></span></code></pre></div><br>
+$var is a string of numbers, not an integer value.<br>
+Therefor <em>is_int should return false</em> as it’s not an integer, it’s a string.<br>
+However it is a numeric string, so hence <em>is_numeric should return true</em>.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

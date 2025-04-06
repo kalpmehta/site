@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Root Password on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/root-password/</link>
+    <description>Recent content in Root Password on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 08 Jan 2013 15:13:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/root-password/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql root password reset or create</title>
+      <link>http://localhost:1313/mysql-root-password-reset-or-create/</link>
+      <pubDate>Tue, 08 Jan 2013 15:13:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/mysql-root-password-reset-or-create/</guid>
+      <description>&lt;p&gt;Mysql root password reset easily by following below instructions. For those who want to create (if no root user in mysql) or reset the password for the Root user in Mysql (in Linux), this post is definately going to help you. I had a tough time in getting this to work, so thought to share it with anyone facing the same problem.&lt;/p&gt;&#xA;&lt;p&gt;You need to use &lt;strong&gt;–skip-grant-tables&lt;/strong&gt; if you don’t know mysql password to login. You can use it like this:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Mysql root password reset easily by following below instructions. For those who want to create (if no root user in mysql) or reset the password for the Root user in Mysql (in Linux), this post is definately going to help you. I had a tough time in getting this to work, so thought to share it with anyone facing the same problem.</p>
+<p>You need to use <strong>–skip-grant-tables</strong> if you don’t know mysql password to login. You can use it like this:</p>
+<p><em>/usr/bin/mysqld_safe –skip-grant-tables &amp;</em></p>
+<p>Once you run the above command on terminal, write <em>mysql</em> and hit enter. That’s because you already said Mysql that you want to skip all the privileges checking and allowing you with all the database access without password.</p>
+<p>You should be inside mysql now. Now execute the command <em>use mysql;</em> because we are going to create/change the user in “mysql” database.</p>
+<p>Now, check if you have the root user in the “user” table. Do this by:<br>
+<em>select * from user;</em></p>
+<p>If you already have root user, just execute this to change the password:<br>
+<em>UPDATE user SET Password=PASSWORD(‘new-password’) WHERE User=’root’;</em></p>
+<p>If you don’t have any records in user table, create one:<br>
+<em>insert into <code>user</code> (<code>Host</code>, <code>User</code>, <code>Password</code>, <code>Select_priv</code>, <code>Insert_priv</code>, <code>Update_priv</code>, <code>Delete_priv</code>, <code>Create_priv</code>, <code>Drop_priv</code>, <code>Reload_priv</code>, <code>Shutdown_priv</code>, <code>Process_priv</code>, <code>File_priv</code>, <code>Grant_priv</code>, <code>References_priv</code>, <code>Index_priv</code>, <code>Alter_priv</code>, <code>Show_db_priv</code>, <code>Super_priv</code>, <code>Create_tmp_table_priv</code>, <code>Lock_tables_priv</code>, <code>Execute_priv</code>, <code>Repl_slave_priv</code>, <code>Repl_client_priv</code>, <code>Create_view_priv</code>, <code>Show_view_priv</code>, <code>Create_routine_priv</code>, <code>Alter_routine_priv</code>, <code>Create_user_priv</code>, <code>ssl_type</code>, <code>ssl_cipher</code>, <code>x509_issuer</code>, <code>x509_subject</code>, <code>max_questions</code>, <code>max_updates</code>, <code>max_connections</code>, <code>max_user_connections</code>)<br>
+values(‘localhost’,’root’,”,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’, ‘Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,’Y’,”,”,”,”,’0′,’0′,’0′,’0′);</em></p>
+<p>This creates new user “root” with no password.<br>
+To set a password, use the above UPDATE command.</p>
+<p>After it’s done, don’t forget to execute <em>flush privileges;</em></p>
+<p>Restart mysql and you should be now able to login with root user and your new password.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

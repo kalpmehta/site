@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Value on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/value/</link>
+    <description>Recent content in Value on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 06 Jun 2011 10:12:18 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/value/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get all the values of a Magento EAV for a particular attribute code</title>
+      <link>http://localhost:1313/magento-get-all-the-values-of-a-magento-eav-for-a-particular-attribute-code/</link>
+      <pubDate>Mon, 06 Jun 2011 10:12:18 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-all-the-values-of-a-magento-eav-for-a-particular-attribute-code/</guid>
+      <description>&lt;p&gt;If you have ever wondered how to get all the values of any EAV attribute for products in Magento, then this is the workaround for you:&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘eav&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;config’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(‘catalog_product’, ‘color’); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//here, “color” is the attribute_code  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$allOptions&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAllOptions&lt;/span&gt;(&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$allOptions&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$myArray&lt;/span&gt;[&lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;[‘value’]] &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;[‘label’];  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$myArray&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;You will get list of all colors in an array called “myArray” in value =&amp;gt; label format.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you have ever wondered how to get all the values of any EAV attribute for products in Magento, then this is the workaround for you:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘catalog_product’, ‘color’); <span style="color:#080;font-style:italic">//here, “color” is the attribute_code  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$allOptions</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAllOptions</span>(<span style="color:#a2f;font-weight:bold">true</span>, <span style="color:#a2f;font-weight:bold">true</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$allOptions</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$instance</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$myArray</span>[<span style="color:#b8860b">$instance</span>[‘value’]] <span style="color:#666">=</span> <span style="color:#b8860b">$instance</span>[‘label’];  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">log</span>(<span style="color:#b8860b">$myArray</span>);</span></span></code></pre></div>
+<p>You will get list of all colors in an array called “myArray” in value =&gt; label format.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Php on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/php/</link>
+    <description>Recent content in Php on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 12 Jun 2013 19:19:54 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PHP redirect without header()</title>
+      <link>http://localhost:1313/php-redirect-without-header/</link>
+      <pubDate>Wed, 12 Jun 2013 19:19:54 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/php-redirect-without-header/</guid>
+      <description>&lt;p&gt;It’s very frustrating when you want to redirect from one page to another, and you get the error:&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It’s very frustrating when you want to redirect from one page to another, and you get the error:</p>
+<p><em>Warning: Cannot modify header information – headers already sent by (output started at /some/filename.php:12) in /some/filename.php on line 99</em></p>
+<p>The problem is Headers are already sent, or in simple language the output is already sent to browser when your header() function is called. The best solution is not to pass headers (send html/output to browser) till the point header() function is fired.</p>
+<p>Another way is to use output buffering. Without output buffering (the default), your HTML is sent to the browser in pieces as PHP processes through your script. With output buffering, your HTML is stored in a variable and sent to the browser as one piece at the end of your script. For using this method, you have to start your file with <em>ob_start();</em> so that output gets buffered.</p>
+<p>But what if you don’t care whether the output is sent or not, you anyway want the redirect to work? This simple function will do the trick for you. It will check if headers are not sent, then it will call the PHP’s header function to redirect. But if the headers are sent, it will use Javascript to redirect to the URL you want.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">redirect</span>(<span style="color:#b8860b">$url</span>)  
+</span></span><span style="display:flex;"><span>{  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>headers_sent())  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> header(‘Location<span style="color:#666">:</span> ‘<span style="color:#666">.</span><span style="color:#b8860b">$url</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">exit</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">else</span>  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> ‘<span style="color:#666">&lt;</span>script type<span style="color:#666">=</span><span style="color:#b44">&#34;text/javascript&#34;</span><span style="color:#666">&gt;</span><span style="color:#b44">&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">        echo &#39;</span>window<span style="color:#666">.</span>location<span style="color:#666">.</span>href<span style="color:#666">=</span><span style="color:#b44">&#34;&#39;.</span><span style="color:#b68;font-weight:bold">$url</span><span style="color:#b44">.&#39;&#34;</span>;<span style="color:#b44">&#39;;
+</span></span></span><span style="display:flex;"><span><span style="color:#b44">        echo &#39;</span><span style="color:#666">&lt;/</span>script<span style="color:#666">&gt;</span>‘;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> ‘<span style="color:#666">&lt;</span>noscript<span style="color:#666">&gt;</span>‘;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> ‘<span style="color:#666">&lt;</span>meta content<span style="color:#666">=</span><span style="color:#b44">&#34;0;url=&#39;.</span><span style="color:#b68;font-weight:bold">$url</span><span style="color:#b44">.&#39;&#34;</span> http<span style="color:#666">-</span>equiv<span style="color:#666">=</span><span style="color:#b44">&#34;refresh&#34;</span><span style="color:#666">&gt;&lt;/</span>meta<span style="color:#666">&gt;</span>‘;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> ‘<span style="color:#666">&lt;/</span>noscript<span style="color:#666">&gt;</span>‘;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">exit</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

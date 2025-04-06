@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item" />
+<meta name="description" content="Suppose you want to add column to some table before it gets save in Magento. Example, Magento doesn’t save regular price of product when an order is placed, it only saves the selling price. So if your product have some special price in it, then Magento only saves it’s special price when an order is placed, so there is no track of regular price of that product in order item table. Same it goes to invoice item and shipment item. When creating invoice and shipment, Magento doesn’t have any track on the regular price of invoiced item’s and shipment item’s regular price." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,sales_flat_invoice_item,sales_flat_order_item,sales_flat_shipment_item," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item" />
+<meta property="og:description" content="Suppose you want to add column to some table before it gets save in Magento. Example, Magento doesn’t save regular price of product when an order is placed, it only saves the selling price. So if your product have some special price in it, then Magento only saves it’s special price when an order is placed, so there is no track of regular price of that product in order item table. Same it goes to invoice item and shipment item. When creating invoice and shipment, Magento doesn’t have any track on the regular price of invoiced item’s and shipment item’s regular price." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-01-17-magento-adding-column-to-sales_flat_order_item-sales_flat_invoice_item-and-sales_flat_shipment_item/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_fdbbed8fb8df2777.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-01-17T17:01:13+00:00" />
+<meta property="article:modified_time" content="2012-01-17T17:01:13+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_fdbbed8fb8df2777.webp"/>
+<meta name="twitter:title" content="Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item"/>
+<meta name="twitter:description" content="Suppose you want to add column to some table before it gets save in Magento. Example, Magento doesn’t save regular price of product when an order is placed, it only saves the selling price. So if your product have some special price in it, then Magento only saves it’s special price when an order is placed, so there is no track of regular price of that product in order item table. Same it goes to invoice item and shipment item. When creating invoice and shipment, Magento doesn’t have any track on the regular price of invoiced item’s and shipment item’s regular price."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item">
+<meta itemprop="description" content="Suppose you want to add column to some table before it gets save in Magento. Example, Magento doesn’t save regular price of product when an order is placed, it only saves the selling price. So if your product have some special price in it, then Magento only saves it’s special price when an order is placed, so there is no track of regular price of that product in order item table. Same it goes to invoice item and shipment item. When creating invoice and shipment, Magento doesn’t have any track on the regular price of invoiced item’s and shipment item’s regular price."><meta itemprop="datePublished" content="2012-01-17T17:01:13+00:00" />
+<meta itemprop="dateModified" content="2012-01-17T17:01:13+00:00" />
+<meta itemprop="wordCount" content="378">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_fdbbed8fb8df2777.webp"/>
+
+
+<meta itemprop="keywords" content="magento,sales_flat_invoice_item,sales_flat_order_item,sales_flat_shipment_item," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item</h1>
+<p class="byline">
+  <time datetime='2012-01-17' pubdate>
+    2012-01-17
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Suppose you want to add column to some table before it gets save in Magento. Example, Magento doesn’t save regular price of product when an order is placed, it only saves the selling price. So if your product have some special price in it, then Magento only saves it’s special price when an order is placed, so there is no track of regular price of that product in order item table. Same it goes to invoice item and shipment item. When creating invoice and shipment, Magento doesn’t have any track on the regular price of invoiced item’s and shipment item’s regular price.</p>
+<p>So here I show you how you will add a column “product_mrp” in each of 3 tables and update the information without firing any query!</p>
+<p>First of all, make an installer script in your module that will alter these three tables and add column “product_mrp” or any of your choice.</p>
+<p>{code type=php}&lt;?php $installer = $this;</p>
+<p>$installer-?&gt;
+startSetup();</p>
+<p>$installer-&gt;run(”<br>
+ALTER TABLE sales_flat_order_item ADD COLUMN product_mrp DECIMAL(12,4) NULL;<br>
+ALTER TABLE sales_flat_invoice_item ADD COLUMN product_mrp DECIMAL(12,4) NULL;<br>
+ALTER TABLE sales_flat_shipment_item ADD COLUMN product_mrp DECIMAL(12,4) NULL;<br>
+“);</p>
+<p>$installer-&gt;endSetup();</p>
+<p>?&gt;{/code}</p>
+<p>After this is executed, you will find your columns added at the end of your tables.<br>
+Now we will catch the event before order is placed, before invoice is created and before shipment is saved.</p>
+<p><strong>config.xml</strong><br>
+{code type=xml}&lt;sales_order_place_before&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;adding_product_mrp_order&gt;<br>
+<!-- raw HTML omitted -->singleton<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Namespace_Module_Model_Observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->saveProductMrpInOrder<!-- raw HTML omitted --><br>
+&lt;/adding_product_mrp_order&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/sales_order_place_before&gt;</p>
+<p>&lt;sales_order_invoice_save_before&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;adding_product_mrp_invoice&gt;<br>
+<!-- raw HTML omitted -->singleton<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Namespace_Module_Model_Observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->saveProductMrpInInvoice<!-- raw HTML omitted --><br>
+&lt;/adding_product_mrp_invoice&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/sales_order_invoice_save_before&gt;</p>
+<p>&lt;sales_order_shipment_save_before&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;adding_product_mrp_shipment&gt;<br>
+<!-- raw HTML omitted -->singleton<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->Namespace_Module_Model_Observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->saveProductMrpInShipment<!-- raw HTML omitted --><br>
+&lt;/adding_product_mrp_shipment&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/sales_order_shipment_save_before&gt;{/code}</p>
+<p>Now comes the Observer part that will add our column data before data is actually saved in table.</p>
+<p><strong>Observer.php</strong><br>
+{code type=php}public function saveProductMrpInOrder(Varien_Event_Observer $observer) {<br>
+$order = $observer-&gt;getEvent()-&gt;getOrder();<br>
+foreach($order-&gt;getAllItems() as $item) {<br>
+$price = Mage::getModel(‘catalog/product’)-&gt;load($item-&gt;getId())-&gt;getPrice();<br>
+$item-&gt;setProductMrp($price);<br>
+}<br>
+return $this;<br>
+}</p>
+<p>public function saveProductMrpInInvoice(Varien_Event_Observer $observer) {<br>
+$invoice = $observer-&gt;getEvent()-&gt;getInvoice();<br>
+foreach($invoice-&gt;getAllItems() as $item) {<br>
+$price = Mage::getModel(‘catalog/product’)-&gt;load($item-&gt;getProductId())-&gt;getPrice();<br>
+$item-&gt;setProductMrp($price);<br>
+}<br>
+return $this;<br>
+}</p>
+<p>public function saveProductMrpInShipment(Varien_Event_Observer $observer)<br>
+{<br>
+$shipment = $observer-&gt;getEvent()-&gt;getShipment();<br>
+foreach($shipment-&gt;getAllItems() as $item) {<br>
+$product = Mage::getModel(‘catalog/product’)-&gt;load($item-&gt;getProductId());<br>
+$price = $product-&gt;getPrice();<br>
+$item-&gt;product_mrp = $price;<br>
+}<br>
+}{/code}</p>
+<p>Now clear the cache, and place order and create it’s invoice and shipment. You will find the regular price of each of your products in all these three useful tables and hence you can track the original price information even if your product’s price has been changed afterwards.</p>
+<p>Happy coding!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/sales_flat_invoice_item/">#sales_flat_invoice_item</a>
+  
+    <a class="blog-tags" href="/blog/sales_flat_order_item/">#sales_flat_order_item</a>
+  
+    <a class="blog-tags" href="/blog/sales_flat_shipment_item/">#sales_flat_shipment_item</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Adding%20column%20to%20sales_flat_order_item%2c%20sales_flat_invoice_item%20and%20sales_flat_shipment_item"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

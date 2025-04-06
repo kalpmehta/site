@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Can&amp;#8217;t login/add items in Chrome and IE | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Can&amp;#8217;t login/add items in Chrome and IE" />
+<meta name="description" content="Problem: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.
+Solution: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="cookie,error,magento," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Can&amp;#8217;t login/add items in Chrome and IE" />
+<meta property="og:description" content="Problem: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.
+Solution: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2011-07-09-magento-cant-loginadd-items-in-chrome-and-ie/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_c40a0b0387310e1b.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2011-07-09T10:13:08+00:00" />
+<meta property="article:modified_time" content="2011-07-09T10:13:08+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_c40a0b0387310e1b.webp"/>
+<meta name="twitter:title" content="Magento: Can&amp;#8217;t login/add items in Chrome and IE"/>
+<meta name="twitter:description" content="Problem: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.
+Solution: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Can&amp;#8217;t login/add items in Chrome and IE">
+<meta itemprop="description" content="Problem: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.
+Solution: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item."><meta itemprop="datePublished" content="2011-07-09T10:13:08+00:00" />
+<meta itemprop="dateModified" content="2011-07-09T10:13:08+00:00" />
+<meta itemprop="wordCount" content="180">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_c40a0b0387310e1b.webp"/>
+
+
+<meta itemprop="keywords" content="cookie,error,magento," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Can&amp;#8217;t login/add items in Chrome and IE</h1>
+<p class="byline">
+  <time datetime='2011-07-09' pubdate>
+    2011-07-09
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p><strong>Problem</strong>: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.</p>
+<p><strong>Solution</strong>: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item.</p>
+<p>To solve this, set cookie’s lifetime to 86400 (1 day) instead of 1 hour and everything will work as expected. You can also set cookie lifetime to 0, so that cookie will only expire when the user’s browser is closed.</p>
+<p>Go to: Magento backend -&gt; Sytem -&gt; Configuration -&gt; Web -&gt; Session and Cookie Management<br>
+Set cookie lifetime to 86400 and save. Everything will work as expected now.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/cookie/">#cookie</a>
+  
+    <a class="blog-tags" href="/blog/error/">#error</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Can%26%238217%3bt%20login%2fadd%20items%20in%20Chrome%20and%20IE"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cookie on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/cookie/</link>
+    <description>Recent content in Cookie on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 02 Sep 2014 17:28:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/cookie/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento set session cookie lifetime to 1 day</title>
+      <link>http://localhost:1313/magento-set-session-cookie-lifetime-to-1-day/</link>
+      <pubDate>Tue, 02 Sep 2014 17:28:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-set-session-cookie-lifetime-to-1-day/</guid>
+      <description>&lt;p&gt;Is your Magento shopping cart kicking out all the items after 24 minutes? Are you frustrated because your customer’s cart items are getting flushed every few hours even though you have correct setting in Magento? Do you want to increase your shopping cart sessions to last for 1 day (or anything you wish)?&lt;/p&gt;&#xA;&lt;p&gt;Here are the things to look for to increase/decrease Magento’s session cookie lifetime.&lt;/p&gt;&#xA;&lt;p&gt;In your php.ini file:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; session.gc_maxlifetime 86400&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;If you have not changed this, it should be by default 1440 i.e. 24 minutes. Change it to 86400 for one day session lifetime&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Is your Magento shopping cart kicking out all the items after 24 minutes? Are you frustrated because your customer’s cart items are getting flushed every few hours even though you have correct setting in Magento? Do you want to increase your shopping cart sessions to last for 1 day (or anything you wish)?</p>
+<p>Here are the things to look for to increase/decrease Magento’s session cookie lifetime.</p>
+<p>In your php.ini file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> session.gc_maxlifetime 86400</span></span></span></code></pre></div><br>
+If you have not changed this, it should be by default 1440 i.e. 24 minutes. Change it to 86400 for one day session lifetime</p>
+<p>In your Magento admin:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> System -&gt; Configuration -&gt; Checkout -&gt; Shopping Cart  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Quote Lifetime (days) -&gt; 1</span></span></span></code></pre></div></p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> System -&gt; Configuration -&gt; Web -&gt; Session Cookie Management  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Cookie Lifetime -&gt; 86400</span></span></span></code></pre></div>
+<p>Make sure to check if you are in correct website/store if using multi-website/multi-store Magento setup. You can change the scope by changing the website/store from the upper left Store Switcher drop down in System -&gt; Configuration screen.</p>
+<p>If you are changing php.ini value, make sure you reload apache to reflect the changes.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Can&amp;#8217;t login/add items in Chrome and IE</title>
+      <link>http://localhost:1313/magento-can%238217t-login/add-items-in-chrome-and-ie/</link>
+      <pubDate>Sat, 09 Jul 2011 10:13:08 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-can%238217t-login/add-items-in-chrome-and-ie/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Problem&lt;/strong&gt;: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Solution&lt;/strong&gt;: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>Problem</strong>: In Chrome and IE, user as well as admin are unable to login as well as add items to cart. In Firefox, everything works fine.</p>
+<p><strong>Solution</strong>: This is due to the cookie problem, not in browser but in Magento itself. In Magento, by default cookie’s lifetime is set to 3600 (1 hour). But if the end users computer time runs ahead of server’s time, cookies will not get set for magento frontend as well as backend. For example, end user’s computer time is 1 hour forward than server’s time, that means the cookie (holding user’s session id) will expire as soon as user logs in or tries to add an item.</p>
+<p>To solve this, set cookie’s lifetime to 86400 (1 day) instead of 1 hour and everything will work as expected. You can also set cookie lifetime to 0, so that cookie will only expire when the user’s browser is closed.</p>
+<p>Go to: Magento backend -&gt; Sytem -&gt; Configuration -&gt; Web -&gt; Session and Cookie Management<br>
+Set cookie lifetime to 86400 and save. Everything will work as expected now.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

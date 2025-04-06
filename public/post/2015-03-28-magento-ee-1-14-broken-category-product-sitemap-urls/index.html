@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs" />
+<meta name="description" content="Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. Magento EE 1.14.0.0 Release Notes and Magento CE 1.9.0.0 Release Notes lists this in it’s Bug Fixes:
+Google Sitemap files now include the .html suffix for category and product URLs.
+We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="bug,enterprise,magento,sitemap," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs" />
+<meta property="og:description" content="Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. Magento EE 1.14.0.0 Release Notes and Magento CE 1.9.0.0 Release Notes lists this in it’s Bug Fixes:
+Google Sitemap files now include the .html suffix for category and product URLs.
+We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2015-03-28-magento-ee-1-14-broken-category-product-sitemap-urls/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_3dcbeaf900d0bd14.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-03-28T04:40:23+00:00" />
+<meta property="article:modified_time" content="2015-03-28T04:40:23+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_3dcbeaf900d0bd14.webp"/>
+<meta name="twitter:title" content="Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs"/>
+<meta name="twitter:description" content="Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. Magento EE 1.14.0.0 Release Notes and Magento CE 1.9.0.0 Release Notes lists this in it’s Bug Fixes:
+Google Sitemap files now include the .html suffix for category and product URLs.
+We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs">
+<meta itemprop="description" content="Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. Magento EE 1.14.0.0 Release Notes and Magento CE 1.9.0.0 Release Notes lists this in it’s Bug Fixes:
+Google Sitemap files now include the .html suffix for category and product URLs.
+We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages."><meta itemprop="datePublished" content="2015-03-28T04:40:23+00:00" />
+<meta itemprop="dateModified" content="2015-03-28T04:40:23+00:00" />
+<meta itemprop="wordCount" content="265">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_3dcbeaf900d0bd14.webp"/>
+
+
+<meta itemprop="keywords" content="bug,enterprise,magento,sitemap," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento EE 1.14 &amp;#8211; Broken category &amp;#038; product sitemap URLs</h1>
+<p class="byline">
+  <time datetime='2015-03-28' pubdate>
+    2015-03-28
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our website. <a href="http://www.magentocommerce.com/knowledge-base/entry/ee114-later-release-notes#ee114-1400fixes-other">Magento EE 1.14.0.0 Release Notes</a> and <a href="http://www.magentocommerce.com/knowledge-base/entry/ce19-later-release-notes#ce19-1900fixes-other">Magento CE 1.9.0.0 Release Notes</a> lists this in it’s Bug Fixes:<br>
+<em>Google Sitemap files now include the .html suffix for category and product URLs.</em></p>
+<p>We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages.</p>
+<p><a href="http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png"><img src="http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png" alt="Magento Category Product URL config"></a></p>
+<p>Magento team have used observer to observe the events <em>sitemap_categories_generating_before</em> and <em>sitemap_products_generating_before</em> to add the suffix in the following file and functions (Notice I have commented all lines in the functions):<br>
+app/code/core/Enterprise/Catalog/Model/Observer.php<br>
+(copy this file to app/code/local/Enterprise/Catalog/Model/Observer.php, you may have to create directories)<br>
+{code type=php}/**<br>
+* Add Seo suffix to category’s URL if doesn’t exists.<br>
+*<br>
+* @param Varien_Event_Observer $observer<br>
+*/<br>
+public function addSeoSuffixToCategoryUrl(Varien_Event_Observer $observer)<br>
+{<br>
+/*$seoSuffix = (string) Mage::app()-&gt;getStore()-&gt;getConfig(<br>
+Mage_Catalog_Helper_Category::XML_PATH_CATEGORY_URL_SUFFIX<br>
+);<br>
+$this-&gt;_addSuffixToUrl($observer-&gt;getCollection()-&gt;getItems(), $seoSuffix);*/<br>
+}</p>
+<p>/**<br>
+* Add Seo suffix to product’s URL if doesn’t exists.<br>
+*<br>
+* @param Varien_Event_Observer $observer<br>
+*/<br>
+public function addSeoSuffixToProductUrl(Varien_Event_Observer $observer)<br>
+{<br>
+/*$seoSuffix = (string) Mage::app()-&gt;getStore()-&gt;getConfig(<br>
+Mage_Catalog_Helper_Product::XML_PATH_PRODUCT_URL_SUFFIX<br>
+);<br>
+$this-&gt;_addSuffixToUrl($observer-&gt;getCollection()-&gt;getItems(), $seoSuffix);*/<br>
+}{/code}</p>
+<p>After commenting above function’s logic and generating the Google Sitemap again (Admin &gt; Catalog &gt; Google Sitemap) everything was normal (no dot and suffix in URLs)</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/bug/">#bug</a>
+  
+    <a class="blog-tags" href="/blog/enterprise/">#enterprise</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/sitemap/">#sitemap</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20EE%201.14%20%26%238211%3b%20Broken%20category%20%26%23038%3b%20product%20sitemap%20URLs"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

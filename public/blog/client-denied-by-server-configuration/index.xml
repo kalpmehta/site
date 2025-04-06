@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Client Denied by Server Configuration on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/client-denied-by-server-configuration/</link>
+    <description>Recent content in Client Denied by Server Configuration on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 18 Apr 2013 20:00:20 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/client-denied-by-server-configuration/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento client denied by server configuration notice</title>
+      <link>http://localhost:1313/magento-client-denied-by-server-configuration-notice/</link>
+      <pubDate>Thu, 18 Apr 2013 20:00:20 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-client-denied-by-server-configuration-notice/</guid>
+      <description>&lt;p&gt;Magento client denied by server configuration: /var/www/magento/app/etc/local.xml .. This is not the error, but just a message type thing displayed in apache error log and firebug console. Nothing to worry here, it’s just a security check from web server and you should ignore it.&lt;/p&gt;&#xA;&lt;p&gt;If you don’t like it then you can turn it off by writing few lines of code in app/design/adminhtml/default/default/layout/local.xml&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;layout&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;default&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;remove&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;notification_security&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/remove&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;remove&lt;/span&gt; &lt;span style=&#34;color:#b44&#34;&gt;name=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;notification_survey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;gt;&amp;lt;/remove&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/default&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/layout&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Clear cache as usual, and you should get rid of this message.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento client denied by server configuration: /var/www/magento/app/etc/local.xml .. This is not the error, but just a message type thing displayed in apache error log and firebug console. Nothing to worry here, it’s just a security check from web server and you should ignore it.</p>
+<p>If you don’t like it then you can turn it off by writing few lines of code in app/design/adminhtml/default/default/layout/local.xml<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;layout&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;default&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;remove</span> <span style="color:#b44">name=</span><span style="color:#b44">&#34;notification_security&#34;</span><span style="color:#008000;font-weight:bold">&gt;&lt;/remove&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;remove</span> <span style="color:#b44">name=</span><span style="color:#b44">&#34;notification_survey&#34;</span><span style="color:#008000;font-weight:bold">&gt;&lt;/remove&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/default&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;/layout&gt;</span></span></span></code></pre></div></p>
+<p>Clear cache as usual, and you should get rid of this message.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

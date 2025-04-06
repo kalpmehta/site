@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Camel Case to Sentence Case on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/camel-case-to-sentence-case/</link>
+    <description>Recent content in Camel Case to Sentence Case on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 18 Apr 2012 17:31:06 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/camel-case-to-sentence-case/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get sentence case from camel case string</title>
+      <link>http://localhost:1313/magento-get-sentence-case-from-camel-case-string/</link>
+      <pubDate>Wed, 18 Apr 2012 17:31:06 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-sentence-case-from-camel-case-string/</guid>
+      <description>&lt;p&gt;Magento has pre-defined methods for getters and setters which will convert camelcase string to underscore formatted string.&lt;br&gt;&#xA;Example, Magento will convert &lt;em&gt;thisIsDummy&lt;/em&gt; to &lt;em&gt;this_is_dummy&lt;/em&gt; using it’s method _underscore which is available at Varien_Object class.&lt;/p&gt;&#xA;&lt;p&gt;If you want to convert &lt;strong&gt;Camel case string to Sentence case&lt;/strong&gt; (this may sound weird, but we got the requirement),&lt;br&gt;&#xA;Example, from &lt;em&gt;thisIsDummy&lt;/em&gt; to &lt;em&gt;This Is Dummy&lt;/em&gt;, below method will help you to do so:&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#00a000&#34;&gt;camelToSentence&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$word&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;if&lt;/span&gt;(isset(&lt;span style=&#34;color:#b8860b&#34;&gt;$word&lt;/span&gt;)) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$result&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; ucwords(preg_replace(‘&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;(&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;)([A&lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt;Z])&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;’, “&lt;span style=&#34;&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;2&lt;/span&gt;”, &lt;span style=&#34;color:#b8860b&#34;&gt;$word&lt;/span&gt;));  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$result&lt;/span&gt;;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; }  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; }&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <content:encoded><![CDATA[<p>Magento has pre-defined methods for getters and setters which will convert camelcase string to underscore formatted string.<br>
+Example, Magento will convert <em>thisIsDummy</em> to <em>this_is_dummy</em> using it’s method _underscore which is available at Varien_Object class.</p>
+<p>If you want to convert <strong>Camel case string to Sentence case</strong> (this may sound weird, but we got the requirement),<br>
+Example, from <em>thisIsDummy</em> to <em>This Is Dummy</em>, below method will help you to do so:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">camelToSentence</span>(<span style="color:#b8860b">$word</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(isset(<span style="color:#b8860b">$word</span>)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$result</span> <span style="color:#666">=</span> ucwords(preg_replace(‘<span style="color:#666">/</span>(<span style="color:#666">.</span>)([A<span style="color:#666">-</span>Z])<span style="color:#666">/</span>’, “<span style="">$</span><span style="color:#666">1</span> <span style="">$</span><span style="color:#666">2</span>”, <span style="color:#b8860b">$word</span>));  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$result</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

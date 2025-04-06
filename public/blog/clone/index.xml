@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Clone on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/clone/</link>
+    <description>Recent content in Clone on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 23 May 2013 09:03:43 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/clone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento clone collection &amp;#8211; How to clone collection in Magento</title>
+      <link>http://localhost:1313/magento-clone-collection-%238211-how-to-clone-collection-in-magento/</link>
+      <pubDate>Thu, 23 May 2013 09:03:43 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-clone-collection-%238211-how-to-clone-collection-in-magento/</guid>
+      <description>&lt;p&gt;Clone collection in Magento in an easy and effective way. Cloning collection in Magento is not as straight forward as we do in PHP object cloning. That’s because Magento does not implement clone in it’s collection object, which is why if you try to clone Magento collection it will nothing but just a copy of the original collection itself. If the original collection gets updated, this cloned will also get updated, which is what we don’t want right?&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Clone collection in Magento in an easy and effective way. Cloning collection in Magento is not as straight forward as we do in PHP object cloning. That’s because Magento does not implement clone in it’s collection object, which is why if you try to clone Magento collection it will nothing but just a copy of the original collection itself. If the original collection gets updated, this cloned will also get updated, which is what we don’t want right?</p>
+<p>Let’s see an example where PHP’s clone keyword will fail. Consider you have an $collection in the class method and you want to perform operations on this $collection in two different ways. So you need to clone this $collection and perform operation differently in both the collections so that both collections have different result set.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$coll1</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">clone</span> <span style="color:#b8860b">$collection</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$coll2</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">clone</span> <span style="color:#b8860b">$collection</span>;</span></span></code></pre></div>
+<p>Let’s perform different operations on these two separate collections now, like this:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$coll1</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">where</span>(‘first where condition’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$coll2</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">where</span>(‘second where condition’);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$coll1</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSize</span>() <span style="color:#666">==</span> <span style="color:#666">0</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span> <span style="color:#666">=</span> <span style="color:#b8860b">$coll2</span>;  
+</span></span><span style="display:flex;"><span>} <span style="color:#a2f;font-weight:bold">else</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span> <span style="color:#666">=</span> <span style="color:#b8860b">$coll1</span>;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>But this will fail and not work what we expect here. $collection here will hold BOTH the where conditions, instead of any one depending on the result of IF condition.</p>
+<p>To overcome this, in Magento, what you have to do is:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#080;font-style:italic">//Assuming you have original collection as $collection  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">joinLeft</span>(‘table1 <span style="color:#a2f;font-weight:bold">as</span> table1alias’, ‘table1alias<span style="color:#666">.</span>entity_id<span style="color:#666">=</span>e<span style="color:#666">.</span>entity_id’,<span style="color:#a2f;font-weight:bold">array</span>(‘name’,’description’))  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">where</span>(‘<span style="color:#b8860b">$firstWhereCondition’</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$coll</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">clone</span> <span style="color:#b8860b">$collection</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$coll</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSize</span>() <span style="color:#666">==</span> <span style="color:#666">0</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$fromPart</span> <span style="color:#666">=</span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">FROM</span>); <span style="color:#080;font-style:italic">//getting all the FROM clause from collection  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$wherePart</span> <span style="color:#666">=</span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">WHERE</span>); <span style="color:#080;font-style:italic">//getting all the WHERE clause conditions from collection  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#080;font-style:italic">//debug to see what you have to remove  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#080;font-style:italic">//print_r($fromPart);print_r($wherePart);exit;
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span> unset(<span style="color:#b8860b">$fromPart</span>[‘table1alias’]); <span style="color:#080;font-style:italic">//removing table1 join which we did for first where condition  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> unset(<span style="color:#b8860b">$wherePart</span>[<span style="color:#666">0</span>]); <span style="color:#080;font-style:italic">//removing first where condition, this may be different based on your query
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//removed FROM and first WHERE condition from collection  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">setPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">FROM</span>, <span style="color:#b8860b">$fromPart</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">setPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">WHERE</span>, <span style="color:#b8860b">$wherePart</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//now assign FROM and second WHERE condition to collection  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">joinLeft</span>(‘table1 <span style="color:#a2f;font-weight:bold">as</span> table1alias’, ‘table1alias<span style="color:#666">.</span>entity_id<span style="color:#666">=</span>e<span style="color:#666">.</span>entity_id’,<span style="color:#a2f;font-weight:bold">array</span>(‘name’,’description’))  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">where</span>(<span style="color:#b8860b">$secondWhereCondition</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//echo $collection-&gt;getSelect()-&gt;__toString();
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSize</span>();</span></span></code></pre></div>
+<p>That’s it! You have just used one collection and applied two where conditions. Similarly you can even apply multiple FROM and WHERE clause conditions as per the requirement.</p>
+<p>HTH!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento convert attribute type from TEXT to DROPDOWN | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento convert attribute type from TEXT to DROPDOWN" />
+<meta name="description" content="Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.
+WARNING: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="attribute,magento," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento convert attribute type from TEXT to DROPDOWN" />
+<meta property="og:description" content="Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.
+WARNING: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-08-13-magento-convert-attribute-type-from-text-to-dropdown/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_992b437994b70eea.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-13T23:15:44+00:00" />
+<meta property="article:modified_time" content="2013-08-13T23:15:44+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_992b437994b70eea.webp"/>
+<meta name="twitter:title" content="Magento convert attribute type from TEXT to DROPDOWN"/>
+<meta name="twitter:description" content="Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.
+WARNING: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento convert attribute type from TEXT to DROPDOWN">
+<meta itemprop="description" content="Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.
+WARNING: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute."><meta itemprop="datePublished" content="2013-08-13T23:15:44+00:00" />
+<meta itemprop="dateModified" content="2013-08-13T23:15:44+00:00" />
+<meta itemprop="wordCount" content="635">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_992b437994b70eea.webp"/>
+
+
+<meta itemprop="keywords" content="attribute,magento," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento convert attribute type from TEXT to DROPDOWN</h1>
+<p class="byline">
+  <time datetime='2013-08-13' pubdate>
+    2013-08-13
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.<br>
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.</p>
+<p><strong>WARNING</strong>: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute.</p>
+<p><strong>Step 1.)</strong> Backup your database.<br>
+{code type=sql}mysqldump -u mysqluser -p mysqldbname &gt; mysqldbname_backup.sql{/code}</p>
+<p><strong>Step 2.)</strong> Export all the values of the attribute you want to convert in a CSV file. For that, create a file vendor.php (your_attribute.php) in your magento root with following code inside it:<br>
+{code type=php}require “app/Mage.php”;<br>
+umask(0);<br>
+Mage::app();</p>
+<p>$collection = Mage::getModel(‘catalog/product’)<br>
+-&gt;getCollection()<br>
+-&gt;addAttributeToSelect(‘sku’)<br>
+-&gt;addAttributeToSelect(‘vendor’); //replace vendor with your attribute code</p>
+<p>$data = $collection-&gt;getData();</p>
+<p>foreach ($data as $product) {<br>
+echo $product[‘entity_id’] . “,” . $product[‘vendor’].”\n”;<br>
+}{/code}</p>
+<p>After saving the above code, run it from command line:</p>
+<p>{code}php vendor.php &gt; vendor.csv{/code}<br>
+You should now have all the attribute’s data with product ID in the vendor.csv (your_attribute.csv) file.</p>
+<p><strong>Step 3.)</strong> Now get all the unique values you have in the attribute’s data, which we will be filling them as options of select dropdown.<br>
+Run following mysql command to get all the unique values and copy them in a new file:<br>
+{code type=sql}select distinct value from catalog_product_entity_varchar where attribute_id in (select attribute_id from eav_attribute where attribute_code=’vendor’); //replace vendor with your own attribute code{/code}</p>
+<p>After this step, we have all the attribute’s data in CSV file, and all the UNIQUE attribute values.</p>
+<p><strong>Step 4.)</strong> Note all the settings of the attribute and Delete the attribute from backend Manage Attributes screen. Now create new attribute from there with SAME attribute code but different Frontend Type (Dropdown). Rest all the settings will be same as you had it before. Save it. Go to Manage Attribute Sets page and assign the attribute to the Group it was assigned to before.</p>
+<p><strong>Step 5.)</strong> Now we have to insert all the options to this attribute so that the values are shown in the dropdown. Edit your vendor.php file and replace the code with below:<br>
+{code type=php}require “app/Mage.php”;<br>
+umask(0);<br>
+Mage::app();</p>
+<p>$installer = new Mage_Eav_Model_Entity_Setup(‘core_setup’);<br>
+$installer-&gt;startSetup();</p>
+<p>//Change this….<br>
+$values = array(“val1″,”val2”); //your unique attributes values that you copied in a new file<br>
+$attrCode = ‘vendor’; //your attribute code here<br>
+//……..</p>
+<p>$values = array_map(‘utf8_encode’,$values); //If you’re using special characters<br>
+$iProductEntityTypeId = Mage::getModel(‘catalog/product’)-&gt;getResource()-&gt;getTypeId();<br>
+$aOption = array();<br>
+$aOption[‘attribute_id’] = $installer-&gt;getAttributeId($iProductEntityTypeId, $attrCode);<br>
+for($iCount=0;$iCount<!-- raw HTML omitted -->addAttributeOption($aOption);<!-- raw HTML omitted --></p>
+<p>$installer-&gt;endSetup();{/code}</p>
+<p>After running this, check your attribute manage page and see if all the values are updated or not. You can find the values in “Manage Labels/Options” tab of attribute’s Manage Attributes screen.</p>
+<p><strong>Step 6.)</strong> Now comes the main part which will insert the attribute values in the database. The old values are stored in catalog_product_entity_varchar (text type), while now the values should go to catalog_product_entity_int (dropdown type). Replace your vendor.php file with below code:</p>
+<p>{code type=php}require “app/Mage.php”;<br>
+umask(0);<br>
+Mage::app();</p>
+<p>$attribute = Mage::getModel(‘eav/config’)-&gt;getAttribute(‘catalog_product’, ‘vendor’); //change to your attribute code<br>
+$allOptions = $attribute-&gt;getSource()-&gt;getAllOptions(true, true);<br>
+foreach ($allOptions as $instance) {<br>
+$myArray[$instance[‘label’]] = $instance[‘value’];<br>
+}</p>
+<p>if (($handle = fopen(“vendor.csv”, “r”)) !== FALSE) { //change to your attribute .csv file<br>
+while (($data = fgetcsv($handle, 1000, “,”)) !== FALSE) {<br>
+list($_id, $_value) = $data;</p>
+<p>$product = Mage::getModel(‘catalog/product’)-&gt;load($_id);<br>
+$product-&gt;setVendor($myArray[$_value]); //setVendor should be setYourAttributeCode</p>
+<p>try {<br>
+$product-&gt;getResource()-&gt;saveAttribute($product, ‘vendor’); //change to your attribute code<br>
+} catch(Exception $e) {<br>
+echo $_id .”:”. $e-&gt;getMessage() .”\n”;<br>
+}<br>
+}<br>
+fclose($handle);<br>
+}{/code}</p>
+<p>Run the file, it will take time to complete depending on how many values you had for that attribute.</p>
+<p><strong>Step 7.)</strong> Clear cache, Re-index the indexes.</p>
+<p>Done!<br>
+Test it thoroughly.<br>
+Based on my Magento Stackexchange question: <a href="http://magento.stackexchange.com/questions/6707/convert-attribute-type-from-text-to-dropdown/6710">http://magento.stackexchange.com/questions/6707/convert-attribute-type-from-text-to-dropdown/6710</a></p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/attribute/">#attribute</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20convert%20attribute%20type%20from%20TEXT%20to%20DROPDOWN"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

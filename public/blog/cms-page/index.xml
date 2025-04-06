@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Cms Page on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/cms-page/</link>
+    <description>Recent content in Cms Page on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 25 Apr 2013 11:26:42 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/cms-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Special price products page</title>
+      <link>http://localhost:1313/magento-special-price-products-page/</link>
+      <pubDate>Thu, 25 Apr 2013 11:26:42 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-special-price-products-page/</guid>
+      <description>&lt;p&gt;Magento special price products page. We will be creating a new CMS page that will display all the Special or Sale products. We can make a product as a Special by filling it’s “Special From” and “Special To” price in “Prices” tab in Manage Products individual screen.&lt;/p&gt;&#xA;&lt;p&gt;So let’s first create CMS Page, by going to CMS &amp;gt; Pages, which we will name it as “Specials”. In the Content tab of that Page, paste the below line of code:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; {{block type=”catalog/product_special” template=”catalog/product/list.phtml” column_count=”3″ num_products=”0″}}&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;and save the page.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento special price products page. We will be creating a new CMS page that will display all the Special or Sale products. We can make a product as a Special by filling it’s “Special From” and “Special To” price in “Prices” tab in Manage Products individual screen.</p>
+<p>So let’s first create CMS Page, by going to CMS &gt; Pages, which we will name it as “Specials”. In the Content tab of that Page, paste the below line of code:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> {{block type=”catalog/product_special” template=”catalog/product/list.phtml” column_count=”3″ num_products=”0″}}</span></span></span></code></pre></div><br>
+and save the page.</p>
+<p>– Here we are saying Magento to display Product List template by looking at our new block type file, Catalog/Product/Block/Special.php. So let’s create this file, Special.php in local/Mage/Catalog/Product/Block/ directory. You will have to create this directory path if it’s not already there.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">Mage_Catalog_Block_Product_Special</span> <span style="color:#a2f;font-weight:bold">extends</span> Mage_Catalog_Block_Product_List
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">protected</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">_getProductCollection</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">if</span> (is_null(<span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">_productCollection</span>)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$categoryID</span> <span style="color:#666">=</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCategoryId</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$categoryID</span>)  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$category</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Mage_Catalog_Model_Category();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$category</span><span style="color:#666">-&gt;</span><span style="color:#b44">load</span>(<span style="color:#b8860b">$categoryID</span>); <span style="color:#080;font-style:italic">// this is category id  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#b8860b">$collection</span> <span style="color:#666">=</span> <span style="color:#b8860b">$category</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProductCollection</span>();  
+</span></span><span style="display:flex;"><span> } <span style="color:#a2f;font-weight:bold">else</span>  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>product_collection’);  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$todayDate</span> <span style="color:#666">=</span> date(‘m<span style="color:#666">/</span>d<span style="color:#666">/</span>y’);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$tomorrow</span> <span style="color:#666">=</span> mktime(<span style="color:#666">0</span>, <span style="color:#666">0</span>, <span style="color:#666">0</span>, date(‘m’), date(‘d’)<span style="color:#666">+</span><span style="color:#666">1</span>, date(‘y’));  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$tomorrowDate</span> <span style="color:#666">=</span> date(‘m<span style="color:#666">/</span>d<span style="color:#666">/</span>y’, <span style="color:#b8860b">$tomorrow</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>layer’)<span style="color:#666">-&gt;</span><span style="color:#b44">prepareProductCollection</span>(<span style="color:#b8860b">$collection</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToSort</span>(‘created_at’, ‘desc’);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">addStoreFilter</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToFilter</span>(‘special_from_date’, <span style="color:#a2f;font-weight:bold">array</span>(‘date’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>, ‘to’ <span style="color:#666">=&gt;</span> <span style="color:#b8860b">$todayDate</span>))  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToFilter</span>(‘special_to_date’, <span style="color:#a2f;font-weight:bold">array</span>(‘or’<span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">array</span>(  
+</span></span><span style="display:flex;"><span> <span style="color:#666">0</span> <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">array</span>(‘date’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>, ‘from’ <span style="color:#666">=&gt;</span> <span style="color:#b8860b">$tomorrowDate</span>),  
+</span></span><span style="display:flex;"><span> <span style="color:#666">1</span> <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">array</span>(‘is’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">new</span> Zend_Db_Expr(‘null’)))  
+</span></span><span style="display:flex;"><span> ), ‘left’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$numProducts</span> <span style="color:#666">=</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getNumProducts</span>() <span style="color:#666">?</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getNumProducts</span>() <span style="color:#666">:</span> <span style="color:#666">0</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">setPage</span>(<span style="color:#666">1</span>, <span style="color:#b8860b">$numProducts</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">load</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">_productCollection</span> <span style="color:#666">=</span> <span style="color:#b8860b">$collection</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">_productCollection</span>;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Gd2 Compression on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/gd2-compression/</link>
+    <description>Recent content in Gd2 Compression on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 12 Jul 2012 13:56:20 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/gd2-compression/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Image resize/compression reduces quality of JPEG</title>
+      <link>http://localhost:1313/magento-image-resize/compression-reduces-quality-of-jpeg/</link>
+      <pubDate>Thu, 12 Jul 2012 13:56:20 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-image-resize/compression-reduces-quality-of-jpeg/</guid>
+      <description>&lt;p&gt;In Magento, image quality is distorted when it’s resized in Category page as well as Product page. This is very bad if you are running an eCommerce website because image is the only thing which gives best impression to your customers. There are several complains regarding this in Magento forums with different answers. Some even suggest to use ImageMagick over the default Gd2 library.&lt;/p&gt;&#xA;&lt;p&gt;If you don’t want to switch to ImageMagick and also don’t want to do much changes, here is a simple solution.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In Magento, image quality is distorted when it’s resized in Category page as well as Product page. This is very bad if you are running an eCommerce website because image is the only thing which gives best impression to your customers. There are several complains regarding this in Magento forums with different answers. Some even suggest to use ImageMagick over the default Gd2 library.</p>
+<p>If you don’t want to switch to ImageMagick and also don’t want to do much changes, here is a simple solution.</p>
+<p>1.) Copy app/code/core/Mage/Catalog/Helper/Image.php<br>
+2.) Paste it in local (app/code/local/ , create directories Mage/Catalog/Helper if it’s not there)<br>
+So the final structure will be app/code/local/Mage/Catalog/Helper/Image.php<br>
+3.) Edit newly pasted Image.php’s init() method, just after it sets “watermark size”, add a line:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">setQuality</span>(<span style="color:#666">100</span>);</span></span></code></pre></div><br>
+4.) Save, flush image cache, run any category or product page and see the difference!</p>
+<p>Hope this helps!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

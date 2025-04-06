@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Add products to placed order programatically | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Add products to placed order programatically" />
+<meta name="description" content="Ever wondered how to attach products to order programatically? It may require if you want to surprise your customer by giving them some special items along with their ordered products. Magento doesn’t allow you to do this, you need to write it through calling observer for event sales_order_place_after.
+Copy this in the observer file which observes order place after event.
+{code type=php}$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’, $skuToAdd); //your product SKU to add
+$qty = 1;
+$rowTotal = $product-&gt;getPrice();
+$orderItem = Mage::getModel(‘sales/order_item’)
+-&gt;setStoreId($order-&gt;getStore()-&gt;getStoreId())
+-&gt;setQuoteItemId(NULL)
+-&gt;setQuoteParentItemId(NULL)
+-&gt;setProductId($product-&gt;getId())
+-&gt;setProductType($product-&gt;getTypeId())
+-&gt;setQtyBackordered(NULL)
+-&gt;setTotalQtyOrdered($qty)
+-&gt;setQtyOrdered($qty)
+-&gt;setName($product-&gt;getName())
+-&gt;setSku($product-&gt;getSku())
+-&gt;setPrice($product-&gt;getPrice())
+-&gt;setBasePrice($product-&gt;getPrice())
+-&gt;setOriginalPrice($product-&gt;getPrice())
+-&gt;setRowTotal($rowTotal)
+-&gt;setBaseRowTotal($rowTotal)
+-&gt;setOrder($order);
+$orderItem-&gt;save();{/code}
+Please note that you may also need to add the entry in sales_flat_quote_item table to be 100% sure it’s going to work for reorder also. If you’re not worried about reordering, the above code is fine." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="add items to order,add product to order placed,add products programatically to order,edit order in magento,magento attach products to order," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Add products to placed order programatically" />
+<meta property="og:description" content="Ever wondered how to attach products to order programatically? It may require if you want to surprise your customer by giving them some special items along with their ordered products. Magento doesn’t allow you to do this, you need to write it through calling observer for event sales_order_place_after.
+Copy this in the observer file which observes order place after event.
+{code type=php}$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’, $skuToAdd); //your product SKU to add
+$qty = 1;
+$rowTotal = $product-&gt;getPrice();
+$orderItem = Mage::getModel(‘sales/order_item’)
+-&gt;setStoreId($order-&gt;getStore()-&gt;getStoreId())
+-&gt;setQuoteItemId(NULL)
+-&gt;setQuoteParentItemId(NULL)
+-&gt;setProductId($product-&gt;getId())
+-&gt;setProductType($product-&gt;getTypeId())
+-&gt;setQtyBackordered(NULL)
+-&gt;setTotalQtyOrdered($qty)
+-&gt;setQtyOrdered($qty)
+-&gt;setName($product-&gt;getName())
+-&gt;setSku($product-&gt;getSku())
+-&gt;setPrice($product-&gt;getPrice())
+-&gt;setBasePrice($product-&gt;getPrice())
+-&gt;setOriginalPrice($product-&gt;getPrice())
+-&gt;setRowTotal($rowTotal)
+-&gt;setBaseRowTotal($rowTotal)
+-&gt;setOrder($order);
+$orderItem-&gt;save();{/code}
+Please note that you may also need to add the entry in sales_flat_quote_item table to be 100% sure it’s going to work for reorder also. If you’re not worried about reordering, the above code is fine." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-10-22-magento-add-products-to-placed-order-programatically/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_3eb48526e1cd516c.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-10-22T16:00:53+00:00" />
+<meta property="article:modified_time" content="2012-10-22T16:00:53+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_3eb48526e1cd516c.webp"/>
+<meta name="twitter:title" content="Magento: Add products to placed order programatically"/>
+<meta name="twitter:description" content="Ever wondered how to attach products to order programatically? It may require if you want to surprise your customer by giving them some special items along with their ordered products. Magento doesn’t allow you to do this, you need to write it through calling observer for event sales_order_place_after.
+Copy this in the observer file which observes order place after event.
+{code type=php}$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’, $skuToAdd); //your product SKU to add
+$qty = 1;
+$rowTotal = $product-&gt;getPrice();
+$orderItem = Mage::getModel(‘sales/order_item’)
+-&gt;setStoreId($order-&gt;getStore()-&gt;getStoreId())
+-&gt;setQuoteItemId(NULL)
+-&gt;setQuoteParentItemId(NULL)
+-&gt;setProductId($product-&gt;getId())
+-&gt;setProductType($product-&gt;getTypeId())
+-&gt;setQtyBackordered(NULL)
+-&gt;setTotalQtyOrdered($qty)
+-&gt;setQtyOrdered($qty)
+-&gt;setName($product-&gt;getName())
+-&gt;setSku($product-&gt;getSku())
+-&gt;setPrice($product-&gt;getPrice())
+-&gt;setBasePrice($product-&gt;getPrice())
+-&gt;setOriginalPrice($product-&gt;getPrice())
+-&gt;setRowTotal($rowTotal)
+-&gt;setBaseRowTotal($rowTotal)
+-&gt;setOrder($order);
+$orderItem-&gt;save();{/code}
+Please note that you may also need to add the entry in sales_flat_quote_item table to be 100% sure it’s going to work for reorder also. If you’re not worried about reordering, the above code is fine."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Add products to placed order programatically">
+<meta itemprop="description" content="Ever wondered how to attach products to order programatically? It may require if you want to surprise your customer by giving them some special items along with their ordered products. Magento doesn’t allow you to do this, you need to write it through calling observer for event sales_order_place_after.
+Copy this in the observer file which observes order place after event.
+{code type=php}$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’, $skuToAdd); //your product SKU to add
+$qty = 1;
+$rowTotal = $product-&gt;getPrice();
+$orderItem = Mage::getModel(‘sales/order_item’)
+-&gt;setStoreId($order-&gt;getStore()-&gt;getStoreId())
+-&gt;setQuoteItemId(NULL)
+-&gt;setQuoteParentItemId(NULL)
+-&gt;setProductId($product-&gt;getId())
+-&gt;setProductType($product-&gt;getTypeId())
+-&gt;setQtyBackordered(NULL)
+-&gt;setTotalQtyOrdered($qty)
+-&gt;setQtyOrdered($qty)
+-&gt;setName($product-&gt;getName())
+-&gt;setSku($product-&gt;getSku())
+-&gt;setPrice($product-&gt;getPrice())
+-&gt;setBasePrice($product-&gt;getPrice())
+-&gt;setOriginalPrice($product-&gt;getPrice())
+-&gt;setRowTotal($rowTotal)
+-&gt;setBaseRowTotal($rowTotal)
+-&gt;setOrder($order);
+$orderItem-&gt;save();{/code}
+Please note that you may also need to add the entry in sales_flat_quote_item table to be 100% sure it’s going to work for reorder also. If you’re not worried about reordering, the above code is fine."><meta itemprop="datePublished" content="2012-10-22T16:00:53+00:00" />
+<meta itemprop="dateModified" content="2012-10-22T16:00:53+00:00" />
+<meta itemprop="wordCount" content="132">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_3eb48526e1cd516c.webp"/>
+
+
+<meta itemprop="keywords" content="add items to order,add product to order placed,add products programatically to order,edit order in magento,magento attach products to order," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Add products to placed order programatically</h1>
+<p class="byline">
+  <time datetime='2012-10-22' pubdate>
+    2012-10-22
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Ever wondered how to attach products to order programatically? It may require if you want to surprise your customer by giving them some special items along with their ordered products. Magento doesn’t allow you to do this, you need to write it through calling observer for event sales_order_place_after.</p>
+<p>Copy this in the observer file which observes order place after event.<br>
+{code type=php}$product = Mage::getModel(‘catalog/product’)-&gt;loadByAttribute(‘sku’, $skuToAdd); //your product SKU to add<br>
+$qty = 1;<br>
+$rowTotal = $product-&gt;getPrice();<br>
+$orderItem = Mage::getModel(‘sales/order_item’)<br>
+-&gt;setStoreId($order-&gt;getStore()-&gt;getStoreId())<br>
+-&gt;setQuoteItemId(NULL)<br>
+-&gt;setQuoteParentItemId(NULL)<br>
+-&gt;setProductId($product-&gt;getId())<br>
+-&gt;setProductType($product-&gt;getTypeId())<br>
+-&gt;setQtyBackordered(NULL)<br>
+-&gt;setTotalQtyOrdered($qty)<br>
+-&gt;setQtyOrdered($qty)<br>
+-&gt;setName($product-&gt;getName())<br>
+-&gt;setSku($product-&gt;getSku())<br>
+-&gt;setPrice($product-&gt;getPrice())<br>
+-&gt;setBasePrice($product-&gt;getPrice())<br>
+-&gt;setOriginalPrice($product-&gt;getPrice())<br>
+-&gt;setRowTotal($rowTotal)<br>
+-&gt;setBaseRowTotal($rowTotal)<br>
+-&gt;setOrder($order);<br>
+$orderItem-&gt;save();{/code}<br>
+Please note that you may also need to add the entry in sales_flat_quote_item table to be 100% sure it’s going to work for reorder also. If you’re not worried about reordering, the above code is fine.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/add-items-to-order/">#add items to order</a>
+  
+    <a class="blog-tags" href="/blog/add-product-to-order-placed/">#add product to order placed</a>
+  
+    <a class="blog-tags" href="/blog/add-products-programatically-to-order/">#add products programatically to order</a>
+  
+    <a class="blog-tags" href="/blog/edit-order-in-magento/">#edit order in magento</a>
+  
+    <a class="blog-tags" href="/blog/magento-attach-products-to-order/">#magento attach products to order</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Add%20products%20to%20placed%20order%20programatically"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

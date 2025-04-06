@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>500 Internal Server Error on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/500-internal-server-error/</link>
+    <description>Recent content in 500 Internal Server Error on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 28 Mar 2015 23:52:11 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/500-internal-server-error/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento bug Checkout cart 500 error Redirect loops</title>
+      <link>http://localhost:1313/magento-bug-checkout-cart-500-error-redirect-loops/</link>
+      <pubDate>Sat, 28 Mar 2015 23:52:11 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-bug-checkout-cart-500-error-redirect-loops/</guid>
+      <description>&lt;p&gt;Magento checkout cart gives 500 error and redirect loops when there is a shopping cart rule with Category condition.&lt;/p&gt;&#xA;&lt;p&gt;I found a bug in Magento which redirects shopping cart indefinitely causing it 500 internal server error. This can be a serious bug as customer will not able to shop if this happens. I noticed this happens when there is a shopping cart rule which have Category in conditions of the rule.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento checkout cart gives 500 error and redirect loops when there is a shopping cart rule with Category condition.</p>
+<p>I found a bug in Magento which redirects shopping cart indefinitely causing it 500 internal server error. This can be a serious bug as customer will not able to shop if this happens. I noticed this happens when there is a shopping cart rule which have Category in conditions of the rule.</p>
+<p>If total quantity equals or greater than 1 for a subselection of items in cart matching ALL of these conditions:<br>
+<strong>Category</strong> is 125</p>
+<p>So for example you have a shopping cart rule where you want to give some discount or free product if at least one product is chosen from specific Category, this triggers the error in frontend shopping cart. Main reason here is <strong>Category</strong> condition. If you remove category condition then the error should go away. But if you want to keep the category condition and still want Magento to handle the shopping cart promotion rule, check the code changes below:</p>
+<p>To solve this I copied below file to my local<br>
+app/code/core/Mage/SalesRule/Model/Rule/Condition/Product/Combine.php</p>
+<p>and edited the function validate:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b44;font-style:italic">/**  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * Validate a condition with the checking of the child value  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * @param Varien_Object $object  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> *  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> * @return bool  
+</span></span></span><span style="display:flex;"><span><span style="color:#b44;font-style:italic"> */</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">validate</span>(Varien_Object <span style="color:#b8860b">$object</span>)  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b44;font-style:italic">/** @var Mage_Catalog_Model_Product $product */</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span> <span style="color:#666">=</span> <span style="color:#b8860b">$object</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProduct</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span>(<span style="color:#b8860b">$product</span> instanceof Mage_Catalog_Model_Product)) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">load</span>(<span style="color:#b8860b">$object</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProductId</span>());  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$valid</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">parent</span><span style="color:#666">::</span><span style="color:#b44">validate</span>(<span style="color:#b8860b">$object</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">/* Kalpesh commented whole block, as it causes redirect loop and Segmentation fault in apache  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> if (!$valid &amp;amp;&amp;amp; $product-&gt;getTypeId() == Mage_Catalog_Model_Product_Type_Configurable::TYPE_CODE) {  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> $children = $object-&gt;getChildren();  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> //$valid = $children &amp;amp;&amp;amp; $this-&gt;validate($children[0]); //Kalpesh commented, issue….  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"> }*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$valid</span>;  
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div></p>
+<p>Hope this helps to some troubled souls!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento 500 internal server error</title>
+      <link>http://localhost:1313/magento-500-internal-server-error/</link>
+      <pubDate>Sat, 09 Feb 2013 18:15:42 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-500-internal-server-error/</guid>
+      <description>&lt;p&gt;[Resolved]: Magento 500 internal server error&lt;br&gt;&#xA;If you are getting “500 Internal Server Error” then the reason might be permissions issue or fatal error.&lt;/p&gt;&#xA;&lt;p&gt;In Magento, you can check the errors occured in files:&lt;br&gt;&#xA;var/log/system.log&lt;br&gt;&#xA;var/log/exception.log&lt;/p&gt;&#xA;&lt;p&gt;You can even allow the error to output to your browser by editing your Magento index.php with:&lt;br&gt;&#xA;error_reporting(E_ALL | E_STRICT);&lt;br&gt;&#xA;ini_set(‘display_errors’, 1);&lt;/p&gt;&#xA;&lt;p&gt;Also, try this to solve the error:&lt;br&gt;&#xA;– Check the owner of your magento project. It should be the server (www-data for apache)&lt;br&gt;&#xA;chown -R www-data:www-data .&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>[Resolved]: Magento 500 internal server error<br>
+If you are getting “500 Internal Server Error” then the reason might be permissions issue or fatal error.</p>
+<p>In Magento, you can check the errors occured in files:<br>
+var/log/system.log<br>
+var/log/exception.log</p>
+<p>You can even allow the error to output to your browser by editing your Magento index.php with:<br>
+error_reporting(E_ALL | E_STRICT);<br>
+ini_set(‘display_errors’, 1);</p>
+<p>Also, try this to solve the error:<br>
+– Check the owner of your magento project. It should be the server (www-data for apache)<br>
+chown -R www-data:www-data .</p>
+<p>– Change the directory permissions to 755 and file permissions to 644 for your project<br>
+find . -type d -exec chmod 0755 {} \;<br>
+find . -type f -exec chmod 0644 {} \;<br>
+chmod 550 pear<br>
+chmod 550 mage<br>
+chmod 755 -R var</p>
+<p>– Check after upgrade do you have your .htaccess file inside Magento root</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

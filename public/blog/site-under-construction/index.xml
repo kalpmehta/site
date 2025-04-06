@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Site Under Construction on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/site-under-construction/</link>
+    <description>Recent content in Site Under Construction on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 31 Dec 2011 17:49:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/site-under-construction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Show maintenance mode page (website under construction)</title>
+      <link>http://localhost:1313/magento-show-maintenance-mode-page-website-under-construction/</link>
+      <pubDate>Sat, 31 Dec 2011 17:49:50 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-show-maintenance-mode-page-website-under-construction/</guid>
+      <description>&lt;p&gt;If you want your Magento website to show in maintenance mode, you will have to do two things.&lt;/p&gt;&#xA;&lt;p&gt;1. Create a file name &lt;strong&gt;maintenance.flag&lt;/strong&gt; in your magento root directory. Contents under this file doesn’t matter, you can keep it empty.&lt;br&gt;&#xA;2. Change the maintenance file (located in &lt;strong&gt;magento root -&amp;gt; errors -&amp;gt; default&lt;/strong&gt; directory) to show proper message when user visits your website.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you want your Magento website to show in maintenance mode, you will have to do two things.</p>
+<p>1. Create a file name <strong>maintenance.flag</strong> in your magento root directory. Contents under this file doesn’t matter, you can keep it empty.<br>
+2. Change the maintenance file (located in <strong>magento root -&gt; errors -&gt; default</strong> directory) to show proper message when user visits your website.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

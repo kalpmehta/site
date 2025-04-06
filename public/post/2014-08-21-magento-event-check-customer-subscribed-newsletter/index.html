@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento event to check if customer have subscribed to newsletter | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento event to check if customer have subscribed to newsletter" />
+<meta name="description" content="Check if the customer has subscribed to the newsletter from registration page or checkout page by using event observer. You may need to take some action programatically if customer subscribes to newsletter, below code will help you exactly in that.
+Code to put in your config.xml
+{code type=xml}
+&lt;newsletter_subscriber_save_after&gt;
+
+&lt;namespace_module_model_observer&gt;
+Namespace_Module_Model_Observer
+subscribedToNewsletter
+&lt;/namespace_module_model_observer&gt;
+
+&lt;/newsletter_subscriber_save_after&gt;
+{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="customer,event,magento,newsletter,observer,subscribed," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento event to check if customer have subscribed to newsletter" />
+<meta property="og:description" content="Check if the customer has subscribed to the newsletter from registration page or checkout page by using event observer. You may need to take some action programatically if customer subscribes to newsletter, below code will help you exactly in that.
+Code to put in your config.xml
+{code type=xml}
+&lt;newsletter_subscriber_save_after&gt;
+
+&lt;namespace_module_model_observer&gt;
+Namespace_Module_Model_Observer
+subscribedToNewsletter
+&lt;/namespace_module_model_observer&gt;
+
+&lt;/newsletter_subscriber_save_after&gt;
+{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2014-08-21-magento-event-check-customer-subscribed-newsletter/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_9c9ab386fac7fe24.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-08-21T21:07:38+00:00" />
+<meta property="article:modified_time" content="2014-08-21T21:07:38+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_9c9ab386fac7fe24.webp"/>
+<meta name="twitter:title" content="Magento event to check if customer have subscribed to newsletter"/>
+<meta name="twitter:description" content="Check if the customer has subscribed to the newsletter from registration page or checkout page by using event observer. You may need to take some action programatically if customer subscribes to newsletter, below code will help you exactly in that.
+Code to put in your config.xml
+{code type=xml}
+&lt;newsletter_subscriber_save_after&gt;
+
+&lt;namespace_module_model_observer&gt;
+Namespace_Module_Model_Observer
+subscribedToNewsletter
+&lt;/namespace_module_model_observer&gt;
+
+&lt;/newsletter_subscriber_save_after&gt;
+{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento event to check if customer have subscribed to newsletter">
+<meta itemprop="description" content="Check if the customer has subscribed to the newsletter from registration page or checkout page by using event observer. You may need to take some action programatically if customer subscribes to newsletter, below code will help you exactly in that.
+Code to put in your config.xml
+{code type=xml}
+&lt;newsletter_subscriber_save_after&gt;
+
+&lt;namespace_module_model_observer&gt;
+Namespace_Module_Model_Observer
+subscribedToNewsletter
+&lt;/namespace_module_model_observer&gt;
+
+&lt;/newsletter_subscriber_save_after&gt;
+{/code}"><meta itemprop="datePublished" content="2014-08-21T21:07:38+00:00" />
+<meta itemprop="dateModified" content="2014-08-21T21:07:38+00:00" />
+<meta itemprop="wordCount" content="108">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_9c9ab386fac7fe24.webp"/>
+
+
+<meta itemprop="keywords" content="customer,event,magento,newsletter,observer,subscribed," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento event to check if customer have subscribed to newsletter</h1>
+<p class="byline">
+  <time datetime='2014-08-21' pubdate>
+    2014-08-21
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Check if the customer has subscribed to the newsletter from registration page or checkout page by using event observer. You may need to take some action programatically if customer subscribes to newsletter, below code will help you exactly in that.</p>
+<p>Code to put in your config.xml<br>
+{code type=xml}<br>
+&lt;newsletter_subscriber_save_after&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;namespace_module_model_observer&gt;<br>
+<!-- raw HTML omitted -->Namespace_Module_Model_Observer<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->subscribedToNewsletter<!-- raw HTML omitted --><br>
+&lt;/namespace_module_model_observer&gt;<br>
+<!-- raw HTML omitted --><br>
+&lt;/newsletter_subscriber_save_after&gt;<br>
+{/code}</p>
+<p>Code to put in your Observer.php file<br>
+{code type=php}<br>
+class Namespace_Module_Model_Observer {<br>
+public function subscribedToNewsletter(Varien_Event_Observer $observer)<br>
+{<br>
+$event = $observer-&gt;getEvent();<br>
+$subscriber = $event-&gt;getDataObject();<br>
+$data = $subscriber-&gt;getData();<br>
+$email = $data[‘subscriber_email’];</p>
+<p>$statusChange = $subscriber-&gt;getIsStatusChanged();<br>
+if ($data[‘subscriber_status’] == “1” &amp;&amp; $statusChange == true) {<br>
+//code to handle if customer is just subscribed…<br>
+}<br>
+}<br>
+}<br>
+{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/customer/">#customer</a>
+  
+    <a class="blog-tags" href="/blog/event/">#event</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/newsletter/">#newsletter</a>
+  
+    <a class="blog-tags" href="/blog/observer/">#observer</a>
+  
+    <a class="blog-tags" href="/blog/subscribed/">#subscribed</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20event%20to%20check%20if%20customer%20have%20subscribed%20to%20newsletter"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

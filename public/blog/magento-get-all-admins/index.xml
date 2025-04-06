@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Get All Admins on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-get-all-admins/</link>
+    <description>Recent content in Magento Get All Admins on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 16 Oct 2012 14:54:31 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-get-all-admins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get details of all Admin users</title>
+      <link>http://localhost:1313/magento-get-details-of-all-admin-users/</link>
+      <pubDate>Tue, 16 Oct 2012 14:54:31 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-details-of-all-admin-users/</guid>
+      <description>&lt;p&gt;As we can get details of all the customers of the Magento store, we can also get details of all the Admin users. It may be necessary sometimes when you want to display all the admin uses either in dropdown for filtering something or just as a text or something based on requirement.&lt;/p&gt;&#xA;&lt;p&gt;The following code will get you all the Admin users with their details:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$adminUserModel&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘admin&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;user’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$userCollection&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$adminUserModel&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCollection&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;load&lt;/span&gt;();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$userCollection&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getData&lt;/span&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>As we can get details of all the customers of the Magento store, we can also get details of all the Admin users. It may be necessary sometimes when you want to display all the admin uses either in dropdown for filtering something or just as a text or something based on requirement.</p>
+<p>The following code will get you all the Admin users with their details:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$adminUserModel</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘admin<span style="color:#666">/</span>user’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$userCollection</span> <span style="color:#666">=</span> <span style="color:#b8860b">$adminUserModel</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCollection</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">load</span>();  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">log</span>(<span style="color:#b8860b">$userCollection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getData</span>());</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pinterest on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/pinterest/</link>
+    <description>Recent content in Pinterest on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 20 May 2013 22:47:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/pinterest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Pinterest extension Auto Pin multiple product images Plugin</title>
+      <link>http://localhost:1313/magento-pinterest-extension-auto-pin-multiple-product-images-plugin/</link>
+      <pubDate>Mon, 20 May 2013 22:47:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-pinterest-extension-auto-pin-multiple-product-images-plugin/</guid>
+      <description>&lt;p&gt;We all know that Pinterest is very popular and a great tool for marketing variety of products. It can give you huge traffic to your website resulting in incredible sales and revenue. It have almost all types of categories to hold your pinned images so that your product gets noticed to potential customers. It even has an option to specify the price of the product, which only gives you interested buyers to your website.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>We all know that Pinterest is very popular and a great tool for marketing variety of products. It can give you huge traffic to your website resulting in incredible sales and revenue. It have almost all types of categories to hold your pinned images so that your product gets noticed to potential customers. It even has an option to specify the price of the product, which only gives you interested buyers to your website.</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/05/Magento-Pinterest-AutoPin.jpg" alt="Magento Pinterest Auto Pin product images by Magentools"></p>
+<p>If you have hundreds/thousands of products in your store and want to pin it on Pinterest it becomes very difficult, as Pinterest don’t provide multiple pinning of images. One by one pinning images is a nightmare if you have lots of products. There is also no official Pinterest API which can allow you to auto-pin your images through some kind of API.</p>
+<p>If you are using Magento as your e-commerce framework, there’s a good news for you! There is an extension available at Magentools.com which gives you ability to auto-pin hundreds of product images in just one click! Other options includes to pin image with your Product Name, SKU and Price along with your product link on your website. This extension, called as Pinterest Auto Pin multiple images plugin acts as a bridge between your Magento store and Pinterest. In your Magento admin panel’s “Manage Products” screen, you can see the option Pin To Board which loads all your Pinterest boards you want the product images to pin into! It also allows you to pin the individual product image pin when you create new product / edit existing product, by clicking on the tab “MagenTools” and selecting your desired Pinterest Board before saving the product.</p>
+<p>It’s the must-have extension for the e-Commerce company which is more focused into marketing their products online and want more potential customers. You can find more details on the Pinterest Auto-Pin API extension here: <a href="http://magext.com/work/magento-social-network-auto-poster/" title="MagenTools Pinterest Auto Pin API">http://magext.com/work/magento-social-network-auto-poster/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Buy: Pinterest Auto Pin images right from your website!</title>
+      <link>http://localhost:1313/buy-pinterest-auto-pin-images-right-from-your-website/</link>
+      <pubDate>Fri, 02 Nov 2012 12:00:53 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/buy-pinterest-auto-pin-images-right-from-your-website/</guid>
+      <description>&lt;p&gt;Pinterest has yet not released their API which can help developers to integrate to the system and autopin images directly from their website/blog. Yet, I have created an Pinterest API in PHP which will post your image to Pinterest with message, link and price.&lt;/p&gt;&#xA;&lt;p&gt;Just after entering correct email and password of your pinterest account, and providing Image URL, Message and link URL, you will be shown the list of boards you have, so that you can select any one and pin the image on it right from your website! Sounds interesting!? Here is the image that will help you understand how it works:&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Pinterest has yet not released their API which can help developers to integrate to the system and autopin images directly from their website/blog. Yet, I have created an Pinterest API in PHP which will post your image to Pinterest with message, link and price.</p>
+<p>Just after entering correct email and password of your pinterest account, and providing Image URL, Message and link URL, you will be shown the list of boards you have, so that you can select any one and pin the image on it right from your website! Sounds interesting!? Here is the image that will help you understand how it works:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Nothing complicated, very easy to use, one click to pin your image directly to pinterest, click below button to buy it now! <a href="http://ka.lpe.sh/contact-me">Contact me</a> for any questions!<br>
+Price: <!-- raw HTML omitted -->$49<!-- raw HTML omitted --> $39 <!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><img src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" alt=""></p>
+<!-- raw HTML omitted -->
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

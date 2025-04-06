@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento Interview Questions | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento Interview Questions" />
+<meta name="description" content="Here is a list of Magento advanced interview questions that I can think off now.
+EDIT: There are also Expert interview questions that I added lately.
+1. Explain Magento’s MVC architecture
+2. How Magento’s ORM work?
+3. What is EAV in Magento?
+4. Difference between Mage::getSingleton() and Mage::getModel()
+5. What are the steps to change the theme of Magento
+6. If you want to add/modify core functionality, how will you do it?
+7. How will you create a new module in Magento?
+8. How will you call a CMS page in your module’s PHTML file?
+9. What is codePool in Magento?
+10. Explain handles in Magento’s layout
+11. What is  in Magento’s config XML?
+12. Explain Magento’s URL structure
+13. How will you optimize Magento featured website?
+14. Explain in detail cache management in Magento
+15. When will you need to clear cache to see the changes in Magento?
+16. Explain the flow of placing an order technically
+17. How will you enable product’s custom attribute visibility in frontend?
+18. How will you upgrade your custom module?
+19. Difference between EAV and flat table
+20. Is it mandatory to give Namespace while creating custom module in Magento?
+21. How will you override Block/Model/controllers in Magento?
+22. What is difference between override and rewrite?
+23. How will you add/remove content from core’s system.xml file?
+24. Can you have more than one Grid in a module?
+25. How will you join flat table and EAV table in Magento?
+26. How will you enable maintenance mode of your Magento website?
+27. What are “magic methods” in Magento?
+28. How many database tables will Magento create when you make a new EAV module?
+29. Explain Magento’s Collections
+30. Explain events and observers in Magento
+31. Difference between block’s “name” and “as” attributes in layout XML
+32. When to use session and when to use registry to store variables?
+33. Where will you write your module’s business logic in Magento?
+34. Explain different types of sessions in Magento (e.g. customer/session, checkout/session, core/session) and the reason why you store data in different session types.
+35. What are the commonly used block types? What is the special in core/text_list block type.
+36. What are the different design patterns used in Magento?
+37. What can you do to optimize Magento performance?
+38. Where is the relation between configurable product and it’s simple product stored in database?
+39. How will you log current collection’s SQL query?
+40. How to get first item or last item from the collection?" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="advanced,interview,magento,magento interview questions,questions," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2012-01-29-magento-interview-questions/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento Interview Questions">
+  <meta property="og:description" content="Here is a list of Magento advanced interview questions that I can think off now.
+EDIT: There are also Expert interview questions that I added lately.
+1. Explain Magento’s MVC architecture
+2. How Magento’s ORM work?
+3. What is EAV in Magento?
+4. Difference between Mage::getSingleton() and Mage::getModel()
+5. What are the steps to change the theme of Magento
+6. If you want to add/modify core functionality, how will you do it?
+7. How will you create a new module in Magento?
+8. How will you call a CMS page in your module’s PHTML file?
+9. What is codePool in Magento?
+10. Explain handles in Magento’s layout
+11. What is in Magento’s config XML?
+12. Explain Magento’s URL structure
+13. How will you optimize Magento featured website?
+14. Explain in detail cache management in Magento
+15. When will you need to clear cache to see the changes in Magento?
+16. Explain the flow of placing an order technically
+17. How will you enable product’s custom attribute visibility in frontend?
+18. How will you upgrade your custom module?
+19. Difference between EAV and flat table
+20. Is it mandatory to give Namespace while creating custom module in Magento?
+21. How will you override Block/Model/controllers in Magento?
+22. What is difference between override and rewrite?
+23. How will you add/remove content from core’s system.xml file?
+24. Can you have more than one Grid in a module?
+25. How will you join flat table and EAV table in Magento?
+26. How will you enable maintenance mode of your Magento website?
+27. What are “magic methods” in Magento?
+28. How many database tables will Magento create when you make a new EAV module?
+29. Explain Magento’s Collections
+30. Explain events and observers in Magento
+31. Difference between block’s “name” and “as” attributes in layout XML
+32. When to use session and when to use registry to store variables?
+33. Where will you write your module’s business logic in Magento?
+34. Explain different types of sessions in Magento (e.g. customer/session, checkout/session, core/session) and the reason why you store data in different session types.
+35. What are the commonly used block types? What is the special in core/text_list block type.
+36. What are the different design patterns used in Magento?
+37. What can you do to optimize Magento performance?
+38. Where is the relation between configurable product and it’s simple product stored in database?
+39. How will you log current collection’s SQL query?
+40. How to get first item or last item from the collection?">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2012-01-29T06:29:58+00:00">
+    <meta property="article:modified_time" content="2012-01-29T06:29:58+00:00">
+    <meta property="article:tag" content="Advanced">
+    <meta property="article:tag" content="Interview">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="Magento Interview Questions">
+    <meta property="article:tag" content="Questions">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento Interview Questions">
+  <meta name="twitter:description" content="Here is a list of Magento advanced interview questions that I can think off now.
+EDIT: There are also Expert interview questions that I added lately.
+1. Explain Magento’s MVC architecture
+2. How Magento’s ORM work?
+3. What is EAV in Magento?
+4. Difference between Mage::getSingleton() and Mage::getModel()
+5. What are the steps to change the theme of Magento
+6. If you want to add/modify core functionality, how will you do it?
+7. How will you create a new module in Magento?
+8. How will you call a CMS page in your module’s PHTML file?
+9. What is codePool in Magento?
+10. Explain handles in Magento’s layout
+11. What is in Magento’s config XML?
+12. Explain Magento’s URL structure
+13. How will you optimize Magento featured website?
+14. Explain in detail cache management in Magento
+15. When will you need to clear cache to see the changes in Magento?
+16. Explain the flow of placing an order technically
+17. How will you enable product’s custom attribute visibility in frontend?
+18. How will you upgrade your custom module?
+19. Difference between EAV and flat table
+20. Is it mandatory to give Namespace while creating custom module in Magento?
+21. How will you override Block/Model/controllers in Magento?
+22. What is difference between override and rewrite?
+23. How will you add/remove content from core’s system.xml file?
+24. Can you have more than one Grid in a module?
+25. How will you join flat table and EAV table in Magento?
+26. How will you enable maintenance mode of your Magento website?
+27. What are “magic methods” in Magento?
+28. How many database tables will Magento create when you make a new EAV module?
+29. Explain Magento’s Collections
+30. Explain events and observers in Magento
+31. Difference between block’s “name” and “as” attributes in layout XML
+32. When to use session and when to use registry to store variables?
+33. Where will you write your module’s business logic in Magento?
+34. Explain different types of sessions in Magento (e.g. customer/session, checkout/session, core/session) and the reason why you store data in different session types.
+35. What are the commonly used block types? What is the special in core/text_list block type.
+36. What are the different design patterns used in Magento?
+37. What can you do to optimize Magento performance?
+38. Where is the relation between configurable product and it’s simple product stored in database?
+39. How will you log current collection’s SQL query?
+40. How to get first item or last item from the collection?">
+
+
+  
+  
+  <meta itemprop="name" content="Magento Interview Questions">
+  <meta itemprop="description" content="Here is a list of Magento advanced interview questions that I can think off now.
+EDIT: There are also Expert interview questions that I added lately.
+1. Explain Magento’s MVC architecture
+2. How Magento’s ORM work?
+3. What is EAV in Magento?
+4. Difference between Mage::getSingleton() and Mage::getModel()
+5. What are the steps to change the theme of Magento
+6. If you want to add/modify core functionality, how will you do it?
+7. How will you create a new module in Magento?
+8. How will you call a CMS page in your module’s PHTML file?
+9. What is codePool in Magento?
+10. Explain handles in Magento’s layout
+11. What is in Magento’s config XML?
+12. Explain Magento’s URL structure
+13. How will you optimize Magento featured website?
+14. Explain in detail cache management in Magento
+15. When will you need to clear cache to see the changes in Magento?
+16. Explain the flow of placing an order technically
+17. How will you enable product’s custom attribute visibility in frontend?
+18. How will you upgrade your custom module?
+19. Difference between EAV and flat table
+20. Is it mandatory to give Namespace while creating custom module in Magento?
+21. How will you override Block/Model/controllers in Magento?
+22. What is difference between override and rewrite?
+23. How will you add/remove content from core’s system.xml file?
+24. Can you have more than one Grid in a module?
+25. How will you join flat table and EAV table in Magento?
+26. How will you enable maintenance mode of your Magento website?
+27. What are “magic methods” in Magento?
+28. How many database tables will Magento create when you make a new EAV module?
+29. Explain Magento’s Collections
+30. Explain events and observers in Magento
+31. Difference between block’s “name” and “as” attributes in layout XML
+32. When to use session and when to use registry to store variables?
+33. Where will you write your module’s business logic in Magento?
+34. Explain different types of sessions in Magento (e.g. customer/session, checkout/session, core/session) and the reason why you store data in different session types.
+35. What are the commonly used block types? What is the special in core/text_list block type.
+36. What are the different design patterns used in Magento?
+37. What can you do to optimize Magento performance?
+38. Where is the relation between configurable product and it’s simple product stored in database?
+39. How will you log current collection’s SQL query?
+40. How to get first item or last item from the collection?">
+  <meta itemprop="datePublished" content="2012-01-29T06:29:58+00:00">
+  <meta itemprop="dateModified" content="2012-01-29T06:29:58+00:00">
+  <meta itemprop="wordCount" content="443">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Advanced,Interview,Magento,Magento Interview Questions,Questions">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento Interview Questions</h1>
+<p class="byline">
+  <time datetime='2012-01-29' pubdate>
+    2012-01-29
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Here is a list of Magento advanced interview questions that I can think off now.<br>
+EDIT: There are also Expert interview questions that I added lately.</p>
+<p>1. Explain Magento’s MVC architecture<br>
+2. How Magento’s ORM work?<br>
+3. What is EAV in Magento?<br>
+4. Difference between Mage::getSingleton() and Mage::getModel()<br>
+5. What are the steps to change the theme of Magento<br>
+6. If you want to add/modify core functionality, how will you do it?<br>
+7. How will you create a new module in Magento?<br>
+8. How will you call a CMS page in your module’s PHTML file?<br>
+9. What is codePool in Magento?<br>
+10. Explain handles in Magento’s layout<br>
+11. What is <!-- raw HTML omitted --> in Magento’s config XML?<br>
+12. Explain Magento’s URL structure<br>
+13. How will you optimize Magento featured website?<br>
+14. Explain in detail cache management in Magento<br>
+15. When will you need to clear cache to see the changes in Magento?<br>
+16. Explain the flow of placing an order technically<br>
+17. How will you enable product’s custom attribute visibility in frontend?<br>
+18. How will you upgrade your custom module?<br>
+19. Difference between EAV and flat table<br>
+20. Is it mandatory to give Namespace while creating custom module in Magento?<br>
+21. How will you override Block/Model/controllers in Magento?<br>
+22. What is difference between override and rewrite?<br>
+23. How will you add/remove content from core’s system.xml file?<br>
+24. Can you have more than one Grid in a module?<br>
+25. How will you join flat table and EAV table in Magento?<br>
+26. How will you enable maintenance mode of your Magento website?<br>
+27. What are “magic methods” in Magento?<br>
+28. How many database tables will Magento create when you make a new EAV module?<br>
+29. Explain Magento’s Collections<br>
+30. Explain events and observers in Magento<br>
+31. Difference between block’s “name” and “as” attributes in layout XML<br>
+32. When to use session and when to use registry to store variables?<br>
+33. Where will you write your module’s business logic in Magento?<br>
+34. Explain different types of sessions in Magento (e.g. customer/session, checkout/session, core/session) and the reason why you store data in different session types.<br>
+35. What are the commonly used block types? What is the special in <em>core/text_list</em> block type.<br>
+36. What are the different design patterns used in Magento?<br>
+37. What can you do to optimize Magento performance?<br>
+38. Where is the relation between configurable product and it’s simple product stored in database?<br>
+39. How will you log current collection’s SQL query?<br>
+40. How to get first item or last item from the collection?<!-- raw HTML omitted --></p>
+<p>If you are looking for answers to these questions, check it out here:<br>
+<a href="http://ka.lpe.sh/2012/07/19/magento-interview-questions-and-answers/" title="Magento Interview questions and answers for experienced and freshers">Magento Interview questions and answers for experienced and freshers</a></p>
+<p>Best luck!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/advanced/">#advanced</a>
+  
+    <a class="blog-tags" href="/blog/interview/">#interview</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/magento-interview-questions/">#magento interview questions</a>
+  
+    <a class="blog-tags" href="/blog/questions/">#questions</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

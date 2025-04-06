@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Get all products with quantities and Out Of Stock | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Get all products with quantities and Out Of Stock" />
+<meta name="description" content="Magento get all the simple products which have greater than 0 quantity and are still Out of Stock in inventory.
+{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);
+$productCollection = Mage::getModel(&lsquo;catalog/product&rsquo;)
+-?&gt;
+getCollection()
+-&gt;addAttributeToSelect(‘*’)
+-&gt;joinField(‘qty’,
+‘cataloginventory/stock_item’,
+‘qty’,
+‘product_id=entity_id’,
+‘{{table}}.is_in_stock=0’,
+‘left’)
+-&gt;addAttributeToFilter(‘qty’, array(“gt” =&gt; 0));
+echo “
+Simple Products with &gt;0 quantity and Out of Stock
+“;
+foreach($productCollection as $product) { //print_r($product-&gt;getData());exit;
+if($product-&gt;getTypeId() == ‘simple’)
+echo $product-&gt;getName() . ” | ” . $product-&gt;getSku() . “
+“;
+}
+echo ‘Done’;
+?&gt;{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,out of stock,products," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Get all products with quantities and Out Of Stock" />
+<meta property="og:description" content="Magento get all the simple products which have greater than 0 quantity and are still Out of Stock in inventory.
+{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);
+$productCollection = Mage::getModel(&lsquo;catalog/product&rsquo;)
+-?&gt;
+getCollection()
+-&gt;addAttributeToSelect(‘*’)
+-&gt;joinField(‘qty’,
+‘cataloginventory/stock_item’,
+‘qty’,
+‘product_id=entity_id’,
+‘{{table}}.is_in_stock=0’,
+‘left’)
+-&gt;addAttributeToFilter(‘qty’, array(“gt” =&gt; 0));
+echo “
+Simple Products with &gt;0 quantity and Out of Stock
+“;
+foreach($productCollection as $product) { //print_r($product-&gt;getData());exit;
+if($product-&gt;getTypeId() == ‘simple’)
+echo $product-&gt;getName() . ” | ” . $product-&gt;getSku() . “
+“;
+}
+echo ‘Done’;
+?&gt;{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2014-11-06-magento-get-products-quantities-stock/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_f1851bab2f41ca82.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-11-06T20:27:28+00:00" />
+<meta property="article:modified_time" content="2014-11-06T20:27:28+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_f1851bab2f41ca82.webp"/>
+<meta name="twitter:title" content="Magento: Get all products with quantities and Out Of Stock"/>
+<meta name="twitter:description" content="Magento get all the simple products which have greater than 0 quantity and are still Out of Stock in inventory.
+{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);
+$productCollection = Mage::getModel(&lsquo;catalog/product&rsquo;)
+-?&gt;
+getCollection()
+-&gt;addAttributeToSelect(‘*’)
+-&gt;joinField(‘qty’,
+‘cataloginventory/stock_item’,
+‘qty’,
+‘product_id=entity_id’,
+‘{{table}}.is_in_stock=0’,
+‘left’)
+-&gt;addAttributeToFilter(‘qty’, array(“gt” =&gt; 0));
+echo “
+Simple Products with &gt;0 quantity and Out of Stock
+“;
+foreach($productCollection as $product) { //print_r($product-&gt;getData());exit;
+if($product-&gt;getTypeId() == ‘simple’)
+echo $product-&gt;getName() . ” | ” . $product-&gt;getSku() . “
+“;
+}
+echo ‘Done’;
+?&gt;{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Get all products with quantities and Out Of Stock">
+<meta itemprop="description" content="Magento get all the simple products which have greater than 0 quantity and are still Out of Stock in inventory.
+{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);
+$productCollection = Mage::getModel(&lsquo;catalog/product&rsquo;)
+-?&gt;
+getCollection()
+-&gt;addAttributeToSelect(‘*’)
+-&gt;joinField(‘qty’,
+‘cataloginventory/stock_item’,
+‘qty’,
+‘product_id=entity_id’,
+‘{{table}}.is_in_stock=0’,
+‘left’)
+-&gt;addAttributeToFilter(‘qty’, array(“gt” =&gt; 0));
+echo “
+Simple Products with &gt;0 quantity and Out of Stock
+“;
+foreach($productCollection as $product) { //print_r($product-&gt;getData());exit;
+if($product-&gt;getTypeId() == ‘simple’)
+echo $product-&gt;getName() . ” | ” . $product-&gt;getSku() . “
+“;
+}
+echo ‘Done’;
+?&gt;{/code}"><meta itemprop="datePublished" content="2014-11-06T20:27:28+00:00" />
+<meta itemprop="dateModified" content="2014-11-06T20:27:28+00:00" />
+<meta itemprop="wordCount" content="77">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_f1851bab2f41ca82.webp"/>
+
+
+<meta itemprop="keywords" content="magento,out of stock,products," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Get all products with quantities and Out Of Stock</h1>
+<p class="byline">
+  <time datetime='2014-11-06' pubdate>
+    2014-11-06
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento get all the simple products which have greater than 0 quantity and are still Out of Stock in inventory.</p>
+<p>{code type=php}&lt;?php require_once(&lsquo;app/Mage.php&rsquo;);
+umask(0);
+Mage::app(&lsquo;admin&rsquo;);
+set_time_limit(0);</p>
+<p>$productCollection = Mage::getModel(&lsquo;catalog/product&rsquo;)
+-?&gt;
+getCollection()<br>
+-&gt;addAttributeToSelect(‘*’)<br>
+-&gt;joinField(‘qty’,<br>
+‘cataloginventory/stock_item’,<br>
+‘qty’,<br>
+‘product_id=entity_id’,<br>
+‘{{table}}.is_in_stock=0’,<br>
+‘left’)<br>
+-&gt;addAttributeToFilter(‘qty’, array(“gt” =&gt; 0));</p>
+<p>echo “</p>
+<h2 id="simple-products-with-0-quantity-and-out-of-stock">Simple Products with &gt;0 quantity and Out of Stock</h2>
+<p>“;<br>
+foreach($productCollection as $product) { //print_r($product-&gt;getData());exit;<br>
+if($product-&gt;getTypeId() == ‘simple’)<br>
+echo $product-&gt;getName() . ” | ” . $product-&gt;getSku() . “<br>
+“;<br>
+}<br>
+echo ‘Done’;<br>
+?&gt;{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/out-of-stock/">#out of stock</a>
+  
+    <a class="blog-tags" href="/blog/products/">#products</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Get%20all%20products%20with%20quantities%20and%20Out%20Of%20Stock"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

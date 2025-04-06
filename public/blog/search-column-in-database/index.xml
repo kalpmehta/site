@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Search Column in Database on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/search-column-in-database/</link>
+    <description>Recent content in Search Column in Database on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Fri, 03 Aug 2012 15:31:53 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/search-column-in-database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql: Find column name in any table(s) having it in whole database</title>
+      <link>http://localhost:1313/mysql-find-column-name-in-any-tables-having-it-in-whole-database/</link>
+      <pubDate>Fri, 03 Aug 2012 15:31:53 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/mysql-find-column-name-in-any-tables-having-it-in-whole-database/</guid>
+      <description>&lt;p&gt;There may be instances where we want to find in how many tables of some particular database some column (field) occurs. Or you know that some column field existed but don’t remember in which table of a database, what will you do? And if there are hundreds of tables, it would be nightmare to go through each table schema and searching.&lt;/p&gt;&#xA;&lt;p&gt;Below Mysql query will get you all the tables where the specified column occurs in some database.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-mariadb&#34; data-lang=&#34;mariadb&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;SELECT&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;table_name,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;column_name&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;information_schema.columns&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;WHERE&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;column_name&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;LIKE&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;&#34;&gt;‘&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;%&lt;/span&gt;column_name_to_search&lt;span style=&#34;color:#666&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;&#34;&gt;’&lt;/span&gt;;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;&#xA;Remember, don’t use % before column_name_to_search if you know the starting characters of that column. It slows down, as Mysql will not use any indexes for fields searched with leading wildcard (%).&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>There may be instances where we want to find in how many tables of some particular database some column (field) occurs. Or you know that some column field existed but don’t remember in which table of a database, what will you do? And if there are hundreds of tables, it would be nightmare to go through each table schema and searching.</p>
+<p>Below Mysql query will get you all the tables where the specified column occurs in some database.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">SELECT</span><span style="color:#bbb"> </span>table_name,<span style="color:#bbb"> </span>column_name<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">from</span><span style="color:#bbb"> </span>information_schema.columns<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>column_name<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">LIKE</span><span style="color:#bbb"> </span><span style="">‘</span><span style="color:#666">%</span>column_name_to_search<span style="color:#666">%</span><span style="">’</span>;</span></span></code></pre></div><br>
+Remember, don’t use % before column_name_to_search if you know the starting characters of that column. It slows down, as Mysql will not use any indexes for fields searched with leading wildcard (%).</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

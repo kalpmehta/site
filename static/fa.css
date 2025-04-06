@@ -1,0 +1,122 @@
+.social-buttons {  
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: start;  
+    gap: 0.5rem;  
+}  
+.social-button {  
+    position: relative;  
+    display: flex;  
+    justify-content: center;  
+    align-items: center;  
+    outline: none;  
+    width: 3rem;  
+    height: 3rem;  
+    text-decoration: none;  
+    border-radius: 100%;  
+    background: rgb(206 206 206 / 20%);  
+    text-align: center;  
+}  
+.social-button::after {  
+    content: "";  
+    position: absolute;  
+    top: -1px;  
+    left: 50%;  
+    display: block;  
+    width: 0;  
+    height: 0;  
+    border-radius: 100%;  
+    transition: 0.3s;  
+}  
+.social-button:focus,  
+.social-button:hover {  
+    color: #fff;  
+}  
+.social-button:focus::after,  
+.social-button:hover::after {  
+    width: calc(100% + 2px);  
+    height: calc(100% + 2px);  
+    margin-left: calc(-50% - 1px);  
+}  
+.social-button i,  
+.social-button svg {  
+    position: relative;  
+    z-index: 1;  
+    transition: 0.3s;  
+}  
+.social-button i {  
+    font-size: 22px;  
+    color: #c9d1d9;
+}  
+.social-button:hover i {  
+    font-size: 22px;  
+    color: rgb(255 255 255);  
+}  
+.social-button svg {  
+    height: 40%;  
+    width: 40%;  
+}  
+.social-button--mail {  
+    color: #0072c6;  
+}  
+.social-button--mail::after {  
+    background: #0072c6;  
+}  
+.social-button--linkedin {  
+    color: #0077b5;  
+}  
+.social-button--linkedin::after {  
+    background: #0077b5;  
+}  
+.social-button--github {  
+    color: #6e5494;  
+}  
+.social-button--github::after {  
+    background: #6e5494;  
+}  
+.social-button--twitter {  
+    color: #55acee;  
+}  
+.social-button--twitter::after {  
+    background: #55acee;  
+}  
+.social-button--instagram {  
+    color: #e4405f;  
+}  
+.social-button--instagram::after {  
+    background: #e4405f;  
+}  
+.social-button--npmjs {  
+    color: #c12127;  
+}  
+.social-button--npmjs::after {  
+    background: #c12127;  
+} 
+
+
+
+.header-line {
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: justify;
+}
+.social-buttons, .site-title {
+    display: inline-flex;
+  margin: 0;
+}
+.social-buttons a {
+    float:left;
+}
+
+@media screen and (max-width: 500px) {
+    .social-button {
+       width: 2rem;
+       height: 2rem;
+    }
+    .social-button i {
+        font-size: 18px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 110px;
+     }
+ }

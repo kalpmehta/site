@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento how to remove order | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento how to remove order" />
+<meta name="description" content="First of all, removing live orders is not recommended. But if you are sure you want to remove orders (test orders?) then you can do so by custom script below. Get the order increment id(s) of the order you wish to delete from Magento. Remember, once order is deleted you can’t get any related information of that order.
+Create a test PHP file in your Magento project root with below code:
+{code type=php}require ‘app/Mage.php’;
+Mage::app(‘admin’)-&gt;setUseSessionInUrl(false);" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="magento,order,remove," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento how to remove order" />
+<meta property="og:description" content="First of all, removing live orders is not recommended. But if you are sure you want to remove orders (test orders?) then you can do so by custom script below. Get the order increment id(s) of the order you wish to delete from Magento. Remember, once order is deleted you can’t get any related information of that order.
+Create a test PHP file in your Magento project root with below code:
+{code type=php}require ‘app/Mage.php’;
+Mage::app(‘admin’)-&gt;setUseSessionInUrl(false);" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-08-11-magento-how-to-remove-order/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_9dc2888eef50c01a.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-11T19:38:44+00:00" />
+<meta property="article:modified_time" content="2013-08-11T19:38:44+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_9dc2888eef50c01a.webp"/>
+<meta name="twitter:title" content="Magento how to remove order"/>
+<meta name="twitter:description" content="First of all, removing live orders is not recommended. But if you are sure you want to remove orders (test orders?) then you can do so by custom script below. Get the order increment id(s) of the order you wish to delete from Magento. Remember, once order is deleted you can’t get any related information of that order.
+Create a test PHP file in your Magento project root with below code:
+{code type=php}require ‘app/Mage.php’;
+Mage::app(‘admin’)-&gt;setUseSessionInUrl(false);"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento how to remove order">
+<meta itemprop="description" content="First of all, removing live orders is not recommended. But if you are sure you want to remove orders (test orders?) then you can do so by custom script below. Get the order increment id(s) of the order you wish to delete from Magento. Remember, once order is deleted you can’t get any related information of that order.
+Create a test PHP file in your Magento project root with below code:
+{code type=php}require ‘app/Mage.php’;
+Mage::app(‘admin’)-&gt;setUseSessionInUrl(false);"><meta itemprop="datePublished" content="2013-08-11T19:38:44+00:00" />
+<meta itemprop="dateModified" content="2013-08-11T19:38:44+00:00" />
+<meta itemprop="wordCount" content="146">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_9dc2888eef50c01a.webp"/>
+
+
+<meta itemprop="keywords" content="magento,order,remove," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento how to remove order</h1>
+<p class="byline">
+  <time datetime='2013-08-11' pubdate>
+    2013-08-11
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>First of all, removing live orders is not recommended. But if you are sure you want to remove orders (test orders?) then you can do so by custom script below. Get the order increment id(s) of the order you wish to delete from Magento. Remember, once order is deleted you can’t get any related information of that order.</p>
+<p>Create a test PHP file in your Magento project root with below code:<br>
+{code type=php}require ‘app/Mage.php’;<br>
+Mage::app(‘admin’)-&gt;setUseSessionInUrl(false);</p>
+<p>$orderIncrementIDs = array(‘100000001′,’100000002’); //your order increment ids to delete, beware!<br>
+$rmvd = array();</p>
+<p>foreach($orderIncrementIDs as $ordID){<br>
+try{<br>
+Mage::getModel(‘sales/order’)-&gt;loadByIncrementId($ordID)-&gt;delete();<br>
+$rmvd[] = $ordID;<br>
+} catch(Exception $e){<br>
+echo ‘Error: ‘.$e-&gt;getMessage().’<br>
+‘;<br>
+}<br>
+}<br>
+echo “Following Orders Removed!<br>
+” . implode(“, “,$rmvd);{/code}<br>
+and run the file to delete the order(s).</p>
+<p>You can also delete orders directly from database using below query:<br>
+{code type=sql}select @order_id:=entity_id from sales_order_entity where increment_id=’100000001′;<br>
+delete from sales_order_entity where entity_id=@order_id or parent_id=@order_id;{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/order/">#order</a>
+  
+    <a class="blog-tags" href="/blog/remove/">#remove</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20how%20to%20remove%20order"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

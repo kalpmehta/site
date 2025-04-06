@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Get customer details : customer id, name, email | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Get customer details : customer id, name, email" />
+<meta name="description" content="Magento get the logged in customer details like customer id, name, email, etc. Check if customer is already logged in or not, if they are logged in then get all the data using customer session object and use it as per the requirement.
+{code type=php}if (Mage::getSingleton(‘customer/session’)-&gt;isLoggedIn()) {
+$customer = Mage::getSingleton(‘customer/session’)-&gt;getCustomer();
+$customerData = Mage::getModel(‘customer/customer’)-&gt;load($customer-&gt;getId())-&gt;getData();
+Mage::log($customerData);
+}{/code}
+Output:
+{code type=php}Array
+(
+[entity_id] =&gt; 1
+[entity_type_id] =&gt; 1
+[attribute_set_id] =&gt; 0
+[website_id] =&gt; 1
+[email] =&gt; john.doe@example.com
+[group_id] =&gt; 1
+[increment_id] =&gt; 000000001
+[store_id] =&gt; 1
+[created_at] =&gt; 2007-08-30 23:23:13
+[updated_at] =&gt; 2008-08-08 12:28:24
+[is_active] =&gt; 1
+[firstname] =&gt; John
+[lastname] =&gt; Doe
+[password_hash] =&gt; 204948a4020ed1d0e4238db2277d5:eg
+[prefix] =&gt;
+[middlename] =&gt;
+[suffix] =&gt;
+[taxvat] =&gt;
+[default_billing] =&gt; 274
+[default_shipping] =&gt; 274
+){/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="customer,magento," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Get customer details : customer id, name, email" />
+<meta property="og:description" content="Magento get the logged in customer details like customer id, name, email, etc. Check if customer is already logged in or not, if they are logged in then get all the data using customer session object and use it as per the requirement.
+{code type=php}if (Mage::getSingleton(‘customer/session’)-&gt;isLoggedIn()) {
+$customer = Mage::getSingleton(‘customer/session’)-&gt;getCustomer();
+$customerData = Mage::getModel(‘customer/customer’)-&gt;load($customer-&gt;getId())-&gt;getData();
+Mage::log($customerData);
+}{/code}
+Output:
+{code type=php}Array
+(
+[entity_id] =&gt; 1
+[entity_type_id] =&gt; 1
+[attribute_set_id] =&gt; 0
+[website_id] =&gt; 1
+[email] =&gt; john.doe@example.com
+[group_id] =&gt; 1
+[increment_id] =&gt; 000000001
+[store_id] =&gt; 1
+[created_at] =&gt; 2007-08-30 23:23:13
+[updated_at] =&gt; 2008-08-08 12:28:24
+[is_active] =&gt; 1
+[firstname] =&gt; John
+[lastname] =&gt; Doe
+[password_hash] =&gt; 204948a4020ed1d0e4238db2277d5:eg
+[prefix] =&gt;
+[middlename] =&gt;
+[suffix] =&gt;
+[taxvat] =&gt;
+[default_billing] =&gt; 274
+[default_shipping] =&gt; 274
+){/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2011-06-19-magento-get-customer-id-name-email/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_3e2d727aa590d1a7.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2011-06-19T08:55:13+00:00" />
+<meta property="article:modified_time" content="2011-06-19T08:55:13+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_3e2d727aa590d1a7.webp"/>
+<meta name="twitter:title" content="Magento: Get customer details : customer id, name, email"/>
+<meta name="twitter:description" content="Magento get the logged in customer details like customer id, name, email, etc. Check if customer is already logged in or not, if they are logged in then get all the data using customer session object and use it as per the requirement.
+{code type=php}if (Mage::getSingleton(‘customer/session’)-&gt;isLoggedIn()) {
+$customer = Mage::getSingleton(‘customer/session’)-&gt;getCustomer();
+$customerData = Mage::getModel(‘customer/customer’)-&gt;load($customer-&gt;getId())-&gt;getData();
+Mage::log($customerData);
+}{/code}
+Output:
+{code type=php}Array
+(
+[entity_id] =&gt; 1
+[entity_type_id] =&gt; 1
+[attribute_set_id] =&gt; 0
+[website_id] =&gt; 1
+[email] =&gt; john.doe@example.com
+[group_id] =&gt; 1
+[increment_id] =&gt; 000000001
+[store_id] =&gt; 1
+[created_at] =&gt; 2007-08-30 23:23:13
+[updated_at] =&gt; 2008-08-08 12:28:24
+[is_active] =&gt; 1
+[firstname] =&gt; John
+[lastname] =&gt; Doe
+[password_hash] =&gt; 204948a4020ed1d0e4238db2277d5:eg
+[prefix] =&gt;
+[middlename] =&gt;
+[suffix] =&gt;
+[taxvat] =&gt;
+[default_billing] =&gt; 274
+[default_shipping] =&gt; 274
+){/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Get customer details : customer id, name, email">
+<meta itemprop="description" content="Magento get the logged in customer details like customer id, name, email, etc. Check if customer is already logged in or not, if they are logged in then get all the data using customer session object and use it as per the requirement.
+{code type=php}if (Mage::getSingleton(‘customer/session’)-&gt;isLoggedIn()) {
+$customer = Mage::getSingleton(‘customer/session’)-&gt;getCustomer();
+$customerData = Mage::getModel(‘customer/customer’)-&gt;load($customer-&gt;getId())-&gt;getData();
+Mage::log($customerData);
+}{/code}
+Output:
+{code type=php}Array
+(
+[entity_id] =&gt; 1
+[entity_type_id] =&gt; 1
+[attribute_set_id] =&gt; 0
+[website_id] =&gt; 1
+[email] =&gt; john.doe@example.com
+[group_id] =&gt; 1
+[increment_id] =&gt; 000000001
+[store_id] =&gt; 1
+[created_at] =&gt; 2007-08-30 23:23:13
+[updated_at] =&gt; 2008-08-08 12:28:24
+[is_active] =&gt; 1
+[firstname] =&gt; John
+[lastname] =&gt; Doe
+[password_hash] =&gt; 204948a4020ed1d0e4238db2277d5:eg
+[prefix] =&gt;
+[middlename] =&gt;
+[suffix] =&gt;
+[taxvat] =&gt;
+[default_billing] =&gt; 274
+[default_shipping] =&gt; 274
+){/code}"><meta itemprop="datePublished" content="2011-06-19T08:55:13+00:00" />
+<meta itemprop="dateModified" content="2011-06-19T08:55:13+00:00" />
+<meta itemprop="wordCount" content="164">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_3e2d727aa590d1a7.webp"/>
+
+
+<meta itemprop="keywords" content="customer,magento," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Get customer details : customer id, name, email</h1>
+<p class="byline">
+  <time datetime='2011-06-19' pubdate>
+    2011-06-19
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento get the logged in customer details like customer id, name, email, etc. Check if customer is already logged in or not, if they are logged in then get all the data using customer session object and use it as per the requirement.</p>
+<p>{code type=php}if (Mage::getSingleton(‘customer/session’)-&gt;isLoggedIn()) {<br>
+$customer = Mage::getSingleton(‘customer/session’)-&gt;getCustomer();<br>
+$customerData = Mage::getModel(‘customer/customer’)-&gt;load($customer-&gt;getId())-&gt;getData();<br>
+Mage::log($customerData);<br>
+}{/code}</p>
+<p>Output:<br>
+{code type=php}Array<br>
+(<br>
+[entity_id] =&gt; 1<br>
+[entity_type_id] =&gt; 1<br>
+[attribute_set_id] =&gt; 0<br>
+[website_id] =&gt; 1<br>
+[email] =&gt; <a href="mailto:john.doe@example.com">john.doe@example.com</a><br>
+[group_id] =&gt; 1<br>
+[increment_id] =&gt; 000000001<br>
+[store_id] =&gt; 1<br>
+[created_at] =&gt; 2007-08-30 23:23:13<br>
+[updated_at] =&gt; 2008-08-08 12:28:24<br>
+[is_active] =&gt; 1<br>
+[firstname] =&gt; John<br>
+[lastname] =&gt; Doe<br>
+[password_hash] =&gt; 204948a4020ed1d0e4238db2277d5:eg<br>
+[prefix] =&gt;<br>
+[middlename] =&gt;<br>
+[suffix] =&gt;<br>
+[taxvat] =&gt;<br>
+[default_billing] =&gt; 274<br>
+[default_shipping] =&gt; 274<br>
+){/code}</p>
+<p>Getting customer details from the $customerData object:<br>
+{code type=php}$customerID = $customerData-&gt;getId(); //entity_id can be used as id<br>
+$name = $customerData-&gt;getFirstname() . ‘ ‘ . $customerData-&gt;getLastname();<br>
+$isActive = $customerData-&gt;getIsActive();<br>
+$email = $customerData-&gt;getEmail();<br>
+$incrId = $customerData-&gt;getIncrementId();{/code}</p>
+<p>Similarly, we can get lastname, email, etc. ( [website_id] = getWebsiteId() )</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/customer/">#customer</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Get%20customer%20details%20%3a%20customer%20id%2c%20name%2c%20email"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

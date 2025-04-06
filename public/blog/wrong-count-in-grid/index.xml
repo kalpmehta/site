@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Wrong Count in Grid on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/wrong-count-in-grid/</link>
+    <description>Recent content in Wrong Count in Grid on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 05 Jan 2012 09:47:31 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/wrong-count-in-grid/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Wrong count in admin Grid when using GROUP BY clause, overriding lib module</title>
+      <link>http://localhost:1313/magento-wrong-count-in-admin-grid-when-using-group-by-clause-overriding-lib-module/</link>
+      <pubDate>Thu, 05 Jan 2012 09:47:31 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-wrong-count-in-admin-grid-when-using-group-by-clause-overriding-lib-module/</guid>
+      <description>&lt;p&gt;If you have noticed or not, in version 1.5 of Magento when you use GROUP BY clause in any Grid.php file in admin, the count always display wrong. Many times it displays 1 even if there are hundreds of records. Due to this your pagination also doesn’t work. This is a bug in Magento. Your getSize() always returns wrong count whereas total records in grid are proper.&lt;/p&gt;&#xA;&lt;p&gt;To fix this, you need to edit one of your core file. As it’s not a good practice to edit core file, we will here override the core file.&lt;br&gt;&#xA;Overriding LIB module&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you have noticed or not, in version 1.5 of Magento when you use GROUP BY clause in any Grid.php file in admin, the count always display wrong. Many times it displays 1 even if there are hundreds of records. Due to this your pagination also doesn’t work. This is a bug in Magento. Your getSize() always returns wrong count whereas total records in grid are proper.</p>
+<p>To fix this, you need to edit one of your core file. As it’s not a good practice to edit core file, we will here override the core file.<br>
+Overriding LIB module</p>
+<p>Copy Db.php file from magento / lib / Varien / Data / Collection / Db.php<br>
+Paste it to your local directory so the resultant folder structure would look like this:<br>
+magento / app / code / local / Varien / Data / Collection / Db.php</p>
+<p>Now open this file to edit and replace getSelectCountSql function with below one<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">public</span> <span style="color:#a2f;font-weight:bold">function</span> <span style="color:#00a000">getSelectCountSql</span>()  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">_renderFilters</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">clone</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">reset</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">ORDER</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">reset</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">LIMIT_COUNT</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">reset</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">LIMIT_OFFSET</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">reset</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">COLUMNS</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(count(<span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">GROUP</span>)) <span style="color:#666">&gt;</span> <span style="color:#666">0</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">reset</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">GROUP</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">distinct</span>(<span style="color:#a2f;font-weight:bold">true</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$group</span> <span style="color:#666">=</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSelect</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getPart</span>(Zend_Db_Select<span style="color:#666">::</span><span style="color:#b44">GROUP</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">columns</span>(“COUNT(DISTINCT “<span style="color:#666">.</span>implode(“, “, <span style="color:#b8860b">$group</span>)<span style="color:#666">.</span>”)”);  
+</span></span><span style="display:flex;"><span> } <span style="color:#a2f;font-weight:bold">else</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$countSelect</span><span style="color:#666">-&gt;</span><span style="color:#b44">columns</span>(‘COUNT(<span style="color:#666">*</span>)’);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">return</span> <span style="color:#b8860b">$countSelect</span>;  
+</span></span><span style="display:flex;"><span> }</span></span></code></pre></div></p>
+<p><em>Updated the method for generic use</em></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

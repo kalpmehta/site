@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>return false vs preventDefault in javascript | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="return false vs preventDefault in javascript" />
+<meta name="description" content="This post will help you to differentiate between javascript’s return false, preventDefault, stopPropagation and stopImmediatePropagation.
+The first thing you learn when using javascript is to use return false. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using return false. But when you want event to propagate, return false will not be helpful and will give unexpected result." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="javascript,jquery,prototypejs," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="return false vs preventDefault in javascript" />
+<meta property="og:description" content="This post will help you to differentiate between javascript’s return false, preventDefault, stopPropagation and stopImmediatePropagation.
+The first thing you learn when using javascript is to use return false. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using return false. But when you want event to propagate, return false will not be helpful and will give unexpected result." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-06-01-return-false-vs-preventdefault-javascript/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_ac08a91d167ce9f4.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-06-01T22:53:39+00:00" />
+<meta property="article:modified_time" content="2013-06-01T22:53:39+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_ac08a91d167ce9f4.webp"/>
+<meta name="twitter:title" content="return false vs preventDefault in javascript"/>
+<meta name="twitter:description" content="This post will help you to differentiate between javascript’s return false, preventDefault, stopPropagation and stopImmediatePropagation.
+The first thing you learn when using javascript is to use return false. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using return false. But when you want event to propagate, return false will not be helpful and will give unexpected result."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="return false vs preventDefault in javascript">
+<meta itemprop="description" content="This post will help you to differentiate between javascript’s return false, preventDefault, stopPropagation and stopImmediatePropagation.
+The first thing you learn when using javascript is to use return false. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using return false. But when you want event to propagate, return false will not be helpful and will give unexpected result."><meta itemprop="datePublished" content="2013-06-01T22:53:39+00:00" />
+<meta itemprop="dateModified" content="2013-06-01T22:53:39+00:00" />
+<meta itemprop="wordCount" content="509">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_ac08a91d167ce9f4.webp"/>
+
+
+<meta itemprop="keywords" content="javascript,jquery,prototypejs," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>return false vs preventDefault in javascript</h1>
+<p class="byline">
+  <time datetime='2013-06-01' pubdate>
+    2013-06-01
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>This post will help you to differentiate between javascript’s <em>return false</em>, <em>preventDefault</em>, <em>stopPropagation</em> and <em>stopImmediatePropagation</em>.</p>
+<p>The first thing you learn when using javascript is to use <em>return false</em>. That’s the best thing we think to cancel browser’s default behavior, to stop further execution of an event. If you are using a simple function which returns what you want, then probably you won’t notice anything wrong in using <em>return false</em>. But when you want event to propagate, <em>return false</em> will not be helpful and will give unexpected result.</p>
+<h2 id="what-is-event-propagation">What is event propagation?</h2>
+<p>When a single event, such as a mouse click, if is handled by two or more event handlers defined in various location of the DOM hiearachy, then the event handling starts by executing for individual elements at the lowest level. There are two models of this event propagation, <em>event bubbling</em> and <em>event capturing</em>.</p>
+<p><!-- raw HTML omitted -->Event bubbling<!-- raw HTML omitted --> is when an event has more than one event handler and event handling execution starts from <strong>bottom to top</strong> i.e. from individual links to it’s parent element (e.g. form or body or document) having it’s own event handler.</p>
+<p>{code type=html}</p>
+<!-- raw HTML omitted -->
+<p>On clicking on the link in the above example code, first the hyperlink’s event will be handled, then form’s event will get handled, and at last body’s event will get handled. This is event bubbling, which bubble up from bottom to top.</p>
+<p><!-- raw HTML omitted -->Event capturing<!-- raw HTML omitted --> is opposite to event bubbling, where event handling execution starts from <strong>top to bottom</strong>.</p>
+<p>If you have such type of architecture, where there are many event handlers for an event, you should not use <em>return false</em> or atleast use it with caution. It can get you in big trouble, as it does <em>preventDefault()</em> and <em>stopPropagation()</em> both and hence never allows further execution of an event.</p>
+<h2 id="preventdefault">preventDefault()</h2>
+<p>It simply stops the default action of an element. Example, prevents the hyperlink from following the URL, prevents the submit button to submit the form. When you have many event handlers and you just want to prevent default event from occuring, just use <em>e.preventDefault()</em> in the top of the function definition. The reason we put <em>preventDefault()</em> in the first line of function is because, if something goes wrong in the code following the <em>preventDefault()</em>, then also it will not allow link or form to get submitted or do whatever action you want it to do. And hence the link or submit button will get submitted. It will still allow further propagation of the event.</p>
+<p>Following example prevents the link from following the URL given in href attribute.<br>
+{code type=html}</p>
+<!-- raw HTML omitted -->
+<p>{/code}</p>
+<h2 id="stoppropagation">stopPropagation()</h2>
+<p>{code type=html}</p>
+<!-- raw HTML omitted -->
+<h2 id="stopimmediatepropagation">stopImmediatePropagation()</h2>
+<p>If you have multiple event handlers for the event, and you want to stop all other event handlers and current event also from further executing, you should use <em>stopImmediatePropagation()</em>.<br>
+{code type=html}</p>
+<!-- raw HTML omitted -->
+<p>$(&ldquo;div a&rdquo;).click(function (e) { alert(&lsquo;Hi! You can see me&rsquo;); e.stopImmediatePropagation(); });</p>
+<p>$(&ldquo;div a&rdquo;).click(function () { alert(&lsquo;I will never popup :(&rsquo;); });</p>
+<p>{/code}</p>
+<p>So next time when you use <em>return false</em>, think twice do you really want return false or <em>e.preventDefault()</em> or other methods explained above will well-suited there.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/javascript/">#javascript</a>
+  
+    <a class="blog-tags" href="/blog/jquery/">#jquery</a>
+  
+    <a class="blog-tags" href="/blog/prototypejs/">#prototypejs</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"return%20false%20vs%20preventDefault%20in%20javascript"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

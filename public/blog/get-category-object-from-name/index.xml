@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Get Category Object From Name on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/get-category-object-from-name/</link>
+    <description>Recent content in Get Category Object From Name on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 13 Sep 2012 14:53:09 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/get-category-object-from-name/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get category object from category name</title>
+      <link>http://localhost:1313/magento-get-category-object-from-category-name/</link>
+      <pubDate>Thu, 13 Sep 2012 14:53:09 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-category-object-from-category-name/</guid>
+      <description>&lt;p&gt;Although this is very weird, to get category object (id, entity_type_id, attribute_set_id, children, etc.) from category name, sometimes it may be useful. Below lines of code will help you in getting it.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$cat&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getResourceModel&lt;/span&gt;(‘catalog&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;category_collection’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;addFieldToFilter&lt;/span&gt;(‘name’, ‘Category_Name_Here’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print_r(&lt;span style=&#34;color:#b8860b&#34;&gt;$cat&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getData&lt;/span&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;To get the category id from $cat object, simply use: &#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$cat&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getFirstItem&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getEntityId&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt; Beware, the name should only return one category else the above query will return first category id no matter how many categories are retrieved.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Although this is very weird, to get category object (id, entity_type_id, attribute_set_id, children, etc.) from category name, sometimes it may be useful. Below lines of code will help you in getting it.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$cat</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>category_collection’)<span style="color:#666">-&gt;</span><span style="color:#b44">addFieldToFilter</span>(‘name’, ‘Category_Name_Here’);  
+</span></span><span style="display:flex;"><span>print_r(<span style="color:#b8860b">$cat</span><span style="color:#666">-&gt;</span><span style="color:#b44">getData</span>());</span></span></code></pre></div>
+<p>To get the category id from $cat object, simply use: 
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$cat</span><span style="color:#666">-&gt;</span><span style="color:#b44">getFirstItem</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getEntityId</span>();</span></span></code></pre></div> Beware, the name should only return one category else the above query will return first category id no matter how many categories are retrieved.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

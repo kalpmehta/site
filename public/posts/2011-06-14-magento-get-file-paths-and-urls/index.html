@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento get file paths and URLs | Hugo ʕ•ᴥ•ʔ Bear Blog</title>
+<meta name="title" content="Magento get file paths and URLs" />
+<meta name="description" content="Get URL paths of your magento folder structure – Absolute URL Path
+Mage::getBaseUrl() =&gt; Gets base url path e.g. http://my.website.com/
+Mage::getBaseUrl(‘media’) =&gt; Gets MEDIA folder path e.g. http://my.website.com/media/
+Mage::getBaseUrl(‘js’) =&gt; Gets JS folder path e.g. http://my.website.com/js/
+Mage::getBaseUrl(‘skin’) =&gt; Gets SKIN folder path e.g. http://my.website.com/skin/
+Get DIRECTORY paths (physical location of your folders on the server) – Relative URL Path
+Mage::getBaseDir() =&gt; Gives you your Magento installation folder / root folder e.g. /home/kalpesh/workspace/magento
+Mage::getBaseDir(‘app’) =&gt; Gives you your Magento’s APP directory file location e.g. /home/kalpesh/workspace/magento/app" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="absolute path,directory,magento,relative path,url," />
+
+
+
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/2011-06-14-magento-get-file-paths-and-urls/">
+  <meta property="og:site_name" content="Hugo ʕ•ᴥ•ʔ Bear Blog">
+  <meta property="og:title" content="Magento get file paths and URLs">
+  <meta property="og:description" content="Get URL paths of your magento folder structure – Absolute URL Path
+Mage::getBaseUrl() =&gt; Gets base url path e.g. http://my.website.com/
+Mage::getBaseUrl(‘media’) =&gt; Gets MEDIA folder path e.g. http://my.website.com/media/
+Mage::getBaseUrl(‘js’) =&gt; Gets JS folder path e.g. http://my.website.com/js/
+Mage::getBaseUrl(‘skin’) =&gt; Gets SKIN folder path e.g. http://my.website.com/skin/
+Get DIRECTORY paths (physical location of your folders on the server) – Relative URL Path
+Mage::getBaseDir() =&gt; Gives you your Magento installation folder / root folder e.g. /home/kalpesh/workspace/magento
+Mage::getBaseDir(‘app’) =&gt; Gives you your Magento’s APP directory file location e.g. /home/kalpesh/workspace/magento/app">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2011-06-14T11:45:15+00:00">
+    <meta property="article:modified_time" content="2011-06-14T11:45:15+00:00">
+    <meta property="article:tag" content="Absolute Path">
+    <meta property="article:tag" content="Directory">
+    <meta property="article:tag" content="Magento">
+    <meta property="article:tag" content="Relative Path">
+    <meta property="article:tag" content="Url">
+    <meta property="og:image" content="http://localhost:1313/images/share.png">
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:title" content="Magento get file paths and URLs">
+  <meta name="twitter:description" content="Get URL paths of your magento folder structure – Absolute URL Path
+Mage::getBaseUrl() =&gt; Gets base url path e.g. http://my.website.com/
+Mage::getBaseUrl(‘media’) =&gt; Gets MEDIA folder path e.g. http://my.website.com/media/
+Mage::getBaseUrl(‘js’) =&gt; Gets JS folder path e.g. http://my.website.com/js/
+Mage::getBaseUrl(‘skin’) =&gt; Gets SKIN folder path e.g. http://my.website.com/skin/
+Get DIRECTORY paths (physical location of your folders on the server) – Relative URL Path
+Mage::getBaseDir() =&gt; Gives you your Magento installation folder / root folder e.g. /home/kalpesh/workspace/magento
+Mage::getBaseDir(‘app’) =&gt; Gives you your Magento’s APP directory file location e.g. /home/kalpesh/workspace/magento/app">
+
+
+  
+  
+  <meta itemprop="name" content="Magento get file paths and URLs">
+  <meta itemprop="description" content="Get URL paths of your magento folder structure – Absolute URL Path
+Mage::getBaseUrl() =&gt; Gets base url path e.g. http://my.website.com/
+Mage::getBaseUrl(‘media’) =&gt; Gets MEDIA folder path e.g. http://my.website.com/media/
+Mage::getBaseUrl(‘js’) =&gt; Gets JS folder path e.g. http://my.website.com/js/
+Mage::getBaseUrl(‘skin’) =&gt; Gets SKIN folder path e.g. http://my.website.com/skin/
+Get DIRECTORY paths (physical location of your folders on the server) – Relative URL Path
+Mage::getBaseDir() =&gt; Gives you your Magento installation folder / root folder e.g. /home/kalpesh/workspace/magento
+Mage::getBaseDir(‘app’) =&gt; Gives you your Magento’s APP directory file location e.g. /home/kalpesh/workspace/magento/app">
+  <meta itemprop="datePublished" content="2011-06-14T11:45:15+00:00">
+  <meta itemprop="dateModified" content="2011-06-14T11:45:15+00:00">
+  <meta itemprop="wordCount" content="125">
+  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="keywords" content="Absolute Path,Directory,Magento,Relative Path,Url">
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Hugo ʕ•ᴥ•ʔ Bear Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento get file paths and URLs</h1>
+<p class="byline">
+  <time datetime='2011-06-14' pubdate>
+    2011-06-14
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Get URL paths of your magento folder structure – Absolute URL Path</p>
+<p><strong>Mage::getBaseUrl()</strong> =&gt; Gets base url path e.g. <a href="http://my.website.com/">http://my.website.com/</a></p>
+<p><strong>Mage::getBaseUrl(‘media’</strong>) =&gt; Gets MEDIA folder path e.g. <a href="http://my.website.com/media/">http://my.website.com/media/</a></p>
+<p><strong>Mage::getBaseUrl(‘js’)</strong> =&gt; Gets JS folder path e.g. <a href="http://my.website.com/js/">http://my.website.com/js/</a></p>
+<p><strong>Mage::getBaseUrl(‘skin’)</strong> =&gt; Gets SKIN folder path e.g. <a href="http://my.website.com/skin/">http://my.website.com/skin/</a></p>
+<p>Get DIRECTORY paths (physical location of your folders on the server) – Relative URL Path</p>
+<p><strong>Mage::getBaseDir()</strong> =&gt; Gives you your Magento installation folder / root folder e.g. /home/kalpesh/workspace/magento</p>
+<p><strong>Mage::getBaseDir(‘app’)</strong> =&gt; Gives you your Magento’s APP directory file location e.g. /home/kalpesh/workspace/magento/app</p>
+<p><strong>Mage::getBaseDir(‘design’)</strong> =&gt; Gives you your Magento’s DESIGN directory file location e.g. /home/kalpesh/workspace/magento/design</p>
+<p><strong>Mage::getBaseDir(‘media’)</strong> =&gt; Gives MEDIA directory file path</p>
+<p><strong>Mage::getBaseDir(‘code’)</strong> =&gt; Gives CODE directory file path</p>
+<p><strong>Mage::getBaseDir(‘lib’)</strong> =&gt; Gives LIB directory file path</p>
+<p>Get Current URL – whole URL path</p>
+<p><strong>Mage::helper(‘core/url’)-&gt;getCurrentUrl()</strong></p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/absolute-path/">#absolute path</a>
+  
+    <a class="blog-tags" href="/blog/directory/">#directory</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/relative-path/">#relative path</a>
+  
+    <a class="blog-tags" href="/blog/url/">#url</a>
+  
+</p>
+
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2020, Jane Doe. | 
+</small></footer>
+
+    
+</body>
+
+</html>

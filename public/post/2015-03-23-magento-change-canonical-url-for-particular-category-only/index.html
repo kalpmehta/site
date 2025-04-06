@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Change canonical URL for particular category only | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Change canonical URL for particular category only" />
+<meta name="description" content="In Magento, if you want to change canonical URL for just one category or quite a few categories, and don’t want to affect rest of the canonical URLs then do the following.
+Note that this is helpful when you already have canonical URL in the page and want to REPLACE it with new url. If you don’t have canonical URL at all then you might want to ignore the first action tag in the below code." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="canonical url,category,custom canonical,magento," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Change canonical URL for particular category only" />
+<meta property="og:description" content="In Magento, if you want to change canonical URL for just one category or quite a few categories, and don’t want to affect rest of the canonical URLs then do the following.
+Note that this is helpful when you already have canonical URL in the page and want to REPLACE it with new url. If you don’t have canonical URL at all then you might want to ignore the first action tag in the below code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2015-03-23-magento-change-canonical-url-for-particular-category-only/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_8a0dc47132d32275.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2015-03-23T18:46:40+00:00" />
+<meta property="article:modified_time" content="2015-03-23T18:46:40+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_8a0dc47132d32275.webp"/>
+<meta name="twitter:title" content="Magento: Change canonical URL for particular category only"/>
+<meta name="twitter:description" content="In Magento, if you want to change canonical URL for just one category or quite a few categories, and don’t want to affect rest of the canonical URLs then do the following.
+Note that this is helpful when you already have canonical URL in the page and want to REPLACE it with new url. If you don’t have canonical URL at all then you might want to ignore the first action tag in the below code."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Change canonical URL for particular category only">
+<meta itemprop="description" content="In Magento, if you want to change canonical URL for just one category or quite a few categories, and don’t want to affect rest of the canonical URLs then do the following.
+Note that this is helpful when you already have canonical URL in the page and want to REPLACE it with new url. If you don’t have canonical URL at all then you might want to ignore the first action tag in the below code."><meta itemprop="datePublished" content="2015-03-23T18:46:40+00:00" />
+<meta itemprop="dateModified" content="2015-03-23T18:46:40+00:00" />
+<meta itemprop="wordCount" content="158">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_8a0dc47132d32275.webp"/>
+
+
+<meta itemprop="keywords" content="canonical url,category,custom canonical,magento," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Change canonical URL for particular category only</h1>
+<p class="byline">
+  <time datetime='2015-03-23' pubdate>
+    2015-03-23
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>In Magento, if you want to change canonical URL for just one category or quite a few categories, and don’t want to affect rest of the canonical URLs then do the following.</p>
+<p>Note that this is helpful when you already have canonical URL in the page and want to REPLACE it with new url. If you don’t have canonical URL at all then you might want to ignore the first <em>action</em> tag in the below code.</p>
+<p>– Go to the category page you want to change canonical URL in Magento Admin<br>
+– Click the tab “Custom Design”<br>
+– In the Custom Layout Update textbox, paste this:</p>
+<p>{code type=xml}<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->link_rel<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><a href="http://loca.lho.st/old-canonical-url">http://loca.lho.st/old-canonical-url</a><!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->canonical<!-- raw HTML omitted --><br>
+<!-- raw HTML omitted --><a href="http://loca.lho.st/new-canonical-url">http://loca.lho.st/new-canonical-url</a><!-- raw HTML omitted --> <!-- raw HTML omitted --><br>
+<!-- raw HTML omitted -->{/code}</p>
+<p>Change <em><a href="http://loca.lho.st/old-canonical-url">http://loca.lho.st/old-canonical-url</a></em> and <em><a href="http://loca.lho.st/new-canonical-url">http://loca.lho.st/new-canonical-url</a></em> with your desired URLs and save the category.</p>
+<p>Basically first <em>action</em> tag in the code removes old canonical URL and second <em>action</em> tag adds the canonical URL with the new value you specify.</p>
+<p>You may also need to clear cache.</p>
+<p>HTH!</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/canonical-url/">#canonical url</a>
+  
+    <a class="blog-tags" href="/blog/category/">#category</a>
+  
+    <a class="blog-tags" href="/blog/custom-canonical/">#custom canonical</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Change%20canonical%20URL%20for%20particular%20category%20only"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

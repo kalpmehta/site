@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Devexchange 2019 on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/devexchange-2019/</link>
+    <description>Recent content in Devexchange 2019 on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 09 Jun 2019 06:09:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/devexchange-2019/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>#MagentoImagine2019 Dev Exchange Recap – Make Magento more secure</title>
+      <link>http://localhost:1313/%23magentoimagine2019-dev-exchange-recap-make-magento-more-secure/</link>
+      <pubDate>Sun, 09 Jun 2019 06:09:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/%23magentoimagine2019-dev-exchange-recap-make-magento-more-secure/</guid>
+      <description>&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;I hosted a table at Dev Exchange around &lt;a href=&#34;https://community.magento.com/t5/Magento-Imagine-DevExchange-2019/Make-Magento-more-secure/idi-p/127723&#34;&gt;Magento security&lt;/a&gt;, which was co-hosted by &lt;a href=&#34;https://twitter.com/centerax&#34;&gt;Pablo Benitez&lt;/a&gt; from eBizmarts. &lt;a href=&#34;https://twitter.com/piotrekkaminski&#34;&gt;Piotr Kaminski&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/StevenZurek&#34;&gt;Steven Zurek&lt;/a&gt; participated from Magento/Adobe’s side. &lt;a href=&#34;https://twitter.com/_Talesh&#34;&gt;Talesh Seeparsan&lt;/a&gt; took all the notes and contributed to the discussion during the talk. Other people that joined the table from Magento and community were &lt;a href=&#34;https://twitter.com/iminyaylo&#34;&gt;Igor Miniailo&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/theigorgorin&#34;&gt;Igor Gorin&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/youanden&#34;&gt;Georgiy Slobodenyuk&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/LeeSaferite&#34;&gt;Lee Saferite&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/mittalmanishm&#34;&gt;Manish Mittal&lt;/a&gt;, &lt;a href=&#34;https://twitter.com/JeanneMage&#34;&gt;Jeanne&lt;/a&gt;, Scott N and Shilpa M. Everyone participated in the discussion and gave their valuable feedback on the topics we discussed, overall it was very productive.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>I hosted a table at Dev Exchange around <a href="https://community.magento.com/t5/Magento-Imagine-DevExchange-2019/Make-Magento-more-secure/idi-p/127723">Magento security</a>, which was co-hosted by <a href="https://twitter.com/centerax">Pablo Benitez</a> from eBizmarts. <a href="https://twitter.com/piotrekkaminski">Piotr Kaminski</a> and <a href="https://twitter.com/StevenZurek">Steven Zurek</a> participated from Magento/Adobe’s side. <a href="https://twitter.com/_Talesh">Talesh Seeparsan</a> took all the notes and contributed to the discussion during the talk. Other people that joined the table from Magento and community were <a href="https://twitter.com/iminyaylo">Igor Miniailo</a>, <a href="https://twitter.com/theigorgorin">Igor Gorin</a>, <a href="https://twitter.com/youanden">Georgiy Slobodenyuk</a>, <a href="https://twitter.com/LeeSaferite">Lee Saferite</a>, <a href="https://twitter.com/mittalmanishm">Manish Mittal</a>, <a href="https://twitter.com/JeanneMage">Jeanne</a>, Scott N and Shilpa M. Everyone participated in the discussion and gave their valuable feedback on the topics we discussed, overall it was very productive.</p>
+<p>There were 4 main topics we discussed at the table:</p>
+<h3 id="1-extension-developers-write-secure-code">1. Extension developers write secure code</h3>
+<p><em>With the proactive and nimble approach Magento has taken to core security, many time agencies and merchants find external 3rd party extension makers have not put in as much effort. How can we encourage their developers to take a more secure coding approach? Can Magento community maintain secure coding practices document like <a href="https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#15-security">technical guidelines, security</a>? Validate code using a tool like PHP CodeSniffer? What solutions already exist that we can rely on? What processes already exist that we can implement?</em></p>
+<p><strong>Static Scanners / RIPS:</strong></p>
+<p>Third party code checking and code scanning is a complex process. <a href="http://rips-scanner.sourceforge.net/">RIPS</a> work for some paths, they are also working on improving the support. We can add Regular Expressions to the old open source versions as well. However, we have to do lot of work to deal with the false positives because they don’t directly support Magento.</p>
+<p><strong>Dynamic Scanners:</strong></p>
+<p>Probably Dynamic Scanning is the better idea. Example, using <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project">OWASP Zap</a> to test input fields of extensions. There are current efforts to get an easy to set up OWASP Zap fuzzer for Magento Extension makers.</p>
+<p>There is a danger of reporting error in extensions without understanding the value of the error or making it easy to act on the error. Example, using tools that just dump a PDF of all the errors versus categorizing and ranking problems and putting them into bug tracker. We should have documentation of recommended fixes for the types of errors dynamic scanning provides.</p>
+<p><strong>Vulnerabilities in extensions:</strong></p>
+<p>A lot of extension providers are not prepared for a vulnerability in their extension. There are a few common problems with their approach. The problems we find with them, they are:</p>
+<ul>
+<li>Not fixing vulnerabilities and ignoring input from developer community, or</li>
+<li>Fixing vulnerabilities silently and not notifying their customers, or</li>
+<li>No way of notifying their customers of a new version with a fix.</li>
+</ul>
+<p>There should be a process for responding to security vulnerabilities if extension makers want their extensions to be on the Marketplace. There should be consequences instead of enforcement when dealing with extension makers with vulnerabilities.</p>
+<p><strong>Marketplace vs non-marketplace extensions:</strong></p>
+<p>Unfortunately, most of the problems that we see are in extensions that are not from Marketplace, therefore enforcement of security policies may have the unintended consequence of reducing the number of extensions on the Magento Marketplace. One possible solution to extensions not on marketplace is that there may be a warning in Magento if it is code matched to an extension that is on the marketplace. This works for vendors that sell the same extension on Marketplace and on their own site.</p>
+<p>One of the driving reasons for buying extensions from outside the marketplace is because updates from the Marketplace are too slow. The process is improving though.</p>
+<p>It would be good if the marketplace extensions page would show the version that is on the Marketplace and show which past versions may be vulnerable.</p>
+<p><strong>Known extension vulnerabilities database:</strong></p>
+<p>Currently there is a community effort to track down vulnerabilities in Magento extensions (from the marketplace or not), you can find that open source list here: <a href="https://github.com/gwillem/magevulndb">https://github.com/gwillem/magevulndb</a></p>
+<p>Pre and post hooks in Github to track if an existing extension has a known vulnerability will not work but running from the admin that reaches to the centralized repo like magevulndb may work. There is a n98-magerun extension that will check your existing extensions against the list on magevulndb.</p>
+<p>Hashes of the files can tie into the vulnerability database, but it may become resource heavy for all files. Hash of the system vs last known good version of itself is an alternative.</p>
+<p><strong>Note to extension makers:</strong></p>
+<p>While more secure development is important, it is extremely critical to take security more seriously in your support processes. We have a problem with unused admin users on stores with known username/passwords that were assigned to an extension maker for support purposes. There are ways around this, example, temporary admin accounts or not the same password for each support incidence by extension maker.</p>
+<p>There is also a problem where extension developers put restrictions on the PHP versions of their extensions such that it cannot be upgraded. It would be good if you can configure SemVer support properly.</p>
+<p><strong>Prevent use of easy and known passwords in admin:</strong></p>
+<p>Wagento has the <a href="https://blog.wagento.com/have-i-been-pwned">Have I Been Pwned</a> extension and there are possible other versions. It would be good if the HIBP extensions worked on the admin accounts too. Admin account needs more protection, so it makes more sense to implement this in admin login form as well.</p>
+<p><strong>Making it easy for merchants:</strong></p>
+<p>There is a lack of will on the part of merchants, so it is important that we make the tools we build as easy as possible for them to use/integrate. Yarn and NPM gives the developer a list of vulnerabilities but we don’t have that in Composer for PHP. <a href="https://github.com/Roave/SecurityAdvisories">Roave</a> and <a href="https://github.com/sensiolabs/security-checker">Sensio labs</a> have checkers for this sort of stuff.</p>
+<p><strong>How System Integrators can help:</strong></p>
+<p>One option to tackle extension updates is tackle it from the SI point of view. It would be great if sales people can commit to % of budget for security and structuring contracts with merchants so that budget is included by default. It frees SI to do what needs to be done so merchants don’t get the sticker shock of maintenance that they didn’t expect. If there are no urgent security updates, then the merchant gets that time as extra development/features.</p>
+<p>There has been a lot of talk when it comes to security being expensive for SIs but there are not a lot of conflicts because of security hotfixes.</p>
+<h3 id="2-better-ways-to-report-vulnerabilities-on-a-merchants-site">2. Better ways to report vulnerabilities on a merchant’s site</h3>
+<p><em>Magento has a bug bounty program to report vulnerabilities in their code and websites. If a user or security researcher finds vulnerabilities in some Magento powered web store, not owned by Magento – an Adobe company, how can they reach out to the right person on the merchant’s team? How to pass the information given the sensitive nature of the issue? Should Magento accept <a href="https://securitytxt.org/">security.txt standard</a>?</em></p>
+<p><strong>Security.txt extension:</strong></p>
+<p>There is an open source extension for Magento to display contact information as per security.txt standard: <a href="https://github.com/kalpmehta/securitytxt">https://github.com/kalpmehta/securitytxt</a></p>
+<p>SI contact information should be on the security.txt since they are most likely responsible.</p>
+<p>The nice thing is that Magento has good contact information for Commerce (Enterprise Edition) customers, this includes Version, URL, etc. which is passed to Magento during news check. Yet still you have to give Magento your email for access to the repo, so they do have access to many customers but attribution to stores are not always the easiest.</p>
+<p>If merchants are not responding to contact when they’re hacked, the funny thing to do would be to call them out on twitter (never do that :D)</p>
+<h3 id="3-code-review-in-community-submitted-pull-requests">3. Code review in community-submitted Pull Requests</h3>
+<p><em>Is Magento doing security code review when someone submits a PR to core code? What to check for when doing code reviews to identify security risks?</em></p>
+<p><strong>Escape HTML/JS before rendering:</strong></p>
+<p>Currently, all the escapings in Magento are explicit, that means a Magento developer needs to escape output manually wherever needed, say with $block-&gt;escapeHtml() function calls in templates. By default, all the output through the echo language construct is not escaped. Potentially it could lead to unintended XSS vulnerabilities. The idea is to make the opposite default behavior so that all the default output should be escaped, say with escapeHtml function, while only exceptions (which no need to be escaped should be explicitly specified in code). The current task complicated with the fact that echo is not a function, but a language construct, thus it cannot be redefined.</p>
+<p><strong>Considering backward compatibility:</strong></p>
+<p>We need to take the backward compatibility requirements into account and prevent double escaping. Potentially a solution could be compiling the PHTML, this is heavyweight and complicated. Is there an easier way or faster way?</p>
+<p>More info on template security here – <a href="https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-security.html">https://devdocs.magento.com/guides/v2.3/frontend-dev-guide/templates/template-security.html</a></p>
+<p>Discussed this topic in weekly Magento architecture call as well:</p>
+<p><a href="https://github.com/magento/architecture/issues/165">https://github.com/magento/architecture/issues/165</a></p>
+<p><strong>Sanitize input before saving in DB:</strong></p>
+<p>There are many places in the admin where you do not expect HTML code. Example, when saving Boolean values like yes/no, integer and decimal values for qty and pricing, most of the store configuration values, etc. Magento can restrict these all to disallow any HTML tags before saving to database. This can reduce the number of potential XSS when these values get rendered on the store front and admin.</p>
+<h3 id="4-add-security-topics-in-developer-certifications">4. Add Security topics in Developer certifications</h3>
+<p><em>Magento U have been including more topics on security in the exams. Should there be more or of different levels or separate exams? There are more security questions on the Developer plus exam but not the others.</em></p>
+<p><strong>Include Security questions in existing certifications Vs. create new security certification?</strong></p>
+<p>Magento has just started exploration of the training for security. They are optimizing for their plans of first training and maybe later certification. A separate certification.</p>
+<p>Magento has gotten feedback that since security is such a broad topic the SI’s would like to see the certificate split up in the multiple levels. OWASP Top Ten at the lower levels to Forensics and more complex topics on the higher levels. There is an overwhelming yes to this plan.</p>
+<p><strong>Lifetime validity of the certification Vs. certifications with expiry date:</strong></p>
+<p>Certifications should have an expiration date since these sorts of skills evolve rapidly.</p>
+<p><strong>Magento Security study material:</strong></p>
+<p>Ideally, there shouldn’t be a monetary barrier to the study material related to Magento security. Probably the Magento Dev Docs is a good place for this.</p>
+<p>Magento makes regular 5-minute training videos. These could also include the initial security topics, example, OWASP Top Ten.</p>
+<p>By a large margin the most requested type of documentation are greenfield build security checklists. Probably Dev Docs is best place for a collaborative checklist.</p>
+<p>Pablo brought some Ext DN pamphlets on Do’s and Don’ts. Also tips on secure Magento 2 development was very good. Here are those pamphlets that Piotr Kaminski shared on Twitter.</p>
+<blockquote>
+<p>Great resource from ⁦<a href="https://twitter.com/ext_dn?ref_src=twsrc%5Etfw">@ext_dn</a>⁩ for Magento security <a href="https://t.co/lZLhDbK4pC">pic.twitter.com/lZLhDbK4pC</a></p>
+<p>— Piotr Kaminski (@piotrekkaminski) <a href="https://twitter.com/piotrekkaminski/status/1128794100243689472?ref_src=twsrc%5Etfw">May 15, 2019</a></p></blockquote>
+<!-- raw HTML omitted -->
+<blockquote>
+<p>More ⁦<a href="https://twitter.com/ext_dn?ref_src=twsrc%5Etfw">@ext_dn</a>⁩ goodies. A must read for all Magento developers not only extension vendors. <a href="https://t.co/88roP0naxk">pic.twitter.com/88roP0naxk</a></p>
+<p>— Piotr Kaminski (@piotrekkaminski) <a href="https://twitter.com/piotrekkaminski/status/1128810027148431360?ref_src=twsrc%5Etfw">May 15, 2019</a></p></blockquote>
+<!-- raw HTML omitted -->
+<p>—</p>
+<p>With this we were out of time as Dev Exchange only provided 45 mins of time slot for every topic discussion. However, I believe it was good enough time to get the feedback and ideas from everyone participated. We actually started few minutes earlier though, I feel sorry for Lee as he had to introduce himself 3 times because of official announcement to start all the talks and all the background noise interrupting him J</p>
+<p>If you have any ideas around Magento security, please post it in a comment!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento Imagine Dev Exchange 2019</title>
+      <link>http://localhost:1313/magento-imagine-dev-exchange-2019/</link>
+      <pubDate>Sun, 28 Apr 2019 21:15:49 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-imagine-dev-exchange-2019/</guid>
+      <description>&lt;p&gt;Magento Imagine 2019 is just 2 weeks away, I cannot wait any longer now! This year would be crazy for me, as I am participating in Contribution Days as a Maintainer that happens on Saturday and Sunday before the conference, and also hosting a Dev Exchange table after the conference on Wednesday. Also, this would be my first Imagine from agency side, so things would be different.&lt;/p&gt;&#xA;&lt;p&gt;As many of you know, I have advocated Magento Security for quite a while now. From submitting core security bugs to adding an entire Security topic in the Magento 2 Professional Developer Plus certification, I realized there is many more things to do. This year I am going to host Dev Exchange where I will share my security ideas and also get ideas and feedback from the community. One very important thing that we would address this year is third-party extensions security. Pablo Benitez, CTO at eBizmarts, will join me bringing in business perspective when talking about third-party extension security. Talesh Seeparsan will bring his past Dev Exchange experiences on security and help us in guiding and noting down all the ideas and feedback that we would discuss with all the participants.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento Imagine 2019 is just 2 weeks away, I cannot wait any longer now! This year would be crazy for me, as I am participating in Contribution Days as a Maintainer that happens on Saturday and Sunday before the conference, and also hosting a Dev Exchange table after the conference on Wednesday. Also, this would be my first Imagine from agency side, so things would be different.</p>
+<p>As many of you know, I have advocated Magento Security for quite a while now. From submitting core security bugs to adding an entire Security topic in the Magento 2 Professional Developer Plus certification, I realized there is many more things to do. This year I am going to host Dev Exchange where I will share my security ideas and also get ideas and feedback from the community. One very important thing that we would address this year is third-party extensions security. Pablo Benitez, CTO at eBizmarts, will join me bringing in business perspective when talking about third-party extension security. Talesh Seeparsan will bring his past Dev Exchange experiences on security and help us in guiding and noting down all the ideas and feedback that we would discuss with all the participants.</p>
+<p>If you are coming to Magento Imagine and would stay little late on Wednesday, please stop by our Dev Exchange table and join the conversation. Here is the topic and details we submitted for Magento Imagine Dev Exchange 2019:</p>
+<blockquote>
+<p>Do you have ideas to make <a href="https://twitter.com/hashtag/Magento?src=hash&amp;ref_src=twsrc%5Etfw">#Magento</a> more secure? Are you interested in participating on security-related discussion at <a href="https://twitter.com/hashtag/MagentoImagine?src=hash&amp;ref_src=twsrc%5Etfw">#MagentoImagine</a>? Then please vote/comment here (deadline 4/26) and stop by our DevExchange table <a href="https://t.co/ZNoLSwScrH">https://t.co/ZNoLSwScrH</a>. cc/ <a href="https://twitter.com/_Talesh?ref_src=twsrc%5Etfw">@_Talesh</a> @centerax <a href="https://twitter.com/FoomanNZ?ref_src=twsrc%5Etfw">@foomanNZ</a> <a href="https://twitter.com/ext_dn?ref_src=twsrc%5Etfw">@ext_dn</a> <a href="https://t.co/eGS0vF8P6R">pic.twitter.com/eGS0vF8P6R</a></p>
+<p>— kalpesh.eth (@kalpmehta) <a href="https://twitter.com/kalpmehta/status/1121333572823076867?ref_src=twsrc%5Etfw">April 25, 2019</a></p></blockquote>
+<!-- raw HTML omitted -->
+<p><strong>Make Magento more secure</strong></p>
+<p><!-- raw HTML omitted -->It’s 2019 and security is a top priority of Magento/Adobe. Every participant in the ecosystem has their part to play to keep merchant stores secure. Let us discuss current low hanging fruits in the ecosystem and share strategies/tools for managing them effectively. For each item we will outline the topic and it’s security shortcomings then begin a deeper investigation into solutions with knowledge and idea sharing before moving to the next one. This is a co-hosted panel: Kalpesh Mehta leading with deep technical security experience and Pablo Benitez bringing the experience and technical/business concerns from an extension developer for a fully rounded conversation. Special thanks to Talesh Seeparsan and Kristof Ringleff for bringing their past Dev Exchange experience around extension security.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->1.) Extension Developers write secure code.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->With the proactive and nimble approach Magento has taken to core security, many time agencies and merchants find external 3rd party extensions makers have not put in as much effort. How can we encourage their developers to take a more secure coding approach? Can Magento community maintain secure coding practices document like <a href="https://devdocs.magento.com/guides/v2.3/coding-standards/technical-guidelines.html#15-security"><!-- raw HTML omitted -->technical guidelines, security<!-- raw HTML omitted --></a>? Validate code using a tool like PHP CodeSniffer ? What solutions already exist that we can rely on? What processes already exist that we can implement?<!-- raw HTML omitted --></p>
+<p>2.) Better ways to report vulnerabilities on a merchant’s site</p>
+<p><!-- raw HTML omitted -->Magento has a bug bounty program to report vulnerabilities in their code and websites. If a user or security researcher finds vulnerabilities in some Magento powered web store, not owned by Magento – an Adobe company, how can they reach out to the right person on the merchant’s team? How to pass the information given the sensitive nature of the issue? Should Magento accept <a href="https://securitytxt.org/"><!-- raw HTML omitted -->security.txt standard<!-- raw HTML omitted --></a>?<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->3.) Code review in community submitted Pull Requests<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Is Magento doing security code review when someone submits a PR to core code? What to check for when doing code reviews to identify security risks?<br>
+<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->4.) Add Security topics in Developer certifications<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Magento has already included Security topic in Magento 2 Professional Developer Plus exam. Can we ask Magento to include Security in Associate as well as Developer exam? Can it help developers learn security best practices?<br>
+<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->All recommendations and suggestions will be documented and shared with the Magento security team and the community afterwards. Remember to keep the privacy of your client intact while discussing vulnerabilities and attacks.<!-- raw HTML omitted --></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

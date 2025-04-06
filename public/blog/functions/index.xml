@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Functions on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/functions/</link>
+    <description>Recent content in Functions on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 19 Jun 2011 07:37:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/functions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Some important functions</title>
+      <link>http://localhost:1313/magento-some-important-functions/</link>
+      <pubDate>Sun, 19 Jun 2011 07:37:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-some-important-functions/</guid>
+      <description>&lt;p&gt;Here I will show you some important functions/methods in Magento that will make your development easy.&lt;/p&gt;&#xA;&lt;p&gt;Get the path of your magento page.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getUrl&lt;/span&gt;(‘mypage’);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Get the path of the image in your skin folder.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSkinUrl&lt;/span&gt;(‘images&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;yourimage&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;gif’);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Get the product link.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getProductData&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getProductUrl&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Get the product name.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;htmlEscape&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getProductData&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getName&lt;/span&gt;());&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Call a static block in .phtml file.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getLayout&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;createBlock&lt;/span&gt;(‘cms&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;block’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;setBlockId&lt;/span&gt;(‘YOURBLOCKID’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;toHtml&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Get Image url of current category.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCurrentCategory&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getImageUrl&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Check whether the current category is Top category.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;IsTopCategory&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;Get description of current category.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$this&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getCurrentCategory&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getDescription&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Here I will show you some important functions/methods in Magento that will make your development easy.</p>
+<p>Get the path of your magento page.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getUrl</span>(‘mypage’);</span></span></code></pre></div></p>
+<p>Get the path of the image in your skin folder.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSkinUrl</span>(‘images<span style="color:#666">/</span>yourimage<span style="color:#666">.</span>gif’);</span></span></code></pre></div></p>
+<p>Get the product link.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProductData</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getProductUrl</span>();</span></span></code></pre></div></p>
+<p>Get the product name.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">htmlEscape</span>(<span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProductData</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>());</span></span></code></pre></div></p>
+<p>Call a static block in .phtml file.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getLayout</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">createBlock</span>(‘cms<span style="color:#666">/</span>block’)<span style="color:#666">-&gt;</span><span style="color:#b44">setBlockId</span>(‘YOURBLOCKID’)<span style="color:#666">-&gt;</span><span style="color:#b44">toHtml</span>();</span></span></code></pre></div></p>
+<p>Get Image url of current category.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCurrentCategory</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getImageUrl</span>();</span></span></code></pre></div></p>
+<p>Check whether the current category is Top category.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">IsTopCategory</span>();</span></span></code></pre></div></p>
+<p>Get description of current category.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCurrentCategory</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getDescription</span>();</span></span></code></pre></div></p>
+<p>Display products list page (list.phtml).<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProductListHtml</span>();</span></span></code></pre></div></p>
+<p>Display CMS block page.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getCmsBlockHtml</span>();</span></span></code></pre></div></p>
+<p>Get current store id.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$storeId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getStore</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getId</span>();</span></span></code></pre></div></p>
+<p>Get current store name.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$storeName</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getStore</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>();</span></span></code></pre></div></p>
+<p>Get current store code.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$storeCode</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getStore</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getCode</span>();</span></span></code></pre></div></p>
+<p>Get website name.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$websiteName</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getWebsite</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getName</span>();</span></span></code></pre></div></p>
+<p>Get session id.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$sessionId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘core<span style="color:#666">/</span>session’)<span style="color:#666">-&gt;</span><span style="color:#b44">getSessionId</span>();</span></span></code></pre></div></p>
+<p>Get customer id.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$customerId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘customer<span style="color:#666">/</span>session’)<span style="color:#666">-&gt;</span><span style="color:#b44">getCustomerId</span>();</span></span></code></pre></div></p>
+<p>Get guest id.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$vistitorId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘core<span style="color:#666">/</span>session’)<span style="color:#666">-&gt;</span><span style="color:#b44">getVisitorId</span>();</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

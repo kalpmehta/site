@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Sample Product Purchase on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-sample-product-purchase/</link>
+    <description>Recent content in Magento Sample Product Purchase on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 23 Feb 2013 08:41:44 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-sample-product-purchase/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Product Free/Paid SAMPLE Purchase Order</title>
+      <link>http://localhost:1313/magento-product-free/paid-sample-purchase-order/</link>
+      <pubDate>Sat, 23 Feb 2013 08:41:44 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-product-free/paid-sample-purchase-order/</guid>
+      <description>&lt;p&gt;If you want to allow your customers to order for sample of any product, before purchasing the actual product, it becomes very tough as in a product page you can’t have two products (sample + full) allowed. But it’s not a good idea to display sample products as Individually, it makes sense only in the actual product page just near the Add To Cart button.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://ka.lpe.sh/wp-content/uploads/2013/02/magento-sample-purchase.png&#34; alt=&#34;Magento Sample product purchase&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;But the question is, how to have TWO SKUs in a single product detail page? Here is the code that will do exactly what you want now. Open your catalog/product/view.phtml template file and put this code just below the code “$this-&amp;gt;getChildHtml(‘addtocart’);”&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#666&#34;&gt;&amp;lt;&lt;/span&gt;button http&lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt; onclick&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;window.location.href=&amp;#39;/order_sample.php?sku=&amp;lt;?php echo &lt;/span&gt;&lt;span style=&#34;color:#b68;font-weight:bold&#34;&gt;$this-&amp;gt;htmlEscape&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#b68;font-weight:bold&#34;&gt;$_product-&amp;gt;getSku&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;()) ?&amp;gt;&amp;#39;” title=”Request Sample for &amp;lt;?php echo &lt;/span&gt;&lt;span style=&#34;color:#b68;font-weight:bold&#34;&gt;$this-&amp;gt;htmlEscape&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#b68;font-weight:bold&#34;&gt;$_product-&amp;gt;getName&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;()) ?&amp;gt;” class=”button btn-cart” &amp;gt;&amp;lt;span&amp;gt;&amp;lt;span&amp;gt;Order Sample – $1&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;!-- raw HTML omitted --&gt;&#xA;\&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you want to allow your customers to order for sample of any product, before purchasing the actual product, it becomes very tough as in a product page you can’t have two products (sample + full) allowed. But it’s not a good idea to display sample products as Individually, it makes sense only in the actual product page just near the Add To Cart button.</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/02/magento-sample-purchase.png" alt="Magento Sample product purchase"></p>
+<p>But the question is, how to have TWO SKUs in a single product detail page? Here is the code that will do exactly what you want now. Open your catalog/product/view.phtml template file and put this code just below the code “$this-&gt;getChildHtml(‘addtocart’);”</p>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;</span>button http<span style="color:#666">:=</span><span style="color:#b44">&#34;&#34;</span> onclick<span style="color:#666">=</span><span style="color:#b44">&#34;window.location.href=&#39;http://localhost:1313/order_sample.php?sku=&lt;?php echo </span><span style="color:#b68;font-weight:bold">$this-&gt;htmlEscape</span><span style="color:#b44">(</span><span style="color:#b68;font-weight:bold">$_product-&gt;getSku</span><span style="color:#b44">()) ?&gt;&#39;” title=”Request Sample for &lt;?php echo </span><span style="color:#b68;font-weight:bold">$this-&gt;htmlEscape</span><span style="color:#b44">(</span><span style="color:#b68;font-weight:bold">$_product-&gt;getName</span><span style="color:#b44">()) ?&gt;” class=”button btn-cart” &gt;&lt;span&gt;&lt;span&gt;Order Sample – $1&lt;/span&gt;&lt;/span&gt;&lt;/button&gt;
+</span></span></span></code></pre></div><!-- raw HTML omitted -->
+\</p>
+<!-- raw HTML omitted -->]]></content:encoded>
+    </item>
+  </channel>
+</rss>

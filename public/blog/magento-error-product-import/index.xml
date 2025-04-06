@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Error Product Import on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-error-product-import/</link>
+    <description>Recent content in Magento Error Product Import on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Wed, 20 Feb 2013 15:07:57 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-error-product-import/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Product Import error &amp;#8211; shows HTML code while importing</title>
+      <link>http://localhost:1313/magento-product-import-error-%238211-shows-html-code-while-importing/</link>
+      <pubDate>Wed, 20 Feb 2013 15:07:57 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-product-import-error-%238211-shows-html-code-while-importing/</guid>
+      <description>&lt;p&gt;While importing products (somewhere around 1200 rows) by Magento’s in-built “System &amp;gt; Import/Export &amp;gt; Dataflow – Profiles” I got an error where the Dashboard’s HTML was printed in the output.&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://ka.lpe.sh/wp-content/uploads/2013/02/import_error.png&#34; alt=&#34;magento product import error&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The reason for this error is due to something wrong in CSV product data which Magento didn’t understand. Create a temporary CSV file with only few rows (2-4) and check if that works. If it works, that means there is some problem with rest of the data.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>While importing products (somewhere around 1200 rows) by Magento’s in-built “System &gt; Import/Export &gt; Dataflow – Profiles” I got an error where the Dashboard’s HTML was printed in the output.</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/02/import_error.png" alt="magento product import error"></p>
+<p>The reason for this error is due to something wrong in CSV product data which Magento didn’t understand. Create a temporary CSV file with only few rows (2-4) and check if that works. If it works, that means there is some problem with rest of the data.</p>
+<p>For more information check my SO question here: <a href="http://stackoverflow.com/questions/14978970/magento-importing-product-error/14980974">http://stackoverflow.com/questions/14978970/magento-importing-product-error/14980974</a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

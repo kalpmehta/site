@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Debug on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/debug/</link>
+    <description>Recent content in Debug on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sat, 17 Aug 2013 18:37:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/debug/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento debug XML (layout, config) files</title>
+      <link>http://localhost:1313/magento-debug-xml-layout-config-files/</link>
+      <pubDate>Sat, 17 Aug 2013 18:37:02 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-debug-xml-layout-config-files/</guid>
+      <description>&lt;p&gt;In Magento if there is any error in XML file, Magento silently ignores it and continues further parsing. So you never get to know where is the actual error and makes it difficult to debug. You can’t even do any logging in XML file and also Magento don’t tell that error is in XML. It makes debugging almost impossible and ends up wasting in hours to find some silly mistake.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In Magento if there is any error in XML file, Magento silently ignores it and continues further parsing. So you never get to know where is the actual error and makes it difficult to debug. You can’t even do any logging in XML file and also Magento don’t tell that error is in XML. It makes debugging almost impossible and ends up wasting in hours to find some silly mistake.</p>
+<p>But we can know if there is any error in XML (layout.xml or config.xml or any xml file) if you use below code in the controller action which is being called. The browser will display WHOLE XML code and if it encounters any error in it, simply gives where is the error in the XML tree.</p>
+<p>If you are trying to load let’s say Product View page, then put this code in Mage/Catalog/controllers/ProductController.php file’s viewAction() method temporarily to display whole XML tree to find out error(s) if any. As we are saying to display the page as XML, the page will break if it finds any mal-formed XML code and will show where is the mistake.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>header(“Content<span style="color:#666">-</span>Type<span style="color:#666">:</span> text<span style="color:#666">/</span>xml”);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getConfig</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getNode</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">asXml</span>();<span style="color:#a2f;font-weight:bold">exit</span>;</span></span></code></pre></div>
+<p>If you want to debug Layout Handles only, you can just check by this code:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>header(“Content<span style="color:#666">-</span>Type<span style="color:#666">:</span> text<span style="color:#666">/</span>xml”);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> Mage<span style="color:#666">::</span><span style="color:#b44">app</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getLayout</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getUpdate</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getHandles</span>();<span style="color:#a2f;font-weight:bold">exit</span>;</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,6 @@
+PROCESSED on Fri, 04 Apr 2025 16:16:44 +0000
+/wp-content/plugins/wptouch/themes/foundation/default/style.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/wptouch/themes/foundation/default/style.css ---
+/wp-includes/css/dist/block-library/style.min.css --- Debug: Fetched from transients cache with key fvm-cache-00f991837 ---
+/wp-content/plugins/fv-code-highlighter/public/css/fvch-styles-dark.min.css --- Debug: Fetched from transients cache with key fvm-cache-010972220 ---
+/wp-content/plugins/wptouch/themes/bauhaus/default/style.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/wptouch/themes/bauhaus/default/style.css ---
+PROCESSED from http://ka.lpe.sh/comment-subscriptions?srp=32&srk&sra=s&srsrc=f

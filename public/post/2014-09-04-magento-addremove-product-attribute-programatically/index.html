@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento add/remove product attribute programatically | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento add/remove product attribute programatically" />
+<meta name="description" content="Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.
+Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement." />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="attribute,magento,product," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento add/remove product attribute programatically" />
+<meta property="og:description" content="Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.
+Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2014-09-04-magento-addremove-product-attribute-programatically/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_5fc7834ece0d3218.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2014-09-04T02:24:16+00:00" />
+<meta property="article:modified_time" content="2014-09-04T02:24:16+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_5fc7834ece0d3218.webp"/>
+<meta name="twitter:title" content="Magento add/remove product attribute programatically"/>
+<meta name="twitter:description" content="Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.
+Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement."/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento add/remove product attribute programatically">
+<meta itemprop="description" content="Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.
+Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement."><meta itemprop="datePublished" content="2014-09-04T02:24:16+00:00" />
+<meta itemprop="dateModified" content="2014-09-04T02:24:16+00:00" />
+<meta itemprop="wordCount" content="169">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_5fc7834ece0d3218.webp"/>
+
+
+<meta itemprop="keywords" content="attribute,magento,product," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento add/remove product attribute programatically</h1>
+<p class="byline">
+  <time datetime='2014-09-04' pubdate>
+    2014-09-04
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.</p>
+<p>Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement.</p>
+<p>{code type=php}<br>
+$model = Mage::getResourceModel(‘catalog/setup’,’catalog_setup’);</p>
+<p>$data=array(<br>
+‘type’=&gt;’int’,<br>
+‘input’=&gt;’boolean’, //for Yes/No dropdown<br>
+‘sort_order’=&gt;50,<br>
+‘label’=&gt;’CUSTOM ATTRIBUTE CODE LABEL’,<br>
+‘global’=&gt;Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL,<br>
+‘required’=&gt;’0’,<br>
+‘comparable’=&gt;’0’,<br>
+‘searchable’=&gt;’0’,<br>
+‘is_configurable’=&gt;’1’,<br>
+‘user_defined’=&gt;’1’,<br>
+‘visible_on_front’ =&gt; 0, //want to show on frontend?<br>
+‘visible_in_advanced_search’ =&gt; 0,<br>
+‘is_html_allowed_on_front’ =&gt; 0,<br>
+‘required’=&gt; 0,<br>
+‘unique’=&gt;false,<br>
+‘apply_to’ =&gt; ‘configurable’, //simple,configurable,bundled,grouped,virtual,downloadable<br>
+‘is_configurable’ =&gt; false<br>
+);</p>
+<p>$model-&gt;addAttribute(‘catalog_product’,’CUSTOM_ATTRIBUTE_CODE’,$data);</p>
+<p>$model-&gt;addAttributeToSet(<br>
+‘catalog_product’, ‘Default’, ‘General’, ‘CUSTOM_ATTRIBUTE_CODE’<br>
+); //Default = attribute set, General = attribute group<br>
+{/code}</p>
+<p>To remove the product attribute using the setup file, use below code instead:</p>
+<p>{code type=php}<br>
+$model = Mage::getResourceModel(‘catalog/setup’,’catalog_setup’);<br>
+$model-&gt;removeAttribute(‘catalog_product’,’CUSTOM_ATTRIBUTE_CODE’);<br>
+{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/attribute/">#attribute</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/product/">#product</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20add%2fremove%20product%20attribute%20programatically"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

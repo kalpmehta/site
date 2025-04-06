@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Get Attribute Label From Value Id on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-get-attribute-label-from-value-id/</link>
+    <description>Recent content in Magento Get Attribute Label From Value Id on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 13 Sep 2012 13:04:16 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-get-attribute-label-from-value-id/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get product attribute&amp;#8217;s select option id/label/value</title>
+      <link>http://localhost:1313/magento-get-product-attribute%238217s-select-option-id/label/value/</link>
+      <pubDate>Thu, 13 Sep 2012 13:04:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-product-attribute%238217s-select-option-id/label/value/</guid>
+      <description>&lt;p&gt;If you have a select dropdown for any product attribute, to get the value from label or vice versa is always needed in order to display or get value for further processing, etc. Every now and then you will require this values while working on product attributes. There aer many ways you can achieve it but the best, in terms of performance and simplicity is what I will tell you here. Get product attribute’s value from label, label from value easily in Magento.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you have a select dropdown for any product attribute, to get the value from label or vice versa is always needed in order to display or get value for further processing, etc. Every now and then you will require this values while working on product attributes. There aer many ways you can achieve it but the best, in terms of performance and simplicity is what I will tell you here. Get product attribute’s value from label, label from value easily in Magento.</p>
+<p>Suppose, you have an product attribute called “color” in Magento. You have the label (e.g. Red), and you want to find it’s value. The below code will help you get the value for it.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$productModel</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attr</span> <span style="color:#666">=</span> <span style="color:#b8860b">$productModel</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(“color”);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$attr</span><span style="color:#666">-&gt;</span><span style="color:#b44">usesSource</span>()) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$color_id</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attr</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getOptionId</span>(“Red”);  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>Now suppose, you have the value (let’s say 8, for Red) for your attribute, but want to get the label for it. Below code will help you to achive it.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$productModel</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attr</span> <span style="color:#666">=</span> <span style="color:#b8860b">$productModel</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(“color”);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$attr</span><span style="color:#666">-&gt;</span><span style="color:#b44">usesSource</span>()) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$color_label</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attr</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getOptionText</span>(“8”);  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Note that the only thing changed in both is, getOptionId() and getOptionText. getOptionId() will accept label and give you value, while getOptionText() will accept value and give you label.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

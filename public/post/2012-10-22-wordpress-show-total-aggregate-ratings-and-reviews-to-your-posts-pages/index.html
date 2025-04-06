@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>WordPress: Show total/aggregate ratings and reviews to your posts/pages | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="WordPress: Show total/aggregate ratings and reviews to your posts/pages" />
+<meta name="description" content="After struggling for finding the way to show aggregate ratings and total number of reviews for the wordpress plugin WP Customer Reviews, I wrote it myself by studying their code. There has been several requests for this feature in their support page and around but they didn’t seem to be interested or didn’t got enough time to wrote this.
+Okay, so for all the people who have been struggling to get total and/or aggregate number of ratings and reviews, here is the code that can work on any page/post.
+{code type=php}global $wpdb;
+$pId = $post-&gt;ID; //if using in another page, use the ID of the post/page you want to show ratings for.
+$row = $wpdb-&gt;get_results(“SELECT COUNT(*) AS total,AVG(review_rating) AS aggregate\_rating,MAX(review_rating) AS max\_rating FROM wp_wpcreviews WHERE page\_id= $pId AND status=1”);
+$max_rating = $row[0]-&gt;max_rating;
+$aggregate_rating = $row[0]-&gt;aggregate_rating;
+$total_reviews = $row[0]-&gt;total;
+$totl = $aggregate_rating * 20;
+$wpdb-&gt;flush();{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="aggregate ratings reviews wordpress,wordpress show total ratings,wp customer reviews total aggregate ratings reviews," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="WordPress: Show total/aggregate ratings and reviews to your posts/pages" />
+<meta property="og:description" content="After struggling for finding the way to show aggregate ratings and total number of reviews for the wordpress plugin WP Customer Reviews, I wrote it myself by studying their code. There has been several requests for this feature in their support page and around but they didn’t seem to be interested or didn’t got enough time to wrote this.
+Okay, so for all the people who have been struggling to get total and/or aggregate number of ratings and reviews, here is the code that can work on any page/post.
+{code type=php}global $wpdb;
+$pId = $post-&gt;ID; //if using in another page, use the ID of the post/page you want to show ratings for.
+$row = $wpdb-&gt;get_results(“SELECT COUNT(*) AS total,AVG(review_rating) AS aggregate\_rating,MAX(review_rating) AS max\_rating FROM wp_wpcreviews WHERE page\_id= $pId AND status=1”);
+$max_rating = $row[0]-&gt;max_rating;
+$aggregate_rating = $row[0]-&gt;aggregate_rating;
+$total_reviews = $row[0]-&gt;total;
+$totl = $aggregate_rating * 20;
+$wpdb-&gt;flush();{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-10-22-wordpress-show-total-aggregate-ratings-and-reviews-to-your-posts-pages/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_ed5311a707ff0e11.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-10-22T15:07:22+00:00" />
+<meta property="article:modified_time" content="2012-10-22T15:07:22+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_ed5311a707ff0e11.webp"/>
+<meta name="twitter:title" content="WordPress: Show total/aggregate ratings and reviews to your posts/pages"/>
+<meta name="twitter:description" content="After struggling for finding the way to show aggregate ratings and total number of reviews for the wordpress plugin WP Customer Reviews, I wrote it myself by studying their code. There has been several requests for this feature in their support page and around but they didn’t seem to be interested or didn’t got enough time to wrote this.
+Okay, so for all the people who have been struggling to get total and/or aggregate number of ratings and reviews, here is the code that can work on any page/post.
+{code type=php}global $wpdb;
+$pId = $post-&gt;ID; //if using in another page, use the ID of the post/page you want to show ratings for.
+$row = $wpdb-&gt;get_results(“SELECT COUNT(*) AS total,AVG(review_rating) AS aggregate\_rating,MAX(review_rating) AS max\_rating FROM wp_wpcreviews WHERE page\_id= $pId AND status=1”);
+$max_rating = $row[0]-&gt;max_rating;
+$aggregate_rating = $row[0]-&gt;aggregate_rating;
+$total_reviews = $row[0]-&gt;total;
+$totl = $aggregate_rating * 20;
+$wpdb-&gt;flush();{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="WordPress: Show total/aggregate ratings and reviews to your posts/pages">
+<meta itemprop="description" content="After struggling for finding the way to show aggregate ratings and total number of reviews for the wordpress plugin WP Customer Reviews, I wrote it myself by studying their code. There has been several requests for this feature in their support page and around but they didn’t seem to be interested or didn’t got enough time to wrote this.
+Okay, so for all the people who have been struggling to get total and/or aggregate number of ratings and reviews, here is the code that can work on any page/post.
+{code type=php}global $wpdb;
+$pId = $post-&gt;ID; //if using in another page, use the ID of the post/page you want to show ratings for.
+$row = $wpdb-&gt;get_results(“SELECT COUNT(*) AS total,AVG(review_rating) AS aggregate\_rating,MAX(review_rating) AS max\_rating FROM wp_wpcreviews WHERE page\_id= $pId AND status=1”);
+$max_rating = $row[0]-&gt;max_rating;
+$aggregate_rating = $row[0]-&gt;aggregate_rating;
+$total_reviews = $row[0]-&gt;total;
+$totl = $aggregate_rating * 20;
+$wpdb-&gt;flush();{/code}"><meta itemprop="datePublished" content="2012-10-22T15:07:22+00:00" />
+<meta itemprop="dateModified" content="2012-10-22T15:07:22+00:00" />
+<meta itemprop="wordCount" content="156">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_ed5311a707ff0e11.webp"/>
+
+
+<meta itemprop="keywords" content="aggregate ratings reviews wordpress,wordpress show total ratings,wp customer reviews total aggregate ratings reviews," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>WordPress: Show total/aggregate ratings and reviews to your posts/pages</h1>
+<p class="byline">
+  <time datetime='2012-10-22' pubdate>
+    2012-10-22
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>After struggling for finding the way to show aggregate ratings and total number of reviews for the wordpress plugin WP Customer Reviews, I wrote it myself by studying their code. There has been several requests for this feature in their support page and around but they didn’t seem to be interested or didn’t got enough time to wrote this.</p>
+<p>Okay, so for all the people who have been struggling to get total and/or aggregate number of ratings and reviews, here is the code that can work on any page/post.<br>
+{code type=php}global $wpdb;<br>
+$pId = $post-&gt;ID; //if using in another page, use the ID of the post/page you want to show ratings for.<br>
+$row = $wpdb-&gt;get_results(“SELECT COUNT(*) AS <code>total</code>,AVG(review_rating) AS <code>aggregate\_rating</code>,MAX(review_rating) AS <code>max\_rating</code> FROM wp_wpcreviews WHERE <code>page\_id</code>= $pId AND <code>status</code>=1”);<br>
+$max_rating = $row[0]-&gt;max_rating;<br>
+$aggregate_rating = $row[0]-&gt;aggregate_rating;<br>
+$total_reviews = $row[0]-&gt;total;<br>
+$totl = $aggregate_rating * 20;<br>
+$wpdb-&gt;flush();{/code}</p>
+<p>To show aggregate ratings in star form, simply add this:<br>
+{code type=html}</p>
+<!-- raw HTML omitted -->
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/aggregate-ratings-reviews-wordpress/">#aggregate ratings reviews wordpress</a>
+  
+    <a class="blog-tags" href="/blog/wordpress-show-total-ratings/">#wordpress show total ratings</a>
+  
+    <a class="blog-tags" href="/blog/wp-customer-reviews-total-aggregate-ratings-reviews/">#wp customer reviews total aggregate ratings reviews</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"WordPress%3a%20Show%20total%2faggregate%20ratings%20and%20reviews%20to%20your%20posts%2fpages"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

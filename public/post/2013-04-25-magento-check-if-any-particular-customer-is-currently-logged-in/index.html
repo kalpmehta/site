@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento: Check if any particular customer is currently logged in | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento: Check if any particular customer is currently logged in" />
+<meta name="description" content="Let’s say you want to check if any particular customer is currently logged in to your site or not. Or let’s check how many customers with their customer IDs and other activities are online on your store.
+This little script will help you in finding all the currently active OR any particular customer(s) active in your store.
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$collection = Mage::getModel(‘log/visitor_online’)-&gt;prepare()-&gt;getCollection();
+//Get all the customers that are logged in……
+foreach($collection-&gt;getData() as $cust) {
+echo ‘Customer ID: ‘.$cust[‘customer_id’] . ‘
+‘;
+echo ‘Last URL visited: ‘.$cust[‘last_url’] . ‘
+‘;
+echo ‘First visit: ‘.$cust[‘first_visit_at’] . ‘
+‘;
+echo ‘Last visit: ‘.$cust[‘last_visit_at’] . ‘
+‘;
+echo ‘======================
+‘;
+}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="activity,customer,logged in,magento,visitor," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento: Check if any particular customer is currently logged in" />
+<meta property="og:description" content="Let’s say you want to check if any particular customer is currently logged in to your site or not. Or let’s check how many customers with their customer IDs and other activities are online on your store.
+This little script will help you in finding all the currently active OR any particular customer(s) active in your store.
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$collection = Mage::getModel(‘log/visitor_online’)-&gt;prepare()-&gt;getCollection();
+//Get all the customers that are logged in……
+foreach($collection-&gt;getData() as $cust) {
+echo ‘Customer ID: ‘.$cust[‘customer_id’] . ‘
+‘;
+echo ‘Last URL visited: ‘.$cust[‘last_url’] . ‘
+‘;
+echo ‘First visit: ‘.$cust[‘first_visit_at’] . ‘
+‘;
+echo ‘Last visit: ‘.$cust[‘last_visit_at’] . ‘
+‘;
+echo ‘======================
+‘;
+}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-04-25-magento-check-if-any-particular-customer-is-currently-logged-in/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_146f529fb0747048.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-04-25T14:08:51+00:00" />
+<meta property="article:modified_time" content="2013-04-25T14:08:51+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_146f529fb0747048.webp"/>
+<meta name="twitter:title" content="Magento: Check if any particular customer is currently logged in"/>
+<meta name="twitter:description" content="Let’s say you want to check if any particular customer is currently logged in to your site or not. Or let’s check how many customers with their customer IDs and other activities are online on your store.
+This little script will help you in finding all the currently active OR any particular customer(s) active in your store.
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$collection = Mage::getModel(‘log/visitor_online’)-&gt;prepare()-&gt;getCollection();
+//Get all the customers that are logged in……
+foreach($collection-&gt;getData() as $cust) {
+echo ‘Customer ID: ‘.$cust[‘customer_id’] . ‘
+‘;
+echo ‘Last URL visited: ‘.$cust[‘last_url’] . ‘
+‘;
+echo ‘First visit: ‘.$cust[‘first_visit_at’] . ‘
+‘;
+echo ‘Last visit: ‘.$cust[‘last_visit_at’] . ‘
+‘;
+echo ‘======================
+‘;
+}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento: Check if any particular customer is currently logged in">
+<meta itemprop="description" content="Let’s say you want to check if any particular customer is currently logged in to your site or not. Or let’s check how many customers with their customer IDs and other activities are online on your store.
+This little script will help you in finding all the currently active OR any particular customer(s) active in your store.
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$collection = Mage::getModel(‘log/visitor_online’)-&gt;prepare()-&gt;getCollection();
+//Get all the customers that are logged in……
+foreach($collection-&gt;getData() as $cust) {
+echo ‘Customer ID: ‘.$cust[‘customer_id’] . ‘
+‘;
+echo ‘Last URL visited: ‘.$cust[‘last_url’] . ‘
+‘;
+echo ‘First visit: ‘.$cust[‘first_visit_at’] . ‘
+‘;
+echo ‘Last visit: ‘.$cust[‘last_visit_at’] . ‘
+‘;
+echo ‘======================
+‘;
+}"><meta itemprop="datePublished" content="2013-04-25T14:08:51+00:00" />
+<meta itemprop="dateModified" content="2013-04-25T14:08:51+00:00" />
+<meta itemprop="wordCount" content="150">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_146f529fb0747048.webp"/>
+
+
+<meta itemprop="keywords" content="activity,customer,logged in,magento,visitor," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento: Check if any particular customer is currently logged in</h1>
+<p class="byline">
+  <time datetime='2013-04-25' pubdate>
+    2013-04-25
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Let’s say you want to check if any particular customer is currently logged in to your site or not. Or let’s check how many customers with their customer IDs and other activities are online on your store.</p>
+<p>This little script will help you in finding all the currently active OR any particular customer(s) active in your store.</p>
+<p>{code type=php}require “app/Mage.php”;<br>
+umask(0);<br>
+Mage::app();</p>
+<p>$collection = Mage::getModel(‘log/visitor_online’)-&gt;prepare()-&gt;getCollection();</p>
+<p>//Get all the customers that are logged in……<br>
+foreach($collection-&gt;getData() as $cust) {<br>
+echo ‘Customer ID: ‘.$cust[‘customer_id’] . ‘<br>
+‘;<br>
+echo ‘Last URL visited: ‘.$cust[‘last_url’] . ‘<br>
+‘;<br>
+echo ‘First visit: ‘.$cust[‘first_visit_at’] . ‘<br>
+‘;<br>
+echo ‘Last visit: ‘.$cust[‘last_visit_at’] . ‘<br>
+‘;<br>
+echo ‘======================<br>
+‘;<br>
+}</p>
+<p>//Get any particular customer, if he’s currently logged in or not…..<br>
+$collection-&gt;addFieldToFilter(‘customer_id’, 5)-&gt;addCustomerData(); //5 is customer ID of customer you want to check<br>
+if($collection-&gt;count()) {<br>
+echo ‘Customer is logged in’;<br>
+} else {<br>
+echo ‘Customer is NOT logged in’;<br>
+}{/code}</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/activity/">#activity</a>
+  
+    <a class="blog-tags" href="/blog/customer/">#customer</a>
+  
+    <a class="blog-tags" href="/blog/logged-in/">#logged in</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/visitor/">#visitor</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%3a%20Check%20if%20any%20particular%20customer%20is%20currently%20logged%20in"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

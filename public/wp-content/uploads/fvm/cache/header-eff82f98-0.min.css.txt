@@ -1,0 +1,9 @@
+PROCESSED on Fri, 04 Apr 2025 15:48:11 +0000
+/wp-includes/css/dashicons.min.css --- Debug: File was opened from /var/www/html/kalpesh/wp-includes/css/dashicons.min.css ---
+/wp-includes/css/admin-bar.min.css --- Debug: File was opened from /var/www/html/kalpesh/wp-includes/css/admin-bar.min.css ---
+/wp-includes/css/dist/block-library/style.min.css --- Debug: File was opened from /var/www/html/kalpesh/wp-includes/css/dist/block-library/style.min.css ---
+/wp-content/plugins/fv-code-highlighter/public/css/fvch-styles-dark.min.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/fv-code-highlighter/public/css/fvch-styles-dark.min.css ---
+/wp-content/plugins/wordfence/css/wordfenceBox.1717686858.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/wordfence/css/wordfenceBox.1717686858.css ---
+/wp-content/plugins/wordpress-seo/css/dist/adminbar-520.min.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/wordpress-seo/css/dist/adminbar-520.min.css ---
+/wp-content/plugins/autoptimize/classes/static/toolbar.css --- Debug: File was opened from /var/www/html/kalpesh/wp-content/plugins/autoptimize/classes/static/toolbar.css ---
+PROCESSED from http://ka.lpe.sh/

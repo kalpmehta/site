@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Magento Dynamically Add Product Attribute Options on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/magento-dynamically-add-product-attribute-options/</link>
+    <description>Recent content in Magento Dynamically Add Product Attribute Options on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 07 Feb 2013 16:19:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/magento-dynamically-add-product-attribute-options/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Add product custom attribute options dynamically</title>
+      <link>http://localhost:1313/magento-add-product-custom-attribute-options-dynamically/</link>
+      <pubDate>Thu, 07 Feb 2013 16:19:00 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add-product-custom-attribute-options-dynamically/</guid>
+      <description>&lt;p&gt;Once you have the product attributes in place, and you want to add lot of options to these attributes it becomes time consuming and hectic task. If you have only few attribute options to add, it’s easy to go to backend and add manually. But if you have many attribute options, more than 10 options for many attributes, it’s very tiresome and feels like data entry job. Magento is not built to do stuff manually, so here I will provide you the code snippet which will push all the attribute options to their respective attribute.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Once you have the product attributes in place, and you want to add lot of options to these attributes it becomes time consuming and hectic task. If you have only few attribute options to add, it’s easy to go to backend and add manually. But if you have many attribute options, more than 10 options for many attributes, it’s very tiresome and feels like data entry job. Magento is not built to do stuff manually, so here I will provide you the code snippet which will push all the attribute options to their respective attribute.</p>
+<p>Create a file in the root of your Magento installation and copy this code there. I generally name it test.php<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require_once</span> ‘app<span style="color:#666">/</span>Mage<span style="color:#666">.</span>php’;  
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>(‘default’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Mage_Eav_Model_Entity_Setup(‘core_setup’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">startSetup</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//Change this….  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$aColors</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>(‘PINK’,’BLACK’,’BLUE’,’BROWN’,’GOLD’,’GRAY’,’GREEN’,’MULTI’,’NEUTRALS<span style="color:#666">/</span>CREAM<span style="color:#666">/</span>WHITE’,’ORANGE’,’PURPLE’,’RED’,’RUST’,’TAUPE’,’YELLOW’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attrCode</span> <span style="color:#666">=</span> ‘color’; <span style="color:#080;font-style:italic">//this should be there already  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//……..
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$aColors</span> <span style="color:#666">=</span> array_map(‘utf8_encode’,<span style="color:#b8860b">$aColors</span>); <span style="color:#080;font-style:italic">//If you’re using special characters  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$iProductEntityTypeId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getTypeId</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$aOption</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$aOption</span>[‘attribute_id’] <span style="color:#666">=</span> <span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeId</span>(<span style="color:#b8860b">$iProductEntityTypeId</span>, <span style="color:#b8860b">$attrCode</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#b8860b">$iCount</span><span style="color:#666">=</span><span style="color:#666">0</span>;<span style="color:#b8860b">$iCount</span><span style="color:#666">&lt;</span>sizeof<span style="color:#666">&gt;</span>addAttributeOption(<span style="color:#b8860b">$aOption</span>);<span style="color:#666">&lt;/</span>sizeof<span style="color:#666">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">endSetup</span>();</span></span></code></pre></div><br>
+Now you just need to give the <strong>existing</strong> product attribute name AND <strong>future</strong> attribute options to this script. Run it and rest all script will do for you! 🙂</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

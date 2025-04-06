@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Htaccess on KALPESH MEHTA</title>
+    <link>http://localhost:1313/categories/htaccess/</link>
+    <description>Recent content in Htaccess on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 04 May 2017 21:34:37 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/htaccess/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Redirect request with POST data using .htaccess</title>
+      <link>http://localhost:1313/redirect-request-with-post-data-using-.htaccess/</link>
+      <pubDate>Thu, 04 May 2017 21:34:37 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/redirect-request-with-post-data-using-.htaccess/</guid>
+      <description>&lt;p&gt;By default, if you want to redirect request with POST data, browser redirects it via GET with 302 redirect. This also drops all the POST data associated with the request. Browser does this as a precaution to prevent any unintentional re-submitting of POST transaction.&lt;/p&gt;&#xA;&lt;p&gt;But what if you want to redirect anyway POST request with it’s data? In HTTP 1.1, there is a status code for this. Status code 307 indicates that the request should be repeated with the same HTTP method and data. So your POST request will be repeated along with it’s data if you use this status code.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>By default, if you want to redirect request with POST data, browser redirects it via GET with 302 redirect. This also drops all the POST data associated with the request. Browser does this as a precaution to prevent any unintentional re-submitting of POST transaction.</p>
+<p>But what if you want to redirect anyway POST request with it’s data? In HTTP 1.1, there is a status code for this. Status code 307 indicates that the request should be repeated with the same HTTP method and data. So your POST request will be repeated along with it’s data if you use this status code.</p>
+<p>From <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</a>,<br>
+<em>If the 307 status code is received in response to a request other than GET or HEAD, <strong>the user agent MUST NOT automatically redirect the request</strong> unless it can be confirmed by the user, since this might change the conditions under which the request was issued.</em></p>
+<p>I did this in one of the website to redirect HTTP request to HTTPS for a specific page.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> RewriteEngine on  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">RewriteCond %{SERVER_PORT} !443  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">RewriteCond %{REQUEST_URI} string_to_match_in_url  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">RewriteCond %{REQUEST_METHOD} POST  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=307]</span></span></span></code></pre></div>
+<p>For this to work, you need to have mod_rewrite enabled on the server. The first RewriteCond checks if the request is NOT coming as HTTPS, otherwise it will go in endless loop. If yes, the second RewriteCond checks if the URL contains a string we are looking for. Then if that URL is being submitted as POST method. If everything matches, then we redirect the request using HTTPS secure protocol retaining the POST method and the associated data.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,676 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Attribute on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/attribute/</link>
+    <description>Recent content in Attribute on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Thu, 06 Nov 2014 20:44:48 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/attribute/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Get all attribute values (colors, sizes, etc..)</title>
+      <link>http://localhost:1313/magento-get-all-attribute-values-colors-sizes-etc../</link>
+      <pubDate>Thu, 06 Nov 2014 20:44:48 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-all-attribute-values-colors-sizes-etc../</guid>
+      <description>&lt;p&gt;Magento get all the attribute values you have in the store. Get all the colors and sizes values in Magento. Change the attribute name to whatever you want values for, in the below script.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;require_once&lt;/span&gt;(‘app&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;php’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;umask(&lt;span style=&#34;color:#666&#34;&gt;0&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;app&lt;/span&gt;(‘admin’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//set_time_limit(0);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘eav&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;config’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(‘catalog_product’, ‘color’);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$colors&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;array&lt;/span&gt;();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAllOptions&lt;/span&gt;(&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;) &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$option&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$colors&lt;/span&gt;[] &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$option&lt;/span&gt;[‘label’];  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sort(&lt;span style=&#34;color:#b8860b&#34;&gt;$colors&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$colors&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$lbl&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “&lt;span style=&#34;color:#666&#34;&gt;&amp;lt;&lt;/span&gt;span style&lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;&amp;#34;background-color:lightgrey&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;&amp;gt;&lt;/span&gt;“&lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$lbl&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;.&lt;/span&gt; “&lt;span style=&#34;color:#666&#34;&gt;&amp;lt;/&lt;/span&gt;span&lt;span style=&#34;color:#666&#34;&gt;&amp;gt;&lt;/span&gt;“;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;echo&lt;/span&gt; “  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;“;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;Replace &lt;em&gt;color&lt;/em&gt; with any attribute you want to get values for. Above script also sorts the result set in alphabetic order to make it easy to view all values. If you don’t want to sort the values, just comment out the line which sorts it.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento get all the attribute values you have in the store. Get all the colors and sizes values in Magento. Change the attribute name to whatever you want values for, in the below script.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require_once</span>(‘app<span style="color:#666">/</span>Mage<span style="color:#666">.</span>php’);  
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>(‘admin’);  
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//set_time_limit(0);  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$attribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘catalog_product’, ‘color’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$colors</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAllOptions</span>(<span style="color:#a2f;font-weight:bold">true</span>) <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$option</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$colors</span>[] <span style="color:#666">=</span> <span style="color:#b8860b">$option</span>[‘label’];  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span>sort(<span style="color:#b8860b">$colors</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span>(<span style="color:#b8860b">$colors</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$lbl</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “<span style="color:#666">&lt;</span>span style<span style="color:#666">=</span><span style="color:#b44">&#34;background-color:lightgrey&#34;</span><span style="color:#666">&gt;</span>“<span style="color:#666">.</span><span style="color:#b8860b">$lbl</span> <span style="color:#666">.</span> “<span style="color:#666">&lt;/</span>span<span style="color:#666">&gt;</span>“;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “  
+</span></span><span style="display:flex;"><span>“;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Replace <em>color</em> with any attribute you want to get values for. Above script also sorts the result set in alphabetic order to make it easy to view all values. If you don’t want to sort the values, just comment out the line which sorts it.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento add/remove product attribute programatically</title>
+      <link>http://localhost:1313/magento-add/remove-product-attribute-programatically/</link>
+      <pubDate>Thu, 04 Sep 2014 02:24:16 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add/remove-product-attribute-programatically/</guid>
+      <description>&lt;p&gt;Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.&lt;/p&gt;&#xA;&lt;p&gt;Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento add product attribute using sql setup file in your module. Also assign your custom attribute to attribute set Default and group General programatically.</p>
+<p>Below code will add your new attribute in Manage Products edit screen at the end of General tab with dropdown values Yes/No. It will not display in frontend website but you can change visibible on front to 1 if you wish. Note that it will assign to Default attribute set only but you can change it to whatever as per your requirement.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$model</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>setup’,’catalog_setup’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$data</span><span style="color:#666">=</span><span style="color:#a2f;font-weight:bold">array</span>(  
+</span></span><span style="display:flex;"><span>‘type’<span style="color:#666">=&gt;</span>’int’,  
+</span></span><span style="display:flex;"><span>‘input’<span style="color:#666">=&gt;</span>’boolean’, <span style="color:#080;font-style:italic">//for Yes/No dropdown  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>‘sort_order’<span style="color:#666">=&gt;</span><span style="color:#666">50</span>,  
+</span></span><span style="display:flex;"><span>‘label’<span style="color:#666">=&gt;</span>’CUSTOM ATTRIBUTE CODE LABEL’,  
+</span></span><span style="display:flex;"><span>‘global’<span style="color:#666">=&gt;</span>Mage_Catalog_Model_Resource_Eav_Attribute<span style="color:#666">::</span><span style="color:#b44">SCOPE_GLOBAL</span>,  
+</span></span><span style="display:flex;"><span>‘required’<span style="color:#666">=&gt;</span>’0’,  
+</span></span><span style="display:flex;"><span>‘comparable’<span style="color:#666">=&gt;</span>’0’,  
+</span></span><span style="display:flex;"><span>‘searchable’<span style="color:#666">=&gt;</span>’0’,  
+</span></span><span style="display:flex;"><span>‘is_configurable’<span style="color:#666">=&gt;</span>’1’,  
+</span></span><span style="display:flex;"><span>‘user_defined’<span style="color:#666">=&gt;</span>’1’,  
+</span></span><span style="display:flex;"><span>‘visible_on_front’ <span style="color:#666">=&gt;</span> <span style="color:#666">0</span>, <span style="color:#080;font-style:italic">//want to show on frontend?  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>‘visible_in_advanced_search’ <span style="color:#666">=&gt;</span> <span style="color:#666">0</span>,  
+</span></span><span style="display:flex;"><span>‘is_html_allowed_on_front’ <span style="color:#666">=&gt;</span> <span style="color:#666">0</span>,  
+</span></span><span style="display:flex;"><span>‘required’<span style="color:#666">=&gt;</span> <span style="color:#666">0</span>,  
+</span></span><span style="display:flex;"><span>‘unique’<span style="color:#666">=&gt;</span><span style="color:#a2f;font-weight:bold">false</span>,  
+</span></span><span style="display:flex;"><span>‘apply_to’ <span style="color:#666">=&gt;</span> ‘configurable’, <span style="color:#080;font-style:italic">//simple,configurable,bundled,grouped,virtual,downloadable  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>‘is_configurable’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">false</span>  
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$model</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttribute</span>(‘catalog_product’,’CUSTOM_ATTRIBUTE_CODE’,<span style="color:#b8860b">$data</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$model</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToSet</span>(  
+</span></span><span style="display:flex;"><span> ‘catalog_product’, ‘Default’, ‘General’, ‘CUSTOM_ATTRIBUTE_CODE’  
+</span></span><span style="display:flex;"><span>); <span style="color:#080;font-style:italic">//Default = attribute set, General = attribute group  
+</span></span></span></code></pre></div>
+<p>To remove the product attribute using the setup file, use below code instead:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$model</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>setup’,’catalog_setup’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$model</span><span style="color:#666">-&gt;</span><span style="color:#b44">removeAttribute</span>(‘catalog_product’,’CUSTOM_ATTRIBUTE_CODE’);  
+</span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento convert attribute type from TEXT to DROPDOWN</title>
+      <link>http://localhost:1313/magento-convert-attribute-type-from-text-to-dropdown/</link>
+      <pubDate>Tue, 13 Aug 2013 23:15:44 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-convert-attribute-type-from-text-to-dropdown/</guid>
+      <description>&lt;p&gt;Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.&lt;br&gt;&#xA;Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;WARNING&lt;/strong&gt;: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento convert attribute type from TEXT (varchar) to DROPDOWN / SELECT (int) in Backend.<br>
+Magento doesn’t have this in-built so we will have to do it in our own way. We will convert our existing attribute which is in TEXT type, to DROPDOWN (select). Let’s say our attribute code is “vendor”, you will need to replace it with your own attribute code in all the code below.</p>
+<p><strong>WARNING</strong>: All the coupon codes that uses this attribute for discounts/promotions will GO AWAY! Please note down all the coupon code Conditions and Actions (which uses this attribute) before converting the attribute.</p>
+<p><strong>Step 1.)</strong> Backup your database.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span>mysqldump<span style="color:#bbb"> </span><span style="color:#666">-</span>u<span style="color:#bbb"> </span>mysqluser<span style="color:#bbb"> </span><span style="color:#666">-</span>p<span style="color:#bbb"> </span>mysqldbname<span style="color:#bbb"> </span><span style="color:#666">&gt;</span><span style="color:#bbb"> </span>mysqldbname_backup.<span style="color:#a2f;font-weight:bold">sql</span></span></span></code></pre></div></p>
+<p><strong>Step 2.)</strong> Export all the values of the attribute you want to convert in a CSV file. For that, create a file vendor.php (your_attribute.php) in your magento root with following code inside it:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require</span> “app<span style="color:#666">/</span>Mage<span style="color:#666">.</span>php”;  
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$collection</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">getCollection</span>()  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToSelect</span>(‘sku’)  
+</span></span><span style="display:flex;"><span> <span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToSelect</span>(‘vendor’); <span style="color:#080;font-style:italic">//replace vendor with your attribute code
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$data</span> <span style="color:#666">=</span> <span style="color:#b8860b">$collection</span><span style="color:#666">-&gt;</span><span style="color:#b44">getData</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$data</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$product</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$product</span>[‘entity_id’] <span style="color:#666">.</span> “,” <span style="color:#666">.</span> <span style="color:#b8860b">$product</span>[‘vendor’]<span style="color:#666">.</span>”\\n”;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>After saving the above code, run it from command line:</p>
+<p>
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> php vendor.php &gt; vendor.csv</span></span></span></code></pre></div><br>
+You should now have all the attribute’s data with product ID in the vendor.csv (your_attribute.csv) file.</p>
+<p><strong>Step 3.)</strong> Now get all the unique values you have in the attribute’s data, which we will be filling them as options of select dropdown.<br>
+Run following mysql command to get all the unique values and copy them in a new file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mariadb" data-lang="mariadb"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">select</span><span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">distinct</span><span style="color:#bbb"> </span>value<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">from</span><span style="color:#bbb"> </span>catalog_product_entity_varchar<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">where</span><span style="color:#bbb"> </span>attribute_id<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">in</span><span style="color:#bbb"> </span>(<span style="color:#a2f;font-weight:bold">select</span><span style="color:#bbb"> </span>attribute_id<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">from</span><span style="color:#bbb"> </span>eav_attribute<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">where</span><span style="color:#bbb"> </span>attribute_code<span style="color:#666">=</span><span style="">’</span>vendor<span style="">’</span>);<span style="color:#bbb"> </span><span style="color:#666">//</span><span style="color:#a2f;font-weight:bold">replace</span><span style="color:#bbb"> </span>vendor<span style="color:#bbb"> </span><span style="color:#a2f;font-weight:bold">with</span><span style="color:#bbb"> </span>your<span style="color:#bbb"> </span>own<span style="color:#bbb"> </span>attribute<span style="color:#bbb"> </span>code</span></span></code></pre></div></p>
+<p>After this step, we have all the attribute’s data in CSV file, and all the UNIQUE attribute values.</p>
+<p><strong>Step 4.)</strong> Note all the settings of the attribute and Delete the attribute from backend Manage Attributes screen. Now create new attribute from there with SAME attribute code but different Frontend Type (Dropdown). Rest all the settings will be same as you had it before. Save it. Go to Manage Attribute Sets page and assign the attribute to the Group it was assigned to before.</p>
+<p><strong>Step 5.)</strong> Now we have to insert all the options to this attribute so that the values are shown in the dropdown. Edit your vendor.php file and replace the code with below:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require</span> “app<span style="color:#666">/</span>Mage<span style="color:#666">.</span>php”;  
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Mage_Eav_Model_Entity_Setup(‘core_setup’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">startSetup</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//Change this….  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$values</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>(“val1″,”val2”); <span style="color:#080;font-style:italic">//your unique attributes values that you copied in a new file  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$attrCode</span> <span style="color:#666">=</span> ‘vendor’; <span style="color:#080;font-style:italic">//your attribute code here  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//……..
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$values</span> <span style="color:#666">=</span> array_map(‘utf8_encode’,<span style="color:#b8860b">$values</span>); <span style="color:#080;font-style:italic">//If you’re using special characters  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$iProductEntityTypeId</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getTypeId</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$aOption</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$aOption</span>[‘attribute_id’] <span style="color:#666">=</span> <span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeId</span>(<span style="color:#b8860b">$iProductEntityTypeId</span>, <span style="color:#b8860b">$attrCode</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">for</span>(<span style="color:#b8860b">$iCount</span><span style="color:#666">=</span><span style="color:#666">0</span>;<span style="color:#b8860b">$iCount</span><span style="color:#666">&lt;</span>sizeof<span style="color:#666">&gt;</span>addAttributeOption(<span style="color:#b8860b">$aOption</span>);<span style="color:#666">&lt;/</span>sizeof<span style="color:#666">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">endSetup</span>();</span></span></code></pre></div></p>
+<p>After running this, check your attribute manage page and see if all the values are updated or not. You can find the values in “Manage Labels/Options” tab of attribute’s Manage Attributes screen.</p>
+<p><strong>Step 6.)</strong> Now comes the main part which will insert the attribute values in the database. The old values are stored in catalog_product_entity_varchar (text type), while now the values should go to catalog_product_entity_int (dropdown type). Replace your vendor.php file with below code:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require</span> “app<span style="color:#666">/</span>Mage<span style="color:#666">.</span>php”;  
+</span></span><span style="display:flex;"><span>umask(<span style="color:#666">0</span>);  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘catalog_product’, ‘vendor’); <span style="color:#080;font-style:italic">//change to your attribute code  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$allOptions</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAllOptions</span>(<span style="color:#a2f;font-weight:bold">true</span>, <span style="color:#a2f;font-weight:bold">true</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$allOptions</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$instance</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$myArray</span>[<span style="color:#b8860b">$instance</span>[‘label’]] <span style="color:#666">=</span> <span style="color:#b8860b">$instance</span>[‘value’];  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">if</span> ((<span style="color:#b8860b">$handle</span> <span style="color:#666">=</span> fopen(“vendor<span style="color:#666">.</span>csv”, “r”)) <span style="color:#666">!==</span> <span style="color:#a2f;font-weight:bold">FALSE</span>) { <span style="color:#080;font-style:italic">//change to your attribute .csv file  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#a2f;font-weight:bold">while</span> ((<span style="color:#b8860b">$data</span> <span style="color:#666">=</span> fgetcsv(<span style="color:#b8860b">$handle</span>, <span style="color:#666">1000</span>, “,”)) <span style="color:#666">!==</span> <span style="color:#a2f;font-weight:bold">FALSE</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">list</span>(<span style="color:#b8860b">$_id</span>, <span style="color:#b8860b">$_value</span>) <span style="color:#666">=</span> <span style="color:#b8860b">$data</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">load</span>(<span style="color:#b8860b">$_id</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">setVendor</span>(<span style="color:#b8860b">$myArray</span>[<span style="color:#b8860b">$_value</span>]); <span style="color:#080;font-style:italic">//setVendor should be setYourAttributeCode
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">try</span> {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">saveAttribute</span>(<span style="color:#b8860b">$product</span>, ‘vendor’); <span style="color:#080;font-style:italic">//change to your attribute code  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> } <span style="color:#a2f;font-weight:bold">catch</span>(Exception <span style="color:#b8860b">$e</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> <span style="color:#b8860b">$_id</span> <span style="color:#666">.</span>”<span style="color:#666">:</span>”<span style="color:#666">.</span> <span style="color:#b8860b">$e</span><span style="color:#666">-&gt;</span><span style="color:#b44">getMessage</span>() <span style="color:#666">.</span>”\\n”;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> fclose(<span style="color:#b8860b">$handle</span>);  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>Run the file, it will take time to complete depending on how many values you had for that attribute.</p>
+<p><strong>Step 7.)</strong> Clear cache, Re-index the indexes.</p>
+<p>Done!<br>
+Test it thoroughly.<br>
+Based on my Magento Stackexchange question: <a href="http://magento.stackexchange.com/questions/6707/convert-attribute-type-from-text-to-dropdown/6710">http://magento.stackexchange.com/questions/6707/convert-attribute-type-from-text-to-dropdown/6710</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento get attribute options</title>
+      <link>http://localhost:1313/magento-get-attribute-options/</link>
+      <pubDate>Sat, 15 Jun 2013 21:19:28 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-attribute-options/</guid>
+      <description>&lt;p&gt;Get attribute options list i.e. label and value, if the attribute type is dropdown.&lt;/p&gt;&#xA;&lt;p&gt;This post will show you how to get all the options of attribute with dropdown type in Magento. If your attribute has options, below code will give all the attribute options labels and values in an array format.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSingleton&lt;/span&gt;(‘eav&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;config’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(‘catalog_product’, ‘shirt_size’); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//change shirt_size to your attribute code  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;usesSource&lt;/span&gt;()) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$options&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAllOptions&lt;/span&gt;(&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;false&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$options&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$option&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; print_r(&lt;span style=&#34;color:#b8860b&#34;&gt;$option&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; }  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;In the above code, first line will initialize the attribute. Then we are checking if the attribute is using source model or not, if using then get all the options of that attribute.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Get attribute options list i.e. label and value, if the attribute type is dropdown.</p>
+<p>This post will show you how to get all the options of attribute with dropdown type in Magento. If your attribute has options, below code will give all the attribute options labels and values in an array format.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘catalog_product’, ‘shirt_size’); <span style="color:#080;font-style:italic">//change shirt_size to your attribute code  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">usesSource</span>()) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$options</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAllOptions</span>(<span style="color:#a2f;font-weight:bold">false</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">foreach</span>(<span style="color:#b8860b">$options</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$option</span>) {  
+</span></span><span style="display:flex;"><span> print_r(<span style="color:#b8860b">$option</span>);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<p>In the above code, first line will initialize the attribute. Then we are checking if the attribute is using source model or not, if using then get all the options of that attribute.</p>
+<p>It will output this for attribute shirt_size:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>Array  
+</span></span><span style="display:flex;"><span>(  
+</span></span><span style="display:flex;"><span> [value] =&gt; 100  
+</span></span><span style="display:flex;"><span> [label] =&gt; Small  
+</span></span><span style="display:flex;"><span>)  
+</span></span><span style="display:flex;"><span>Array  
+</span></span><span style="display:flex;"><span>(  
+</span></span><span style="display:flex;"><span> [value] =&gt; 99  
+</span></span><span style="display:flex;"><span> [label] =&gt; Medium  
+</span></span><span style="display:flex;"><span>)  
+</span></span><span style="display:flex;"><span>Array  
+</span></span><span style="display:flex;"><span>(  
+</span></span><span style="display:flex;"><span> [value] =&gt; 98  
+</span></span><span style="display:flex;"><span> [label] =&gt; Large  
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div>
+<p>If you are here to get attribute option’s label from value OR get attribute option’s value from label, just check out this post: <a href="http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/">http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento get attribute value</title>
+      <link>http://localhost:1313/magento-get-attribute-value/</link>
+      <pubDate>Sat, 15 Jun 2013 20:49:33 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-attribute-value/</guid>
+      <description>&lt;p&gt;To get product attribute value in Magento is very common. You will need it everytime when dealing with catalog products in your development. Attributes have different types, which can be any of Text Field, Text Area, Date, Yes/No, Multiple Select, Dropdown, Price, Gallery, Media Image, Fixed Product Tax (as you can see in backend &lt;em&gt;Manage Attributes &amp;gt; New Attribute &amp;gt; Catalog Input Type for Store Owner&lt;/em&gt;). To get the value for these different types of attributes there is no one straight line of code, you will need to use different code for getting values from plain attributes, while different code to get values from select and multiselect attributes.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>To get product attribute value in Magento is very common. You will need it everytime when dealing with catalog products in your development. Attributes have different types, which can be any of Text Field, Text Area, Date, Yes/No, Multiple Select, Dropdown, Price, Gallery, Media Image, Fixed Product Tax (as you can see in backend <em>Manage Attributes &gt; New Attribute &gt; Catalog Input Type for Store Owner</em>). To get the value for these different types of attributes there is no one straight line of code, you will need to use different code for getting values from plain attributes, while different code to get values from select and multiselect attributes.</p>
+<p>Get attribute value for PLAIN TEXT, TEXTAREA or DATE type attribute:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getShirtSize</span>(); <span style="color:#080;font-style:italic">//for shirt_size attribute
+</span></span></span></code></pre></div></p>
+<p>Get value from SELECT, MULTISELECT, DROPDOWN or YES/NO attributes:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeText</span>(<span style="color:#b8860b">$attribute_code</span>);</span></span></code></pre></div><br>
+OR<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(<span style="color:#b8860b">$attribute_code</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">getFrontend</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getValue</span>(<span style="color:#b8860b">$product</span>);</span></span></code></pre></div></p>
+<p>Get value from PRICE attributes:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getNew_price</span>(); <span style="color:#080;font-style:italic">//for attribute code “new_price”
+</span></span></span></code></pre></div><br>
+and in product list page,<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getNewPrice</span>();</span></span></code></pre></div></p>
+<p>Get attribute value by attribute code and productID WITHOUT loading whole product<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute_value</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeRawValue</span>(<span style="color:#b8860b">$product_id</span>, <span style="color:#b8860b">$attribute_code</span>, <span style="color:#b8860b">$store_id</span>);</span></span></code></pre></div></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento get attribute label</title>
+      <link>http://localhost:1313/magento-get-attribute-label/</link>
+      <pubDate>Sat, 15 Jun 2013 19:25:06 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-attribute-label/</guid>
+      <description>&lt;p&gt;To get attribute label for the product in Magento is not that straight-forward as we do for getting attribute value. You will need attribute code and product object to get the attribute label as shown below.&lt;/p&gt;&#xA;&lt;p&gt;If you have the product object, you can use it to get the attribute’s label..&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$label&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$product&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getResource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute_code&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getFrontend&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getLabel&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$product&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;For the current/selected store view..&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$label&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$product&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getResource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute_code&lt;/span&gt;)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getStoreLabel&lt;/span&gt;();&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;&#xA;&lt;p&gt;This will output you the label of the attribute associated with the attribute code you passed for that product. E.g. Shirt Size, Color, etc..&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>To get attribute label for the product in Magento is not that straight-forward as we do for getting attribute value. You will need attribute code and product object to get the attribute label as shown below.</p>
+<p>If you have the product object, you can use it to get the attribute’s label..<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$label</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(<span style="color:#b8860b">$attribute_code</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">getFrontend</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getLabel</span>(<span style="color:#b8860b">$product</span>);</span></span></code></pre></div></p>
+<p>For the current/selected store view..<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$label</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getResource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(<span style="color:#b8860b">$attribute_code</span>)<span style="color:#666">-&gt;</span><span style="color:#b44">getStoreLabel</span>();</span></span></code></pre></div></p>
+<p>This will output you the label of the attribute associated with the attribute code you passed for that product. E.g. Shirt Size, Color, etc..</p>
+<p>To get select/dropdown attribute label by value OR to get select/dropdown attribute value by label, please check this post: <a href="http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/">http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento get list of all product attributes</title>
+      <link>http://localhost:1313/magento-get-list-of-all-product-attributes/</link>
+      <pubDate>Sat, 15 Jun 2013 00:16:13 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-list-of-all-product-attributes/</guid>
+      <description>&lt;p&gt;Get list of all the product attributes defined in Magento. This will fetch you an array with all the attribute codes as a key AND all the attribute details including attribute code as a value. You can limit this array by just attribute code and attribute label as per your need. I will show you all the possible attribute information you can fetch defined for the product.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attrib_data&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;array&lt;/span&gt;(); &lt;span style=&#34;color:#b8860b&#34;&gt;$allAttributeCodes&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;array&lt;/span&gt;();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attributes&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getResourceModel&lt;/span&gt;(‘catalog&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;product_attribute_collection’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getItems&lt;/span&gt;();&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$attributes&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;){  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attrib_data&lt;/span&gt;[&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttributeCode&lt;/span&gt;()] &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getData&lt;/span&gt;();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//$allAttributeCodes[] = $attribute-&amp;gt;getAttributeCode();  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;&lt;em&gt;Sample Output:&lt;/em&gt;&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-plain&#34; data-lang=&#34;plain&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Array(  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [color] =&amp;gt; Array  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; (  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [entity_type_id] =&amp;gt; 10  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [attribute_code] =&amp;gt; color  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [attribute_model] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [backend_model] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [backend_type] =&amp;gt; int  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [backend_table] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [frontend_model] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [frontend_input] =&amp;gt; select  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [frontend_label] =&amp;gt; Color  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [frontend_class] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [source_model] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_required] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_user_defined] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [default_value] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_unique] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [note] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [attribute_id] =&amp;gt; 272  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [frontend_input_renderer] =&amp;gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_global] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_visible] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_searchable] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_filterable] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_comparable] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_visible_on_front] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_html_allowed_on_front] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_used_for_price_rules] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_filterable_in_search] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [used_in_product_listing] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [used_for_sort_by] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_configurable] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [apply_to] =&amp;gt; simple  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_visible_in_advanced_search] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [position] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_wysiwyg_enabled] =&amp;gt; 0  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [is_used_for_promo_rules] =&amp;gt; 1  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; [other_attribute_code] =&amp;gt; Array  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; (  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; ….  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; )  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Get list of all the product attributes defined in Magento. This will fetch you an array with all the attribute codes as a key AND all the attribute details including attribute code as a value. You can limit this array by just attribute code and attribute label as per your need. I will show you all the possible attribute information you can fetch defined for the product.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attrib_data</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>(); <span style="color:#b8860b">$allAttributeCodes</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attributes</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getResourceModel</span>(‘catalog<span style="color:#666">/</span>product_attribute_collection’)<span style="color:#666">-&gt;</span><span style="color:#b44">getItems</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$attributes</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$attribute</span>){  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attrib_data</span>[<span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeCode</span>()] <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getData</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#080;font-style:italic">//$allAttributeCodes[] = $attribute-&gt;getAttributeCode();  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span>}</span></span></code></pre></div>
+<p><em>Sample Output:</em><br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plain" data-lang="plain"><span style="display:flex;"><span>Array(  
+</span></span><span style="display:flex;"><span> [color] =&gt; Array  
+</span></span><span style="display:flex;"><span> (  
+</span></span><span style="display:flex;"><span> [entity_type_id] =&gt; 10  
+</span></span><span style="display:flex;"><span> [attribute_code] =&gt; color  
+</span></span><span style="display:flex;"><span> [attribute_model] =&gt;  
+</span></span><span style="display:flex;"><span> [backend_model] =&gt;  
+</span></span><span style="display:flex;"><span> [backend_type] =&gt; int  
+</span></span><span style="display:flex;"><span> [backend_table] =&gt;  
+</span></span><span style="display:flex;"><span> [frontend_model] =&gt;  
+</span></span><span style="display:flex;"><span> [frontend_input] =&gt; select  
+</span></span><span style="display:flex;"><span> [frontend_label] =&gt; Color  
+</span></span><span style="display:flex;"><span> [frontend_class] =&gt;  
+</span></span><span style="display:flex;"><span> [source_model] =&gt;  
+</span></span><span style="display:flex;"><span> [is_required] =&gt; 0  
+</span></span><span style="display:flex;"><span> [is_user_defined] =&gt; 1  
+</span></span><span style="display:flex;"><span> [default_value] =&gt;  
+</span></span><span style="display:flex;"><span> [is_unique] =&gt; 0  
+</span></span><span style="display:flex;"><span> [note] =&gt;  
+</span></span><span style="display:flex;"><span> [attribute_id] =&gt; 272  
+</span></span><span style="display:flex;"><span> [frontend_input_renderer] =&gt;  
+</span></span><span style="display:flex;"><span> [is_global] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_visible] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_searchable] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_filterable] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_comparable] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_visible_on_front] =&gt; 0  
+</span></span><span style="display:flex;"><span> [is_html_allowed_on_front] =&gt; 0  
+</span></span><span style="display:flex;"><span> [is_used_for_price_rules] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_filterable_in_search] =&gt; 1  
+</span></span><span style="display:flex;"><span> [used_in_product_listing] =&gt; 0  
+</span></span><span style="display:flex;"><span> [used_for_sort_by] =&gt; 0  
+</span></span><span style="display:flex;"><span> [is_configurable] =&gt; 1  
+</span></span><span style="display:flex;"><span> [apply_to] =&gt; simple  
+</span></span><span style="display:flex;"><span> [is_visible_in_advanced_search] =&gt; 1  
+</span></span><span style="display:flex;"><span> [position] =&gt; 1  
+</span></span><span style="display:flex;"><span> [is_wysiwyg_enabled] =&gt; 0  
+</span></span><span style="display:flex;"><span> [is_used_for_promo_rules] =&gt; 1  
+</span></span><span style="display:flex;"><span> )  
+</span></span><span style="display:flex;"><span> [other_attribute_code] =&gt; Array  
+</span></span><span style="display:flex;"><span> (  
+</span></span><span style="display:flex;"><span> ….  
+</span></span><span style="display:flex;"><span> )  
+</span></span><span style="display:flex;"><span>)</span></span></code></pre></div></p>
+<p>Now you can easily access all the attribute information from the above array.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento add attribute to order</title>
+      <link>http://localhost:1313/magento-add-attribute-to-order/</link>
+      <pubDate>Fri, 10 May 2013 21:46:48 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add-attribute-to-order/</guid>
+      <description>&lt;p&gt;Adding custom attribute to order in Magento is same as we do for customer and category. The difference is we will use different setup class AND we will not need attribute set, group and attribute input type now. We will create a quick module which will do exactly what we want and nothing more than that. So let’s start our new module.&lt;/p&gt;&#xA;&lt;p&gt;1.) Create a file at app/etc/modules/ and name it whatever you want. I will name it Namespace_Module.xml&lt;br&gt;&#xA;Paste this code in that file:&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34;??&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;active&amp;gt;&lt;/span&gt;true&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/active&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;codepool&amp;gt;&lt;/span&gt;local&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/codepool&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Adding custom attribute to order in Magento is same as we do for customer and category. The difference is we will use different setup class AND we will not need attribute set, group and attribute input type now. We will create a quick module which will do exactly what we want and nothing more than that. So let’s start our new module.</p>
+<p>1.) Create a file at app/etc/modules/ and name it whatever you want. I will name it Namespace_Module.xml<br>
+Paste this code in that file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#080">&lt;?xml version=&#34;1.0&#34;??&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;config&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modules&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;active&gt;</span>true<span style="color:#008000;font-weight:bold">&lt;/active&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;codepool&gt;</span>local<span style="color:#008000;font-weight:bold">&lt;/codepool&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modules&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;/config&gt;</span></span></span></code></pre></div></p>
+<p>2.) Create necessary directories to reach to app/code/local/Namespace/Module/etc/, so that we can create our config.xml there. Paste below code in this config file:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#080">&lt;?xml version=&#34;1.0&#34;??&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;config&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modules&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;version&gt;</span>0.0.1<span style="color:#008000;font-weight:bold">&lt;/version&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modules&gt;&lt;/config&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;global&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;resources&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modulename_setup&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;setup&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;module&gt;</span>Namespace_Module<span style="color:#008000;font-weight:bold">&lt;/module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;class&gt;</span>Mage_Sales_Model_Mysql4_Setup<span style="color:#008000;font-weight:bold">&lt;/class&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/setup&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;use&gt;</span>core_setup<span style="color:#008000;font-weight:bold">&lt;/use&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modulename_setup&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modulename_write&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;use&gt;</span>core_write<span style="color:#008000;font-weight:bold">&lt;/use&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modulename_write&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modulename_read&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;use&gt;</span>core_read<span style="color:#008000;font-weight:bold">&lt;/use&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/connection&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modulename_read&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/resources&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/global&gt;</span>  </span></span></code></pre></div></p>
+<p>3.) Now comes our main file, which will create new Order attribute for us. Create file “mysql4-install-0.0.1.php” in app/code/local/Namespace/Module/sql/module_setup/, and paste the below code in it:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">startSetup</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttribute</span>(‘order’, ‘your_custom_attribute_here’, <span style="color:#a2f;font-weight:bold">array</span>(  
+</span></span><span style="display:flex;"><span> ‘type’ <span style="color:#666">=&gt;</span> ‘varchar’,  
+</span></span><span style="display:flex;"><span> ‘label’ <span style="color:#666">=&gt;</span> ‘Custom Order attribute label’,  
+</span></span><span style="display:flex;"><span> ‘visible’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>,  
+</span></span><span style="display:flex;"><span> ‘required’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">false</span>,  
+</span></span><span style="display:flex;"><span> ‘visible_on_front’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>,  
+</span></span><span style="display:flex;"><span> ‘user_defined’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>  
+</span></span><span style="display:flex;"><span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">endSetup</span>();</span></span></code></pre></div></p>
+<p>This will add new attribute to Order and after clearing cache you can see your custom attribute in backend “Manage Orders” screen and in customer frontend screen “My Orders”. HTH!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento add attribute to category</title>
+      <link>http://localhost:1313/magento-add-attribute-to-category/</link>
+      <pubDate>Fri, 10 May 2013 21:16:55 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add-attribute-to-category/</guid>
+      <description>&lt;p&gt;Adding category attribute in Magento is same as we add for product and customer. Here in this post I will create a custom module which will add your new custom category attribute in Magento. So let’s start with the module:&lt;/p&gt;&#xA;&lt;p&gt;1.) As usual, create an XML file in app/etc/modules/ directory, I will name it Namespace_Module.xml&lt;br&gt;&#xA;Paste below code in it changing the Namespace and Module as you want.&lt;br&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080&#34;&gt;&amp;lt;?xml version=&amp;#34;1.0&amp;#34;??&amp;gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;config&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;modules&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;active&amp;gt;&lt;/span&gt;true&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/active&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;codepool&amp;gt;&lt;/span&gt;local&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/codepool&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/namespace_module&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/modules&amp;gt;&lt;/span&gt;  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#008000;font-weight:bold&#34;&gt;&amp;lt;/config&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Adding category attribute in Magento is same as we add for product and customer. Here in this post I will create a custom module which will add your new custom category attribute in Magento. So let’s start with the module:</p>
+<p>1.) As usual, create an XML file in app/etc/modules/ directory, I will name it Namespace_Module.xml<br>
+Paste below code in it changing the Namespace and Module as you want.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#080">&lt;?xml version=&#34;1.0&#34;??&gt;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;config&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;modules&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;active&gt;</span>true<span style="color:#008000;font-weight:bold">&lt;/active&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;codepool&gt;</span>local<span style="color:#008000;font-weight:bold">&lt;/codepool&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/namespace_module&gt;</span>  
+</span></span><span style="display:flex;"><span> <span style="color:#008000;font-weight:bold">&lt;/modules&gt;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#008000;font-weight:bold">&lt;/config&gt;</span></span></span></code></pre></div></p>
+<p>2.) Second step would be to create a file config.xml in app/code/local/Namespace/Module/etc/ directory. Create all the directories required get there. Paste the below code in it making sure you have changed Namespace and Module with your naming.<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>xml version<span style="color:#666">=</span><span style="color:#b44">&#34;1.0&#34;</span><span style="color:#666">?</span><span style="color:#080">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">  
+</span></span></span><span style="display:flex;"><span><span style="">&lt;config&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;modules&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;namespace_module&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;version&gt;0.0.1&lt;/version&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/namespace_module&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/modules&gt;&lt;/config&gt;
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;global&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;resources&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;module&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;setup&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;module&gt;Namespace_Module&lt;/module&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;class&gt;Mage_Catalog_Model_Resource_Eav_Mysql4_Setup&lt;/class&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/setup&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;use&gt;core_setup&lt;/use&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/module&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;module_write&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;use&gt;core_write&lt;/use&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/module_write&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;module_read&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;use&gt;core_read&lt;/use&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/connection&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/module_read&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/resources&gt;  
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;/global&gt;  
+</span></span></span></code></pre></div><br>
+I have only included setup class and connections as those are the only things we will need to execute our script which will insert the custom attribute to category in our Magento project.</p>
+<p>3.) Here comes main file, which will actually add attribute to category. We will put below code in app/code/local/Namespace/Module/sql/module_setup/mysql4-install-0.1.0.php<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">startSetup</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttribute</span>(‘catalog_category’, ‘your_custom_attribute_here’, <span style="color:#a2f;font-weight:bold">array</span>(  
+</span></span><span style="display:flex;"><span> ‘group’ <span style="color:#666">=&gt;</span> ‘General’,  
+</span></span><span style="display:flex;"><span> ‘input’ <span style="color:#666">=&gt;</span> ‘text’,  
+</span></span><span style="display:flex;"><span> ‘type’ <span style="color:#666">=&gt;</span> ‘varchar’,  
+</span></span><span style="display:flex;"><span> ‘label’ <span style="color:#666">=&gt;</span> ‘Custom Category attribute label’,  
+</span></span><span style="display:flex;"><span> ‘visible’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>,  
+</span></span><span style="display:flex;"><span> ‘required’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">false</span>,  
+</span></span><span style="display:flex;"><span> ‘visible_on_front’ <span style="color:#666">=&gt;</span> <span style="color:#a2f;font-weight:bold">true</span>,  
+</span></span><span style="display:flex;"><span> ‘global’ <span style="color:#666">=&gt;</span> Mage_Catalog_Model_Resource_Eav_Attribute<span style="color:#666">::</span><span style="color:#b44">SCOPE_GLOBAL</span>,  
+</span></span><span style="display:flex;"><span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">endSetup</span>();  
+</span></span><span style="display:flex;"><span><span style="color:#080">?&gt;</span><span style="">
+</span></span></span></code></pre></div></p>
+<p>We have used minimal things to create this module and add attribute to category. You can go further and do more additions from this.</p>
+<p>After clearing cache, you will see that your new custom attribute appear in Category pages in frontend as well as Manage Categories section in backend. HTH!</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento add attribute to customer</title>
+      <link>http://localhost:1313/magento-add-attribute-to-customer/</link>
+      <pubDate>Fri, 10 May 2013 20:52:55 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add-attribute-to-customer/</guid>
+      <description>&lt;p&gt;In Magento to add an attribute to customer is not an option in the admin panel like it does have for Product attribute. So you have to end up writing the script that will add your custom attribute in customer’s EAV tables.&lt;/p&gt;&#xA;&lt;p&gt;Below code will insert your custom customer attribute in Magento system. You can even specify whil creating the attribute whether that attribute should appear in the forms (like register/signup) or not.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>In Magento to add an attribute to customer is not an option in the admin panel like it does have for Product attribute. So you have to end up writing the script that will add your custom attribute in customer’s EAV tables.</p>
+<p>Below code will insert your custom customer attribute in Magento system. You can even specify whil creating the attribute whether that attribute should appear in the forms (like register/signup) or not.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$installer</span> <span style="color:#666">=</span> <span style="color:#b8860b">$this</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$installer</span><span style="color:#666">-&gt;</span><span style="color:#b44">startSetup</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$setup</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">new</span> Mage_Eav_Model_Entity_Setup(‘core_setup’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$entityTypeId</span> <span style="color:#666">=</span> <span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">getEntityTypeId</span>(‘customer’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attributeSetId</span> <span style="color:#666">=</span> <span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">getDefaultAttributeSetId</span>(<span style="color:#b8860b">$entityTypeId</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attributeGroupId</span> <span style="color:#666">=</span> <span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">getDefaultAttributeGroupId</span>(<span style="color:#b8860b">$entityTypeId</span>, <span style="color:#b8860b">$attributeSetId</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttribute</span>(‘customer’, ‘your_attribute_code_here’, <span style="color:#a2f;font-weight:bold">array</span>(  
+</span></span><span style="display:flex;"><span> ‘input’ <span style="color:#666">=&gt;</span> ‘text’, <span style="color:#080;font-style:italic">//or select or whatever you like  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> ‘type’ <span style="color:#666">=&gt;</span> ‘int’, <span style="color:#080;font-style:italic">//or varchar or anything you want it  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> ‘label’ <span style="color:#666">=&gt;</span> ‘Attribute description goes here’,  
+</span></span><span style="display:flex;"><span> ‘visible’ <span style="color:#666">=&gt;</span> <span style="color:#666">1</span>,  
+</span></span><span style="display:flex;"><span> ‘required’ <span style="color:#666">=&gt;</span> <span style="color:#666">0</span>, <span style="color:#080;font-style:italic">//mandatory? then 1  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> ‘user_defined’ <span style="color:#666">=&gt;</span> <span style="color:#666">1</span>,  
+</span></span><span style="display:flex;"><span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToGroup</span>(  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$entityTypeId</span>,  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attributeSetId</span>,  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attributeGroupId</span>,  
+</span></span><span style="display:flex;"><span> ‘your_attribute_code_here’,  
+</span></span><span style="display:flex;"><span> ‘100’  
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$oAttribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getSingleton</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘customer’, ‘your_attribute_code_here’);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$oAttribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">setData</span>(‘used_in_forms’, <span style="color:#a2f;font-weight:bold">array</span>(‘adminhtml_customer’));  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$oAttribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">save</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$setup</span><span style="color:#666">-&gt;</span><span style="color:#b44">endSetup</span>();</span></span></code></pre></div>
+<p>Here we have used our custom attribute’s:<br>
+– <em>input</em> type as <em>text</em>, but you can have it anything you like to appear in the form. It can be textarea, date, select or anything you want.<br>
+– data <em>type</em> as <em>int</em>, but you can have it anything from text, datetime, varchar or decimal. Remember customer is EAV in Magento, so it needs this information to store all the future values of this attribute in customer_entity_int (customer_entity_*) table.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Add additional product/item attributes in order and invoice emails</title>
+      <link>http://localhost:1313/magento-add-additional-product/item-attributes-in-order-and-invoice-emails/</link>
+      <pubDate>Thu, 24 Jan 2013 16:29:24 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-add-additional-product/item-attributes-in-order-and-invoice-emails/</guid>
+      <description>&lt;p&gt;Recently I was working with a German client, who wanted to show additional product attribute options in the order and invoice emails due to stricter law for e-commerce in their country. Magento provides basic information in the default email templates, but each store has their unique requirement to show additional information.&lt;/p&gt;&#xA;&lt;p&gt;I will show you how to add extra product attribute values, along with order item options and custom options in order emails and invoice emails.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Recently I was working with a German client, who wanted to show additional product attribute options in the order and invoice emails due to stricter law for e-commerce in their country. Magento provides basic information in the default email templates, but each store has their unique requirement to show additional information.</p>
+<p>I will show you how to add extra product attribute values, along with order item options and custom options in order emails and invoice emails.</p>
+<p>Here is the code that should work for order and invoice emails to get additional PRODUCT ATTRIBUTES displayed:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$productId</span> <span style="color:#666">=</span> <span style="color:#b8860b">$_item</span><span style="color:#666">-&gt;</span><span style="color:#b44">getProduct</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getId</span>(); <span style="color:#080;font-style:italic">//for order emails  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//$productId = $_item-&gt;getProductId(); //for invoice emails  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$product</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘catalog<span style="color:#666">/</span>product’)<span style="color:#666">-&gt;</span><span style="color:#b44">load</span>(<span style="color:#b8860b">$productId</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$attributes</span> <span style="color:#666">=</span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributes</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic">//Get a list of all PRODUCT ATTRIBUTES you want to show in this array…  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$dispAttribs</span> <span style="color:#666">=</span> <span style="color:#a2f;font-weight:bold">array</span>(‘hardrive’, ‘memory’, ‘processor’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$attributes</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$attribute</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$attributeCode</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getAttributeCode</span>();  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#666">!</span>in_array(<span style="color:#b8860b">$attributeCode</span>, <span style="color:#b8860b">$dispAttribs</span>)) <span style="color:#a2f;font-weight:bold">continue</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$label</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getFrontend</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getLabel</span>(<span style="color:#b8860b">$product</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$value</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getFrontend</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getValue</span>(<span style="color:#b8860b">$product</span>);  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">echo</span> “  
+</span></span><span style="display:flex;"><span><span style="color:#666">**</span>” <span style="color:#666">.</span> <span style="color:#b8860b">$label</span> <span style="color:#666">.</span> “<span style="color:#666">:**</span> ” <span style="color:#666">.</span> <span style="color:#b8860b">$value</span>;  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>For displaying CUSTOM OPTIONS and/or ITEM OPTIONS from the item, use this:<br>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span>(<span style="color:#b8860b">$this</span><span style="color:#666">-&gt;</span><span style="color:#b44">getItemOptions</span>() <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$opt</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(isset(<span style="color:#b8860b">$opt</span>[‘option_id’])) { <span style="color:#080;font-style:italic">//for CUSTOM OPTIONS  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#a2f;font-weight:bold">echo</span> “<span style="color:#666">**</span>” <span style="color:#666">.</span> <span style="color:#b8860b">$opt</span>[‘label’] <span style="color:#666">.</span> “<span style="color:#666">:**</span> “<span style="color:#666">.</span> <span style="color:#b8860b">$opt</span>[‘option_value’] <span style="color:#666">.</span> “  
+</span></span><span style="display:flex;"><span>“;  
+</span></span><span style="display:flex;"><span> } <span style="color:#a2f;font-weight:bold">else</span> { <span style="color:#080;font-style:italic">//for ITEM OPTIONS  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span> <span style="color:#a2f;font-weight:bold">echo</span> “<span style="color:#666">**</span>” <span style="color:#666">.</span> <span style="color:#b8860b">$opt</span>[‘label’] <span style="color:#666">.</span> “<span style="color:#666">:**</span> “<span style="color:#666">.</span> <span style="color:#b8860b">$opt</span>[‘value’] <span style="color:#666">.</span> “  
+</span></span><span style="display:flex;"><span>“;  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div></p>
+<p>For adding code to ORDER emails, the file where the code should go is:<br>
+app/design/frontend/base/default/template/email/order/items/order/default.phtml</p>
+<p>For adding code to INVOICE emails, the file where the code should go is:<br>
+app/design/frontend/base/default/template/email/order/items/invoice/default.phtml</p>
+<p>Instead of base/default, you can put it in your custom theme location which is obvious.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Magento: Get all the values of a Magento EAV for a particular attribute code</title>
+      <link>http://localhost:1313/magento-get-all-the-values-of-a-magento-eav-for-a-particular-attribute-code/</link>
+      <pubDate>Mon, 06 Jun 2011 10:12:18 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-get-all-the-values-of-a-magento-eav-for-a-particular-attribute-code/</guid>
+      <description>&lt;p&gt;If you have ever wondered how to get all the values of any EAV attribute for products in Magento, then this is the workaround for you:&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getModel&lt;/span&gt;(‘eav&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;config’)&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAttribute&lt;/span&gt;(‘catalog_product’, ‘color’); &lt;span style=&#34;color:#080;font-style:italic&#34;&gt;//here, “color” is the attribute_code  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#080;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#b8860b&#34;&gt;$allOptions&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$attribute&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getSource&lt;/span&gt;()&lt;span style=&#34;color:#666&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;getAllOptions&lt;/span&gt;(&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;, &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;true&lt;/span&gt;);  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;foreach&lt;/span&gt; (&lt;span style=&#34;color:#b8860b&#34;&gt;$allOptions&lt;/span&gt; &lt;span style=&#34;color:#a2f;font-weight:bold&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;) {  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$myArray&lt;/span&gt;[&lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;[‘value’]] &lt;span style=&#34;color:#666&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#b8860b&#34;&gt;$instance&lt;/span&gt;[‘label’];  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Mage&lt;span style=&#34;color:#666&#34;&gt;::&lt;/span&gt;&lt;span style=&#34;color:#b44&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#b8860b&#34;&gt;$myArray&lt;/span&gt;);&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;You will get list of all colors in an array called “myArray” in value =&amp;gt; label format.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>If you have ever wondered how to get all the values of any EAV attribute for products in Magento, then this is the workaround for you:</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#b8860b">$attribute</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(‘eav<span style="color:#666">/</span>config’)<span style="color:#666">-&gt;</span><span style="color:#b44">getAttribute</span>(‘catalog_product’, ‘color’); <span style="color:#080;font-style:italic">//here, “color” is the attribute_code  
+</span></span></span><span style="display:flex;"><span><span style="color:#080;font-style:italic"></span><span style="color:#b8860b">$allOptions</span> <span style="color:#666">=</span> <span style="color:#b8860b">$attribute</span><span style="color:#666">-&gt;</span><span style="color:#b44">getSource</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">getAllOptions</span>(<span style="color:#a2f;font-weight:bold">true</span>, <span style="color:#a2f;font-weight:bold">true</span>);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$allOptions</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$instance</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$myArray</span>[<span style="color:#b8860b">$instance</span>[‘value’]] <span style="color:#666">=</span> <span style="color:#b8860b">$instance</span>[‘label’];  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">log</span>(<span style="color:#b8860b">$myArray</span>);</span></span></code></pre></div>
+<p>You will get list of all colors in an array called “myArray” in value =&gt; label format.</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

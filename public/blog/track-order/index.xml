@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Track Order on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/track-order/</link>
+    <description>Recent content in Track Order on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 12 Feb 2012 06:50:06 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/track-order/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Show &amp;#8220;track your order&amp;#8221; in frontend &amp;#8211; My Orders</title>
+      <link>http://localhost:1313/magento-show-%238220track-your-order%238221-in-frontend-%238211-my-orders/</link>
+      <pubDate>Sun, 12 Feb 2012 06:50:06 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-show-%238220track-your-order%238221-in-frontend-%238211-my-orders/</guid>
+      <description>&lt;p&gt;It is always required for the customer to track their order. The shipping carriers can be anything: Aramex, Bluedart, DHL, First Flight, Federal Express, etc.. Navigate to My Account and place a button in My Orders section there “Track Order”. Paste the code below to link it to tracking popup that you can also see in backend Shipments area.&lt;/p&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;!-- raw HTML omitted --&gt;&#xA;&lt;p&gt;&lt;!-- raw HTML omitted --&gt; &lt;!-- raw HTML omitted --&gt;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>It is always required for the customer to track their order. The shipping carriers can be anything: Aramex, Bluedart, DHL, First Flight, Federal Express, etc.. Navigate to My Account and place a button in My Orders section there “Track Order”. Paste the code below to link it to tracking popup that you can also see in backend Shipments area.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p><a href=""></a></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Preparation on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/preparation/</link>
+    <description>Recent content in Preparation on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Fri, 04 Jan 2013 11:28:05 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/preparation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Certification Preparation / Interview Questions Answers</title>
+      <link>http://localhost:1313/magento-certification-preparation-/-interview-questions-answers/</link>
+      <pubDate>Fri, 04 Jan 2013 11:28:05 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-certification-preparation-/-interview-questions-answers/</guid>
+      <description>&lt;p&gt;Hi guys, here is the stuff I collected and created from myriad number of websites/blogs/forums/ magento source codebase during my Magento certification preparation. I have put all the things I found and studied during my preparation in one place, so that other developers who are preparing for the exam can benefit from it.&lt;/p&gt;&#xA;&lt;p&gt;Credits to all who have contributed these things over the web from where I copied for study purpose. Few credits to me as well as I also have contributed many things in it 🙂 This may contain errors and wrong information and I don’t guarantee it to be completely correct. But this should be a good resource if you want a heads up! Please be aware that you need to go through the study guide and fundamental videos yourself in order to pass this exam.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Hi guys, here is the stuff I collected and created from myriad number of websites/blogs/forums/ magento source codebase during my Magento certification preparation. I have put all the things I found and studied during my preparation in one place, so that other developers who are preparing for the exam can benefit from it.</p>
+<p>Credits to all who have contributed these things over the web from where I copied for study purpose. Few credits to me as well as I also have contributed many things in it 🙂 This may contain errors and wrong information and I don’t guarantee it to be completely correct. But this should be a good resource if you want a heads up! Please be aware that you need to go through the study guide and fundamental videos yourself in order to pass this exam.</p>
+<p><em>If you are here to prepare for Interview, then I would recommend you to also go through these links:</em><br>
+<a href="http://ka.lpe.sh/2012/07/19/magento-interview-questions-and-answers/" title="Magento Interview questions and answers">Magento Interview questions and answers</a><br>
+<a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/" title="Magento Advanced Interview questions">Magento Advanced Interview questions/</a></p>
+<p>The below stuff alone will definitely not going to help you much in passing the exam. Not to mention, these resource can also be used for Magento interview preparation.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>Magento supports and loads translations in the following order:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – Module Translation CSV in /app/locale  
+</span></span><span style="display:flex;"><span> – Theme Translation CSV in /app/design/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">area</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">area</span>&gt;/&lt;<span style="color:#008000;font-weight:bold">package</span>&gt;/&lt;<span style="color:#008000;font-weight:bold">theme</span>&gt;/locale (theme folder translate)  
+</span></span><span style="display:flex;"><span> – DB Translation Database (table core_translate) ——-  
+</span></span><span style="display:flex;"><span>How many options exist to add a custom translation for any given string?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> As mentioned above, there are three options in Magento to add a custom translation to a text string: module translation, theme translation and inline translation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 1. Module translation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Module translations are stored in app/locale/languagecode_COUNTRYCODE/ folder in form of csv files, named as Namespace_Modulename.csv All string in extensions that are inside __() method can be translated this way
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 2. Theme translation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Strings can be translated inside your theme, for that you just need to set locale via Magento admin area, then create translate.csv in app/design/frontend/&lt;<span style="color:#008000;font-weight:bold">package</span>&gt;/&lt;<span style="color:#008000;font-weight:bold">theme</span>&gt;/locale/ languagecode_COUNTRYCODE and put your translated strings inside this CSV  
+</span></span><span style="display:flex;"><span> “My Cart”,”My Basket”  
+</span></span><span style="display:flex;"><span> “My Account”,”Account”&lt;/<span style="color:#008000;font-weight:bold">theme</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">package</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 3. Inline translation
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To enable inline translation you need to log into Admin panel and go to System -&gt; Configuration -&gt; Developer.  
+</span></span><span style="display:flex;"><span> You need to select Store view from scope select and enable inline translation for this desired store view there.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Magento uses the Front Controller pattern for the following purposes:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Receiving and processing browser data, transferring it to other system elements;  
+</span></span><span style="display:flex;"><span> Defining controller and proper action to perform using routes;  
+</span></span><span style="display:flex;"><span> Displaying browser-requested data using blocks, templates and model data.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(Front Controller) Routes processing order
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – standard
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – cms
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – default  
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Mage::getModel() =&gt; getModelInstance() =&gt; getModelClassName() =&gt; new ClassNameInitializes…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage :: getModel($modelClass, $arguments){  
+</span></span><span style="display:flex;"><span> Mage_Core_Model_Config :: getModelInstance($modelClass, $arguments){  
+</span></span><span style="display:flex;"><span> $className = $this-&gt;getModelClassName($modelClass){  
+</span></span><span style="display:flex;"><span> return $this-&gt;getGroupedClassName(‘model’, $modelClass)  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> …  
+</span></span><span style="display:flex;"><span> $obj = new $className($arguments);  
+</span></span><span style="display:flex;"><span> }  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-  
+</span></span><span style="display:flex;"><span>Front Controller events… Mage_Core_Controller_Varien_Front
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>controller_front_init_before  
+</span></span><span style="display:flex;"><span>controller_front_init_routers  
+</span></span><span style="display:flex;"><span>controller_front_send_response_before  
+</span></span><span style="display:flex;"><span>controller_front_send_response_after
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-  
+</span></span><span style="display:flex;"><span>Mage_Core_Controller_Varien_Action fires events…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>controller_action_layout_load_before  
+</span></span><span style="display:flex;"><span>controller_action_layout_generate_xml_before  
+</span></span><span style="display:flex;"><span>controller_action_layout_generate_blocks_before  
+</span></span><span style="display:flex;"><span>controller_action_layout_generate_blocks_after  
+</span></span><span style="display:flex;"><span>controller_action_layout_render_before  
+</span></span><span style="display:flex;"><span>controller_action_layout_render_before_{getFullActionName}  
+</span></span><span style="display:flex;"><span>controller_action_predispatch  
+</span></span><span style="display:flex;"><span>controller_action_predispatch_{getRouteName}  
+</span></span><span style="display:flex;"><span>controller_action_predispatch_{getFullActionName}  
+</span></span><span style="display:flex;"><span>controller_action_postdispatch  
+</span></span><span style="display:flex;"><span>controller_action_postdispatch_{getFullActionName}  
+</span></span><span style="display:flex;"><span>controller_action_postdispatch_{getRouteName}  
+</span></span><span style="display:flex;"><span>controller_action_noroute  
+</span></span><span style="display:flex;"><span>controller_action_nocookies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>http://blog.belvg.com/magento-front-controller-pattern.html  
+</span></span><span style="display:flex;"><span>http://magebase.com/magento-tutorials/digging-deeper-into-magentos-layout-xml-part-2/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-  
+</span></span><span style="display:flex;"><span>The layout initialization happens as follows:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 1. Instances of the Layout and Layout Update are created.  
+</span></span><span style="display:flex;"><span> 2. Layout handles are added according to the $handles argument if passed.  
+</span></span><span style="display:flex;"><span> 3. Store layout handle STORE_[store_code] is added to the Layout Update Instance. For example, if code of current store is en, then layout handle STORE_en is added.  
+</span></span><span style="display:flex;"><span> 4. Theme layout handle THEME_[area]_[package]_[layout_theme] is added to the Layout Update Instance. For example, if the page rendered is for the frontend area, the current theme package name is magebase and theme name for layout is modern, then the layout handle THEME_frontend_magebase_modern is added.  
+</span></span><span style="display:flex;"><span> 5. Action layout handle is added to the Layout Update Instance. For example, if the page rendered is a category detail page, then Magento is executing catalog module’s category controller’s view action. So it will add an action handle catalog_category_view.  
+</span></span><span style="display:flex;"><span> 6. All Layout XML files defined for all active modules are loaded  
+</span></span><span style="display:flex;"><span> 7. If a layout file named local.xml exists in the current theme’s layout folder, it is loaded last  
+</span></span><span style="display:flex;"><span> 8. Layout updates of all added layout handles from the loaded layout XML are merged  
+</span></span><span style="display:flex;"><span> 9. Layout updates of all added layout handles from the database are merged  
+</span></span><span style="display:flex;"><span> 10. If the $generateXML argument of loadLayout() method is passed as false, the initialization is finished.  
+</span></span><span style="display:flex;"><span> 11. The layout update data is refined by removing all blocks and block references defined with the remove tag. (As discussed in Part 1)  
+</span></span><span style="display:flex;"><span> 12. If $generateBlocks argument is passed as false, the initialization is finished.  
+</span></span><span style="display:flex;"><span> 13. The instances of block classes are created according to the block definitions in the Layout XML  
+</span></span><span style="display:flex;"><span> 14. The methods are called with specified arguments on the blocks where action tags are defined. (As discussed in Part 1)  
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>A layout should have at least one *output* block. Normally, the root block is the only output block in a layout but there can be multiple output blocks for a single page. In that case, the output of each output block is merged and returned in the response.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The *non-output* blocks are child blocks of output blocks and are normally rendered with the getChildHtml() method. There are also two other methods: getChildChildHtml() and getBlockHtml() also used to render non-output blocks.  
+</span></span><span style="display:flex;"><span>——-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Blocks can be instantiated via layout xml (&lt;<span style="color:#008000;font-weight:bold">block</span> <span style="color:#b44">addblock</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">after</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">and</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">config</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">createblock</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">crontab</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">file</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">finally</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">for</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">getblock</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">in</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">initialization</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">invokes</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">located</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">mage_core_model_layout</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">mage_cron_model_observer-</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">magento</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">methods</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">of</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">section</span><span style="color:#666">=</span><span style="color:#b44">&#34;&#34;</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;”groupName/setup”…),&#34;</span>&gt;dipatch() that does the following:&lt;/<span style="color:#008000;font-weight:bold">block</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Process scheduled cron queue: Magento reads the cron schedule table for jobs that need to be executed this very second and jobs that should have already been executed, i.e. with timestamps in the past, that haven’t expired. The expiry limit is also a parameter, configurable in the admin panel. After all the work, dispatch method calls two generate() and cleanup() methods
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Generate tasks schedule: Mage_Cron_Model_Observer-&gt;generate(), this method searches final configuration file for content of &lt;<span style="color:#008000;font-weight:bold">crontab</span>&gt; nodes ($config = Mage::getConfig()-&gt;getNode(‘crontab/jobs’); ), reading &lt;<span style="color:#008000;font-weight:bold">schedule</span>&gt;&lt;<span style="color:#008000;font-weight:bold">cron_expr</span>&gt; elements to find out when and how often they need to be executed and pulls this data into the cron_schedule table.&lt;/<span style="color:#008000;font-weight:bold">cron_expr</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">schedule</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">crontab</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Cleanup: Mage_Cron_Model_Observer-&gt;cleanup(), this method deletes completed (with ‘success’ status) or missed ($time <span style="">&lt;</span> $now – $scheduleLifetime, where $scheduleLifetime are set in Magento admin area) jobs from cron_schedule DB table. ------- 1. All .xml files are collected into one big simpleXmlElement object 2. First, data is loaded from app/etc/*.xml and then from app/etc/modules/*.xml. Based on the module loaded information, config.xml is loaded from the etc directory of the module. If we load backend to check ACL and build menu elements, adminhtml.xml and system.xml are loaded as well. Configuration data from the database is the last one to load. 3. Any parameters, except the ones stored in app/etc/local.xml, can be overridden in config.xml of a custom module. P.S. Even though Magento provides us with such convenient methods as Mage:: getStoreConfig() and Mage:: getStoreConfigFlag(), we can reach any element of the configuration tree with the help of Mage::getConfig()-&gt;getNode($path, $scope, $scopeCode);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——-  
+</span></span><span style="display:flex;"><span>Difference: A Website, a Store and a Store View.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Each websites has its unique customer and order base, base currency and prices.  
+</span></span><span style="display:flex;"><span> Stores can be used to define for example different (looking) stores with the same information.  
+</span></span><span style="display:flex;"><span> Store Views are mostly used to handle different languages on your website. You will typically have one Store View per language.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Setting And Getting Cookies
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To set cookies:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::getModel(‘core/cookie’)-&gt;set(‘cookie_name’, ‘cookie_value’, 0); # session cookie  
+</span></span><span style="display:flex;"><span> Mage::getModel(‘core/cookie’)-&gt;set(‘cookie_name’, ‘cookie_value’, 60); #lasts 60 seconds
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To get cookies:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::getModel(‘core/cookie’)-&gt;get(‘made_productalerts_stock’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Sending Transactional E-Mails
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $email = Mage::getModel(‘core/email_template’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $email-&gt;sendTransactional(  
+</span></span><span style="display:flex;"><span> ‘some_email_template’, // template  
+</span></span><span style="display:flex;"><span> array(‘name’ =&gt; ‘Your Company’, ’email’ =&gt; ‘contact@yourcompany.com’), // sender details  
+</span></span><span style="display:flex;"><span> ‘joe@joebloggs.com’, // recipient email  
+</span></span><span style="display:flex;"><span> ‘Joe Bloggs’, // recipient name  
+</span></span><span style="display:flex;"><span> array(‘customerName’ =&gt; ‘Joe Bloggs’), // merge vars  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getStore()-&gt;getStoreId() // store id  
+</span></span><span style="display:flex;"><span> );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Resizing A Product Image
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $helper = Mage::helper(‘catalog/image’);  
+</span></span><span style="display:flex;"><span> $helper-&gt;init($product, ‘image’);  
+</span></span><span style="display:flex;"><span> $helper-&gt;resize(216, 161);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Adding A Layout Handle From A Controller
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> If you really need to add a handle to a controller, you need to replace the call to $this-&gt;loadLayout() with:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $update = $this-&gt;getLayout()-&gt;getUpdate();  
+</span></span><span style="display:flex;"><span> $update-&gt;addHandle(‘default’);  
+</span></span><span style="display:flex;"><span> $this-&gt;addActionLayoutHandles();  
+</span></span><span style="display:flex;"><span> $update-&gt;addHandle(‘your_handle’);  
+</span></span><span style="display:flex;"><span> $this-&gt;loadLayoutUpdates();  
+</span></span><span style="display:flex;"><span> $this-&gt;generateLayoutXml();  
+</span></span><span style="display:flex;"><span> $this-&gt;generateLayoutBlocks();  
+</span></span><span style="display:flex;"><span> $this-&gt;_isLayoutLoaded = true;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Config URL Rewrite Definition
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> xpath: global/rewrite/module/from<span style="color:#999;font-weight:bold">&amp;amp;</span>to  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">rewrite</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">namespace_module</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">from</span>&gt;<span style="color:#080">&lt;![CDATA[#^/some/regex/([a-z]*/?$#]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">from</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">to</span>&gt;<span style="color:#080">&lt;![CDATA[/frontname/whatever/whatever/blah/$1]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">to</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">namespace_module</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">rewrite</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Config Model Rewrite Definition
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> xpath: global/models/catalog/rewrite/product  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">models</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">catalog</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">rewrite</span>&gt; &lt;<span style="color:#008000;font-weight:bold">product</span>&gt;Namespace_Module_Catalog_Product&lt;/<span style="color:#008000;font-weight:bold">product</span>&gt; &lt;/<span style="color:#008000;font-weight:bold">rewrite</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">catalog</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">models</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Overriding A Controller
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> xpath: frontend/routers/checkout/args/modules/  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">frontend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">routers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">checkout</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">args</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">modules</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">your_module</span> <span style="color:#b44">before</span><span style="color:#666">=</span><span style="color:#b44">&#34;Mage_Checkout&#34;</span>&gt;Your_Module_Checkout&lt;/<span style="color:#008000;font-weight:bold">your_module</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">modules</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">args</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">checkout</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">routers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">frontend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Config Transactional Email Template Definition
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">template</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">email</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">your_module_email_something_template</span> <span style="color:#b44">module</span><span style="color:#666">=</span><span style="color:#b44">&#34;namespace_module&#34;</span> <span style="color:#b44">translate</span><span style="color:#666">=</span><span style="color:#b44">&#34;label&#34;</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">label</span>&gt;Something&lt;/<span style="color:#008000;font-weight:bold">label</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">file</span>&gt;namespace/module/something.html&lt;/<span style="color:#008000;font-weight:bold">file</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">type</span>&gt;html&lt;/<span style="color:#008000;font-weight:bold">type</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">your_module_email_something_template</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">email</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">template</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Block Caching
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To cache a block individually, add this method to the blocks class:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> protected function _construct()  
+</span></span><span style="display:flex;"><span> {  
+</span></span><span style="display:flex;"><span> $this-&gt;addData(array(  
+</span></span><span style="display:flex;"><span> ‘cache_lifetime’ =&gt; 3600,  
+</span></span><span style="display:flex;"><span> ‘cache_tags’ =&gt; array(Mage_Cms_Model_Block::CACHE_TAG),  
+</span></span><span style="display:flex;"><span> ‘cache_key’ =&gt; ‘CACHE_KEY’,  
+</span></span><span style="display:flex;"><span> ));  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———–  
+</span></span><span style="display:flex;"><span>Config Two-Level Memcached <span style="color:#999;font-weight:bold">&amp;amp;</span> DB Definition
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">cache</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">backend</span>&gt;memcached&lt;/<span style="color:#008000;font-weight:bold">backend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">slow_backend</span>&gt;database&lt;/<span style="color:#008000;font-weight:bold">slow_backend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">id_prefix</span>&gt;cache_&lt;/<span style="color:#008000;font-weight:bold">id_prefix</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">memcached</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">servers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">server1</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">host</span>&gt;<span style="color:#080">&lt;![CDATA[localhost]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">host</span>&gt; &lt;<span style="color:#008000;font-weight:bold">port</span>&gt;<span style="color:#080">&lt;![CDATA[11211]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">port</span>&gt; &lt;<span style="color:#008000;font-weight:bold">persistent</span>&gt;<span style="color:#080">&lt;![CDATA[0]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">persistent</span>&gt; &lt;<span style="color:#008000;font-weight:bold">weight</span>&gt;<span style="color:#080">&lt;![CDATA[1]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">weight</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">timeout</span>&gt;<span style="color:#080">&lt;![CDATA[60]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">timeout</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">retry_interval</span>&gt;<span style="color:#080">&lt;![CDATA[10]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">retry_interval</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">server1</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">servers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">compression</span>&gt;<span style="color:#080">&lt;![CDATA[0]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">compression</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">cache_dir</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">cache_dir</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">hashed_directory_level</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">hashed_directory_level</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">hashed_directory_umask</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">hashed_directory_umask</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">file_name_prefix</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">file_name_prefix</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">memcached</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">cache</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">full_page_cache</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">backend</span>&gt;memcached&lt;/<span style="color:#008000;font-weight:bold">backend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">slow_backend</span>&gt;database&lt;/<span style="color:#008000;font-weight:bold">slow_backend</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">id_prefix</span>&gt;fullpagecache_&lt;/<span style="color:#008000;font-weight:bold">id_prefix</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">memcached</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">servers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">server1</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">host</span>&gt;<span style="color:#080">&lt;![CDATA[localhost]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">host</span>&gt; &lt;<span style="color:#008000;font-weight:bold">port</span>&gt;<span style="color:#080">&lt;![CDATA[11211]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">port</span>&gt; &lt;<span style="color:#008000;font-weight:bold">persistent</span>&gt;<span style="color:#080">&lt;![CDATA[0]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">persistent</span>&gt; &lt;<span style="color:#008000;font-weight:bold">weight</span>&gt;<span style="color:#080">&lt;![CDATA[1]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">weight</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">timeout</span>&gt;<span style="color:#080">&lt;![CDATA[60]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">timeout</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">retry_interval</span>&gt;<span style="color:#080">&lt;![CDATA[10]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">retry_interval</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">server1</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">servers</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">compression</span>&gt;<span style="color:#080">&lt;![CDATA[0]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">compression</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">cache_dir</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">cache_dir</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">hashed_directory_level</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">hashed_directory_level</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">hashed_directory_umask</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">hashed_directory_umask</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">file_name_prefix</span>&gt;<span style="color:#080">&lt;![CDATA[]]&gt;</span>&lt;/<span style="color:#008000;font-weight:bold">file_name_prefix</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">memcached</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">full_page_cache</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———–  
+</span></span><span style="display:flex;"><span>Add comment to form input in admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $afterElementHtml = ‘
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#008000;font-weight:bold">small</span>&gt;‘ . ‘ this is the hint! ‘ . ‘&lt;/<span style="color:#008000;font-weight:bold">small</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>‘;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $linkFieldset-&gt;addField(‘field_name’, ‘text’, array(  
+</span></span><span style="display:flex;"><span> ‘after_element_html’ =&gt; $afterElementHtml,  
+</span></span><span style="display:flex;"><span> ));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———–  
+</span></span><span style="display:flex;"><span>Category Product Collection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> This snippet provides a collection of products within a category
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $cat = Mage::getModel(‘catalog/category’)-&gt;load(1);  
+</span></span><span style="display:flex;"><span> $coll = Mage::getResourceModel(‘catalog/product_collection’);  
+</span></span><span style="display:flex;"><span> $coll-&gt;addCategoryFilter($cat);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Adding BreadCrumbs
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Via code (usually in a controller):
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $crumbs = Mage::app()-&gt;getLayout-&gt;getBlock(‘breadcrumbs’);  
+</span></span><span style="display:flex;"><span> $crumbs-&gt;addCrumb(‘home’, array(  
+</span></span><span style="display:flex;"><span> ‘label’ =&gt; ‘Home’,  
+</span></span><span style="display:flex;"><span> ‘title’ =&gt; ‘Go to Home Page’,  
+</span></span><span style="display:flex;"><span> ‘link’ =&gt; Mage::getUrl(”)  
+</span></span><span style="display:flex;"><span> ));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Via Layout XML:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">reference</span> <span style="color:#b44">name</span><span style="color:#666">=</span><span style="color:#b44">&#34;breadcrumbs&#34;</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addCrumb&#34;</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">crumbname</span>&gt;Home&lt;/<span style="color:#008000;font-weight:bold">crumbname</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">crumbinfo</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">label</span>&gt;Home&lt;/<span style="color:#008000;font-weight:bold">label</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">title</span>&gt;Go to Home Page&lt;/<span style="color:#008000;font-weight:bold">title</span>&gt; &lt;<span style="color:#008000;font-weight:bold">link</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">link</span>&gt;/ &lt;/<span style="color:#008000;font-weight:bold">crumbinfo</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">action</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">reference</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Adding new Total Collector Model….
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> extends… Mage_Sales_Model_Quote_Address_Total_Abstract  
+</span></span><span style="display:flex;"><span> config… config/global/sales/quote/totals/custom…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">sales</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">quote</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">totals</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">custom_total</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">class</span>&gt;mynamespace_mymodule/total&lt;/<span style="color:#008000;font-weight:bold">class</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">before</span>&gt;grand_total&lt;/<span style="color:#008000;font-weight:bold">before</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">after</span>&gt;subtotal,tax_subtotal&lt;/<span style="color:#008000;font-weight:bold">after</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">custom_total</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">totals</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">quote</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">sales</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> priority of total collector models can be changed by before and after tags..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> The method *collect* is used to calculate total for the shopping cart, and the method *fetch* is used to fetch data to display in frontend
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>custom product type..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> xpath: global/catalog/product/type/custom_product_type/model<span style="color:#999;font-weight:bold">&amp;amp;</span>price_model<span style="color:#999;font-weight:bold">&amp;amp;</span>allow_product_types<span style="color:#999;font-weight:bold">&amp;amp;</span>price_indexer  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">catalog</span>&gt; &lt;<span style="color:#008000;font-weight:bold">product</span>&gt; &lt;<span style="color:#008000;font-weight:bold">type</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">configurable</span> <span style="color:#b44">module</span><span style="color:#666">=</span><span style="color:#b44">&#34;catalog&#34;</span> <span style="color:#b44">translate</span><span style="color:#666">=</span><span style="color:#b44">&#34;label&#34;</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">label</span>&gt;Configurable Product&lt;/<span style="color:#008000;font-weight:bold">label</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">model</span>&gt;catalog/product_type_configurable&lt;/<span style="color:#008000;font-weight:bold">model</span>&gt; &lt;<span style="color:#008000;font-weight:bold">price_model</span>&gt;catalog/product_type_configurable_price&lt;/<span style="color:#008000;font-weight:bold">price_model</span>&gt; &lt;<span style="color:#008000;font-weight:bold">composite</span>&gt;1&lt;/<span style="color:#008000;font-weight:bold">composite</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">allow_product_types</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">simple</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">simple</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">virtual</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">virtual</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">allow_product_types</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">index_priority</span>&gt;30&lt;/<span style="color:#008000;font-weight:bold">index_priority</span>&gt; &lt;<span style="color:#008000;font-weight:bold">price_indexer</span>&gt;catalog/product_indexer_price_configurable&lt;/<span style="color:#008000;font-weight:bold">price_indexer</span>&gt; &lt;/<span style="color:#008000;font-weight:bold">configurable</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">type</span>&gt; &lt;/<span style="color:#008000;font-weight:bold">product</span>&gt; &lt;/<span style="color:#008000;font-weight:bold">catalog</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>custom indexer..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> xpath: global/index/indexer/custom_indexer/model<span style="color:#999;font-weight:bold">&amp;amp;</span>depends  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">config</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">index</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">indexer</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">test_indexer</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">model</span>&gt;test/indexer&lt;/<span style="color:#008000;font-weight:bold">model</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">depends</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">catalog_url</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">catalog_url</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">depends</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">test_indexer</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">indexer</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">index</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">global</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;/<span style="color:#008000;font-weight:bold">config</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> class Blah.. extends Mage_Index_Model_Indexer_Abstract  
+</span></span><span style="display:flex;"><span> getName: get custom indexer name  
+</span></span><span style="display:flex;"><span> getDescription: get custom indexer description  
+</span></span><span style="display:flex;"><span> _registerEvent: custom registered event  
+</span></span><span style="display:flex;"><span> _processEvent: used when processing the index event  
+</span></span><span style="display:flex;"><span> reindexAll: reindex all items of your entity
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::getModel(‘index/indexer’)-&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————–  
+</span></span><span style="display:flex;"><span>Getting A Database Adapter (Read or Write)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To read:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::getSingleton(‘core/resource’)-&gt;getConnection(‘core_read’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> To write:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::getSingleton(‘core/resource’)-&gt;getConnection(‘core_write’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-  
+</span></span><span style="display:flex;"><span>Add Product attribute
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $installer = Mage::getResourceModel(‘catalog/setup’, ‘catalog_setup’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> if (!$installer-&gt;getAttributeId(Mage_Catalog_Model_Product::ENTITY, ‘attribute_name’)) {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $installer-&gt;addAttribute(Mage_Catalog_Model_Product::ENTITY, ‘attribute_name’, array( // TABLE.COLUMN: DESCRIPTION:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘label’ =&gt; ‘Label’, // eav_attribute.frontend_label — admin input label
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘group’ =&gt; ‘General’, // (not a column) tab in product edit screen
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘sort_order’ =&gt; 0, // eav_entity_attribute.sort_order sort order in group
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘backend’ =&gt; ‘module/class_name’, // eav_attribute.backend_model — backend class (module/class_name format)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘type’ =&gt; ‘varchar’, // eav_attribute.backend_type — backend storage type (varchar, text etc)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘frontend’ =&gt; ‘module/class_name’, // eav_attribute.frontend_model — admin class (module/class_name format)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘note’ =&gt; null, // eav_attribute.note — admin input note (shows below input)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘default’ =&gt; null, // eav_attribute.default_value — admin input default value
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘wysiwyg_enabled’ =&gt; false, // catalog_eav_attribute.is_wysiwyg_enabled — (products only) admin input wysiwyg enabled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘input’ =&gt; ‘input_name’, // eav_attribute.frontend_input — admin input type (select, text, textarea etc)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘input_renderer’ =&gt; ‘module/class_name’, // catalog_eav_attribute.frontend_input_renderer — (products only) admin input renderer  
+</span></span><span style="display:flex;"><span> (otherwise input is used to resolve renderer)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘source’ =&gt; null, // eav_attribute.source_model — admin input source model (for selects) (module/class_name format)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘required’ =&gt; true, // eav_attribute.is_required — required in admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘user_defined’ =&gt; false, // eav_attribute.is_user_defined — editable in admin attributes section, false for not
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘unique’ =&gt; false, // eav_attribute.is_unique — unique value required
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘global’ =&gt; Mage_Catalog_Model_Resource_Eav_Attribute::SCOPE_GLOBAL, // catalog_eav_attribute.is_global —  
+</span></span><span style="display:flex;"><span> (products only) scope
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘visible’ =&gt; true, // catalog_eav_attribute.is_visible — (products only) visible on admin, setting to false stops import  
+</span></span><span style="display:flex;"><span> of this attribute
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘visible_on_front’ =&gt; false, // catalog_eav_attribute.is_visible_on_front — (products only) visible on frontend (store)  
+</span></span><span style="display:flex;"><span> attribute table
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘used_in_product_listing’ =&gt; false, // catalog_eav_attribute.used_in_product_listing — (products only) made available in  
+</span></span><span style="display:flex;"><span> product listing
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘searchable’ =&gt; false, // catalog_eav_attribute.is_searchable — (products only) searchable via basic search
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘visible_in_advanced_search’ =&gt; false, // catalog_eav_attribute.is_visible_in_advanced_search (products only) searchable via  
+</span></span><span style="display:flex;"><span> advanced search
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘filterable’ =&gt; false, // catalog_eav_attribute.is_filterable — (products only) use in layered nav
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘filterable_in_search’ =&gt; false, // catalog_eav_attribute.is_filterable_in_search — (products only) use in search results  
+</span></span><span style="display:flex;"><span> layered nav
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘comparable’ =&gt; false, // catalog_eav_attribute.is_comparable — (products only) comparable on frontend
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘is_html_allowed_on_front’ =&gt; true, // catalog_eav_attribute.is_visible_on_front — (products only) seems obvious, but also see  
+</span></span><span style="display:flex;"><span> visible
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘apply_to’ =&gt; ‘simple,configurable’, // catalog_eav_attribute.apply_to — (products only) which product types to apply to
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘is_configurable’ =&gt; false, // catalog_eav_attribute.is_configurable — (products only) used for configurable products  
+</span></span><span style="display:flex;"><span> or not
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘used_for_sort_by’ =&gt; false, // catalog_eav_attribute.used_for_sort_by — (products only) available in the ‘sort by’ menu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘position’ =&gt; 0, // catalog_eav_attribute.position — (products only) position in layered naviagtion
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘used_for_promo_rules’ =&gt; false, // catalog_eav_attribute.is_used_for_promo_rules — (products only) available for use in  
+</span></span><span style="display:flex;"><span> promo rules
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ));  
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————  
+</span></span><span style="display:flex;"><span>mage_sales_model_quote  
+</span></span><span style="display:flex;"><span>* Supported events:  
+</span></span><span style="display:flex;"><span> * sales_quote_load_after  
+</span></span><span style="display:flex;"><span> * sales_quote_save_before  
+</span></span><span style="display:flex;"><span> * sales_quote_save_after  
+</span></span><span style="display:flex;"><span> * sales_quote_delete_before  
+</span></span><span style="display:flex;"><span> * sales_quote_delete_after
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————  
+</span></span><span style="display:flex;"><span>The “-&gt;getTypeInstance(true)” allows you to retrieve an object that describes the type of the product, where type is the internal magento type. So, you can use this method to determine if a products is a simple product, a bundled product, a configurable product, etc.  
+</span></span><span style="display:flex;"><span>————
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Magento translate trace…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Mage::helper(‘core’)-&gt;__()  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getTranslator()  
+</span></span><span style="display:flex;"><span> Mage_Core_Model_Translate::translate()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————————————————  
+</span></span><span style="display:flex;"><span>Show custom total…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> sales_order_view – frontend order view page  
+</span></span><span style="display:flex;"><span> sales_order_invoice  
+</span></span><span style="display:flex;"><span> sales_order_creditmemo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> sales_order_print – print page
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> sales_email_order_items – email template  
+</span></span><span style="display:flex;"><span> sales_email_order_invoice_items  
+</span></span><span style="display:flex;"><span> sales_email_order_creditmemo_items
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> adminhtml_sales_order_view – backend order view page  
+</span></span><span style="display:flex;"><span> adminhtml_sales_order_invoice_new – backend new invoice view page  
+</span></span><span style="display:flex;"><span> adminhtml_sales_order_invoice_view – backend invoice view page  
+</span></span><span style="display:flex;"><span> adminhtml_sales_order_creditmemo_new – backend new creditmemo view page  
+</span></span><span style="display:flex;"><span> adminhtml_sales_order_creditmemo_view – backend creditmemo view page
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Different from catalog cart rules, shopping cart rules define the promotion for customer only when customer checks out product. They can be specified by either coupon code or others.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————–  
+</span></span><span style="display:flex;"><span>http://magento-quickies.tumblr.com/post/14272607486/configurable-product-research  
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>*catalog_product_super_link* table only contains data related to configurable products.  
+</span></span><span style="display:flex;"><span>*catalog_product_relation* contains the relation information for bundled and grouped products, in addition to the configurable relations.  
+</span></span><span style="display:flex;"><span>*eav_entity_store* contains increment id information of orders, invoices, creditmemos, shipments, etc..  
+</span></span><span style="display:flex;"><span>————–  
+</span></span><span style="display:flex;"><span>*tier prices* works with website, customer group, price and quantity (price_qty).  
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>admin menu, render navigation items by class Mage_Adminhtml_Block_Page_Menu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>_isAllowed() checks navigation permission acl,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>User: the entity that has an authority to use the system. The user that we mention in Magento is the backend user.  
+</span></span><span style="display:flex;"><span>Role: the role of the user when logging in to the system. In Magento, a user has only a role.  
+</span></span><span style="display:flex;"><span>Rule: the rule set of user and role. It defines user’s permission or role’s permission to access the resource.  
+</span></span><span style="display:flex;"><span>Assert: the condition to active an item in ACL. It is used for a special control when checking permission by ACL.  
+</span></span><span style="display:flex;"><span>—————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>– Accessing Magento API via SOAP – basic steps
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Create appropriate role (Magento Admin)  
+</span></span><span style="display:flex;"><span>Create web services user (Magento Admin)  
+</span></span><span style="display:flex;"><span>Assign created role to the user (Magento Admin)  
+</span></span><span style="display:flex;"><span>Log-in to web service and retrieve Session Id (Soap Client)  
+</span></span><span style="display:flex;"><span>Call appropriate method (Soap Client)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Different ways to instantiate block:  
+</span></span><span style="display:flex;"><span> – $block = new Packagename_Modulename_Block_Foo;  
+</span></span><span style="display:flex;"><span> – $class = Mage::getConfig()-&gt;getBlockClassName(‘groupname/foo’);  
+</span></span><span style="display:flex;"><span> $block = new $class;  
+</span></span><span style="display:flex;"><span> – $layout = Mage::getSingleton(‘core/layout’);  
+</span></span><span style="display:flex;"><span> $block = $layout-&gt;createBlock(‘groupname/foo’);  
+</span></span><span style="display:flex;"><span> OR $block = $this-&gt;getLayout()-&gt;createBlock(‘groupname/foo’);  
+</span></span><span style="display:flex;"><span> – &lt;<span style="color:#008000;font-weight:bold">block</span> <span style="color:#b44">name</span><span style="color:#666">=</span><span style="color:#b44">&#34;baz&#34;</span> <span style="color:#b44">type</span><span style="color:#666">=</span><span style="color:#b44">&#34;groupname/foo&#34;</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">block</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>– Call block outside Magento
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> require_once ‘app/Mage.php’;  
+</span></span><span style="display:flex;"><span> Mage::init();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $layout = Mage::app()-&gt;getLayout();  
+</span></span><span style="display:flex;"><span> $layout-&gt;getUpdate()  
+</span></span><span style="display:flex;"><span> -&gt;addHandle(‘default’)  
+</span></span><span style="display:flex;"><span> -&gt;addHandle(‘some_other_handle’)  
+</span></span><span style="display:flex;"><span> -&gt;load();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> /*  
+</span></span><span style="display:flex;"><span> * Generate blocks, but XML from previously loaded layout handles must be  
+</span></span><span style="display:flex;"><span> * loaded first.  
+</span></span><span style="display:flex;"><span> */  
+</span></span><span style="display:flex;"><span> $layout-&gt;generateXml()  
+</span></span><span style="display:flex;"><span> -&gt;generateBlocks();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $cart = $layout-&gt;getBlock(‘cart_sidebar’)-&gt;toHtml();  
+</span></span><span style="display:flex;"><span> echo $cart;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To create new attribute in customer frontend, these three tables will be affected:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> – eav_attribute  
+</span></span><span style="display:flex;"><span> – customer_eav_attribute : id of eav_attribute here..  
+</span></span><span style="display:flex;"><span> – customer_form_attribute : 3 entries here too, for adminhtml_customer, customer_account_create and customer_account_edit
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>simple models have a resource that inherits from Mage_Core_Model_Mysql4_Abstract  
+</span></span><span style="display:flex;"><span>EAV models inherits from Mage_Eav_Model_Entity_Abstract
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Mage_Eav_Model_Entity_Abstract, there is no _init method  
+</span></span><span style="display:flex;"><span>Mage_Eav_Model_Entity_Abstract :: _construct is not an abstract method
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>EAV setup: Mage_Eav_Model_Entity_Setup
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//to add in eav_entity_type table…  
+</span></span><span style="display:flex;"><span>$installer-&gt;addEntityType(‘complexworld_eavblogpost’, array(  
+</span></span><span style="display:flex;"><span> //entity_mode is the URI you’d pass into a Mage::getModel() call  
+</span></span><span style="display:flex;"><span> ‘entity_model’ =&gt; ‘complexworld/eavblogpost’,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> //table refers to the resource URI complexworld/eavblogpost  
+</span></span><span style="display:flex;"><span> //&lt;<span style="color:#008000;font-weight:bold">complexworld_resource</span>&gt;…&lt;<span style="color:#008000;font-weight:bold">eavblogpost</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">eavblogpost</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">complexworld_resource</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ‘table’ =&gt;’complexworld/eavblogpost’,  
+</span></span><span style="display:flex;"><span>));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//to create eav tables for int, varchar, text, datetime, decimal…  
+</span></span><span style="display:flex;"><span>$installer-&gt;createEntityTables(  
+</span></span><span style="display:flex;"><span> $this-&gt;getTable(‘complexworld/eavblogpost’)  
+</span></span><span style="display:flex;"><span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>if you have an order with three items and you refund one item the order don´t change the state, only when you refund all item of the order this change to closed state  
+</span></span><span style="display:flex;"><span>————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>to render a block, Mage_Core_Block_Template::renderView() is called  
+</span></span><span style="display:flex;"><span>to render a block HTML, Mage_Core_Block_Template::_toHtml() is called
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————  
+</span></span><span style="display:flex;"><span>In addAttribute(), if attribute is system, it will add to all existing attribute sets  
+</span></span><span style="display:flex;"><span>—————
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>in Mage_Adminhtml_Block_Widget_Grid_Container  
+</span></span><span style="display:flex;"><span>$_blockGroup is your module’s name.  
+</span></span><span style="display:flex;"><span>$_controller is the path to your grid block.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Direct SQL queries:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $resource = Mage::getSingleton(‘core/resource’);  
+</span></span><span style="display:flex;"><span> $readConnection = $resource-&gt;getConnection(‘core_read’);  
+</span></span><span style="display:flex;"><span> $writeConnection = $resource-&gt;getConnection(‘core_write’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $tableName = $resource-&gt;getTableName(‘catalog_product_entity’);  
+</span></span><span style="display:flex;"><span> $tableName = $resource-&gt;getTableName(‘catalog/product’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $readConnection-&gt;fetchAll(……
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> fetchAll() – Fetches all SQL result rows as a sequential array.  
+</span></span><span style="display:flex;"><span> fetchCol() – Fetches the first column of all SQL result rows as an array.  
+</span></span><span style="display:flex;"><span> fetchOne() – Fetches the first column of the first row of the SQL result.  
+</span></span><span style="display:flex;"><span> fetchRow() – Fetches the first row of the SQL result.  
+</span></span><span style="display:flex;"><span> fetchAssoc() – Fetches all SQL result rows as an associative array.  
+</span></span><span style="display:flex;"><span> fetchPairs() – Fetches all SQL result rows as an array of key-value pairs.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Varien_Db_Adapter_Pdo_Mysql::prepareSqlCondition($fieldname, $condition)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> If $condition integer or string – exact value will be filtered (‘eq’ condition)  
+</span></span><span style="display:flex;"><span> *  
+</span></span><span style="display:flex;"><span> * If $condition is array – one of the following structures is expected:  
+</span></span><span style="display:flex;"><span> * – array(“from” =&gt; $fromValue, “to” =&gt; $toValue)  
+</span></span><span style="display:flex;"><span> * – array(“eq” =&gt; $equalValue)  
+</span></span><span style="display:flex;"><span> * – array(“neq” =&gt; $notEqualValue)  
+</span></span><span style="display:flex;"><span> * – array(“like” =&gt; $likeValue)  
+</span></span><span style="display:flex;"><span> * – array(“in” =&gt; array($inValues))  
+</span></span><span style="display:flex;"><span> * – array(“nin” =&gt; array($notInValues))  
+</span></span><span style="display:flex;"><span> * – array(“notnull” =&gt; $valueIsNotNull)  
+</span></span><span style="display:flex;"><span> * – array(“null” =&gt; $valueIsNull)  
+</span></span><span style="display:flex;"><span> * – array(“moreq” =&gt; $moreOrEqualValue)  
+</span></span><span style="display:flex;"><span> * – array(“gt” =&gt; $greaterValue)  
+</span></span><span style="display:flex;"><span> * – array(“lt” =&gt; $lessValue)  
+</span></span><span style="display:flex;"><span> * – array(“gteq” =&gt; $greaterOrEqualValue)  
+</span></span><span style="display:flex;"><span> * – array(“lteq” =&gt; $lessOrEqualValue)  
+</span></span><span style="display:flex;"><span> * – array(“finset” =&gt; $valueInSet)  
+</span></span><span style="display:flex;"><span> * – array(“regexp” =&gt; $regularExpression)  
+</span></span><span style="display:flex;"><span> * – array(“seq” =&gt; $stringEqual)  
+</span></span><span style="display:flex;"><span> * – array(“sneq” =&gt; $stringNotEqual)  
+</span></span><span style="display:flex;"><span> *  
+</span></span><span style="display:flex;"><span> * If non matched – sequential array is expected and OR conditions  
+</span></span><span style="display:flex;"><span> * will be built using above mentioned structure
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>reindex via code….
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $indexer = Mage::getSingleton(‘index/indexer’);  
+</span></span><span style="display:flex;"><span> $process = $indexer-&gt;getProcessByCode(‘catalog_product_price’);  
+</span></span><span style="display:flex;"><span> $process-&gt;reindexEverything();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> The following are indexer codes which you can use instead of the catalog_product_price index above:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> catalog_product_attribute Product Attributes  
+</span></span><span style="display:flex;"><span> catalog_product_price Product Prices  
+</span></span><span style="display:flex;"><span> catalog_url Catalog URL Rewrites  
+</span></span><span style="display:flex;"><span> catalog_product_flat Product Flat Data  
+</span></span><span style="display:flex;"><span> catalog_category_flat Category Flat Data  
+</span></span><span style="display:flex;"><span> catalog_category_product Category Products  
+</span></span><span style="display:flex;"><span> catalogsearch_fulltext Catalog Search Index  
+</span></span><span style="display:flex;"><span> cataloginventory_stock Stock Status  
+</span></span><span style="display:flex;"><span> tag_summary Tag Aggregation Data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————————
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Mage::getSingleton(‘core/session’)-&gt;addError(‘An Error’);  
+</span></span><span style="display:flex;"><span>Mage::getSingleton(‘core/session’)-&gt;addWarning(‘A Warning’);  
+</span></span><span style="display:flex;"><span>Mage::getSingleton(‘core/session’)-&gt;addNotice (‘A Notice’);  
+</span></span><span style="display:flex;"><span>Mage::getSingleton(‘core/session’)-&gt;addSuccess(‘A Success’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>display “out of stock” uses these indexes:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Product Attributes (catalog_product_attribute)  
+</span></span><span style="display:flex;"><span> Product Prices (catalog_product_price)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Altering Config Data During Setup:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Setting a value in the default scope:  
+</span></span><span style="display:flex;"><span> $installer-&gt;setConfigData(‘some/path’, ‘value’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Setting a value in a specific store:  
+</span></span><span style="display:flex;"><span> $installer-&gt;setConfigData(‘some/path’, ‘value’, ‘stores’, 1);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Deleting a value from all scopes:  
+</span></span><span style="display:flex;"><span> $installer-&gt;deleteConfigData(‘some/path’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Deleting a value from a certain scope (unfortunately you cannot choose which scope ID though:  
+</span></span><span style="display:flex;"><span> $installer-&gt;deleteConfigData(‘some/path’, ‘stores’);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Clearing cache:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Clean everything (use either):  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getCacheInstance()-&gt;flush();  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getCache()-&gt;clean();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Clean specific types:  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getCacheInstance()-&gt;cleanType(‘config’);  
+</span></span><span style="display:flex;"><span> instead of config, we can use layout, block_html, translate, collections, eav, config_api
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Get all declared cache types:  
+</span></span><span style="display:flex;"><span> Mage::app()-&gt;getCacheInstance()-&gt;getTypes();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>——————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>source model in backend Adminhtml module, *requires to return* toOptionArray()  
+</span></span><span style="display:flex;"><span>source model in EAV while adding attributes *requires to return* getAllOptions()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The core/template block is the foundation of the template system, allowing us the ability to load .phtml files from our themes.  
+</span></span><span style="display:flex;"><span>The page/html_pager block provides generic methods for paginating collections, such as isLastPage().  
+</span></span><span style="display:flex;"><span>cron/observer::dispatch handles the cron schedule’s creation, cleanup and execution of the jobs defined in the various config.xml files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>required fields when creating a new category in backend:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name, is_active, include_in_menu, available_sort_by, default_sort_by
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>required fields when creating a new product in backend:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>name, sku, weight, status, visibility, tax class, price, short_desc, description, qty  
+</span></span><span style="display:flex;"><span>—————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The shipping rate is upon Weight vs. Destination, Price vs. Destination, or # of Items vs. Destination (site admin can configurate for that)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>—————–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Mage_Shipping_Model_Carrier_Abstract:: collectRates()  
+</span></span><span style="display:flex;"><span>Mage_Shipping_Model_Carrier_Interface:: isTrackingAvailable(), getAllowedMethods()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>while adding new attributes in $setup-&gt;addAttribute(‘order’, …
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>| catalog_category |  
+</span></span><span style="display:flex;"><span>| catalog_product |  
+</span></span><span style="display:flex;"><span>| creditmemo |  
+</span></span><span style="display:flex;"><span>| creditmemo_comment |  
+</span></span><span style="display:flex;"><span>| creditmemo_item |  
+</span></span><span style="display:flex;"><span>| customer |  
+</span></span><span style="display:flex;"><span>| customer_address |  
+</span></span><span style="display:flex;"><span>| customer_payment |  
+</span></span><span style="display:flex;"><span>| invoice |  
+</span></span><span style="display:flex;"><span>| invoice_comment |  
+</span></span><span style="display:flex;"><span>| invoice_item |  
+</span></span><span style="display:flex;"><span>| invoice_shipment |  
+</span></span><span style="display:flex;"><span>| order |  
+</span></span><span style="display:flex;"><span>| order_address |  
+</span></span><span style="display:flex;"><span>| order_item |  
+</span></span><span style="display:flex;"><span>| order_payment |  
+</span></span><span style="display:flex;"><span>| order_status |  
+</span></span><span style="display:flex;"><span>| order_status_history |  
+</span></span><span style="display:flex;"><span>| quote |  
+</span></span><span style="display:flex;"><span>| quote_address |  
+</span></span><span style="display:flex;"><span>| quote_address_item |  
+</span></span><span style="display:flex;"><span>| quote_address_rate |  
+</span></span><span style="display:flex;"><span>| quote_item |  
+</span></span><span style="display:flex;"><span>| quote_payment |  
+</span></span><span style="display:flex;"><span>| shipment |  
+</span></span><span style="display:flex;"><span>| shipment_comment |  
+</span></span><span style="display:flex;"><span>| shipment_item |  
+</span></span><span style="display:flex;"><span>| shipment_track |
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———————————-
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Adding JS, Skin JS and CSS files…
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addItem&#34;</span>&gt;&lt;<span style="color:#008000;font-weight:bold">type</span>&gt;skin_js&lt;/<span style="color:#008000;font-weight:bold">type</span>&gt;&lt;<span style="color:#008000;font-weight:bold">name</span>&gt;js/ie6.js&lt;/<span style="color:#008000;font-weight:bold">name</span>&gt;&lt;<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;<span style="color:#008000;font-weight:bold">if</span>&gt;lt IE 7&lt;/<span style="color:#008000;font-weight:bold">if</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">action</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addItem&#34;</span>&gt;&lt;<span style="color:#008000;font-weight:bold">type</span>&gt;js&lt;/<span style="color:#008000;font-weight:bold">type</span>&gt;&lt;<span style="color:#008000;font-weight:bold">name</span>&gt;lib/ds-sleight.js&lt;/<span style="color:#008000;font-weight:bold">name</span>&gt;&lt;<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;<span style="color:#008000;font-weight:bold">if</span>&gt;lt IE 7&lt;/<span style="color:#008000;font-weight:bold">if</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">action</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addItem&#34;</span>&gt;&lt;<span style="color:#008000;font-weight:bold">type</span>&gt;skin_css&lt;/<span style="color:#008000;font-weight:bold">type</span>&gt;&lt;<span style="color:#008000;font-weight:bold">name</span>&gt;css/styles-ie.css&lt;/<span style="color:#008000;font-weight:bold">name</span>&gt;&lt;<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">params</span>&gt;&lt;<span style="color:#008000;font-weight:bold">if</span>&gt;lt IE 8&lt;/<span style="color:#008000;font-weight:bold">if</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">action</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addJs&#34;</span>&gt;&lt;<span style="color:#008000;font-weight:bold">script</span>&gt;mage<span style="color:#666">/</span>cookies.js&lt;/<span style="color:#008000;font-weight:bold">script</span>&gt;&lt;/<span style="color:#008000;font-weight:bold">action</span>&gt;  
+</span></span><span style="display:flex;"><span> &lt;<span style="color:#008000;font-weight:bold">action</span> <span style="color:#b44">method</span><span style="color:#666">=</span><span style="color:#b44">&#34;addCss&#34;</span>&gt;&lt;<span style="color:#008000;font-weight:bold">style</span><span style="color:#b44">sheet</span>&gt;<span style="">css/print.css&lt;/stylesheet&gt;&lt;params&gt;media=”print”&lt;/params&gt;&lt;/action&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>———–
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>CMS Directives…..
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> can be used in CMS, static blocks or emails
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> {{block id=’block_id’}}  
+</span></span><span style="display:flex;"><span> {{block type=’module/package_classname’ template=’path/to/template.phtml’}}  
+</span></span><span style="display:flex;"><span> {{config path=’section/group/field’}}  
+</span></span><span style="display:flex;"><span> {{htmlescape var=” allowed_tags=”}}  
+</span></span><span style="display:flex;"><span> {{htmlescape var=’[Hello](javascript:alert(1);)‘}}  
+</span></span><span style="display:flex;"><span> //this outputs [Hello](javascript:alert(1);) and doesn’t interpreted by browsers  
+</span></span><span style="display:flex;"><span> {{layout handle=”}}  
+</span></span><span style="display:flex;"><span> {{media url=”}}  
+</span></span><span style="display:flex;"><span> {{skin url=”}}  
+</span></span><span style="display:flex;"><span> {{store url=”}}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> {{block type=’namespace_custom/test’ my_param1=’value 1′ my_param2=’value 2′}}</span></span></code></pre></div>
+<p>BEST LUCK! :)</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

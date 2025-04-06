@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Category Page Product Images Not Showing on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/category-page-product-images-not-showing/</link>
+    <description>Recent content in Category Page Product Images Not Showing on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 26 Feb 2013 17:15:50 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/category-page-product-images-not-showing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Can&amp;#8217;t see product images in category page</title>
+      <link>http://localhost:1313/magento-can%238217t-see-product-images-in-category-page/</link>
+      <pubDate>Tue, 26 Feb 2013 17:15:50 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-can%238217t-see-product-images-in-category-page/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Set product image as small image and thumbnail programatically&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;If you see your images in product detail page but don’t see it in category page, it’s because your product have images (image attribute filled) but not &lt;em&gt;small_image&lt;/em&gt; and &lt;em&gt;thumbnail&lt;/em&gt; which are required to display on category page. If there are only few products you want to set small_image and thumbnail, then it’s easy to go to &lt;em&gt;Manage Products &amp;gt; Individual Product &amp;gt; Images tab &amp;gt; Set small image and thumbnail radio button&lt;/em&gt;. But when it comes to hundreds/thousands of products, you better want it programatically way.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p><strong>Set product image as small image and thumbnail programatically</strong></p>
+<p>If you see your images in product detail page but don’t see it in category page, it’s because your product have images (image attribute filled) but not <em>small_image</em> and <em>thumbnail</em> which are required to display on category page. If there are only few products you want to set small_image and thumbnail, then it’s easy to go to <em>Manage Products &gt; Individual Product &gt; Images tab &gt; Set small image and thumbnail radio button</em>. But when it comes to hundreds/thousands of products, you better want it programatically way.</p>
+<p>Make a file in your Magento root and place the below code in it. Then run that file and you have just copied your Product Image to small image and thumbnail as well!</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php ini_set(<span style="color:#b44">&#39;display_errors&#39;</span>,<span style="color:#666">1</span>);
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">require</span> <span style="color:#b44">&#39;app/Mage.php&#39;</span>;
+</span></span><span style="display:flex;"><span>Mage<span style="color:#666">::</span><span style="color:#b44">app</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#b8860b">$products</span> <span style="color:#666">=</span> Mage<span style="color:#666">::</span><span style="color:#b44">getModel</span>(<span style="color:#b44">&#39;catalog/product&#39;</span>)<span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">getCollection</span>()<span style="color:#666">-&gt;</span><span style="color:#b44">addAttributeToSelect</span>(‘<span style="color:#666">*</span>’);  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">foreach</span> (<span style="color:#b8860b">$products</span> <span style="color:#a2f;font-weight:bold">as</span> <span style="color:#b8860b">$product</span>) {  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span><span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">hasImage</span>()) <span style="color:#a2f;font-weight:bold">continue</span>;  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span><span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">hasSmallImage</span>()) <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">setSmallImage</span>(<span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getImage</span>());  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span> (<span style="color:#666">!</span><span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">hasThumbnail</span>()) <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">setThumbnail</span>(<span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">getImage</span>());  
+</span></span><span style="display:flex;"><span> <span style="color:#b8860b">$product</span><span style="color:#666">-&gt;</span><span style="color:#b44">save</span>();  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">echo</span> ‘Finished<span style="color:#666">!</span>’;  
+</span></span><span style="display:flex;"><span><span style="color:#080">?&gt;</span><span style="">
+</span></span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

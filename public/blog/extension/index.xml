@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Extension on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/extension/</link>
+    <description>Recent content in Extension on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Mon, 20 May 2013 22:47:10 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/extension/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Pinterest extension Auto Pin multiple product images Plugin</title>
+      <link>http://localhost:1313/magento-pinterest-extension-auto-pin-multiple-product-images-plugin/</link>
+      <pubDate>Mon, 20 May 2013 22:47:10 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-pinterest-extension-auto-pin-multiple-product-images-plugin/</guid>
+      <description>&lt;p&gt;We all know that Pinterest is very popular and a great tool for marketing variety of products. It can give you huge traffic to your website resulting in incredible sales and revenue. It have almost all types of categories to hold your pinned images so that your product gets noticed to potential customers. It even has an option to specify the price of the product, which only gives you interested buyers to your website.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>We all know that Pinterest is very popular and a great tool for marketing variety of products. It can give you huge traffic to your website resulting in incredible sales and revenue. It have almost all types of categories to hold your pinned images so that your product gets noticed to potential customers. It even has an option to specify the price of the product, which only gives you interested buyers to your website.</p>
+<p><img src="http://ka.lpe.sh/wp-content/uploads/2013/05/Magento-Pinterest-AutoPin.jpg" alt="Magento Pinterest Auto Pin product images by Magentools"></p>
+<p>If you have hundreds/thousands of products in your store and want to pin it on Pinterest it becomes very difficult, as Pinterest don’t provide multiple pinning of images. One by one pinning images is a nightmare if you have lots of products. There is also no official Pinterest API which can allow you to auto-pin your images through some kind of API.</p>
+<p>If you are using Magento as your e-commerce framework, there’s a good news for you! There is an extension available at Magentools.com which gives you ability to auto-pin hundreds of product images in just one click! Other options includes to pin image with your Product Name, SKU and Price along with your product link on your website. This extension, called as Pinterest Auto Pin multiple images plugin acts as a bridge between your Magento store and Pinterest. In your Magento admin panel’s “Manage Products” screen, you can see the option Pin To Board which loads all your Pinterest boards you want the product images to pin into! It also allows you to pin the individual product image pin when you create new product / edit existing product, by clicking on the tab “MagenTools” and selecting your desired Pinterest Board before saving the product.</p>
+<p>It’s the must-have extension for the e-Commerce company which is more focused into marketing their products online and want more potential customers. You can find more details on the Pinterest Auto-Pin API extension here: <a href="http://magext.com/work/magento-social-network-auto-poster/" title="MagenTools Pinterest Auto Pin API">http://magext.com/work/magento-social-network-auto-poster/</a></p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>pdo_mysql extension is not installed</title>
+      <link>http://localhost:1313/pdo_mysql-extension-is-not-installed/</link>
+      <pubDate>Thu, 18 Apr 2013 20:11:15 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/pdo_mysql-extension-is-not-installed/</guid>
+      <description>&lt;p&gt;PHP Mysql Error: pdo_mysql extension is not installed.&lt;/p&gt;&#xA;&lt;p&gt;Magento needs PDO Mysql extension for database connection and related things, so if you don’t have pdo_mysql extension enabled Magento will complain about this and will not proceed further installation. If you are not sure what PDO is, it’s high time for you to look at &lt;a href=&#34;http://php.net/manual/en/ref.pdo-mysql.php&#34;&gt;http://php.net/manual/en/ref.pdo-mysql.php&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Coming back to error, to resolve this you will need to edit your php.ini file where it says:&lt;br&gt;&#xA;;extension=pdo_mysql.so&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>PHP Mysql Error: pdo_mysql extension is not installed.</p>
+<p>Magento needs PDO Mysql extension for database connection and related things, so if you don’t have pdo_mysql extension enabled Magento will complain about this and will not proceed further installation. If you are not sure what PDO is, it’s high time for you to look at <a href="http://php.net/manual/en/ref.pdo-mysql.php">http://php.net/manual/en/ref.pdo-mysql.php</a></p>
+<p>Coming back to error, to resolve this you will need to edit your php.ini file where it says:<br>
+;extension=pdo_mysql.so</p>
+<p>Just uncomment the line by removing front semincolon, so it becomes<br>
+extension=pdo_mysql.so</p>
+<p>Save it and restart the server, the error should go.</p>
+<p>If you are on Windows, then that line should read:</p>
+<p>extension=php_pdo_mysql.dll</p>
+<p>If you don’t find pdo_mysql in php.ini, <strong>install</strong> php5-mysql by running the command:</p>
+<p>sudo apt-get install php5-mysql (on Ubuntu)</p>
+<p>sudo yum install php-mysql (on Redhat, Fedora, CentOS)</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

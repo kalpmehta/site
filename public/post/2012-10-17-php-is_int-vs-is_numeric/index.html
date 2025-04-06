@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>PHP: is_int() vs is_numeric() | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="PHP: is_int() vs is_numeric()" />
+<meta name="description" content="Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.
+The key difference between these two functions is that is_int() checks the type of variable, while is_numeric() checks the value of the variable.
+From PHP.net,
+is_int: Find whether the type of a variable is integer
+is_numeric: Finds whether a variable is a number or a numeric string" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="php check variable integer,php is_int vs is_numeric," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="PHP: is_int() vs is_numeric()" />
+<meta property="og:description" content="Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.
+The key difference between these two functions is that is_int() checks the type of variable, while is_numeric() checks the value of the variable.
+From PHP.net,
+is_int: Find whether the type of a variable is integer
+is_numeric: Finds whether a variable is a number or a numeric string" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2012-10-17-php-is_int-vs-is_numeric/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_7265e3abca15f463.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2012-10-17T14:53:07+00:00" />
+<meta property="article:modified_time" content="2012-10-17T14:53:07+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_7265e3abca15f463.webp"/>
+<meta name="twitter:title" content="PHP: is_int() vs is_numeric()"/>
+<meta name="twitter:description" content="Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.
+The key difference between these two functions is that is_int() checks the type of variable, while is_numeric() checks the value of the variable.
+From PHP.net,
+is_int: Find whether the type of a variable is integer
+is_numeric: Finds whether a variable is a number or a numeric string"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="PHP: is_int() vs is_numeric()">
+<meta itemprop="description" content="Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.
+The key difference between these two functions is that is_int() checks the type of variable, while is_numeric() checks the value of the variable.
+From PHP.net,
+is_int: Find whether the type of a variable is integer
+is_numeric: Finds whether a variable is a number or a numeric string"><meta itemprop="datePublished" content="2012-10-17T14:53:07+00:00" />
+<meta itemprop="dateModified" content="2012-10-17T14:53:07+00:00" />
+<meta itemprop="wordCount" content="137">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_7265e3abca15f463.webp"/>
+
+
+<meta itemprop="keywords" content="php check variable integer,php is_int vs is_numeric," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>PHP: is_int() vs is_numeric()</h1>
+<p class="byline">
+  <time datetime='2012-10-17' pubdate>
+    2012-10-17
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Both of the functions looks similar, but there is a difference, which can screw your time if you’re not aware of it and using blindly! is_int() seems same to is_numeric(), checking the variable if it’s integer or not, but it’s not exactly what you’re thinking.</p>
+<p>The key difference between these two functions is that is_int() checks the <strong>type</strong> of variable, while is_numeric() checks the <strong>value</strong> of the variable.</p>
+<p>From PHP.net,<br>
+<em>is_int:</em> Find whether the type of a variable is integer<br>
+<em>is_numeric:</em> Finds whether a variable is a number or a numeric string</p>
+<p>So, if you check something like:<br>
+{code type=php}$var = “123”;{/code}<br>
+$var is a string of numbers, not an integer value.<br>
+Therefor <em>is_int should return false</em> as it’s not an integer, it’s a string.<br>
+However it is a numeric string, so hence <em>is_numeric should return true</em>.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/php-check-variable-integer/">#php check variable integer</a>
+  
+    <a class="blog-tags" href="/blog/php-is_int-vs-is_numeric/">#php is_int vs is_numeric</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"PHP%3a%20is_int%28%29%20vs%20is_numeric%28%29"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>

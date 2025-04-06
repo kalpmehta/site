@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Giftcard on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/giftcard/</link>
+    <description>Recent content in Giftcard on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Tue, 23 Sep 2014 20:13:07 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/giftcard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento: Show gift card details in admin order page</title>
+      <link>http://localhost:1313/magento-show-gift-card-details-in-admin-order-page/</link>
+      <pubDate>Tue, 23 Sep 2014 20:13:07 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-show-gift-card-details-in-admin-order-page/</guid>
+      <description>&lt;p&gt;Magento display gift card details (code and amount) in Order View page of admin panel. When customer uses gift card in their order Magento does not display gift card code and amount details in admin panel which makes it tough to know. Customer can pay partially through gift card which makes even tougher as Magento only shows payment information of other method and not gift card amount deductions.&lt;/p&gt;&#xA;&lt;p&gt;Below code will show you an additional block in magento admin panel with Gift Card details. If gift card is not used in an order, the block will simply no shown.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento display gift card details (code and amount) in Order View page of admin panel. When customer uses gift card in their order Magento does not display gift card code and amount details in admin panel which makes it tough to know. Customer can pay partially through gift card which makes even tougher as Magento only shows payment information of other method and not gift card amount deductions.</p>
+<p>Below code will show you an additional block in magento admin panel with Gift Card details. If gift card is not used in an order, the block will simply no shown.</p>
+<p>Open the file app/design/adminhtml/default/default/template/sales/order/view/edit.phtml</p>
+<p>Add the below lines of code anywhere you want the gift card block to appear. I have used it after Account Information block.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#666">&lt;?</span>php <span style="color:#b8860b">$cards</span> <span style="color:#666">=</span> unserialize(<span style="color:#b8860b">$_order</span><span style="color:#666">-&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#b44">getGiftCards</span>());  
+</span></span><span style="display:flex;"><span> <span style="color:#a2f;font-weight:bold">if</span>(<span style="color:#b8860b">$cards</span><span style="color:#666">!=</span>” <span style="color:#666">&amp;</span>amp;<span style="color:#666">&amp;</span>amp; count(<span style="color:#b8860b">$cards</span>)<span style="color:#666">&gt;</span><span style="color:#666">0</span>) { <span style="color:#080">?&gt;</span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">&lt;div class=&#34;box-left&#34;&gt;&lt;div class=&#34;entry-edit&#34;&gt;&lt;div class=&#34;entry-edit-head&#34;&gt;#### &lt;?php echo Mage::helper(&#39;sales&#39;)-&gt;
+</span></span></span><span style="display:flex;"><span><span style="">__(‘Gift Cards’) ?&gt;
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">&lt;/div&gt;&lt;div class=&#34;fieldset&#34;&gt;&lt;div class=&#34;hor-scroll&#34;&gt;&lt;?php foreach ($cards as $card) { ??&gt;
+</span></span></span><span style="display:flex;"><span><span style="">| &lt;label&gt;&lt;?php echo Mage::helper(&#39;sales&#39;)-&gt; __(‘Giftcard Code’) ?&gt;&lt;/label&gt; | &lt;div style=&#34;font-weight:bold&#34;&gt;&lt;?php echo $card[&#39;c&#39;];??&gt; &lt;/div&gt; |
+</span></span></span><span style="display:flex;"><span><span style="">|---|---|
+</span></span></span><span style="display:flex;"><span><span style="">| &lt;label&gt;&lt;?php echo Mage::helper(&#39;sales&#39;)-&gt; __(‘Giftcard Amount’) ?&gt;&lt;/label&gt; | &lt;div style=&#34;font-weight:bold&#34;&gt;&lt;?php echo $card[&#39;a&#39;];??&gt; &lt;/div&gt; |
+</span></span></span><span style="display:flex;"><span><span style=""> &lt;?php }??&gt;
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">
+</span></span></span><span style="display:flex;"><span><span style="">&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;?php }??&gt;
+</span></span></span></code></pre></div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

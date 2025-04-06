@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Redis on KALPESH MEHTA</title>
+    <link>http://localhost:1313/blog/redis/</link>
+    <description>Recent content in Redis on KALPESH MEHTA</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <managingEditor>k@lpe.sh (Kalpesh Mehta)</managingEditor>
+    <webMaster>k@lpe.sh (Kalpesh Mehta)</webMaster>
+    <copyright>Copyright © 2025 kalpesh mehta</copyright>
+    <lastBuildDate>Sun, 01 Dec 2013 19:57:02 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Magento Redis read error on connection</title>
+      <link>http://localhost:1313/magento-redis-read-error-on-connection/</link>
+      <pubDate>Sun, 01 Dec 2013 19:57:02 +0000</pubDate><author>k@lpe.sh (Kalpesh Mehta)</author>
+      <guid>http://localhost:1313/magento-redis-read-error-on-connection/</guid>
+      <description>&lt;p&gt;Magento read error on connection when using Redis. If you are using Redis as cache in Magento and read timeout is not specified, you may get this error. Below is how it looks in the error report.&lt;/p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-http&#34; data-lang=&#34;http&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt; read error on connection&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;Trace:  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#1 lib/Mage/Cache/Backend/Redis.php(210): Credis_Client-&amp;gt;hGet(‘zc:k:0cd_FPC_DE…’, ‘d’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#2 lib/Zend/Cache/Core.php(303): Mage_Cache_Backend_Redis-&amp;gt;load(‘0cd_FPC_DESIGN_…’, false)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#3 lib/Varien/Cache/Core.php(158): Zend_Cache_Core-&amp;gt;load(‘FPC_DESIGN_EXCE…’, false, false)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#4 app/code/core/Mage/Core/Model/Cache.php(379): Varien_Cache_Core-&amp;gt;load(‘FPC_DESIGN_EXCE…’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#5 app/code/core/Enterprise/PageCache/Model/Processor.php(185): Mage_Core_Model_Cache-&amp;gt;load(‘FPC_DESIGN_EXCE…’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#6 app/code/core/Enterprise/PageCache/Model/Processor.php(146): Enterprise_PageCache_Model_Processor-&amp;gt;_getDesignPackage()  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#7 app/code/core/Enterprise/PageCache/Model/Processor.php(108): Enterprise_PageCache_Model_Processor-&amp;gt;_createRequestIds()  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#8 app/code/core/Mage/Core/Model/Cache.php(703): Enterprise_PageCache_Model_Processor-&amp;gt;__construct()  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#9 app/code/core/Mage/Core/Model/Cache.php(685): Mage_Core_Model_Cache-&amp;gt;_getProcessor(‘Enterprise_Page…’)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#10 app/code/core/Mage/Core/Model/App.php(340): Mage_Core_Model_Cache-&amp;gt;processRequest()  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#11 app/Mage.php(683): Mage_Core_Model_App-&amp;gt;run(Array)  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;\#12 /var/www/source/index.php(87): Mage::run(”, ‘store’)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&#xA;&lt;p&gt;The solution (atleast for us) was to add a read_timeout config option in app/etc/local.xml where you have configured Redis cache for Magento.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>Magento read error on connection when using Redis. If you are using Redis as cache in Magento and read timeout is not specified, you may get this error. Below is how it looks in the error report.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> read error on connection
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">Trace:  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#1 lib/Mage/Cache/Backend/Redis.php(210): Credis_Client-&gt;hGet(‘zc:k:0cd_FPC_DE…’, ‘d’)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#2 lib/Zend/Cache/Core.php(303): Mage_Cache_Backend_Redis-&gt;load(‘0cd_FPC_DESIGN_…’, false)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#3 lib/Varien/Cache/Core.php(158): Zend_Cache_Core-&gt;load(‘FPC_DESIGN_EXCE…’, false, false)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#4 app/code/core/Mage/Core/Model/Cache.php(379): Varien_Cache_Core-&gt;load(‘FPC_DESIGN_EXCE…’)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#5 app/code/core/Enterprise/PageCache/Model/Processor.php(185): Mage_Core_Model_Cache-&gt;load(‘FPC_DESIGN_EXCE…’)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#6 app/code/core/Enterprise/PageCache/Model/Processor.php(146): Enterprise_PageCache_Model_Processor-&gt;_getDesignPackage()  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#7 app/code/core/Enterprise/PageCache/Model/Processor.php(108): Enterprise_PageCache_Model_Processor-&gt;_createRequestIds()  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#8 app/code/core/Mage/Core/Model/Cache.php(703): Enterprise_PageCache_Model_Processor-&gt;__construct()  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#9 app/code/core/Mage/Core/Model/Cache.php(685): Mage_Core_Model_Cache-&gt;_getProcessor(‘Enterprise_Page…’)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#10 app/code/core/Mage/Core/Model/App.php(340): Mage_Core_Model_Cache-&gt;processRequest()  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#11 app/Mage.php(683): Mage_Core_Model_App-&gt;run(Array)  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">\#12 /var/www/source/index.php(87): Mage::run(”, ‘store’)</span></span></span></code></pre></div>
+<p>The solution (atleast for us) was to add a read_timeout config option in app/etc/local.xml where you have configured Redis cache for Magento.</p>
+
+
+
+
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;cache&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;backend&gt;Mage_Cache_Backend_Redis&lt;/backend&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;backend_options&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;server&gt;127.0.0.1&lt;/server&gt; &lt;port&gt;6379&lt;/port&gt; &lt;persistent&gt;&lt;/persistent&gt; &lt;database&gt;0&lt;/database&gt; &lt;password&gt;&lt;/password&gt; &lt;force_standalone&gt;0&lt;/force_standalone&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;connect_retries&gt;1&lt;/connect_retries&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;read_timeout&gt;10&lt;/read_timeout&gt; &lt;lifetimelimit&gt;57600&lt;/lifetimelimit&gt; &lt;compress_data&gt;0&lt;/compress_data&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> &lt;/backend_options&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">&lt;/cache&gt;</span></span></span></code></pre></div>
+<p>HTH!</p>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>

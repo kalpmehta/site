@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<title>Magento delete empty categories and sub-categories | Kalpesh Mehta&#39;s Blog</title>
+<meta name="title" content="Magento delete empty categories and sub-categories" />
+<meta name="description" content="Remove all empty categories and sub-categories in Magento. When there are empty categories, the website shows empty page in those categories in frontend. Create a file in the magento root, I will name it rmvEmptyCats.php, with following code:
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$categoryCollection = Mage::getModel(‘catalog/category’)-&gt;getCollection()
+-&gt;addFieldToFilter(‘level’, array(‘gteq’ =&gt; 2)); //greater than root category id
+foreach($categoryCollection as $category) {
+if ($category-&gt;getProductCount() === 0) {
+$category-&gt;delete();
+}
+}
+echo ‘Empty Categories Deleted!’;{/code}" />
+<meta name="author" content="kalpesh" />
+<meta name="keywords" content="category,magento,product," />
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="Magento delete empty categories and sub-categories" />
+<meta property="og:description" content="Remove all empty categories and sub-categories in Magento. When there are empty categories, the website shows empty page in those categories in frontend. Create a file in the magento root, I will name it rmvEmptyCats.php, with following code:
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$categoryCollection = Mage::getModel(‘catalog/category’)-&gt;getCollection()
+-&gt;addFieldToFilter(‘level’, array(‘gteq’ =&gt; 2)); //greater than root category id
+foreach($categoryCollection as $category) {
+if ($category-&gt;getProductCount() === 0) {
+$category-&gt;delete();
+}
+}
+echo ‘Empty Categories Deleted!’;{/code}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/2013-08-17-magento-delete-empty-categories-and-sub-categories/" />
+
+<meta property="og:image" content="http://localhost:1313/images/social_card_bg_hu_6247fd12da194a2e.webp"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2013-08-17T14:36:45+00:00" />
+<meta property="article:modified_time" content="2013-08-17T14:36:45+00:00" /><meta property="og:site_name" content="Kalpesh Mehta" />
+<meta property="fb:admins" content="0000000000" />
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://localhost:1313/images/social_card_bg_hu_6247fd12da194a2e.webp"/>
+<meta name="twitter:title" content="Magento delete empty categories and sub-categories"/>
+<meta name="twitter:description" content="Remove all empty categories and sub-categories in Magento. When there are empty categories, the website shows empty page in those categories in frontend. Create a file in the magento root, I will name it rmvEmptyCats.php, with following code:
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$categoryCollection = Mage::getModel(‘catalog/category’)-&gt;getCollection()
+-&gt;addFieldToFilter(‘level’, array(‘gteq’ =&gt; 2)); //greater than root category id
+foreach($categoryCollection as $category) {
+if ($category-&gt;getProductCount() === 0) {
+$category-&gt;delete();
+}
+}
+echo ‘Empty Categories Deleted!’;{/code}"/>
+<meta name="twitter:site" content="@kalpmehta"/>
+
+
+
+<meta itemprop="name" content="Magento delete empty categories and sub-categories">
+<meta itemprop="description" content="Remove all empty categories and sub-categories in Magento. When there are empty categories, the website shows empty page in those categories in frontend. Create a file in the magento root, I will name it rmvEmptyCats.php, with following code:
+{code type=php}require “app/Mage.php”;
+umask(0);
+Mage::app();
+$categoryCollection = Mage::getModel(‘catalog/category’)-&gt;getCollection()
+-&gt;addFieldToFilter(‘level’, array(‘gteq’ =&gt; 2)); //greater than root category id
+foreach($categoryCollection as $category) {
+if ($category-&gt;getProductCount() === 0) {
+$category-&gt;delete();
+}
+}
+echo ‘Empty Categories Deleted!’;{/code}"><meta itemprop="datePublished" content="2013-08-17T14:36:45+00:00" />
+<meta itemprop="dateModified" content="2013-08-17T14:36:45+00:00" />
+<meta itemprop="wordCount" content="102">
+
+<meta itemprop="image" content="http://localhost:1313/images/social_card_bg_hu_6247fd12da194a2e.webp"/>
+
+
+<meta itemprop="keywords" content="category,magento,product," />
+
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  
+  <link href="/original.min.css" rel="stylesheet">
+
+  
+
+  
+
+  
+</head>
+
+<body>
+  <header><a class="skip-link" href="#main-content">Skip to main content</a>
+
+<a href="/" class="title"><h1>Kalpesh Mehta&#39;s Blog</h1></a>
+<nav>
+<a href='http://localhost:1313/'>Home</a>
+<a href='http://localhost:1313/about-me'>About Me</a>
+<a href='http://localhost:1313/contact-me'>Contact</a>
+<a href='http://localhost:1313/index.xml'>RSS</a>
+
+
+
+
+
+
+
+</nav>
+</header>
+  <main id="main-content">
+
+<h1>Magento delete empty categories and sub-categories</h1>
+<p class="byline">
+  <time datetime='2013-08-17' pubdate>
+    2013-08-17
+  </time>
+  · kalpesh
+</p>
+
+<content>
+  <p>Remove all empty categories and sub-categories in Magento. When there are empty categories, the website shows empty page in those categories in frontend. Create a file in the magento root, I will name it rmvEmptyCats.php, with following code:</p>
+<p>{code type=php}require “app/Mage.php”;<br>
+umask(0);<br>
+Mage::app();</p>
+<p>$categoryCollection = Mage::getModel(‘catalog/category’)-&gt;getCollection()<br>
+-&gt;addFieldToFilter(‘level’, array(‘gteq’ =&gt; 2)); //greater than root category id</p>
+<p>foreach($categoryCollection as $category) {<br>
+if ($category-&gt;getProductCount() === 0) {<br>
+$category-&gt;delete();<br>
+}<br>
+}</p>
+<p>echo ‘Empty Categories Deleted!’;{/code}</p>
+<p>Now you can easily run it by navigating to <a href="http://loca.lho.st/rmvEmptyCats.php">http://loca.lho.st/rmvEmptyCats.php</a> and wait for the message Empty Categories Deleted!</p>
+<p>Note that this is going to DELETE those categories with zero product count.</p>
+
+</content>
+<p>
+  
+    <a class="blog-tags" href="/blog/category/">#category</a>
+  
+    <a class="blog-tags" href="/blog/magento/">#magento</a>
+  
+    <a class="blog-tags" href="/blog/product/">#product</a>
+  
+</p>
+
+
+  <p>
+    <a href='mailto:k@lpe.sh?subject=Reply%20to%20"Magento%20delete%20empty%20categories%20and%20sub-categories"'>
+      Reply to this post by email ↪
+    </a>
+  </p>
+
+
+
+  </main>
+  <footer><small>
+  Copyright © 2025, Kalpesh Mehta. | 
+</small></footer>
+
+    
+</body>
+
+</html>
