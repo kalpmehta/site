@@ -4,11 +4,7 @@ title: 'Magento: Show gift card details in admin order page'
 date: '2014-09-23T20:13:07+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=940'
-permalink: /index.php/2014/09/23/magento-show-gift-card-details-in-admin-order-page/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2014/01/05/magento-display-categories-subcategories/"     class="crp_title">Magento display categories and sub-categories</a></li><li><a href="http://ka.lpe.sh/2012/10/22/wordpress-show-total-aggregate-ratings-and-reviews-to-your-posts-pages/"     class="crp_title">WordPress: Show total/aggregate ratings and reviews to your posts/pages</a></li><li><a href="http://ka.lpe.sh/2013/06/01/return-false-vs-preventdefault-javascript/"     class="crp_title">return false vs preventDefault in javascript</a></li><li><a href="http://ka.lpe.sh/2013/06/03/prototype-utility-methods/"     class="crp_title">Prototype Utility Methods &#8211; Commonly used prototypejs functions</a></li><li><a href="http://ka.lpe.sh/2012/02/12/magento-show-track-your-order-in-frontend-my-orders/"     class="crp_title">Magento: Show &#8220;track your order&#8221; in frontend &#8211; My Orders</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
 tags:

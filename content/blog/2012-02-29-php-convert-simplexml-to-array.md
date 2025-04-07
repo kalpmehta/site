@@ -4,11 +4,7 @@ title: 'PHP Convert SimpleXML object to Array'
 date: '2012-02-29T12:34:47+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=219'
-permalink: /index.php/2012/02/29/php-convert-simplexml-to-array/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/02/12/magentophp-convert-your-xml-object-to-array/"     class="crp_title">Magento/PHP: Convert your XML Object to Array</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-get-category-object-from-category-name/"     class="crp_title">Magento: Get category object from category name</a></li><li><a href="http://ka.lpe.sh/2012/04/18/magento-get-sentence-case-from-camel-case-string/"     class="crp_title">Magento: Get sentence case from camel case string</a></li><li><a href="http://ka.lpe.sh/2012/07/26/php-xml-to-json-xml-to-array-json-to-array/"     class="crp_title">Convert PHP XML to JSON, XML to Array, JSON to Array</a></li><li><a href="http://ka.lpe.sh/2013/02/02/magento-create-database-backups-daily-programatically-by-cron/"     class="crp_title">Magento: Create database backups daily programatically by cron</a></li></ul></div>'
-categories:
+tags:
     - PHP
     - XML
 tags:

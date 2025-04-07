@@ -4,11 +4,7 @@ title: 'Magento: Get real IP address behind a proxy'
 date: '2014-11-07T18:48:19+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=967'
-permalink: /index.php/2014/11/07/magento-real-ip-address-behind-proxy/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-register-guest-user-to-website-if-email-provided/"     class="crp_title">Magento: Register guest user to website if email provided</a></li><li><a href="http://ka.lpe.sh/2012/11/02/linux-bash-script-to-get-email-address-and-created-updated-expires-dates-of-domain-name/"     class="crp_title">Linux: Bash script to get email address and created/updated/expires dates of domain name</a></li><li><a href="http://ka.lpe.sh/2012/07/21/migrate-magento-to-new-server-domain-database-host/"     class="crp_title">Migrate magento to new server / domain / database / host</a></li><li><a href="http://ka.lpe.sh/2013/08/17/magento-delete-empty-categories-and-sub-categories/"     class="crp_title">Magento delete empty categories and sub-categories</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

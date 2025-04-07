@@ -4,19 +4,7 @@ title: 'Magento Pinterest extension Auto Pin multiple product images Plugin'
 date: '2013-05-20T22:47:10+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=621'
-permalink: /index.php/2013/05/20/magento-pinterest-extension-plugin-autopin-multiple-product-images/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/"     class="crp_title">Buy: Pinterest AutoPost images right from your website!</a></li><li><a href="http://ka.lpe.sh/2013/02/26/magento-cant-see-product-images-in-category-page/"     class="crp_title">Magento: Can&#8217;t see product images in category page</a></li><li><a href="http://ka.lpe.sh/2013/02/23/magento-product-free-paid-sample-purchase-order/"     class="crp_title">Magento: Product Free/Paid SAMPLE Purchase Order</a></li><li><a href="http://ka.lpe.sh/2012/10/22/magento-add-products-to-placed-order-programatically/"     class="crp_title">Magento: Add products to placed order programatically</a></li><li><a href="http://ka.lpe.sh/2013/02/20/magento-product-import-error-shows-html-code-while-importing/"     class="crp_title">Magento: Product Import error &#8211; shows HTML code while importing</a></li></ul></div>'
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-categories:
+tags:
     - Magento
 tags:
     - extension

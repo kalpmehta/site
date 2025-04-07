@@ -4,11 +4,7 @@ title: 'WordPress plugin install without FTP'
 date: '2013-06-27T12:13:16+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=747'
-permalink: /index.php/2013/06/27/wordpress-plugin-install-without-ftp/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/09/magento-500-internal-server-error/"     class="crp_title">Magento 500 internal server error</a></li><li><a href="http://ka.lpe.sh/2012/10/22/wordpress-show-total-aggregate-ratings-and-reviews-to-your-posts-pages/"     class="crp_title">WordPress: Show total/aggregate ratings and reviews to your posts/pages</a></li><li><a href="http://ka.lpe.sh/2013/06/20/how-to-install-orocrm/"     class="crp_title">OroCRM Installation guide</a></li><li><a href="http://ka.lpe.sh/2013/02/20/magento-product-import-error-shows-html-code-while-importing/"     class="crp_title">Magento: Product Import error &#8211; shows HTML code while importing</a></li><li><a href="http://ka.lpe.sh/2012/10/22/humor-name-already-taken-lol/"     class="crp_title">Humor: Name already taken! LOL</a></li></ul></div>'
-categories:
+tags:
     - Wordpress
 tags:
     - 'ftp connection information'

@@ -4,11 +4,7 @@ title: 'Magento 1.5: Cannot login to admin panel after fresh install'
 date: '2011-06-05T07:11:19+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=32'
-permalink: /index.php/2011/06/05/magento-1-5-cant-login-to-admin-panel-after-fresh-install/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/12/magento-get-rid-of-admin-notifications-pop-up/"     class="crp_title">Magento: Get rid of admin notifications pop-up</a></li><li><a href="http://ka.lpe.sh/2011/07/09/magento-cant-loginadd-items-in-chrome-and-ie/"     class="crp_title">Magento: Can&#8217;t login/add items in Chrome and IE</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-submitting-form-in-admin-redirects-to-dashboard/"     class="crp_title">Magento: Submitting form in admin redirects to dashboard</a></li><li><a href="http://ka.lpe.sh/2013/01/08/mysql-root-password-reset/"     class="crp_title">Mysql root password reset or create</a></li><li><a href="http://ka.lpe.sh/2012/01/05/magento-wrong-count-in-admin-grid-when-using-group-by-clause-overriding-lib-module/"     class="crp_title">Magento: Wrong count in admin Grid when using GROUP BY clause, overriding lib module</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento error'
 tags:

@@ -4,19 +4,7 @@ title: 'Magento 2 hello world module in 2 mins!'
 date: '2015-12-23T00:08:50+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1031'
-permalink: /index.php/2015/12/23/magento-2-hello-world-module-2-mins/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-category/"     class="crp_title">Magento add attribute to category</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-order/"     class="crp_title">Magento add attribute to order</a></li><li><a href="http://ka.lpe.sh/2014/11/07/magento-error-scp-404-get-sppajax___siducoid460pid123/"     class="crp_title">Magento error: SCP 404: GET /spp/ajax/?___SID=Uco/?id=460&#038;pid=123</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-remove-index-php-from-url/"     class="crp_title">Magento remove index.php from URL</a></li><li><a href="http://ka.lpe.sh/2013/07/13/magento-system-config-404-error/"     class="crp_title">Magento system config 404 error</a></li></ul></div>'
-categories:
+tags:
     - Magento2
 tags:
     - 'hello world'

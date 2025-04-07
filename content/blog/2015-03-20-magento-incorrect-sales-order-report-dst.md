@@ -4,13 +4,8 @@ title: 'Magento bug: Incorrect sales order report during DST'
 date: '2015-03-20T02:49:19+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=979'
-permalink: /index.php/2015/03/20/magento-incorrect-sales-order-report-dst/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2014/10/07/magento-code-already-exists-fix/"     class="crp_title">Magento fix for error &#8220;Code already exists.&#8221;</a></li><li><a href="http://ka.lpe.sh/2012/07/21/magento-how-to-runset-cron-in-magento/"     class="crp_title">Magento: How to run/set cron in Magento</a></li><li><a href="http://ka.lpe.sh/2013/11/03/magento-remove-session-id-from-url/"     class="crp_title">Magento remove session id from URL</a></li><li><a href="http://ka.lpe.sh/2013/05/22/magento-recoverable-error-argument-1-passed-to/"     class="crp_title">Magento Recoverable Error Argument 1 passed to Mage_Core_Model_Store::setWebsite() must be an instance of&hellip;</a></li><li><a href="http://ka.lpe.sh/2013/04/28/magento-get-all-invoices-and-shipments-of-an-order/"     class="crp_title">Magento get all invoices and shipments of an order</a></li></ul></div>'
-crp_related_posts_feed:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/28/magento-2-security-bug/"     class="crp_title">Magento 2 &#8211; Security Bug in Customer Address section (Resolved)</a></li><li><a href="http://ka.lpe.sh/2014/10/07/magento-code-already-exists-fix/"     class="crp_title">Magento fix for error &#8220;Code already exists.&#8221;</a></li><li><a href="http://ka.lpe.sh/2013/08/11/magento-how-to-remove-order/"     class="crp_title">Magento how to remove order</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-ee-1-14-broken-category-product-sitemap-urls/"     class="crp_title">Magento EE 1.14 &#8211; Broken category &#038; product sitemap URLs</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-order/"     class="crp_title">Magento add attribute to order</a></li></ul><div class="crp_clear"></div></div>'
-categories:
+
+tags:
     - Magento
     - 'Magento admin'
 tags:

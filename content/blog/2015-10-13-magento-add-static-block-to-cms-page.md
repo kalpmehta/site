@@ -4,19 +4,7 @@ title: 'Magento add static block to cms page'
 date: '2015-10-13T21:02:30+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1021'
-permalink: /index.php/2015/10/13/magento-add-static-block-to-cms-page/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/23/magento-change-canonical-url-for-particular-category-only/"     class="crp_title">Magento: Change canonical URL for particular category only</a></li><li><a href="http://ka.lpe.sh/2013/04/25/magento-special-price-products-page/"     class="crp_title">Magento Special price products page</a></li><li><a href="http://ka.lpe.sh/2014/09/23/magento-show-gift-card-details-in-admin-order-page/"     class="crp_title">Magento: Show gift card details in admin order page</a></li><li><a href="http://ka.lpe.sh/2014/01/05/magento-display-categories-subcategories/"     class="crp_title">Magento display categories and sub-categories</a></li><li><a href="http://ka.lpe.sh/2014/08/22/magento-get-cms-page-content-without-header-footer/"     class="crp_title">Magento get CMS page content without header/footer</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

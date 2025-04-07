@@ -4,11 +4,7 @@ title: 'PHP: is_int() vs is_numeric()'
 date: '2012-10-17T14:53:07+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=353'
-permalink: /index.php/2012/10/17/php-is_int-vs-is_numeric/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/04/18/magento-get-sentence-case-from-camel-case-string/"     class="crp_title">Magento: Get sentence case from camel case string</a></li><li><a href="http://ka.lpe.sh/2013/02/09/linux-magento-daily-useful-development-commands/"     class="crp_title">Linux/Magento: Daily useful development commands</a></li><li><a href="http://ka.lpe.sh/2011/06/19/magento-get-and-set-variables-in-session/"     class="crp_title">Magento: Get and set variables in session</a></li><li><a href="http://ka.lpe.sh/2012/02/12/magentophp-convert-your-xml-object-to-array/"     class="crp_title">Magento/PHP: Convert your XML Object to Array</a></li><li><a href="http://ka.lpe.sh/2012/02/29/php-convert-simplexml-to-array/"     class="crp_title">PHP Convert SimpleXML object to Array</a></li></ul></div>'
-categories:
+tags:
     - PHP
 tags:
     - 'php check variable integer'

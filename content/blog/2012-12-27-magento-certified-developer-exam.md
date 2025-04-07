@@ -4,11 +4,7 @@ title: 'Magento Certified Developer Exam'
 date: '2012-12-27T07:32:11+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=408'
-permalink: /index.php/2012/12/27/magento-certified-developer-exam/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/20/magento-product-import-error-shows-html-code-while-importing/"     class="crp_title">Magento: Product Import error &#8211; shows HTML code while importing</a></li><li><a href="http://ka.lpe.sh/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/"     class="crp_title">Buy: Pinterest AutoPost images right from your website!</a></li><li><a href="http://ka.lpe.sh/2012/10/22/humor-name-already-taken-lol/"     class="crp_title">Humor: Name already taken! LOL</a></li><li><a href="http://ka.lpe.sh/2012/10/22/humor-samsung-apple-youre-fired/"     class="crp_title">Humor: Samsung Apple You&#8217;re fired!</a></li><li><a href="http://ka.lpe.sh/2012/04/21/magento-order-state-vs-status/"     class="crp_title">Magento: Difference between order states and statuses</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento Certification'
 tags:

@@ -4,11 +4,7 @@ title: 'Magento add attribute to customer'
 date: '2013-05-10T20:52:55+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=596'
-permalink: /index.php/2013/05/10/magento-add-attribute-to-customer/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/24/magento-add-customer-facebook-twitter-google-pinterest-handles/"     class="crp_title">Magento: Add customer Facebook, Twitter, Google+, Pinterest handles</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-category/"     class="crp_title">Magento add attribute to category</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-order/"     class="crp_title">Magento add attribute to order</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-get-products-by-attribute-set/"     class="crp_title">Magento get products by attribute set id or name</a></li><li><a href="http://ka.lpe.sh/2013/02/07/magento-add-product-custom-attribute-options-dynamically/"     class="crp_title">Magento: Add product custom attribute options dynamically</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

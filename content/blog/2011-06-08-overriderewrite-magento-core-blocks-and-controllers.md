@@ -4,11 +4,7 @@ title: 'Override/Rewrite Magento core blocks and controllers'
 date: '2011-06-08T06:23:16+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=53'
-permalink: /index.php/2011/06/08/overriderewrite-magento-core-blocks-and-controllers/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-order/"     class="crp_title">Magento add attribute to order</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-category/"     class="crp_title">Magento add attribute to category</a></li><li><a href="http://ka.lpe.sh/2012/04/15/magento-difference-between-source_model-frontend_model-backend_model/"     class="crp_title">Magento: Difference between source_model, frontend_model, backend_model</a></li><li><a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/"     class="crp_title">Magento Advanced Interview Questions</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-admin-forcing-invoice-and-ship-button-together/"     class="crp_title">Magento Admin &#8211; Forcing Invoice and Ship button together</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
 tags:

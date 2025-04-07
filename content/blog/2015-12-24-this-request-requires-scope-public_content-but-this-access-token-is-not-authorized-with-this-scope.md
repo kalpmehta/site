@@ -4,19 +4,7 @@ title: '[SOLVED] This request requires scope=public_content, but this access tok
 date: '2015-12-24T00:59:02+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1051'
-permalink: /index.php/2015/12/24/this-request-requires-scope-public_content-but-this-access-token-is-not-authorized-with-this-scope/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/28/magento-2-security-bug/"     class="crp_title">Magento 2 &#8211; Security Bug in Customer Address section (Resolved)</a></li><li><a href="http://ka.lpe.sh/2013/02/25/magento-design-patterns/"     class="crp_title">Magento: Design Patterns</a></li><li><a href="http://ka.lpe.sh/2013/11/03/magento-remove-session-id-from-url/"     class="crp_title">Magento remove session id from URL</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-checkout-cart-500-error/"     class="crp_title">Magento bug &#8211; Checkout cart 500 error &#8211; Redirect loops</a></li><li><a href="http://ka.lpe.sh/2014/10/07/magento-code-already-exists-fix/"     class="crp_title">Magento fix for error &#8220;Code already exists.&#8221;</a></li></ul></div>'
-categories:
+tags:
     - 'Instagram API'
 tags:
     - instagram

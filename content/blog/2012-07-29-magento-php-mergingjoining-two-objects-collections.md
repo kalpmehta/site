@@ -4,11 +4,7 @@ title: 'Magento, PHP: Merging/Joining two objects collections'
 date: '2012-07-29T21:10:16+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=311'
-permalink: /index.php/2012/07/29/magento-php-mergingjoining-two-objects-collections/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/26/php-xml-to-json-xml-to-array-json-to-array/"     class="crp_title">Convert PHP XML to JSON, XML to Array, JSON to Array</a></li><li><a href="http://ka.lpe.sh/2012/02/12/magentophp-convert-your-xml-object-to-array/"     class="crp_title">Magento/PHP: Convert your XML Object to Array</a></li><li><a href="http://ka.lpe.sh/2012/02/29/php-convert-simplexml-to-array/"     class="crp_title">PHP Convert SimpleXML object to Array</a></li><li><a href="http://ka.lpe.sh/2013/02/25/magento-design-patterns/"     class="crp_title">Magento: Design Patterns</a></li><li><a href="http://ka.lpe.sh/2013/04/28/magento-join-eav-collection-with-flat-table/"     class="crp_title">Magento join EAV collection with Flat table</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - PHP
 tags:

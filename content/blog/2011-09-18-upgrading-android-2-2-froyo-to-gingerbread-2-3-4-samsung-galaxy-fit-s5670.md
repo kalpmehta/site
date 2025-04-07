@@ -4,11 +4,7 @@ title: 'Upgrading Android 2.2 (Froyo) to Gingerbread (2.3.4) &#8211; Samsung Gal
 date: '2011-09-18T18:38:07+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=117'
-permalink: /index.php/2011/09/18/upgrading-android-2-2-froyo-to-gingerbread-2-3-4-samsung-galaxy-fit-s5670/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/21/migrate-magento-to-new-server-domain-database-host/"     class="crp_title">Migrate magento to new server / domain / database / host</a></li><li><a href="http://ka.lpe.sh/2012/04/15/magento-difference-between-source_model-frontend_model-backend_model/"     class="crp_title">Magento: Difference between source_model, frontend_model, backend_model</a></li><li><a href="http://ka.lpe.sh/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/"     class="crp_title">Buy: Pinterest AutoPost images right from your website!</a></li><li><a href="http://ka.lpe.sh/2011/07/10/magento-show-only-specific-attributes-in-layered-navigation/"     class="crp_title">Magento: Show only specific attributes in layered navigation</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-admin-forcing-invoice-and-ship-button-together/"     class="crp_title">Magento Admin &#8211; Forcing Invoice and Ship button together</a></li></ul></div>'
-categories:
+tags:
     - Mobile
 tags:
     - android

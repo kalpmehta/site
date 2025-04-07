@@ -4,11 +4,7 @@ title: 'Magento add admin user in MySQL'
 date: '2012-02-12T11:26:35+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=214'
-permalink: /index.php/2012/02/12/magento-add-admin-user-in-mysql/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/01/08/mysql-root-password-reset/"     class="crp_title">Mysql root password reset or create</a></li><li><a href="http://ka.lpe.sh/2012/07/21/migrate-magento-to-new-server-domain-database-host/"     class="crp_title">Migrate magento to new server / domain / database / host</a></li><li><a href="http://ka.lpe.sh/2012/01/08/magento-mysql-records-null-values-not-getting-fetched/"     class="crp_title">Magento: Mysql records with NULL values are not fetched in query</a></li><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li><li><a href="http://ka.lpe.sh/2011/06/19/magento-get-customer-details-customer-id-name-email/"     class="crp_title">Magento: Get customer details : customer id, name, email</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - MySQL

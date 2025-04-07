@@ -4,19 +4,7 @@ title: 'pdo_mysql extension is not installed'
 date: '2013-04-18T20:11:15+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=504'
-permalink: /index.php/2013/04/18/pdo_mysql-extension-is-not-installed/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/09/linux-magento-daily-useful-development-commands/"     class="crp_title">Linux/Magento: Daily useful development commands</a></li><li><a href="http://ka.lpe.sh/2013/01/08/mysql-root-password-reset/"     class="crp_title">Mysql root password reset or create</a></li><li><a href="http://ka.lpe.sh/2012/07/21/migrate-magento-to-new-server-domain-database-host/"     class="crp_title">Migrate magento to new server / domain / database / host</a></li><li><a href="http://ka.lpe.sh/2012/08/03/mysql-find-column-name-in-any-tables-having-it-in-whole-database/"     class="crp_title">Mysql: Find column name in any table(s) having it in whole database</a></li><li><a href="http://ka.lpe.sh/2012/10/10/ubuntu-delete-temporary-cache-files/"     class="crp_title">Ubuntu: Delete temporary/cache files</a></li></ul></div>'
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-categories:
+tags:
     - Linux
     - Magento
     - 'Magento error'

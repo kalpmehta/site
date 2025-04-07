@@ -4,11 +4,7 @@ title: 'OroCRM Installation guide'
 date: '2013-06-20T00:43:02+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=732'
-permalink: /index.php/2013/06/20/how-to-install-orocrm/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/06/10/orocrm/"     class="crp_title">OroCRM</a></li><li><a href="http://ka.lpe.sh/2013/02/09/magento-500-internal-server-error/"     class="crp_title">Magento 500 internal server error</a></li><li><a href="http://ka.lpe.sh/2013/04/18/magento-client-denied-by-server-configuration/"     class="crp_title">Magento client denied by server configuration notice</a></li><li><a href="http://ka.lpe.sh/2013/05/22/magento-recoverable-error-argument-1-passed-to/"     class="crp_title">Magento Recoverable Error Argument 1 passed to Mage_Core_Model_Store::setWebsite() must be an instance of&hellip;</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-remove-index-php-from-url/"     class="crp_title">Magento remove index.php from URL</a></li></ul></div>'
-categories:
+tags:
     - Linux
     - OroCRM
 tags:

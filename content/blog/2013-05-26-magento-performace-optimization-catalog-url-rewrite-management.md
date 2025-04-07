@@ -4,11 +4,7 @@ title: 'Magento performace optimization, Catalog URL Rewrite Management'
 date: '2013-05-26T15:56:17+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=647'
-permalink: /index.php/2013/05/26/magento-performace-optimization-catalog-url-rewrite-management/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/05/26/magento-remove-index-php-from-url/"     class="crp_title">Magento remove index.php from URL</a></li><li><a href="http://ka.lpe.sh/2012/08/09/magento-how-to-delete-remove-all-products-from-all-categories/"     class="crp_title">Magento: How to delete/remove all products from all categories</a></li><li><a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/"     class="crp_title">Magento Advanced Interview Questions</a></li><li><a href="http://ka.lpe.sh/2011/06/14/magento-get-file-paths-and-urls/"     class="crp_title">Magento get file paths and URLs</a></li><li><a href="http://ka.lpe.sh/2012/04/15/magento-difference-between-source_model-frontend_model-backend_model/"     class="crp_title">Magento: Difference between source_model, frontend_model, backend_model</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - Performance
 tags:

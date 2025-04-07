@@ -4,13 +4,8 @@ title: 'Magento EE 1.14 &#8211; Broken category &#038; product sitemap URLs'
 date: '2015-03-28T04:40:23+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=991'
-permalink: /index.php/2015/03/28/magento-ee-1-14-broken-category-product-sitemap-urls/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/07/21/magento-redirect-from-observer/"     class="crp_title">Magento redirect from observer</a></li><li><a href="http://ka.lpe.sh/2013/07/12/magento-convert-quote-item-to-order-item/"     class="crp_title">Magento convert quote item to order item</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-performace-optimization-catalog-url-rewrite-management/"     class="crp_title">Magento performace optimization, Catalog URL Rewrite Management</a></li><li><a href="http://ka.lpe.sh/2014/08/21/magento-event-observer-customer-registration-success/"     class="crp_title">Magento event observer for customer registration success</a></li><li><a href="http://ka.lpe.sh/2015/03/23/magento-change-canonical-url-for-particular-category-only/"     class="crp_title">Magento: Change canonical URL for particular category only</a></li></ul></div>'
-crp_related_posts_feed:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/07/21/magento-redirect-from-observer/"     class="crp_title">Magento redirect from observer</a></li><li><a href="http://ka.lpe.sh/2013/07/12/magento-convert-quote-item-to-order-item/"     class="crp_title">Magento convert quote item to order item</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-checkout-cart-500-error/"     class="crp_title">Magento bug &#8211; Checkout cart 500 error &#8211; Redirect loops</a></li><li><a href="http://ka.lpe.sh/2014/08/21/magento-event-observer-customer-registration-success/"     class="crp_title">Magento event observer for customer registration success</a></li><li><a href="http://ka.lpe.sh/2014/08/21/magento-event-check-customer-subscribed-newsletter/"     class="crp_title">Magento event to check if customer have subscribed to newsletter</a></li></ul><div class="crp_clear"></div></div>'
-categories:
+
+tags:
     - Magento
     - 'Magento admin'
 tags:

@@ -4,11 +4,7 @@ title: 'Magento Certification Preparation / Interview Questions Answers'
 date: '2013-01-04T11:28:05+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=424'
-permalink: /index.php/2013/01/04/magento-certification-preparation-interview-questions-answers/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/19/magento-interview-questions-and-answers/"     class="crp_title">Magento Interview questions and answers</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-category/"     class="crp_title">Magento add attribute to category</a></li><li><a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/"     class="crp_title">Magento Advanced Interview Questions</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-order/"     class="crp_title">Magento add attribute to order</a></li><li><a href="http://ka.lpe.sh/2011/06/08/overriderewrite-magento-core-blocks-and-controllers/"     class="crp_title">Override/Rewrite Magento core blocks and controllers</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento Certification'
     - 'Magento Interview'

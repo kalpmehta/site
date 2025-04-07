@@ -4,13 +4,9 @@ title: 'Magento 2 Security Bug in Customer Address section (Resolved)'
 date: '2015-03-28T06:31:02+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=995'
-permalink: /index.php/2015/03/28/magento-2-security-bug/
-crp_related_posts_feed:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/20/magento-incorrect-sales-order-report-dst/"     class="crp_title">Magento bug: Incorrect sales order report during DST</a></li><li><a href="http://ka.lpe.sh/2014/11/07/magento-real-ip-address-behind-proxy/"     class="crp_title">Magento: Get real IP address behind a proxy</a></li><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-checkout-cart-500-error/"     class="crp_title">Magento bug &#8211; Checkout cart 500 error &#8211; Redirect loops</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-ee-1-14-broken-category-product-sitemap-urls/"     class="crp_title">Magento EE 1.14 &#8211; Broken category &#038; product sitemap URLs</a></li></ul><div class="crp_clear"></div></div>'
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/20/magento-incorrect-sales-order-report-dst/"     class="crp_title">Magento bug: Incorrect sales order report during DST</a></li><li><a href="http://ka.lpe.sh/2014/11/07/magento-real-ip-address-behind-proxy/"     class="crp_title">Magento: Get real IP address behind a proxy</a></li><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li><li><a href="http://ka.lpe.sh/2013/06/10/orocrm/"     class="crp_title">OroCRM</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-ee-1-14-broken-category-product-sitemap-urls/"     class="crp_title">Magento EE 1.14 &#8211; Broken category &#038; product sitemap URLs</a></li></ul></div>'
-categories:
+
+
+tags:
     - Magento2
 tags:
     - bug

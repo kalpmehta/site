@@ -4,19 +4,7 @@ title: 'I am one of the Top 50 Magento Contributors of 2018'
 date: '2019-02-09T19:46:08+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1182'
-permalink: /index.php/2019/02/09/one-top-50-magento-contributors-2018/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2018/10/20/magento-2-certified-professional-developer-plus-workshop/"     class="crp_title">Magento 2 Certified Professional Developer Plus Workshop</a></li><li><a href="http://ka.lpe.sh/2017/05/04/redirect-request-post-data-using-htaccess/"     class="crp_title">Redirect request with POST data using .htaccess</a></li><li><a href="http://ka.lpe.sh/2018/08/13/magento-2-certified-professional-developer-exam-experience/"     class="crp_title">Magento 2 Certified Professional Developer Exam Experience</a></li><li><a href="http://ka.lpe.sh/2016/11/17/multiple-security-vulnerabilities-aheadworks-follow-up-email-extension/"     class="crp_title">Magento: Multiple security vulnerabilities in Aheadworks Follow up Email extension</a></li><li><a href="http://ka.lpe.sh/2018/03/20/install-magento-2-2-3-valet-plus-macos/"     class="crp_title">Setting up Magento 2.2.3 on Valet+ (requires MacOS)</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - Magento2
 ---

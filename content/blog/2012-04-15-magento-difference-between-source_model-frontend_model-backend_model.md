@@ -4,11 +4,7 @@ title: 'Magento: Difference between source_model, frontend_model, backend_model'
 date: '2012-04-15T07:15:06+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=247'
-permalink: /index.php/2012/04/15/magento-difference-between-source_model-frontend_model-backend_model/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/19/magento-interview-questions-and-answers/"     class="crp_title">Magento Interview questions and answers</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-admin-forcing-invoice-and-ship-button-together/"     class="crp_title">Magento Admin &#8211; Forcing Invoice and Ship button together</a></li><li><a href="http://ka.lpe.sh/2011/06/08/overriderewrite-magento-core-blocks-and-controllers/"     class="crp_title">Override/Rewrite Magento core blocks and controllers</a></li><li><a href="http://ka.lpe.sh/2012/07/12/magento-add-radio-checkbox-button-to-admin-grid/"     class="crp_title">Magento add radio / checkbox button to admin grid</a></li><li><a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/"     class="crp_title">Magento Advanced Interview Questions</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento Interview'

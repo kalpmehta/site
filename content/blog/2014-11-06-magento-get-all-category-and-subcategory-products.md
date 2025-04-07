@@ -4,11 +4,7 @@ title: 'Magento: Get all category and subcategory products'
 date: '2014-11-06T20:37:45+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=961'
-permalink: /index.php/2014/11/06/magento-get-all-category-and-subcategory-products/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/07/21/magento-get-all-categories-of-a-product/"     class="crp_title">Magento get all categories of a product</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-get-category-object-from-category-name/"     class="crp_title">Magento: Get category object from category name</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-get-subcategories-of-a-category/"     class="crp_title">Magento get subcategories of a category by category ID</a></li><li><a href="http://ka.lpe.sh/2014/01/05/magento-display-categories-subcategories/"     class="crp_title">Magento display categories and sub-categories</a></li><li><a href="http://ka.lpe.sh/2013/07/19/magento-products-not-showing-in-categories/"     class="crp_title">Magento products not showing in categories</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

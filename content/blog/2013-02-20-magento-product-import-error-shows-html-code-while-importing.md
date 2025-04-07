@@ -4,11 +4,7 @@ title: 'Magento: Product Import error &#8211; shows HTML code while importing'
 date: '2013-02-20T15:07:57+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=473'
-permalink: /index.php/2013/02/20/magento-product-import-error-shows-html-code-while-importing/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/09/magento-500-internal-server-error/"     class="crp_title">Magento 500 internal server error</a></li><li><a href="http://ka.lpe.sh/2013/02/23/magento-product-free-paid-sample-purchase-order/"     class="crp_title">Magento: Product Free/Paid SAMPLE Purchase Order</a></li><li><a href="http://ka.lpe.sh/2012/01/17/404-room-not-found-lol-d/"     class="crp_title">404 Room not found.. LOL :D</a></li><li><a href="http://ka.lpe.sh/2013/04/18/pdo_mysql-extension-is-not-installed/"     class="crp_title">pdo_mysql extension is not installed</a></li><li><a href="http://ka.lpe.sh/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/"     class="crp_title">Buy: Pinterest AutoPost images right from your website!</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento error'
 tags:

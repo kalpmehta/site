@@ -4,11 +4,7 @@ title: 'jQuery Prototype conflict, resolve it using noconflict'
 date: '2013-06-01T20:37:42+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=682'
-permalink: /index.php/2013/06/01/jquery-prototype-conflict/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/05/29/jquery-check-if-checkbox-is-checked/"     class="crp_title">jQuery check if checkbox is checked or not</a></li><li><a href="http://ka.lpe.sh/2013/05/29/jquery-redirect-page-with-javascript-alternative/"     class="crp_title">jQuery redirect page, with javascript alternative</a></li><li><a href="http://ka.lpe.sh/2013/02/25/magento-design-patterns/"     class="crp_title">Magento: Design Patterns</a></li><li><a href="http://ka.lpe.sh/2012/11/02/linux-bash-script-to-get-email-address-and-created-updated-expires-dates-of-domain-name/"     class="crp_title">Linux: Bash script to get email address and created/updated/expires dates of domain name</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-customer/"     class="crp_title">Magento add attribute to customer</a></li></ul></div>'
-categories:
+tags:
     - jQuery
     - 'Prototype JS'
 tags:

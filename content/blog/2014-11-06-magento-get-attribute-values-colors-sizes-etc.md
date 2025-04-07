@@ -4,11 +4,7 @@ title: 'Magento: Get all attribute values (colors, sizes, etc..)'
 date: '2014-11-06T20:44:48+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=963'
-permalink: /index.php/2014/11/06/magento-get-attribute-values-colors-sizes-etc/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/06/15/magento-get-attribute-options/"     class="crp_title">Magento get attribute options</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/"     class="crp_title">Magento: Get product attribute&#8217;s select option id/label/value</a></li><li><a href="http://ka.lpe.sh/2013/08/13/magento-convert-attribute-type-from-text-to-dropdown/"     class="crp_title">Magento convert attribute type from TEXT to DROPDOWN</a></li><li><a href="http://ka.lpe.sh/2013/06/15/magento-get-attribute-label/"     class="crp_title">Magento get attribute label</a></li><li><a href="http://ka.lpe.sh/2013/05/10/magento-add-attribute-to-customer/"     class="crp_title">Magento add attribute to customer</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

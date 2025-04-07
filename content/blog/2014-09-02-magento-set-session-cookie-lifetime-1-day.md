@@ -4,11 +4,7 @@ title: 'Magento set session cookie lifetime to 1 day'
 date: '2014-09-02T17:28:16+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=930'
-permalink: /index.php/2014/09/02/magento-set-session-cookie-lifetime-1-day/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2011/12/31/magento-getting-back-shopping-cart-items-after-order-fails/"     class="crp_title">Magento: Getting back shopping cart items after order fails</a></li><li><a href="http://ka.lpe.sh/2014/08/22/magento-auto-remove-out-of-stock-items-from-shopping-cart/"     class="crp_title">Magento auto remove out of stock items from shopping cart</a></li><li><a href="http://ka.lpe.sh/2014/08/22/magento-reload-top-mini-cart-programatically/"     class="crp_title">Magento reload top mini cart programatically</a></li><li><a href="http://ka.lpe.sh/2014/01/05/magento-continue-shopping-link-to-last-added-products-category-page/"     class="crp_title">Magento continue shopping link to last added product&#8217;s category page</a></li><li><a href="http://ka.lpe.sh/2013/11/03/magento-remove-session-id-from-url/"     class="crp_title">Magento remove session id from URL</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

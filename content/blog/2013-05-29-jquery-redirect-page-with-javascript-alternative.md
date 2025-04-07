@@ -4,11 +4,7 @@ title: 'jQuery redirect page, with javascript alternative'
 date: '2013-05-29T11:31:29+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=672'
-permalink: /index.php/2013/05/29/jquery-redirect-page-with-javascript-alternative/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/23/magento-product-free-paid-sample-purchase-order/"     class="crp_title">Magento: Product Free/Paid SAMPLE Purchase Order</a></li><li><a href="http://ka.lpe.sh/2011/06/14/magento-get-file-paths-and-urls/"     class="crp_title">Magento get file paths and URLs</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-remove-index-php-from-url/"     class="crp_title">Magento remove index.php from URL</a></li><li><a href="http://ka.lpe.sh/2012/02/12/magento-show-track-your-order-in-frontend-my-orders/"     class="crp_title">Magento: Show &#8220;track your order&#8221; in frontend &#8211; My Orders</a></li><li><a href="http://ka.lpe.sh/2013/02/25/magento-design-patterns/"     class="crp_title">Magento: Design Patterns</a></li></ul></div>'
-categories:
+tags:
     - jQuery
 tags:
     - jquery

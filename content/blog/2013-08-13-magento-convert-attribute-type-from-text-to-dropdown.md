@@ -4,21 +4,7 @@ title: 'Magento convert attribute type from TEXT to DROPDOWN'
 date: '2013-08-13T23:15:44+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=825'
-permalink: /index.php/2013/08/13/magento-convert-attribute-type-from-text-to-dropdown/
-snapEdIT:
-    - '1'
-snapFB:
-    - 's:162:"a:1:{i:0;a:4:{s:8:"PostType";s:1:"A";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:56:"New post (%TITLE%) has been published on %SITENAME% blog";s:4:"doFB";i:0;}}";'
-snapTW:
-    - 's:225:"a:1:{i:0;a:7:{s:4:"doTW";s:1:"1";s:10:"SNAPformat";s:15:"%TITLE% - %URL%";s:8:"attchImg";s:1:"0";s:11:"isPrePosted";s:1:"1";s:8:"isPosted";s:1:"1";s:4:"pgID";s:18:"367424293522931712";s:5:"pDate";s:19:"2013-08-13 23:15:52";}}";'
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/07/magento-add-product-custom-attribute-options-dynamically/"     class="crp_title">Magento: Add product custom attribute options dynamically</a></li><li><a href="http://ka.lpe.sh/2013/06/15/magento-get-attribute-options/"     class="crp_title">Magento get attribute options</a></li><li><a href="http://ka.lpe.sh/2013/06/15/magento-get-attribute-value/"     class="crp_title">Magento get attribute value</a></li><li><a href="http://ka.lpe.sh/2011/06/06/magento-get-all-the-values-of-a-magento-eav-for-a-particular-attribute-code/"     class="crp_title">Magento: Get all the values of a Magento EAV for a particular attribute code</a></li><li><a href="http://ka.lpe.sh/2013/06/15/magento-get-attribute-label/"     class="crp_title">Magento get attribute label</a></li></ul></div>'
-snap_isAutoPosted:
-    - '1'
-snapLI:
-    - 's:410:"a:1:{i:0;a:8:{s:4:"doLI";s:1:"1";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:46:"New post has been published on %SITENAME% blog";s:11:"SNAPformatT";s:18:"New Post - %TITLE%";s:11:"isPrePosted";s:1:"1";s:8:"isPosted";s:1:"1";s:4:"pgID";s:123:"http://www.linkedin.com/updates?discuss=&amp;scope=20008880&amp;stype=M&amp;topic=5773190272091435008&amp;type=U&amp;a=aHBE";s:5:"pDate";s:19:"2013-08-13 23:17:01";}}";'
-categories:
+tags:
     - Magento
     - 'Magento admin'
 tags:

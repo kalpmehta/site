@@ -4,19 +4,7 @@ title: 'Magento 2 upgrade from 2.0.* to latest version using composer via CLI'
 date: '2017-04-17T01:11:15+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1096'
-permalink: /index.php/2017/04/17/magento-2-upgrade-2-0-latest-version-using-composer-via-cli/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/12/23/magento-2-hello-world-module-2-mins/"     class="crp_title">Magento 2 hello world module in 2 mins!</a></li><li><a href="http://ka.lpe.sh/2015/09/04/magento-zipcode-4-tax-calculation-bug-fix/"     class="crp_title">Magento: Zipcode + 4 tax calculation bug fix</a></li><li><a href="http://ka.lpe.sh/2014/11/07/magento-error-scp-404-get-sppajax___siducoid460pid123/"     class="crp_title">Magento error: SCP 404: GET /spp/ajax/?___SID=Uco/?id=460&#038;pid=123</a></li><li><a href="http://ka.lpe.sh/2016/03/28/wordpress-update-error/"     class="crp_title">[Resolved] WordPress update error</a></li><li><a href="http://ka.lpe.sh/2014/09/04/magento-addremove-product-attribute-programatically/"     class="crp_title">Magento add/remove product attribute programatically</a></li></ul></div>'
-categories:
+tags:
     - Magento2
 tags:
     - composer

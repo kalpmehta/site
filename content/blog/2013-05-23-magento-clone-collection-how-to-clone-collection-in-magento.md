@@ -4,11 +4,7 @@ title: 'Magento clone collection &#8211; How to clone collection in Magento'
 date: '2013-05-23T09:03:43+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=633'
-permalink: /index.php/2013/05/23/magento-clone-collection-how-to-clone-collection-in-magento/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2011/12/31/magento-joining-groupby-order-invoice-shipment-tables/"     class="crp_title">Magento: Joining/group by &#8211; order, invoice, shipment tables</a></li><li><a href="http://ka.lpe.sh/2012/01/05/magento-wrong-count-in-admin-grid-when-using-group-by-clause-overriding-lib-module/"     class="crp_title">Magento: Wrong count in admin Grid when using GROUP BY clause, overriding lib module</a></li><li><a href="http://ka.lpe.sh/2013/04/25/magento-check-if-any-particular-customer-is-currently-logged-in/"     class="crp_title">Magento: Check if any particular customer is currently logged in</a></li><li><a href="http://ka.lpe.sh/2013/04/25/magento-special-price-products-page/"     class="crp_title">Magento Special price products page</a></li><li><a href="http://ka.lpe.sh/2012/01/08/magento-mysql-records-null-values-not-getting-fetched/"     class="crp_title">Magento: Mysql records with NULL values are not fetched in query</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento frontend'
 tags:

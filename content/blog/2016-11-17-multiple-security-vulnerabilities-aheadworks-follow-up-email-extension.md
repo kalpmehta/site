@@ -4,19 +4,7 @@ title: 'Magento: Multiple security vulnerabilities in Aheadworks Follow up Email
 date: '2016-11-17T20:46:55+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1081'
-permalink: /index.php/2016/11/17/multiple-security-vulnerabilities-aheadworks-follow-up-email-extension/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/03/28/magento-2-security-bug/"     class="crp_title">Magento 2 &#8211; Security Bug in Customer Address section (Resolved)</a></li><li><a href="http://ka.lpe.sh/2014/09/25/fix-linux-bash-code-vulnerability-shellshock/"     class="crp_title">[Fix] Linux Bash Code Injection Vulnerability &#8211; ShellShock</a></li><li><a href="http://ka.lpe.sh/2015/03/20/magento-incorrect-sales-order-report-dst/"     class="crp_title">Magento bug: Incorrect sales order report during DST</a></li><li><a href="http://ka.lpe.sh/2016/03/28/wordpress-update-error/"     class="crp_title">[Resolved] WordPress update error</a></li><li><a href="http://ka.lpe.sh/2015/12/23/magento-2-hello-world-module-2-mins/"     class="crp_title">Magento 2 hello world module in 2 mins!</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - Security
 ---

@@ -4,19 +4,7 @@ title: 'Redirect request with POST data using .htaccess'
 date: '2017-05-04T21:34:37+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1101'
-permalink: /index.php/2017/05/04/redirect-request-post-data-using-htaccess/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/12/24/this-request-requires-scope-public_content-but-this-access-token-is-not-authorized-with-this-scope/"     class="crp_title">[SOLVED] This request requires scope=public_content, but this access token is not authorized with this scope</a></li><li><a href="http://ka.lpe.sh/2015/09/04/magento-zipcode-4-tax-calculation-bug-fix/"     class="crp_title">Magento: Zipcode + 4 tax calculation bug fix</a></li><li><a href="http://ka.lpe.sh/2014/11/07/magento-error-scp-404-get-sppajax___siducoid460pid123/"     class="crp_title">Magento error: SCP 404: GET /spp/ajax/?___SID=Uco/?id=460&#038;pid=123</a></li><li><a href="http://ka.lpe.sh/2014/10/07/magento-code-already-exists-fix/"     class="crp_title">Magento fix for error &#8220;Code already exists.&#8221;</a></li><li><a href="http://ka.lpe.sh/2016/02/16/magento-2-events-observer-list/"     class="crp_title">Magento 2 events observer list</a></li></ul></div>'
-categories:
+tags:
     - Apache
     - htaccess
 tags:

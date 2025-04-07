@@ -4,11 +4,7 @@ title: 'Magento check if customer registered in checkout page'
 date: '2014-08-21T20:49:54+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=916'
-permalink: /index.php/2014/08/21/magento-check-customer-registered-checkout-page/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2011/12/31/magento-register-guest-user-to-website-if-email-provided/"     class="crp_title">Magento: Register guest user to website if email provided</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-getting-back-shopping-cart-items-after-order-fails/"     class="crp_title">Magento: Getting back shopping cart items after order fails</a></li><li><a href="http://ka.lpe.sh/2013/05/26/magento-disable-guest-checkout-enable-guest-checkout/"     class="crp_title">Magento disable guest checkout / enable guest checkout</a></li><li><a href="http://ka.lpe.sh/2013/07/12/magento-convert-quote-item-to-order-item/"     class="crp_title">Magento convert quote item to order item</a></li><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento frontend'
 tags:

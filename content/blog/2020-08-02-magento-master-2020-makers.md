@@ -4,19 +4,7 @@ title: 'Magento Master 2020 Makers'
 date: '2020-08-02T02:05:18+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1244'
-permalink: /index.php/2020/08/02/magento-master-2020-makers/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2019/02/09/one-top-50-magento-contributors-2018/"     class="crp_title">I am one of the Top 50 Magento Contributors of 2018</a></li><li><a href="http://ka.lpe.sh/2019/04/28/magento-imagine-dev-exchange-2019/"     class="crp_title">Magento Imagine Dev Exchange 2019</a></li><li><a href="http://ka.lpe.sh/2019/06/09/magentoimagine2019-dev-exchange-recap-make-magento-secure/"     class="crp_title">#MagentoImagine2019 Dev Exchange Recap – Make Magento more secure</a></li><li><a href="http://ka.lpe.sh/2018/10/20/magento-2-certified-professional-developer-plus-workshop/"     class="crp_title">Magento 2 Certified Professional Developer Plus Workshop</a></li><li><a href="http://ka.lpe.sh/2018/08/13/magento-2-certified-professional-developer-exam-experience/"     class="crp_title">Magento 2 Certified Professional Developer Exam Experience</a></li></ul></div>'
-s4_cdes:
-    - ''
-s4_ctitle:
-    - ''
-s4_image2s:
-    - ''
-s4_url2s:
-    - ''
-categories:
+tags:
     - Magento
     - 'Magento Master'
 ---

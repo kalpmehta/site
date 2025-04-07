@@ -4,19 +4,7 @@ title: 'Setting up Magento 2.2.3 on Valet+ (requires MacOS)'
 date: '2018-03-20T00:15:28+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1117'
-permalink: /index.php/2018/03/20/install-magento-2-2-3-valet-plus-macos/
-s4_ctitle:
-    - ''
-s4_image2s:
-    - ''
-s4_url2s:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2015/12/23/magento-2-hello-world-module-2-mins/"     class="crp_title">Magento 2 hello world module in 2 mins!</a></li><li><a href="http://ka.lpe.sh/2015/09/04/magento-zipcode-4-tax-calculation-bug-fix/"     class="crp_title">Magento: Zipcode + 4 tax calculation bug fix</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-ee-1-14-broken-category-product-sitemap-urls/"     class="crp_title">Magento EE 1.14 &#8211; Broken category &#038; product sitemap URLs</a></li><li><a href="http://ka.lpe.sh/2017/04/17/magento-2-upgrade-2-0-latest-version-using-composer-via-cli/"     class="crp_title">Magento 2 upgrade from 2.0.* to latest version using composer via CLI</a></li><li><a href="http://ka.lpe.sh/2015/03/28/magento-2-security-bug/"     class="crp_title">Magento 2 &#8211; Security Bug in Customer Address section (Resolved)</a></li></ul></div>'
-categories:
+tags:
     - Magento2
 tags:
     - magento2

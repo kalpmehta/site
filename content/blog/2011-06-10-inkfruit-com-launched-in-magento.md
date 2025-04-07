@@ -4,11 +4,7 @@ title: 'InkFruit.com &#8211; launched in Magento'
 date: '2011-06-10T15:33:37+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=60'
-permalink: /index.php/2011/06/10/inkfruit-com-launched-in-magento/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/10/22/humor-samsung-apple-youre-fired/"     class="crp_title">Humor: Samsung Apple You&#8217;re fired!</a></li><li><a href="http://ka.lpe.sh/2012/10/22/humor-name-already-taken-lol/"     class="crp_title">Humor: Name already taken! LOL</a></li><li><a href="http://ka.lpe.sh/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/"     class="crp_title">Buy: Pinterest AutoPost images right from your website!</a></li><li><a href="http://ka.lpe.sh/2012/01/29/magento-advanced-interview-questions/"     class="crp_title">Magento Advanced Interview Questions</a></li><li><a href="http://ka.lpe.sh/2012/01/17/404-room-not-found-lol-d/"     class="crp_title">404 Room not found.. LOL :D</a></li></ul></div>'
-categories:
+tags:
     - eCommerce
     - Magento
 tags:

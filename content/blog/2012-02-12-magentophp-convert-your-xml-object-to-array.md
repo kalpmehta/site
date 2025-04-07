@@ -4,11 +4,7 @@ title: 'Magento/PHP: Convert your XML Object to Array'
 date: '2012-02-12T06:24:25+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=202'
-permalink: /index.php/2012/02/12/magentophp-convert-your-xml-object-to-array/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/02/29/php-convert-simplexml-to-array/"     class="crp_title">PHP Convert SimpleXML object to Array</a></li><li><a href="http://ka.lpe.sh/2012/07/26/php-xml-to-json-xml-to-array-json-to-array/"     class="crp_title">Convert PHP XML to JSON, XML to Array, JSON to Array</a></li><li><a href="http://ka.lpe.sh/2012/07/29/magento-php-mergingjoining-two-objects-collections/"     class="crp_title">Magento, PHP: Merging/Joining two objects collections</a></li><li><a href="http://ka.lpe.sh/2012/01/08/magento-save-shipment-information-tracking-number-carrier-code-programatically/"     class="crp_title">Magento: Save shipment information of order programatically</a></li><li><a href="http://ka.lpe.sh/2012/04/18/magento-get-sentence-case-from-camel-case-string/"     class="crp_title">Magento: Get sentence case from camel case string</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - PHP

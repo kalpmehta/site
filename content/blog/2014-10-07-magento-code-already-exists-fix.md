@@ -4,19 +4,7 @@ title: 'Magento fix for error "Code already exists."'
 date: '2014-10-07T23:09:09+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=946'
-permalink: /index.php/2014/10/07/magento-code-already-exists-fix/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/02/09/magento-500-internal-server-error/"     class="crp_title">Magento 500 internal server error</a></li><li><a href="http://ka.lpe.sh/2011/10/10/magento-get-checkout-cart-total-details-subtotal-grandtotal-discount-tax/"     class="crp_title">Magento: Get checkout cart total details | Subtotal/Grandtotal/Discount/Tax</a></li><li><a href="http://ka.lpe.sh/2013/04/18/pdo_mysql-extension-is-not-installed/"     class="crp_title">pdo_mysql extension is not installed</a></li><li><a href="http://ka.lpe.sh/2013/07/19/magento-htaccess-performance-optimization/"     class="crp_title">Magento tweak .htaccess for performance optimization</a></li><li><a href="http://ka.lpe.sh/2014/09/02/magento-set-session-cookie-lifetime-1-day/"     class="crp_title">Magento set session cookie lifetime to 1 day</a></li></ul></div>'
-s4_image2s:
-    - ''
-s4_url2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento error'

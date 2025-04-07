@@ -4,11 +4,7 @@ title: 'jQuery check if checkbox is checked or not'
 date: '2013-05-29T11:49:19+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=674'
-permalink: /index.php/2013/05/29/jquery-check-if-checkbox-is-checked/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/07/12/magento-add-radio-checkbox-button-to-admin-grid/"     class="crp_title">Magento add radio / checkbox button to admin grid</a></li><li><a href="http://ka.lpe.sh/2013/05/29/jquery-redirect-page-with-javascript-alternative/"     class="crp_title">jQuery redirect page, with javascript alternative</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-submitting-form-in-admin-redirects-to-dashboard/"     class="crp_title">Magento: Submitting form in admin redirects to dashboard</a></li><li><a href="http://ka.lpe.sh/2012/09/13/magento-get-product-attribute-select-option-idlabelvalue/"     class="crp_title">Magento: Get product attribute&#8217;s select option id/label/value</a></li><li><a href="http://ka.lpe.sh/2013/05/20/magento-pinterest-extension-plugin-autopin-multiple-product-images/"     class="crp_title">Magento Pinterest extension Auto Pin multiple product images Plugin</a></li></ul></div>'
-categories:
+tags:
     - jQuery
 tags:
     - checkbox

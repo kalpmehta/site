@@ -4,11 +4,7 @@ title: 'Magento event observer for customer registration success'
 date: '2014-08-21T21:00:10+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=918'
-permalink: /index.php/2014/08/21/magento-event-observer-customer-registration-success/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2014/08/21/magento-check-customer-registered-checkout-page/"     class="crp_title">Magento check if customer registered in checkout page</a></li><li><a href="http://ka.lpe.sh/2013/07/12/magento-convert-quote-item-to-order-item/"     class="crp_title">Magento convert quote item to order item</a></li><li><a href="http://ka.lpe.sh/2012/07/26/magento-check-if-customer-already-exist-or-not/"     class="crp_title">Magento: Check if customer already exist or not</a></li><li><a href="http://ka.lpe.sh/2011/12/31/magento-admin-forcing-invoice-and-ship-button-together/"     class="crp_title">Magento Admin &#8211; Forcing Invoice and Ship button together</a></li><li><a href="http://ka.lpe.sh/2012/01/17/magento-adding-column-to-sales_flat_order_item-sales_flat_invoice_item-and-sales_flat_shipment_item/"     class="crp_title">Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento frontend'
 tags:

@@ -4,11 +4,7 @@ title: 'Magento: Get all products with 0 quantity and In Stock'
 date: '2014-11-06T20:23:39+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=957'
-permalink: /index.php/2014/11/06/magento-get-products-0-quantity-stock/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2014/11/06/magento-get-products-without-categories-orphaned-products/"     class="crp_title">Magento: Get all products without categories (orphaned products)</a></li><li><a href="http://ka.lpe.sh/2013/07/19/magento-products-not-showing-in-categories/"     class="crp_title">Magento products not showing in categories</a></li><li><a href="http://ka.lpe.sh/2013/02/23/magento-product-free-paid-sample-purchase-order/"     class="crp_title">Magento: Product Free/Paid SAMPLE Purchase Order</a></li><li><a href="http://ka.lpe.sh/2012/10/22/magento-add-products-to-placed-order-programatically/"     class="crp_title">Magento: Add products to placed order programatically</a></li><li><a href="http://ka.lpe.sh/2013/07/21/magento-get-all-categories-of-a-product/"     class="crp_title">Magento get all categories of a product</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

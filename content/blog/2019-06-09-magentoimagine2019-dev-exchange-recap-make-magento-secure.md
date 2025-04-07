@@ -4,19 +4,7 @@ title: '#MagentoImagine2019 Dev Exchange Recap – Make Magento more secure'
 date: '2019-06-09T06:09:10+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1203'
-permalink: /index.php/2019/06/09/magentoimagine2019-dev-exchange-recap-make-magento-secure/
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2019/04/28/magento-imagine-dev-exchange-2019/"     class="crp_title">Magento Imagine Dev Exchange 2019</a></li><li><a href="http://ka.lpe.sh/2016/11/17/multiple-security-vulnerabilities-aheadworks-follow-up-email-extension/"     class="crp_title">Magento: Multiple security vulnerabilities in Aheadworks Follow up Email extension</a></li><li><a href="http://ka.lpe.sh/2018/10/20/magento-2-certified-professional-developer-plus-workshop/"     class="crp_title">Magento 2 Certified Professional Developer Plus Workshop</a></li><li><a href="http://ka.lpe.sh/2018/08/13/magento-2-certified-professional-developer-exam-experience/"     class="crp_title">Magento 2 Certified Professional Developer Exam Experience</a></li><li><a href="http://ka.lpe.sh/2018/03/20/install-magento-2-2-3-valet-plus-macos/"     class="crp_title">Setting up Magento 2.2.3 on Valet+ (requires MacOS)</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento Imagine'
     - Security

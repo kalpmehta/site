@@ -4,11 +4,7 @@ title: 'Magento: Joining/group by &#8211; order, invoice, shipment tables'
 date: '2011-12-31T11:09:45+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=143'
-permalink: /index.php/2011/12/31/magento-joining-groupby-order-invoice-shipment-tables/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/04/28/magento-join-eav-collection-with-flat-table/"     class="crp_title">Magento join EAV collection with Flat table</a></li><li><a href="http://ka.lpe.sh/2013/02/20/magento-reset-download-limit-for-downloadable-product-item-order/"     class="crp_title">Magento: Reset download limit for downloadable product item/order</a></li><li><a href="http://ka.lpe.sh/2012/01/05/magento-wrong-count-in-admin-grid-when-using-group-by-clause-overriding-lib-module/"     class="crp_title">Magento: Wrong count in admin Grid when using GROUP BY clause, overriding lib module</a></li><li><a href="http://ka.lpe.sh/2013/04/25/magento-special-price-products-page/"     class="crp_title">Magento Special price products page</a></li><li><a href="http://ka.lpe.sh/2012/01/08/magento-mysql-records-null-values-not-getting-fetched/"     class="crp_title">Magento: Mysql records with NULL values are not fetched in query</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
 tags:

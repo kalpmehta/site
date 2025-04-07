@@ -4,19 +4,7 @@ title: 'Magento 2 Certified Professional Developer Exam Experience'
 date: '2018-08-13T22:13:07+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=1131'
-permalink: /index.php/2018/08/13/magento-2-certified-professional-developer-exam-experience/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2016/11/17/multiple-security-vulnerabilities-aheadworks-follow-up-email-extension/"     class="crp_title">Magento: Multiple security vulnerabilities in Aheadworks Follow up Email extension</a></li><li><a href="http://ka.lpe.sh/2015/12/24/this-request-requires-scope-public_content-but-this-access-token-is-not-authorized-with-this-scope/"     class="crp_title">[SOLVED] This request requires scope=public_content, but this access token is not authorized with this scope</a></li><li><a href="http://ka.lpe.sh/2018/03/20/install-magento-2-2-3-valet-plus-macos/"     class="crp_title">Setting up Magento 2.2.3 on Valet+ (requires MacOS)</a></li><li><a href="http://ka.lpe.sh/2017/04/17/magento-2-upgrade-2-0-latest-version-using-composer-via-cli/"     class="crp_title">Magento 2 upgrade from 2.0.* to latest version using composer via CLI</a></li><li><a href="http://ka.lpe.sh/2017/05/04/redirect-request-post-data-using-htaccess/"     class="crp_title">Redirect request with POST data using .htaccess</a></li></ul></div>'
-s4_url2s:
-    - ''
-s4_image2s:
-    - ''
-s4_ctitle:
-    - ''
-s4_cdes:
-    - ''
-categories:
+tags:
     - 'Magento Certification'
     - Magento2
 tags:

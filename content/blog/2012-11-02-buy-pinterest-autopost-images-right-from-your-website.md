@@ -4,19 +4,7 @@ title: 'Buy: Pinterest Auto Pin images right from your website!'
 date: '2012-11-02T12:00:53+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=397'
-permalink: /index.php/2012/11/02/buy-pinterest-autopost-images-right-from-your-website/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/10/22/humor-name-already-taken-lol/"     class="crp_title">Humor: Name already taken! LOL</a></li><li><a href="http://ka.lpe.sh/2012/10/22/humor-samsung-apple-youre-fired/"     class="crp_title">Humor: Samsung Apple You&#8217;re fired!</a></li><li><a href="http://ka.lpe.sh/2013/02/26/magento-cant-see-product-images-in-category-page/"     class="crp_title">Magento: Can&#8217;t see product images in category page</a></li><li><a href="http://ka.lpe.sh/2012/07/12/magento-image-resize-compression-reduces-quality-jpeg/"     class="crp_title">Magento: Image resize/compression reduces quality of JPEG</a></li><li><a href="http://ka.lpe.sh/2011/06/10/inkfruit-com-launched-in-magento/"     class="crp_title">InkFruit.com &#8211; launched in Magento</a></li></ul></div>'
-snapEdIT:
-    - '1'
-snapFB:
-    - 's:166:"a:1:{i:0;a:4:{s:4:"doFB";s:1:"1";s:8:"PostType";s:1:"A";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:56:"New post (%TITLE%) has been published on %SITENAME% blog";}}";'
-snapLI:
-    - 's:178:"a:1:{i:0;a:4:{s:4:"doLI";s:1:"1";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:46:"New post has been published on %SITENAME% blog";s:11:"SNAPformatT";s:18:"New Post - %TITLE%";}}";'
-snapTW:
-    - 's:99:"a:1:{i:0;a:3:{s:4:"doTW";s:1:"1";s:10:"SNAPformat";s:15:"%TITLE% - %URL%";s:8:"attchImg";s:1:"0";}}";'
-categories:
+tags:
     - PHP
 tags:
     - checkout

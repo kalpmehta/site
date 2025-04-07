@@ -4,11 +4,7 @@ title: 'Prototype Utility Methods &#8211; Commonly used prototypejs functions'
 date: '2013-06-03T11:33:13+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=687'
-permalink: /index.php/2013/06/03/prototype-utility-methods/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/06/01/return-false-vs-preventdefault-javascript/"     class="crp_title">return false vs preventDefault in javascript</a></li><li><a href="http://ka.lpe.sh/2013/06/01/jquery-prototype-conflict/"     class="crp_title">jQuery Prototype conflict, resolve it using noconflict</a></li><li><a href="http://ka.lpe.sh/2012/04/15/magento-difference-between-source_model-frontend_model-backend_model/"     class="crp_title">Magento: Difference between source_model, frontend_model, backend_model</a></li><li><a href="http://ka.lpe.sh/2013/02/25/magento-design-patterns/"     class="crp_title">Magento: Design Patterns</a></li><li><a href="http://ka.lpe.sh/2013/02/02/magento-create-database-backups-daily-programatically-by-cron/"     class="crp_title">Magento: Create database backups daily programatically by cron</a></li></ul></div>'
-categories:
+tags:
     - 'Prototype JS'
 tags:
     - prototypejs

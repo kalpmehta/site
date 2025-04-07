@@ -4,11 +4,7 @@ title: 'Magento event observer cheatsheet list'
 date: '2013-07-17T13:34:56+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=767'
-permalink: /index.php/2013/07/17/magento-event-observer-cheatsheet-list/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/07/12/magento-convert-quote-item-to-order-item/"     class="crp_title">Magento convert quote item to order item</a></li><li><a href="http://ka.lpe.sh/2012/08/22/magento-get-route-name-module-name-controller-and-action-name-from-url/"     class="crp_title">Magento: Get route name, module name, controller and action name from URL</a></li><li><a href="http://ka.lpe.sh/2013/01/04/magento-certification-preparation-interview-questions-answers/"     class="crp_title">Magento Certification Preparation / Interview Questions Answers</a></li><li><a href="http://ka.lpe.sh/2012/01/17/magento-adding-column-to-sales_flat_order_item-sales_flat_invoice_item-and-sales_flat_shipment_item/"     class="crp_title">Magento: Adding column to sales_flat_order_item, sales_flat_invoice_item and sales_flat_shipment_item</a></li><li><a href="http://ka.lpe.sh/2013/06/01/return-false-vs-preventdefault-javascript/"     class="crp_title">return false vs preventDefault in javascript</a></li></ul></div>'
-categories:
+tags:
     - Magento
     - 'Magento admin'
     - 'Magento frontend'

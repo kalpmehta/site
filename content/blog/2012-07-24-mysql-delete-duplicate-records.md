@@ -4,11 +4,7 @@ title: 'Mysql delete duplicate records leaving one'
 date: '2012-07-24T17:22:49+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=296'
-permalink: /index.php/2012/07/24/mysql-delete-duplicate-records/
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/08/09/magento-how-to-delete-remove-all-products-from-all-categories/"     class="crp_title">Magento: How to delete/remove all products from all categories</a></li><li><a href="http://ka.lpe.sh/2012/07/12/magento-add-radio-checkbox-button-to-admin-grid/"     class="crp_title">Magento add radio / checkbox button to admin grid</a></li><li><a href="http://ka.lpe.sh/2012/10/10/ubuntu-delete-temporary-cache-files/"     class="crp_title">Ubuntu: Delete temporary/cache files</a></li><li><a href="http://ka.lpe.sh/2013/02/09/linux-magento-daily-useful-development-commands/"     class="crp_title">Linux/Magento: Daily useful development commands</a></li><li><a href="http://ka.lpe.sh/2012/07/19/magento-interview-questions-and-answers/"     class="crp_title">Magento Interview questions and answers</a></li></ul></div>'
-categories:
+tags:
     - MySQL
 tags:
     - delete

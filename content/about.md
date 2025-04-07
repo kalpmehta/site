@@ -1,6 +1,6 @@
 ---
 title: 'about'
-description: 'Tech enthusiast, occasional rambler, and professional problem-solver navigating life one curiosity at a time.'
+description: 'My personal corner of the internet for sharing knowledge, tech stuff, and the occasional yapping and ramblings.'
 hidedate: true
 social: true
 date: '2011-06-04T14:28:46+00:00'

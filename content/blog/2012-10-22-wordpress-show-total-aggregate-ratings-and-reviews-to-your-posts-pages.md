@@ -4,11 +4,7 @@ title: 'WordPress: Show total/aggregate ratings and reviews to your posts/pages'
 date: '2012-10-22T15:07:22+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=364'
-permalink: /index.php/2012/10/22/wordpress-show-total-aggregate-ratings-and-reviews-to-your-posts-pages/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/10/18/magento-get-most-popular-products-in-a-category/"     class="crp_title">Magento Get most popular products in a category</a></li><li><a href="http://ka.lpe.sh/2012/02/12/magento-show-track-your-order-in-frontend-my-orders/"     class="crp_title">Magento: Show &#8220;track your order&#8221; in frontend &#8211; My Orders</a></li><li><a href="http://ka.lpe.sh/2013/02/23/magento-product-free-paid-sample-purchase-order/"     class="crp_title">Magento: Product Free/Paid SAMPLE Purchase Order</a></li><li><a href="http://ka.lpe.sh/2011/06/19/magento-some-important-functions/"     class="crp_title">Magento: Some important functions</a></li><li><a href="http://ka.lpe.sh/2011/06/19/magento-checking-customer-admin-is-logged-in-or-not/"     class="crp_title">Magento: Checking customer/admin is logged in or not</a></li></ul></div>'
-categories:
+tags:
     - Wordpress
 tags:
     - 'aggregate ratings reviews wordpress'

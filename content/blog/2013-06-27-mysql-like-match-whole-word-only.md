@@ -4,11 +4,7 @@ title: 'MYSQL LIKE match whole word only'
 date: '2013-06-27T11:40:15+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=742'
-permalink: /index.php/2013/06/27/mysql-like-match-whole-word-only/
-crp_related_posts:
-    - '<div id="crp_related" class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2012/08/03/mysql-find-column-name-in-any-tables-having-it-in-whole-database/"     class="crp_title">Mysql: Find column name in any table(s) having it in whole database</a></li><li><a href="http://ka.lpe.sh/2012/04/18/magento-get-sentence-case-from-camel-case-string/"     class="crp_title">Magento: Get sentence case from camel case string</a></li><li><a href="http://ka.lpe.sh/2013/02/20/magento-reset-download-limit-for-downloadable-product-item-order/"     class="crp_title">Magento: Reset download limit for downloadable product item/order</a></li><li><a href="http://ka.lpe.sh/2012/11/02/linux-bash-script-to-check-availability-of-domain-names-in-differnet-tlds/"     class="crp_title">Linux: Bash script to check availability of domain names in differnet TLDs</a></li><li><a href="http://ka.lpe.sh/2013/05/23/magento-clone-collection-how-to-clone-collection-in-magento/"     class="crp_title">Magento clone collection &#8211; How to clone collection in Magento</a></li></ul></div>'
-categories:
+tags:
     - MySQL
 tags:
     - mysql

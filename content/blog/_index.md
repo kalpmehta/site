@@ -1,6 +1,5 @@
 ---
 title: "blog"
 url: "blog"
-description: "collection of all the blog posts."
 ---
 

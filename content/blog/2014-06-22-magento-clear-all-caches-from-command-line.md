@@ -4,21 +4,7 @@ title: 'Magento: Clear all caches from command line'
 date: '2014-06-22T18:58:17+00:00'
 author: kalpesh
 layout: post
-guid: 'http://ka.lpe.sh/?p=895'
-permalink: /index.php/2014/06/22/magento-clear-all-caches-from-command-line/
-snapEdIT:
-    - '1'
-snapFB:
-    - 's:162:"a:1:{i:0;a:4:{s:8:"PostType";s:1:"A";s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:56:"New post (%TITLE%) has been published on %SITENAME% blog";s:4:"doFB";i:0;}}";'
-snapLI:
-    - 's:174:"a:1:{i:0;a:4:{s:10:"AttachPost";s:1:"1";s:10:"SNAPformat";s:46:"New post has been published on %SITENAME% blog";s:11:"SNAPformatT";s:18:"New Post - %TITLE%";s:4:"doLI";i:0;}}";'
-snapTW:
-    - 's:95:"a:1:{i:0;a:3:{s:10:"SNAPformat";s:15:"%TITLE% - %URL%";s:8:"attchImg";s:1:"0";s:4:"doTW";i:0;}}";'
-snap_isAutoPosted:
-    - '1'
-crp_related_posts:
-    - '<div class="crp_related"><h3>Related Posts:</h3><ul><li><a href="http://ka.lpe.sh/2013/08/11/magento-how-to-remove-order/"     class="crp_title">Magento how to remove order</a></li><li><a href="http://ka.lpe.sh/2013/10/20/magento-fatal-error-call-to-a-member-function-rewrite-on-a-non-object-in/"     class="crp_title">Magento Error: Fatal error: Call to a member function rewrite() on a non-object in&hellip;</a></li><li><a href="http://ka.lpe.sh/2013/06/12/php-redirect-without-header/"     class="crp_title">PHP redirect without header()</a></li><li><a href="http://ka.lpe.sh/2013/04/25/magento-check-if-any-particular-customer-is-currently-logged-in/"     class="crp_title">Magento: Check if any particular customer is currently logged in</a></li><li><a href="http://ka.lpe.sh/2013/06/20/how-to-install-orocrm/"     class="crp_title">OroCRM Installation guide</a></li></ul></div>'
-categories:
+tags:
     - Linux
     - Magento
 tags:
