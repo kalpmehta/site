@@ -11,7 +11,7 @@ tags:
     - jquery
 ---
 
-![jQuery javascript framework](http://ka.lpe.sh/wp-content/uploads/2013/06/jquery-logo.png)Using jQuery, check whether checkbox is checked or not using 4 different ways in this post.
+![jQuery javascript framework](http://ka.lpe.sh/uploads/2013/06/jquery-logo.png)Using jQuery, check whether checkbox is checked or not using 4 different ways in this post.
 
 Below code relies on jQuery’s [is](http://api.jquery.com/is/ "jQuery is method") method to check if the checkbox is checked or not. If you want to lookup the checkbox by *class* instead of *id*, just replace *\#yourCheckboxID* with *.yourCheckboxClassName*
 

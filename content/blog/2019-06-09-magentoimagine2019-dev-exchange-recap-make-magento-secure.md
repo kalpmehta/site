@@ -14,7 +14,7 @@ tags:
     - 'magento security'
 ---
 
-<div class="wp-caption aligncenter" id="attachment_1212" style="width: 610px">![Magento Imagine 2019 Dev Exchange](http://ka.lpe.sh/wp-content/uploads/2019/06/magento_imagine_2019_dev_exchange-1024x616.jpg)Magento Imagine 2019 Dev Exchange
+<div class="wp-caption aligncenter" id="attachment_1212" style="width: 610px">![Magento Imagine 2019 Dev Exchange](http://ka.lpe.sh/uploads/2019/06/magento_imagine_2019_dev_exchange-1024x616.jpg)Magento Imagine 2019 Dev Exchange
 
 </div>This year Magento Imagine conference was amazing, around 3,500 people from around the world attended the event which was held at Wynn, Las Vegas. I met many people whom I already knew, and many more whom I never met before in real life but interacted on social media and forums.
 

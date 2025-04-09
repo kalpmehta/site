@@ -11,7 +11,7 @@ tags:
     - wordpress
 ---
 
-![Wordpress Connection Information Error](http://ka.lpe.sh/wp-content/uploads/2013/06/wp_connection_error.jpg)
+![Wordpress Connection Information Error](http://ka.lpe.sh/uploads/2013/06/wp_connection_error.jpg)
 
 WordPress generally gives you page to fill FTP connection details when you try to install new plugin or update wordpress. The reason is it cannot write to wp-content directory due of lack of permissions to write. The best way is to change permissions and ownership of wp-content directory. But if you can’t do that because of some reason, then add the below line of code in your wp-config.php
 

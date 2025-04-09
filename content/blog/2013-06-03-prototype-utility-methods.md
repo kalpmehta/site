@@ -10,7 +10,7 @@ tags:
     - prototypejs
 ---
 
-![Prototype JS Javascript framework](http://ka.lpe.sh/wp-content/uploads/2013/06/prototype_logo.gif)Prototype JS comes with many utility methods which are very powerful and useful while development. Below methods are shorthands or aliases of other Prototype methods, created to save time in typing.
+![Prototype JS Javascript framework](http://ka.lpe.sh/uploads/2013/06/prototype_logo.gif)Prototype JS comes with many utility methods which are very powerful and useful while development. Below methods are shorthands or aliases of other Prototype methods, created to save time in typing.
 
 These are created as they are very commonly used, to make developer’s life easier.
 

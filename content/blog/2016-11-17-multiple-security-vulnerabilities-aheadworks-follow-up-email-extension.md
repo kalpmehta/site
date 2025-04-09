@@ -18,7 +18,7 @@ While modifying Aheadworks follow up extension on our store to meet our specific
 Link of the extension in Magento Marketplace:  
 <https://marketplace.magento.com/aheadworks-follow-up-email.html>  
 It allows store owners to send automated emails to customers who had abandoned their cart.  
-![Aheadworks follow up email extension](http://ka.lpe.sh/wp-content/uploads/2016/11/fue-2.png)
+![Aheadworks follow up email extension](http://ka.lpe.sh/uploads/2016/11/fue-2.png)
 
 All the below vulnerabilities were found in the extension.
 

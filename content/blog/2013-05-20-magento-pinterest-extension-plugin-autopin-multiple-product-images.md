@@ -14,7 +14,7 @@ tags:
 
 We all know that Pinterest is very popular and a great tool for marketing variety of products. It can give you huge traffic to your website resulting in incredible sales and revenue. It have almost all types of categories to hold your pinned images so that your product gets noticed to potential customers. It even has an option to specify the price of the product, which only gives you interested buyers to your website.
 
-![Magento Pinterest Auto Pin product images by Magentools](http://ka.lpe.sh/wp-content/uploads/2013/05/Magento-Pinterest-AutoPin.jpg)
+![Magento Pinterest Auto Pin product images by Magentools](http://ka.lpe.sh/uploads/2013/05/Magento-Pinterest-AutoPin.jpg)
 
 If you have hundreds/thousands of products in your store and want to pin it on Pinterest it becomes very difficult, as Pinterest don’t provide multiple pinning of images. One by one pinning images is a nightmare if you have lots of products. There is also no official Pinterest API which can allow you to auto-pin your images through some kind of API.  
   

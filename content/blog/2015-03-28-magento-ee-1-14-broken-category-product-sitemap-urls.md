@@ -20,7 +20,7 @@ Magento EE 1.14 introduces a bug fix which apparently becomes a bug in our websi
 
 We don’t have .html suffix in our category and product URLs, so we were good before this fix. But after upgrading it to latest version all the category and product URLs were having “.” (dot) at the end in XML sitemap. This is because Magento allows admin to give a custom suffix for category and product URLs for sitemap, but hardcodes “.” regardless of there are values in the above config fields or not. This allows unnecessary dots in all the URLs which can lead to 404 pages.
 
-[![Magento Category Product URL config](http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png)](http://ka.lpe.sh/wp-content/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png)
+[![Magento Category Product URL config](http://ka.lpe.sh/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png)](http://ka.lpe.sh/uploads/2015/03/Screen-Shot-2015-03-27-at-9.24.08-PM.png)
 
 Magento team have used observer to observe the events *sitemap_categories_generating_before* and *sitemap_products_generating_before* to add the suffix in the following file and functions (Notice I have commented all lines in the functions):  
 app/code/core/Enterprise/Catalog/Model/Observer.php  

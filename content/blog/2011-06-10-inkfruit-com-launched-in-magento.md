@@ -1,6 +1,6 @@
 ---
 id: 60
-title: 'InkFruit.com &#8211; launched in Magento'
+title: 'InkFruit.com launched in Magento'
 date: '2011-06-10T15:33:37+00:00'
 author: kalpesh
 layout: post
@@ -12,7 +12,7 @@ tags:
     - magento
 ---
 
-![Inkfruit.com](http://ka.lpe.sh/wp-content/uploads/2011/06/ink1.jpg)After so much of hard work and less time to complete, finally we launched our old core PHP website in Magento.
+![Inkfruit.com](http://ka.lpe.sh/uploads/2011/06/ink1.jpg)After so much of hard work and less time to complete, finally we launched our old core PHP website in Magento.
 
 At beginning, the task was the tough nut to crack, but then it was more interesting and honestly we loved it.
 

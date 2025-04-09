@@ -11,7 +11,7 @@ tags:
     - redirect
 ---
 
-![jQuery javascript framework](http://ka.lpe.sh/wp-content/uploads/2013/06/jquery-logo.png)jQuery redirect one page to another using the following code:  
+![jQuery javascript framework](http://ka.lpe.sh/uploads/2013/06/jquery-logo.png)jQuery redirect one page to another using the following code:  
 {{< highlight js "style=emacs" >}}var your_url = ‘http://ka.lpe.sh/’; //change this to your url  
 $(location).attr(‘href’,’your_url’);{{< /highlight >}}
 

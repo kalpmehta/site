@@ -13,4 +13,4 @@ tags:
     - Humor
 ---
 
-![404 Room Not Found](http://weknowmemes.com/wp-content/uploads/2011/12/error-404-room-not-found1.jpg)
+![404 Room Not Found](http://weknowmemes.com/uploads/2011/12/error-404-room-not-found1.jpg)

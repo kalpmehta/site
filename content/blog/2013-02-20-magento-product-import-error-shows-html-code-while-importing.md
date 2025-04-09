@@ -14,7 +14,7 @@ tags:
 
 While importing products (somewhere around 1200 rows) by Magento’s in-built “System > Import/Export > Dataflow – Profiles” I got an error where the Dashboard’s HTML was printed in the output.
 
-![magento product import error](http://ka.lpe.sh/wp-content/uploads/2013/02/import_error.png)
+![magento product import error](http://ka.lpe.sh/uploads/2013/02/import_error.png)
 
 The reason for this error is due to something wrong in CSV product data which Magento didn’t understand. Create a temporary CSV file with only few rows (2-4) and check if that works. If it works, that means there is some problem with rest of the data.
 

@@ -89,4 +89,4 @@ Change directory to reach Magento 2 root directory
 
 Check your module in browser: <http://www.yourwebsite.com/first/hello/world>. If you have done everything correct, it should output “Hello world!”
 
-![Magento 2 hello world module](http://ka.lpe.sh/wp-content/uploads/2015/12/magento2-hello-world-module.png)
+![Magento 2 hello world module](http://ka.lpe.sh/uploads/2015/12/magento2-hello-world-module.png)

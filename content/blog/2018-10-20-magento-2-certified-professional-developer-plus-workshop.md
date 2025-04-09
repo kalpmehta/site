@@ -12,7 +12,7 @@ tags:
     - 'magento 2 certified professional developer plus'
 ---
 
-[![](http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam-300x200.jpg)](http://ka.lpe.sh/wp-content/uploads/2018/10/magentoUteam.jpg)
+[![](http://ka.lpe.sh/uploads/2018/10/magentoUteam-300x200.jpg)](http://ka.lpe.sh/uploads/2018/10/magentoUteam.jpg)
 
 Last month I and Jonathan from Corra participated in the M2 Developer Plus certification workshop which happened in London. The goal of this new certification is to test the developers’ skills in Magento 2 Commerce and Open Source. This exam is intended to be difficult than the Professional Developer that was launched earlier this year. The exam will be scenario-based, so don’t come memorizing class and method names to the exam, it will not help 🙂
 

@@ -15,7 +15,7 @@ I will show you here how to install OroCRM in your machine. OroCRM is the latest
 
 **Requirements**: Symfony 2, Doctrine 2, PHP >= 5.3.3
 
-![OroCRM login - installation guide](http://ka.lpe.sh/wp-content/uploads/2013/06/orocrm-login.png)
+![OroCRM login - installation guide](http://ka.lpe.sh/uploads/2013/06/orocrm-login.png)
 
 – Clone the CRM application Git repository in your local. It should be done in your web server’s root directory (e.g. /var/www/).  
 {{< highlight http >}} git clone http://gitlab.orocrm.com/crm-application.git{{< /highlight >}}  

@@ -14,7 +14,7 @@ tags:
 
 If you want to allow your customers to order for sample of any product, before purchasing the actual product, it becomes very tough as in a product page you can’t have two products (sample + full) allowed. But it’s not a good idea to display sample products as Individually, it makes sense only in the actual product page just near the Add To Cart button.
 
-![Magento Sample product purchase](http://ka.lpe.sh/wp-content/uploads/2013/02/magento-sample-purchase.png)
+![Magento Sample product purchase](http://ka.lpe.sh/uploads/2013/02/magento-sample-purchase.png)
 
 But the question is, how to have TWO SKUs in a single product detail page? Here is the code that will do exactly what you want now. Open your catalog/product/view.phtml template file and put this code just below the code “$this->getChildHtml(‘addtocart’);”
 

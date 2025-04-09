@@ -12,6 +12,6 @@ tags:
     - 'samsung apple you''re fired'
 ---
 
-<div class="wp-caption alignnone" id="attachment_375" style="width: 310px">[![Samsung Apple you're fired!](http://ka.lpe.sh/wp-content/uploads/2012/10/393187_427675353957913_516348606_n-300x293.jpg "393187_427675353957913_516348606_n")](http://ka.lpe.sh/wp-content/uploads/2012/10/393187_427675353957913_516348606_n.jpg)Samsung Apple you're fired!
+<div class="wp-caption alignnone" id="attachment_375" style="width: 310px">[![Samsung Apple you're fired!](http://ka.lpe.sh/uploads/2012/10/393187_427675353957913_516348606_n-300x293.jpg "393187_427675353957913_516348606_n")](http://ka.lpe.sh/uploads/2012/10/393187_427675353957913_516348606_n.jpg)Samsung Apple you're fired!
 
 </div>
