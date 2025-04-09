@@ -79,7 +79,7 @@ ignoreErrors = ["error-disable-taxonomy"]
   # link by using a `hideReply` param in front matter.
   [params.author]
     name = "Kalpesh Mehta" # Your name as shown in the RSS feed metadata
-    email = "k@lpe.sh" # Added to the footer so readers can reply to posts
+    email = "k[at]lpe[dot]sh" # Added to the footer so readers can reply to posts
 
 
 #[markup.goldmark.renderer]

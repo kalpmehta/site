@@ -108,9 +108,59 @@
     float:left;
 }
 
-.site-title {
-    max-width: 65%;
-}
+
+/* iPad Mini/iPad */
+@media screen and (max-width: 768px) {
+    .social-button {
+       width: 2.2rem;
+       height: 2.2rem;
+    }
+    .social-button i {
+        font-size: 20px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 125px;
+     }
+ }
+
+
+ /* iPhone 6/7/8 Plus */
+ @media screen and (max-width: 480px) {
+    .social-button {
+       width: 2rem;
+       height: 2rem;
+    }
+    .social-button i {
+        font-size: 18px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 115px;
+     }
+     .site-title {
+        max-width: 250px;
+    }
+ }
+
+
+ /* iPhone 6/7/8 */
+ @media screen and (max-width: 414px) {
+    .social-button {
+       width: 1.8rem;
+       height: 1.8rem;
+    }
+    .social-button i {
+        font-size: 15px;
+     }
+     .title h1 {
+        font-size: 18px;
+     }
+     ul.blog-posts li span {
+        flex: 0 0 110px;
+     }
+     .site-title {
+        max-width: 200px;
+    }
+ }
 
 
  /* iPhone SE and smaller phones */
@@ -126,59 +176,15 @@
         font-size: 18px;
      }
      ul.blog-posts li span {
-        flex: 0 0 100px;
+        flex: 0 0 105px;
      }
      nav a {
         margin-right: 0px;
      }
  }
 
- /* iPhone 6/7/8 */
- @media screen and (max-width: 414px) {
-    .social-button {
-       width: 1.8rem;
-       height: 1.8rem;
-    }
-    .social-button i {
-        font-size: 15px;
-     }
-     .title h1 {
-        font-size: 20px;
-     }
-     ul.blog-posts li span {
-        flex: 0 0 110px;
-     }
- }
 
- /* iPhone 6/7/8 Plus */
- @media screen and (max-width: 480px) {
-    .social-button {
-       width: 2rem;
-       height: 2rem;
-    }
-    .social-button i {
-        font-size: 18px;
-     }
-     ul.blog-posts li span {
-        flex: 0 0 125px;
-     }
- }
-
- /* iPad Mini/iPad */
- @media screen and (max-width: 768px) {
-    .social-button {
-       width: 2.2rem;
-       height: 2.2rem;
-    }
-    .social-button i {
-        font-size: 20px;
-     }
-     ul.blog-posts li span {
-        flex: 0 0 140px;
-     }
- }
-
- @media screen and (max-width: 360px) {
+@media screen and (max-width: 360px) {
     .social-button {
        width: 1.5rem;
        height: 1.5rem;
@@ -195,4 +201,12 @@
      nav a {
         margin-right: 0px;
      }
+     .site-title {
+        max-width: 200px;
+    }
  }
+
+
+
+ 
+
