@@ -108,6 +108,10 @@
     float:left;
 }
 
+.site-title {
+    max-width: 230px;
+}
+
 
 /* iPad Mini/iPad */
 @media screen and (max-width: 768px) {
@@ -136,9 +140,7 @@
      ul.blog-posts li span {
         flex: 0 0 115px;
      }
-     .site-title {
-        max-width: 250px;
-    }
+     
  }
 
 
